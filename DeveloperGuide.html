@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>TeaPet - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
+<p>By: <code>CS2103T-W12-02</code>      Since: <code>Jan 2020</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
@@ -628,7 +628,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p>is the form teacher of a class</p>
+<p>form teacher of a class</p>
 </li>
 <li>
 <p>has a need to manage a significant number of students</p>
@@ -720,25 +720,43 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">see the scores of my class</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">know the academic progress of my class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">track the academic progress of my class</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add a new student</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add students</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add new students to the class list</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">delete a student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">remove entries that I no longer need</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove students that I no longer need</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">find a student by name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">locate details of students without having to go through the entire list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sort students by alphabetical order</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">locate a student easily</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">update the details of my students</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">make necessary changes to my student&#8217;s particulars</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">maintain emergency contacts of my students</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know who to contact in case of emergency</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
@@ -748,27 +766,27 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">update the details of my students</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">make necessary changes to my student&#8217;s particulars</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">see usage instructions</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">refer to instructions when I forget how to use the App</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">hide <a href="#private-contact-detail">private contact details</a> by default</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">minimize chance of someone else seeing them by accident</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of the sitting arrangement of the class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">students who change their seats unknowingly</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">record the temperature of students</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">track the health of my students</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user with many students in the address book</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sort students by name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">locate a student easily</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get feedback from other teachers teaching the students of my class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">better understand the progress of the class</p></td>
 </tr>
 </tbody>
 </table>
@@ -783,17 +801,20 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="paragraph">
 <p>(For all use cases below, the <strong>System</strong> is the <code>TeaPet</code> and the <strong>Actor</strong> is the <code>Teacher</code>, unless specified otherwise)</p>
 </div>
-<h3 id="use-case-add-student" class="discrete">Use case: Add student</h3>
+<h3 id="use-case-uc01-add-student" class="discrete">Use case: UC01 - Add student</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User keys in a student</p>
+<p>User keys in a student, followed by optional <a href="#attributes">attributes</a> such as emergency contacts  at the command line.</p>
 </li>
 <li>
-<p>TeaPet adds the student to the class list</p>
+<p>TeaPet adds the student and his or her <a href="#attributes">attributes</a> to the class list.</p>
+</li>
+<li>
+<p>TeaPet feedback to the user that a the student is being added.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -806,11 +827,11 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. Student is invalid.</p>
+<p>1a. Student is invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a1. TeaPet shows an error message.</p>
+<p>1a1. TeaPet shows an error message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -820,17 +841,20 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-edit-student" class="discrete">Use case: Edit student</h3>
+<h3 id="use-case-uc02-edit-student" class="discrete">Use case: UC02 - Edit student</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User specifies which student and what particulars he/she wants to edit</p>
+<p>User specifies which student, using the name, and what particulars he/she wants to edit in the command line.</p>
 </li>
 <li>
-<p>TeaPet edits the student&#8217;s particulars in the class list</p>
+<p>TeaPet edits the student&#8217;s particulars in the class list as instructed by the commands.</p>
+</li>
+<li>
+<p>TeaPet feedback to the user that the student has been edited, followed by the updates made.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -843,11 +867,11 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. Student is invalid.</p>
+<p>1a. Student is invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a1. TeaPet shows an error message.</p>
+<p>1a1. TeaPet shows an error message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -856,11 +880,11 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </li>
 <li>
-<p>2a. Particulars is invalid.</p>
+<p>1b. Particulars are invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a1. TeaPet shows an error message.</p>
+<p>1b1. TeaPet shows an error message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -870,23 +894,20 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-delete-student" class="discrete">Use case: Delete student</h3>
+<h3 id="use-case-uc03-delete-student" class="discrete">Use case: UC03 - Delete student</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list students</p>
+<p>User specifies which student, using the name, he/she wants to remove.</p>
 </li>
 <li>
-<p>TeaPet shows a list of students</p>
+<p>TeaPet removes the student from the class list.</p>
 </li>
 <li>
-<p>User requests to delete a specific student in the list</p>
-</li>
-<li>
-<p>TeaPet deletes the student</p>
+<p>TeaPet feedback to the user that a the student is being removed.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -899,37 +920,34 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The list is empty.</p>
+<p>1a. Student name entered is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. TeaPet shows an error message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-<li>
-<p>3a. The given index is invalid.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>3a1. TeaPet shows an error message.</p>
-<div class="paragraph">
-<p>Use case resumes at step 2.</p>
-</div>
-</li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
-<h3 id="use-case-add-event" class="discrete">Use case: Add event</h3>
+<h3 id="use-case-uc04-add-event" class="discrete">Use case: UC04 - Add event</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User keys in an event</p>
+<p>User keys in an event.</p>
 </li>
 <li>
-<p>TeaPet adds the event to the schedule</p>
+<p>TeaPet adds the event to the schedule.</p>
+</li>
+<li>
+<p>TeaPet feedback the event has been added.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -942,11 +960,85 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. Event is invalid.</p>
+<p>1a. Event entered is invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a1. TeaPet shows an error message.</p>
+<p>1a1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc05-display-a-href-schedule-schedule-a" class="discrete">Use case: UC05 - Display <a href="#schedule">schedule</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User keys in the command to display events.</p>
+</li>
+<li>
+<p>TeaPet displays the events in chronological order.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Command is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc06-display-students-academic-progress" class="discrete">Use case: UC06 - Display students' academic progress</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters the command to display academic progress of students.</p>
+</li>
+<li>
+<p>TeaPet displays the academic progress in chronological order.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Command is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. TeaPet shows an error message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -976,7 +1068,13 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p>A teacher with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
 </li>
 <li>
-<p>TeaPet should be used only for a teacher handling his/her own form class.</p>
+<p>TeaPet should be used only for a teacher handling his/her own form class, not by any other teachers.</p>
+</li>
+<li>
+<p>TeaPet should be able to work without internet access.</p>
+</li>
+<li>
+<p>The teacher should be able to familiarise himself/herself within half an hour of usage.</p>
 </li>
 </ol>
 </div>
@@ -990,6 +1088,10 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="sectionbody">
 <div class="dlist">
 <dl>
+<dt class="hdlist1"><a id="attributes"></a> Attributes</dt>
+<dd>
+<p>The information of a student. For example, phone number, address or emergency contacts.</p>
+</dd>
 <dt class="hdlist1"><a id="class-list"></a> Class List</dt>
 <dd>
 <p>Class list of students</p>
@@ -1008,7 +1110,8 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </dd>
 <dt class="hdlist1"><a id="schedule"></a> Schedule</dt>
 <dd>
-<p>TeaPet&#8217;s schedule that stores all of the teacher&#8217;s events</p>
+<p>TeaPet&#8217;s schedule that stores all of the teacher&#8217;s events
+t</p>
 </dd>
 </dl>
 </div>
@@ -1112,23 +1215,20 @@ Expected: The most recent window size and location is retained.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Deleting a student while all students are listed</p>
+<p>Deleting a student from class list with the specific name entered by user</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all students using the <code>list</code> command. Multiple students in the list.</p>
+<p>Test case: <code>delete John Tan Jun Wei</code><br>
+Expected: Student "John Tan Jun Wei" is deleted from the list. Status message displays that the specified student has been deleted. Timestamp in the status bar is updated.</p>
 </li>
 <li>
-<p>Test case: <code>delete 1</code><br>
-Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.</p>
-</li>
-<li>
-<p>Test case: <code>delete 0</code><br>
+<p>Test case: <code>delete Tan John Wei Jun</code><br>
 Expected: No student is deleted. Error details shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
-Expected: Similar to previous.</p>
+<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete john Tan Jun Wei</code> (where the specified student is not a student in the class list due to the capitalisation of the first alphabet.) <em>{give more}</em><br>
+Expected: Similar to test case b.</p>
 </li>
 </ol>
 </div>
@@ -1160,4 +1260,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-04 07:10:09 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-04 12:32:38 UTC</div></div></div></body></html>
