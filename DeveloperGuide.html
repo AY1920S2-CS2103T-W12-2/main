@@ -387,6 +387,27 @@ with the duplicate students error message.</p>
 <p><strong>Step 3</strong>. The method <code>Model#addStudent(Student student)</code> will then be called to add the student. The command box will be reflected with
 the <code>AddCommand#MESSAGE_SUCCESS</code> constant and a new <code>CommandResult</code> will be returned with the message.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the format or wording of adding a student contains error(s), the behaviour of TeaPet will be similar to step 2, where either a unknown command
+or wrong format error message will be displayed.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the add operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddSequenceDiagram.png" alt="AddSequenceDiagram">
+</div>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -1645,4 +1666,4 @@ Expected: Similar to test case b.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-24 18:06:31 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-25 14:52:57 UTC</div></div></div></body></html>
