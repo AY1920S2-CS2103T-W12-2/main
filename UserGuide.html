@@ -11,30 +11,55 @@
 <ul class="sectlevel1">
 <li><a href="#introduction">1. Introduction</a></li>
 <li><a href="#about">2. About</a></li>
-<li><a href="#getting-started">3. Getting started</a></li>
-<li><a href="#Features">4. Features</a>
+<li><a href="#overview-of-features">3. Overview of Features</a></li>
+<li><a href="#getting-started">4. Getting started</a></li>
+<li><a href="#Features">5. Features &amp; Commands</a>
 <ul class="sectlevel2">
-<li><a href="#class-particulars">4.1. Class Particulars</a></li>
-<li><a href="#class-administration">4.2. Class Administration</a></li>
-<li><a href="#personal-scheduler">4.3. Personal Scheduler</a></li>
-<li><a href="#class-progress-tracker">4.4. Class Progress Tracker</a></li>
-<li><a href="#notes">4.5. Notes</a></li>
-<li><a href="#saving-data">4.6. Saving data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-like-never-lmao-lol-yes-code">4.7. Encrypting data files <code>[coming in like never lmao lol yes]</code></a></li>
-</ul>
-</li>
-<li><a href="#commands">5. Commands</a>
-<ul class="sectlevel2">
-<li><a href="#default-commands">5.1. Default Commands</a>
+<li><a href="#class-particulars">5.1. Class Particulars</a>
 <ul class="sectlevel3">
-<li><a href="#viewing-help-code-help-code">5.1.1. Viewing help: <code>help</code></a></li>
-<li><a href="#exiting-program-code-exit-code">5.1.2. Exiting program: <code>exit</code></a></li>
+<li><a href="#commands-related-to-class-particulars">5.1.1. Commands related to Class Particulars</a></li>
 </ul>
 </li>
+<li><a href="#class-administration">5.2. Class Administration</a>
+<ul class="sectlevel3">
+<li><a href="#commands-related-to-class-administration">5.2.1. Commands related to Class Administration</a></li>
+</ul>
+</li>
+<li><a href="#personal-scheduler">5.3. Personal Scheduler</a>
+<ul class="sectlevel3">
+<li><a href="#commands-related-to-personal-scheduler">5.3.1. Commands related to Personal Scheduler</a>
+<ul class="sectlevel5">
+<li><a href="#display-personal-schedule-code-schedule-code">Display Personal Schedule: <code>schedule</code></a></li>
+<li><a href="#add-event-code-placeholder-code">Add event: <code>placeholder</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#class-progress-tracker">5.4. Class Progress Tracker</a>
+<ul class="sectlevel3">
+<li><a href="#commands-related-to-class-progress-tracker">5.4.1. Commands related to Class Progress Tracker</a></li>
+</ul>
+</li>
+<li><a href="#notes">5.5. Notes</a>
+<ul class="sectlevel3">
+<li><a href="#commands-related-to-notes">5.5.1. Commands related to Notes</a></li>
+</ul>
+</li>
+<li><a href="#saving-data">5.6. Saving data</a></li>
+<li><a href="#default-commands">5.7. Default Commands</a>
+<ul class="sectlevel3">
+<li><a href="#view-help-code-help-code">5.7.1. View help: <code>help</code></a></li>
+<li><a href="#view-in-detailed-mode-code-detailed-code">5.7.2. View in detailed mode: <code>detailed</code></a></li>
+<li><a href="#view-in-admin-mode-code-admin-code">5.7.3. View in admin mode: <code>admin</code></a></li>
+<li><a href="#view-in-default-mode-code-default-code">5.7.4. View in default mode: <code>default</code></a></li>
+<li><a href="#exit-program-code-exit-code">5.7.5. Exit program: <code>exit</code></a></li>
+</ul>
+</li>
+<li><a href="#encrypting-data-files-code-coming-in-like-never-lmao-lol-yes-code">5.8. Encrypting data files <code>[coming in like never lmao lol yes]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">6. FAQ</a></li>
-<li><a href="#command-summary">7. Command Summary</a></li>
+<li><a href="#Summary">7. Command Summary</a></li>
 </ul>
 </div>
 </div>
@@ -42,19 +67,25 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>TeaPet is an all-in-one desktop program for primary school form teachers to <strong>manage their classroom effectively</strong>.
-It manages your <strong>personal curriculum schedule</strong>, <strong>student particulars</strong>, and can also <strong>track your class progress</strong> all in
-one simple program.</p>
+<p>Welcome to TeaPet!</p>
 </div>
 <div class="paragraph">
-<p>TeaPet flexes its simple and clean Graphical User Interface (GUI) and is optimized for those who prefer to work on a <strong>Command Line Interface (CLI).</strong></p>
+<p>Looking for an all-in-one solution for your teaching needs? Look no further!</p>
+</div>
+<div class="paragraph">
+<p>TeaPet is an integrated platform fully customized for Primary School Form Teachers to help you manage your classroom effectively.
+It contains your personal curriculum schedule, students' particulars, and can also track your class' academic progress.</p>
+</div>
+<div class="paragraph">
+<p>All your important information is comfortably compartmentalized on our simple and clean Graphical User Interface (GUI) and we are optimized for users who are very comfortable
+working on the Command Line Interface (CLI).</p>
 </div>
 <div class="paragraph">
 <p>If you are looking for a way to easily manage your administrative classroom chores
 and have quick hands, TeaPet is for you!</p>
 </div>
 <div class="paragraph">
-<p>Interested? Hop into <a href="#getting-started">Section 3, &#8220;Getting started&#8221;</a>. Enjoy!</p>
+<p>Interested? Hop onto <a href="#getting-started">Section 4, &#8220;Getting started&#8221;</a>. Enjoy!</p>
 </div>
 </div>
 </div>
@@ -62,62 +93,169 @@ and have quick hands, TeaPet is for you!</p>
 <h2 id="about"><a class="link" href="#about">2. About</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The user guide will provide all the information needed to fully utilise <strong>TeaPet</strong>.</p>
+<p>The aim of this User Guide is to provide you with all the information you need to fully utilise TeaPet. We understand the pains of using a
+Command Line Interface (CLI) program and have bested our efforts into ensuring a very readable guide on how to use our program.</p>
 </div>
 <div class="paragraph">
-<p>If you need help on setting up <strong>TeaPet</strong>, you can go to the <a href="#getting-started">Section 3, &#8220;Getting started&#8221;</a> guide below.</p>
+<p>If you need help setting up TeaPet, you can go to the <a href="#getting-started">Section 4, &#8220;Getting started&#8221;</a> section.</p>
 </div>
 <div class="paragraph">
-<p>If you want to check out <strong>TeaPet&#8217;s</strong> features, you can go to the <a href="#Features">Section 4, &#8220;Features&#8221;</a> section.</p>
+<p>If you want to find out more about TeaPet&#8217;s features and commands, you can go to the <a href="#Features">Section 5, &#8220;Features &amp; Commands&#8221;</a> section.</p>
 </div>
 <div class="paragraph">
-<p>If you need help regarding usage of <strong>TeaPet&#8217;s</strong> commands, head on to the <a href="#commands">Section 5, &#8220;Commands&#8221;</a> section.</p>
+<p>If you need an overview regarding the usage of TeaPet&#8217;s commands, head on to the <a href="#Summary">Section 7, &#8220;Command Summary&#8221;</a> section.</p>
 </div>
 <div class="paragraph">
-<p><strong>Take note of the following symbols and formatting used in this document:</strong></p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-This symbol indicates tips.
-</td>
-</tr>
-</table>
+<p>Take note of the following symbols and formatting used in this document:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. A Summary of symbols used in our User Guide.</caption>
 <colgroup>
 <col style="width: 7.6923%;">
 <col style="width: 92.3077%;">
 </colgroup>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>Enter</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This symbol indicates the Enter button on your keyboard.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[IMPORTANT]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this to highlight important stuff</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[WARNING]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this for warnings</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[CAUTION]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this for caution</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[NOTE]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">use this for note</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[TIP]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This symbol indicates tips.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>command</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A grey highlight indicates that this is a command that can be typed into the command line and executed by the program.</p></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>[TIP] If you have any questions, please check out our <a href="#faq">Section 6, &#8220;FAQ&#8221;</a> section.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="getting-started"><a class="link" href="#getting-started">3. Getting started</a></h2>
+<h2 id="overview-of-features"><a class="link" href="#overview-of-features">3. Overview of Features</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>This section will provide you a brief overview of TeaPet&#8217;s cool features and functionalities.</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Ensure you have Java <code>11</code> or above installed in your Computer.</p>
+<p>Manage your students easily</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Include student&#8217;s particulars. e.g. address, contact number, next of kin (NOK)</p>
 </li>
 <li>
-<p>Download the latest <code>TeaPet.jar</code> <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/releases/releases">here</a> <strong>[Coming soon]</strong></p>
+<p>Include administrative details of the students. e.g. attendance, temperature</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Plan your schedule easily</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Create and manage your events with a single calendar</p>
+</li>
+<li>
+<p>View calendar at a glance</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Manage your class academic progress easily</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Include every student&#8217;s grades for every examination.</p>
+</li>
+<li>
+<p>Easy to track progress using helpful tools. e.g. graph plots</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Add Notes to act as lightweight, digital reminders easily</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Include reminders for yourself to help you remember important information.</p>
+</li>
+<li>
+<p>Search keywords in your notes.</p>
+</li>
+<li>
+<p>Save the notes as administrative or behavioural</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Toggle different views to find information easily</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Different view modes show only the required information. e.g. detailed, admin, default</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Data is saved onto your hard disk automatically</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Any changes made will be saved onto your computer so you dont have to worry about data being lost.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="getting-started"><a class="link" href="#getting-started">4. Getting started</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section will bring you through the step-by-step process on getting started with TeaPet.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ensure you have Java 11 or above installed in your Computer.</p>
+</li>
+<li>
+<p>Download the latest TeaPet.jar <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/releases/releases">here</a></p>
 </li>
 <li>
 <p>Copy the file to the folder you want to use as the home folder for TeaPet.</p>
 </li>
 <li>
-<p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
+<p>Double-click the file to start the app. The Graphical User Interface (GUI) should appear in a few seconds.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/Ui.png" alt="Ui" width="790">
@@ -133,7 +271,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>part add</code></strong><code>n/Xiao Ming p/98765432 e/xiaoming@example.com a/Ming Dynasty, block 123, #01-01</code> : adds a contact named <code>Xiao Ming</code> to the Class List.</p>
+<p><strong><code>part add</code></strong><code>n/Xiao Ming p/98765432 e/xiaoming@example.com a/Ming Dynasty, block 123, #01-01</code> : adds a contact named Xiao Ming to the Class List.</p>
 </li>
 <li>
 <p><strong><code>part delete</code></strong><code>3</code> : deletes the 3rd contact shown in the current list</p>
@@ -145,73 +283,19 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </li>
 <li>
-<p>Refer to <a href="#Features">Section 4, &#8220;Features&#8221;</a> for details of each command.</p>
+<p>Refer to <a href="#Features">Section 5, &#8220;Features &amp; Commands&#8221;</a> for details of each command.</p>
 </li>
 </ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="Features"><a class="link" href="#Features">4. Features</a></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="class-particulars"><a class="link" href="#class-particulars">4.1. Class Particulars</a></h3>
-<div class="paragraph">
-<p>TeaPet records down personal particulars of students such as address, contact number and Next of Kin (NOK) particulars.
-Thereafter, you are able to view, update or delete those information of specific students when deemed necessary.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="class-administration"><a class="link" href="#class-administration">4.2. Class Administration</a></h3>
-<div class="paragraph">
-<p>TeaPet&#8217;s Class Administration feature is used to keep track of administrative details such as daily attendance and
-temperature recordings. Data will be displayed in a weekly format for further perusal.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="personal-scheduler"><a class="link" href="#personal-scheduler">4.3. Personal Scheduler</a></h3>
-<div class="paragraph">
-<p>TeaPet&#8217;s Personal Scheduler feature allows you records down your commitments for the week, which will be
-sorted according to date and time. You will then be able to view your weekly schedule at a glance.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="class-progress-tracker"><a class="link" href="#class-progress-tracker">4.4. Class Progress Tracker</a></h3>
-<div class="paragraph">
-<p>TeaPet&#8217;s Class Progress Tracker is able to keep tabs on the class' academic progress. You will be able to store data of
-every student&#8217;s subject grades with this feature. Thereafter, there will be a graph plot displayed to highlight the
-progress of individual students as well as the entire class.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="notes"><a class="link" href="#notes">4.5. Notes</a></h3>
-<div class="paragraph">
-<p>TeaPet&#8217;s Notes feature performs like the ones we all use in our everyday lives, aiming to help form teachers keep
-track of important information of their students spontaneously. This feature supports two types of notes,
-<strong>administrative</strong> notes and <strong>behavioural</strong> notes. Every note is tagged to one or more students, such you will be able to
-better keep track of the stakeholder and information.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">4.6. Saving data</a></h3>
-<div class="paragraph">
-<p>Changes are saved in the hard disk automatically upon entering a command that alters the data.
-There is no requirement to save any form of data manually.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-like-never-lmao-lol-yes-code"><a class="link" href="#encrypting-data-files-code-coming-in-like-never-lmao-lol-yes-code">4.7. Encrypting data files <code>[coming in like never lmao lol yes]</code></a></h3>
-<div class="paragraph">
-<p><em>{explain how the user can enable/disable data encryption}</em></p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="commands"><a class="link" href="#commands">5. Commands</a></h2>
+<h2 id="Features"><a class="link" href="#Features">5. Features &amp; Commands</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>TeaPet</strong> utilises manny different commands which may be complicated at times. Hence, we have segmented it&#8230;&#8203;.[TO BE FILLED LATER]</p>
+<p>This section will provide you with an in-depth explanation of our features and
+provide examples on what you can do to make the most out of TeaPet.
+Under each feature, you will find commands related to each feature and how to use each command.</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -269,20 +353,196 @@ There is no requirement to save any form of data manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="default-commands"><a class="link" href="#default-commands">5.1. Default Commands</a></h3>
-<div class="sect3">
-<h4 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">5.1.1. Viewing help: <code>help</code></a></h4>
+<h3 id="class-particulars"><a class="link" href="#class-particulars">5.1. Class Particulars</a></h3>
 <div class="paragraph">
-<p>Displays the list of commands. Or displays <strong>TeaPet</strong> user guide.
+<p>TeaPet records down personal particulars of students such as address, contact number and Next of Kin (NOK) particulars.
+Thereafter, you are able to view, update or delete those information of specific students when deemed necessary.</p>
+</div>
+<div class="sect3">
+<h4 id="commands-related-to-class-particulars"><a class="link" href="#commands-related-to-class-particulars">5.1.1. Commands related to Class Particulars</a></h4>
+<div class="paragraph">
+<p>part add delete view</p>
+</div>
+<div class="paragraph">
+<p>GUIDE THEM STEP BY STEP<br>
+PROVIDE EXAMPLE<br>
+CATER THEIR NEEDS</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="class-administration"><a class="link" href="#class-administration">5.2. Class Administration</a></h3>
+<div class="paragraph">
+<p>TeaPet&#8217;s Class Administration feature is used to keep track of administrative details such as daily attendance and
+temperature recordings. Data will be displayed in a weekly format for further perusal.</p>
+</div>
+<div class="sect3">
+<h4 id="commands-related-to-class-administration"><a class="link" href="#commands-related-to-class-administration">5.2.1. Commands related to Class Administration</a></h4>
+<div class="paragraph">
+<p>temp admin</p>
+</div>
+<div class="paragraph">
+<p>GUIDE THEM STEP BY STEP<br>
+PROVIDE EXAMPLE<br>
+CATER THEIR NEEDS</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="personal-scheduler"><a class="link" href="#personal-scheduler">5.3. Personal Scheduler</a></h3>
+<div class="paragraph">
+<p>TeaPet&#8217;s Personal Scheduler feature allows you records down your commitments for the week, which will be
+sorted according to date and time. You will then be able to view your weekly schedule at a glance.</p>
+</div>
+<div class="sect3">
+<h4 id="commands-related-to-personal-scheduler"><a class="link" href="#commands-related-to-personal-scheduler">5.3.1. Commands related to Personal Scheduler</a></h4>
+<div class="sect5">
+<h6 id="display-personal-schedule-code-schedule-code"><a class="link" href="#display-personal-schedule-code-schedule-code">Display Personal Schedule: <code>schedule</code></a></h6>
+<div class="paragraph">
+<p>Displays the personal schedule (description)</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>schedule</code></p>
+</div>
+<div class="paragraph">
+<p>The format supported by this command includes:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Keyword</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>NONE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NONE</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>schedule</code><br>
+Views your current schedule</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect5">
+<h6 id="add-event-code-placeholder-code"><a class="link" href="#add-event-code-placeholder-code">Add event: <code>placeholder</code></a></h6>
+<div class="paragraph">
+<p>etc etc</p>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="class-progress-tracker"><a class="link" href="#class-progress-tracker">5.4. Class Progress Tracker</a></h3>
+<div class="paragraph">
+<p>TeaPet&#8217;s Class Progress Tracker is able to keep tabs on the class' academic progress. You will be able to store data of
+every student&#8217;s subject grades with this feature. Thereafter, there will be a graph plot displayed to highlight the
+progress of individual students as well as the entire class.</p>
+</div>
+<div class="sect3">
+<h4 id="commands-related-to-class-progress-tracker"><a class="link" href="#commands-related-to-class-progress-tracker">5.4.1. Commands related to Class Progress Tracker</a></h4>
+<div class="paragraph">
+<p>academics</p>
+</div>
+<div class="paragraph">
+<p>GUIDE THEM STEP BY STEP<br>
+PROVIDE EXAMPLE<br>
+CATER THEIR NEEDS</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="notes"><a class="link" href="#notes">5.5. Notes</a></h3>
+<div class="paragraph">
+<p>TeaPet&#8217;s Notes feature performs like the ones we all use in our everyday lives, aiming to help form teachers keep
+track of important information of their students spontaneously. This feature supports two types of notes,
+<strong>administrative</strong> notes and <strong>behavioural</strong> notes. Every note is tagged to one or more students, such you will be able to
+better keep track of the stakeholder and information.</p>
+</div>
+<div class="sect3">
+<h4 id="commands-related-to-notes"><a class="link" href="#commands-related-to-notes">5.5.1. Commands related to Notes</a></h4>
+<div class="paragraph">
+<p>anotes</p>
+</div>
+<div class="paragraph">
+<p>GUIDE THEM STEP BY STEP<br>
+PROVIDE EXAMPLE<br>
+CATER THEIR NEEDS</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">5.6. Saving data</a></h3>
+<div class="paragraph">
+<p>Changes are saved in the hard disk automatically upon entering a command that alters the data.
+There is no requirement to save any form of data manually.</p>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="default-commands"><a class="link" href="#default-commands">5.7. Default Commands</a></h3>
+<div class="paragraph">
+<p>Default Commands are the commands that help you navigate through TeaPet easily.</p>
+</div>
+<div class="sect3">
+<h4 id="view-help-code-help-code"><a class="link" href="#view-help-code-help-code">5.7.1. View help: <code>help</code></a></h4>
+<div class="paragraph">
+<p>Displays the list of commands. Or displays TeaPet User Guide.<br>
 Format: <code>help</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="exiting-program-code-exit-code"><a class="link" href="#exiting-program-code-exit-code">5.1.2. Exiting program: <code>exit</code></a></h4>
+<h4 id="view-in-detailed-mode-code-detailed-code"><a class="link" href="#view-in-detailed-mode-code-detailed-code">5.7.2. View in detailed mode: <code>detailed</code></a></h4>
+<div class="paragraph">
+<p>View all information about students<br>
+Format: <code>detailed</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="view-in-admin-mode-code-admin-code"><a class="link" href="#view-in-admin-mode-code-admin-code">5.7.3. View in admin mode: <code>admin</code></a></h4>
+<div class="paragraph">
+<p>View administrative details about students<br>
+Format: <code>admin</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="view-in-default-mode-code-default-code"><a class="link" href="#view-in-default-mode-code-default-code">5.7.4. View in default mode: <code>default</code></a></h4>
+<div class="paragraph">
+<p>View all information about students<br>
+Format: <code>default</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="exit-program-code-exit-code"><a class="link" href="#exit-program-code-exit-code">5.7.5. Exit program: <code>exit</code></a></h4>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="encrypting-data-files-code-coming-in-like-never-lmao-lol-yes-code"><a class="link" href="#encrypting-data-files-code-coming-in-like-never-lmao-lol-yes-code">5.8. Encrypting data files <code>[coming in like never lmao lol yes]</code></a></h3>
+<div class="paragraph">
+<p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
 </div>
 </div>
@@ -291,57 +551,71 @@ Format: <code>exit</code></p>
 <h2 id="faq"><a class="link" href="#faq">6. FAQ</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
-<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
+<p>This section will provide answers to all Frequently Asked Questions by our users.</p>
+</div>
+<div class="qlist qanda">
+<ol>
+<li>
+<p><em>How do I transfer my data to another Computer? </em></p>
+<p>Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="command-summary"><a class="link" href="#command-summary">7. Command Summary</a></h2>
+<h2 id="Summary"><a class="link" href="#Summary">7. Command Summary</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>This section provides a summary on all of the commands that we use at TeaPet sorted in alphabetical order.</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code>    <br>
+<p><strong>Academics</strong>: <code>academics</code></p>
+</li>
+<li>
+<p><strong>Add</strong>: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code>    <br>
 e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague</code></p>
-</li>
-<li>
-<p><strong>Clear</strong> : <code>clear</code></p>
-</li>
-<li>
-<p><strong>Delete</strong> : <code>delete INDEX</code><br>
-e.g. <code>delete 3</code></p>
-</li>
-<li>
-<p><strong>Edit</strong> : <code>edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
-</li>
-<li>
-<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>find James Jake</code></p>
-</li>
-<li>
-<p><strong>List</strong> : <code>list</code></p>
-</li>
-<li>
-<p><strong>Help</strong> : <code>help</code></p>
-</li>
-<li>
-<p><strong>Schedule</strong> : <code>schedule</code></p>
-</li>
-<li>
-<p><strong>Notes</strong> : <code>anotes [n/NAME] [c/CONTENT]</code></p>
-</li>
-<li>
-<p><strong>Detailed Student Information</strong>: <code>detailed</code></p>
 </li>
 <li>
 <p><strong>Administrative Student Information</strong>: <code>admin</code></p>
 </li>
 <li>
+<p><strong>Clear</strong>: <code>clear</code></p>
+</li>
+<li>
+<p><strong>Delete</strong>: <code>delete INDEX</code><br>
+e.g. <code>delete 3</code></p>
+</li>
+<li>
 <p><strong>Default Student Information</strong>: <code>default</code></p>
+</li>
+<li>
+<p><strong>Detailed Student Information</strong>: <code>detailed</code></p>
+</li>
+<li>
+<p><strong>Edit</strong>: <code>edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
+e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
+</li>
+<li>
+<p><strong>Find</strong>: <code>find KEYWORD [MORE_KEYWORDS]</code><br>
+e.g. <code>find James Jake</code></p>
+</li>
+<li>
+<p><strong>Help</strong>: <code>help</code></p>
+</li>
+<li>
+<p><strong>List</strong>: <code>list</code></p>
+</li>
+<li>
+<p><strong>Notes</strong>: <code>anotes [n/NAME] [c/CONTENT]</code></p>
+</li>
+<li>
+<p><strong>Schedule</strong>: <code>schedule</code></p>
 </li>
 </ul>
 </div>
+<hr>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-31 07:24:50 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-31 10:15:36 UTC</div></div></div></body></html>
