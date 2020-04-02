@@ -9,31 +9,35 @@
 <div id="toc" class="toc">
 <div id="toctitle"></div>
 <ul class="sectlevel1">
-<li><a href="#setting-up">1. Setting up</a></li>
-<li><a href="#design">2. Design</a>
+<li><a href="#introduction">1. Introduction</a></li>
+<li><a href="#about">2. About</a></li>
+<li><a href="#how-to-use">3. How To Use</a></li>
+<li><a href="#overview-of-features">4. Overview of Features</a></li>
+<li><a href="#setting-up">5. Setting up</a></li>
+<li><a href="#design">6. Design</a>
 <ul class="sectlevel2">
-<li><a href="#Design-Architecture">2.1. Architecture</a></li>
-<li><a href="#Design-Ui">2.2. UI component</a></li>
-<li><a href="#Design-Logic">2.3. Logic component</a></li>
-<li><a href="#Design-Model">2.4. Model component</a></li>
-<li><a href="#Design-Storage">2.5. Storage component</a></li>
-<li><a href="#Design-Commons">2.6. Common classes</a></li>
+<li><a href="#Design-Architecture">6.1. Architecture</a></li>
+<li><a href="#Design-Ui">6.2. UI component</a></li>
+<li><a href="#Design-Logic">6.3. Logic component</a></li>
+<li><a href="#Design-Model">6.4. Model component</a></li>
+<li><a href="#Design-Storage">6.5. Storage component</a></li>
+<li><a href="#Design-Commons">6.6. Common classes</a></li>
 </ul>
 </li>
-<li><a href="#implementation">3. Implementation</a>
+<li><a href="#implementation">7. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#class-particulars-feature">3.1. Class particulars feature</a></li>
-<li><a href="#import-image-feature">3.2. Import image feature</a></li>
-<li><a href="#personal-schedule-feature">3.3. Personal Schedule feature</a></li>
-<li><a href="#proposed-undo-redo-feature">3.4. [Proposed] Undo/Redo feature</a></li>
-<li><a href="#proposed-data-encryption">3.5. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">3.6. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.7. Configuration</a></li>
+<li><a href="#class-particulars-feature">7.1. Class particulars feature</a></li>
+<li><a href="#import-image-feature">7.2. Import image feature</a></li>
+<li><a href="#personal-schedule-feature">7.3. Personal Schedule feature</a></li>
+<li><a href="#proposed-undo-redo-feature">7.4. [Proposed] Undo/Redo feature</a></li>
+<li><a href="#proposed-data-encryption">7.5. [Proposed] Data Encryption</a></li>
+<li><a href="#logging">7.6. Logging</a></li>
+<li><a href="#Implementation-Configuration">7.7. Configuration</a></li>
 </ul>
 </li>
-<li><a href="#documentation">4. Documentation</a></li>
-<li><a href="#testing">5. Testing</a></li>
-<li><a href="#dev-ops">6. Dev Ops</a></li>
+<li><a href="#documentation">8. Documentation</a></li>
+<li><a href="#testing">9. Testing</a></li>
+<li><a href="#dev-ops">10. Dev Ops</a></li>
 <li><a href="#product-scope">Appendix A: Product Scope</a></li>
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
 <li><a href="#use-cases">Appendix C: Use Cases</a></li>
@@ -52,18 +56,247 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="setting-up"><a class="link" href="#setting-up">1. Setting up</a></h2>
+<h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Refer to the guide <a href="SettingUp.html">here</a>.</p>
+<p>Welcome to TeaPet!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Ui.png" alt="Ui" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>TeaPet is an integrated platform fully customized for Primary School Form Teachers to help you manage your classroom effectively.
+It contains your personal curriculum schedule, students' particulars, and can also track your class' academic progress.</p>
+</div>
+<div class="paragraph">
+<p>All your important information is comfortably compartmentalized on our simple and clean Graphical User Interface (GUI) and we are optimized for users who are very comfortable
+working on the Command Line Interface (CLI).</p>
+</div>
+<div class="paragraph">
+<p>If you are looking for a way to easily manage your administrative classroom chores
+and have quick hands, then TeaPet is definitely for you!</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="design"><a class="link" href="#design">2. Design</a></h2>
+<h2 id="about"><a class="link" href="#about">2. About</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>The aim of this Developer Guide is to provide an introduction to the software architecture and implementation of TeaPet.
+It is made for developers who wish to understand and maintain the backbone of our application.</p>
+</div>
+<div class="paragraph">
+<p>At TeaPet, we prioritise teamwork. We welcome you developers to contribute and improve on our application anytime by
+opening an issue should you have any refreshing ideas to improve TeaPet after reading this guide.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="how-to-use"><a class="link" href="#how-to-use">3. How To Use</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section will teach you how should you go about understanding our Developer Guide in order to best understand our product.</p>
+</div>
+<div class="paragraph">
+<p>Reading ahead, you will find that we&#8217;ve adopted the "top-down" approach into the structure of our Developer Guide&#8201;&#8212;&#8201;We will first look at the high-level architecture of our application before delving into the implementation details of each feature that makes up TeaPet.</p>
+</div>
+<div class="paragraph">
+<p>We encourage you to read every page diligently from the top to the bottom in order to get the highest level of understanding of our application.
+If you are only interested in how we develop one feature, you may read the high-level design then focus on the implementation of that particular feature.</p>
+</div>
+<div class="paragraph">
+<p>Take note of the following symbols and formatting used in this document:</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Use this to highlight important stuff
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Use this for warnings
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Use this for caution
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Use this for note
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+This symbol indicates tips.
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. A Summary of symbols used in our User Guide.</caption>
+<colgroup>
+<col style="width: 7.6923%;">
+<col style="width: 92.3077%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>Enter</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This symbol indicates the Enter button on your keyboard.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>command</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A grey highlight indicates that this is a command that can be typed into the command line and executed by the program.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview-of-features"><a class="link" href="#overview-of-features">4. Overview of Features</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section will provide you a brief overview of TeaPet&#8217;s cool features and functionalities.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Manage your students easily</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Include student&#8217;s particulars. e.g. address, contact number, next of kin (NOK)</p>
+</li>
+<li>
+<p>Include administrative details of the students. e.g. attendance, temperature</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Plan your schedule easily</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Create and manage your events with a single calendar</p>
+</li>
+<li>
+<p>View calendar at a glance</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Manage your class academic progress easily</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Include every student&#8217;s grades for every examination.</p>
+</li>
+<li>
+<p>Easy to track progress using helpful tools. e.g. graph plots</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Add Notes to act as lightweight, digital reminders easily</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Include reminders for yourself to help you remember important information.</p>
+</li>
+<li>
+<p>Search keywords in your notes.</p>
+</li>
+<li>
+<p>Save the notes as administrative or behavioural</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Toggle different views to find information easily</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Different view modes show only the required information. e.g. detailed, admin, default</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Data is saved onto your hard disk automatically</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Any changes made will be saved onto your computer so you dont have to worry about data being lost.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="setting-up"><a class="link" href="#setting-up">5. Setting up</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section provides you with the tools needed for you to set up TeaPet.</p>
+</div>
+<div class="paragraph">
+<p>You can refer to the guide <a href="SettingUp.html">here</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="design"><a class="link" href="#design">6. Design</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section describes the high-level design details of TeaPet.</p>
+</div>
 <div class="sect2">
-<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">2.1. Architecture</a></h3>
+<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">6.1. Architecture</a></h3>
+<div class="paragraph">
+<p>This section describes the high-level software architecture of TeaPet.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ArchitectureDiagram.png" alt="ArchitectureDiagram">
@@ -166,7 +399,10 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Ui"><a class="link" href="#Design-Ui">2.2. UI component</a></h3>
+<h3 id="Design-Ui"><a class="link" href="#Design-Ui">6.2. UI component</a></h3>
+<div class="paragraph">
+<p>This section describes the high-level software structure of TeaPet&#8217;s UI Component.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram">
@@ -197,7 +433,10 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Logic"><a class="link" href="#Design-Logic">2.3. Logic component</a></h3>
+<h3 id="Design-Logic"><a class="link" href="#Design-Logic">6.3. Logic component</a></h3>
+<div class="paragraph">
+<p>This section describes the high-level software structure of TeaPet&#8217;s Logic Component.</p>
+</div>
 <div id="fig-LogicClassDiagram" class="imageblock">
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
@@ -250,7 +489,10 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Model"><a class="link" href="#Design-Model">2.4. Model component</a></h3>
+<h3 id="Design-Model"><a class="link" href="#Design-Model">6.4. Model component</a></h3>
+<div class="paragraph">
+<p>This section describes the high-level software structure of TeaPet&#8217;s Model Component.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
@@ -284,7 +526,10 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Storage"><a class="link" href="#Design-Storage">2.5. Storage component</a></h3>
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">6.5. Storage component</a></h3>
+<div class="paragraph">
+<p>This section describes the high-level software structure of TeaPet&#8217;s Storage Component.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
@@ -312,7 +557,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Commons"><a class="link" href="#Design-Commons">2.6. Common classes</a></h3>
+<h3 id="Design-Commons"><a class="link" href="#Design-Commons">6.6. Common classes</a></h3>
 <div class="paragraph">
 <p>Classes used by multiple components are in the <code>seedu.addressbook.commons</code> package.</p>
 </div>
@@ -320,13 +565,13 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 </div>
 </div>
 <div class="sect1">
-<h2 id="implementation"><a class="link" href="#implementation">3. Implementation</a></h2>
+<h2 id="implementation"><a class="link" href="#implementation">7. Implementation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="class-particulars-feature"><a class="link" href="#class-particulars-feature">3.1. Class particulars feature</a></h3>
+<h3 id="class-particulars-feature"><a class="link" href="#class-particulars-feature">7.1. Class particulars feature</a></h3>
 <div class="paragraph">
 <p>The class particulars feature keeps track of essential student details.
 The feature comprises of four commands namely,</p>
@@ -358,7 +603,7 @@ The feature comprises of four commands namely,</p>
 <div class="title">Figure 9. Class Diagram for Commands</div>
 </div>
 <div class="sect3">
-<h4 id="Feature-Add"><a class="link" href="#Feature-Add">3.1.1. Add command</a></h4>
+<h4 id="Feature-Add"><a class="link" href="#Feature-Add">7.1.1. Add command</a></h4>
 <div class="sect4">
 <h5 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h5>
 <div class="paragraph">
@@ -412,7 +657,7 @@ or wrong format error message will be displayed.
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-command"><a class="link" href="#edit-command">3.1.2. Edit command</a></h4>
+<h4 id="edit-command"><a class="link" href="#edit-command">7.1.2. Edit command</a></h4>
 <div class="sect4">
 <h5 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h5>
 <div class="paragraph">
@@ -440,24 +685,24 @@ method.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="import-image-feature"><a class="link" href="#import-image-feature">3.2. Import image feature</a></h3>
+<h3 id="import-image-feature"><a class="link" href="#import-image-feature">7.2. Import image feature</a></h3>
 
 </div>
 <div class="sect2">
-<h3 id="personal-schedule-feature"><a class="link" href="#personal-schedule-feature">3.3. Personal Schedule feature</a></h3>
+<h3 id="personal-schedule-feature"><a class="link" href="#personal-schedule-feature">7.3. Personal Schedule feature</a></h3>
 <div class="sect3">
-<h4 id="command-1"><a class="link" href="#command-1">3.3.1. Command 1</a></h4>
+<h4 id="command-1"><a class="link" href="#command-1">7.3.1. Command 1</a></h4>
 
 </div>
 <div class="sect3">
-<h4 id="command-2"><a class="link" href="#command-2">3.3.2. Command 2</a></h4>
+<h4 id="command-2"><a class="link" href="#command-2">7.3.2. Command 2</a></h4>
 
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">3.4. [Proposed] Undo/Redo feature</a></h3>
+<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">7.4. [Proposed] Undo/Redo feature</a></h3>
 <div class="sect3">
-<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">3.4.1. Proposed Implementation</a></h4>
+<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">7.4.1. Proposed Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
 It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
@@ -599,7 +844,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.4.2. Design Considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">7.4.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -669,20 +914,23 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.5. [Proposed] Data Encryption</a></h3>
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">7.5. [Proposed] Data Encryption</a></h3>
 <div class="paragraph">
 <p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.6. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">7.6. Logging</a></h3>
+<div class="paragraph">
+<p>This section describes how TeaPet record it&#8217;s logs.</p>
+</div>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.7, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 7.7, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -713,7 +961,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.7. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">7.7. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -721,7 +969,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect1">
-<h2 id="documentation"><a class="link" href="#documentation">4. Documentation</a></h2>
+<h2 id="documentation"><a class="link" href="#documentation">8. Documentation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Documentation.html">here</a>.</p>
@@ -729,7 +977,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect1">
-<h2 id="testing"><a class="link" href="#testing">5. Testing</a></h2>
+<h2 id="testing"><a class="link" href="#testing">9. Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Testing.html">here</a>.</p>
@@ -737,7 +985,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect1">
-<h2 id="dev-ops"><a class="link" href="#dev-ops">6. Dev Ops</a></h2>
+<h2 id="dev-ops"><a class="link" href="#dev-ops">10. Dev Ops</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="DevOps.html">here</a>.</p>
@@ -1678,4 +1926,4 @@ Expected: Similar to test case b.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 17:02:58 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 17:18:14 UTC</div></div></div></body></html>
