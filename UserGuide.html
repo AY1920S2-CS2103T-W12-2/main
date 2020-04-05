@@ -13,7 +13,7 @@
 <li><a href="#about">2. About</a></li>
 <li><a href="#overview-of-features">3. Overview of Features</a></li>
 <li><a href="#getting-started">4. Getting started</a></li>
-<li><a href="#Features">5. Features &amp; Commands</a>
+<li><a href="#Features">5. Features</a>
 <ul class="sectlevel2">
 <li><a href="#class-particulars">5.1. Class Particulars</a>
 <ul class="sectlevel3">
@@ -43,12 +43,12 @@
 <li><a href="#commands-related-to-class-progress-tracker">5.4.1. Commands related to Class Progress Tracker</a></li>
 </ul>
 </li>
-<li><a href="#notes">5.5. Notes</a>
+<li><a href="#update-profile">5.5. Update Profile Picture</a></li>
+<li><a href="#notes">5.6. Notes</a>
 <ul class="sectlevel3">
-<li><a href="#commands-related-to-notes">5.5.1. Commands related to Notes</a></li>
+<li><a href="#commands-related-to-notes">5.6.1. Commands related to Notes</a></li>
 </ul>
 </li>
-<li><a href="#saving-data">5.6. Saving data</a></li>
 <li><a href="#default-commands">5.7. Default Commands</a>
 <ul class="sectlevel3">
 <li><a href="#view-help-code-help-code">5.7.1. View help: <code>help</code></a></li>
@@ -56,9 +56,22 @@
 <li><a href="#view-in-admin-mode-code-admin-code">5.7.3. View in admin mode: <code>admin</code></a></li>
 <li><a href="#view-in-default-mode-code-default-code">5.7.4. View in default mode: <code>default</code></a></li>
 <li><a href="#exit-program-code-exit-code">5.7.5. Exit program: <code>exit</code></a></li>
+<li><a href="#refresh-student-list-code-refresh-code">5.7.6. Refresh student list: <code>refresh</code></a></li>
 </ul>
 </li>
-<li><a href="#encrypting-data-files-code-coming-in-like-never-lmao-lol-yes-code">5.8. Encrypting data files <code>[coming in like never lmao lol yes]</code></a></li>
+<li><a href="#student-commands">5.8. Student commands</a>
+<ul class="sectlevel3">
+<li><a href="#adding-students-code-add-code">5.8.1. Adding students: <code>add</code></a></li>
+<li><a href="#editing-student-information-code-edit-code">5.8.2. Editing student information: <code>edit</code></a></li>
+<li><a href="#delete-student-code-delete-code">5.8.3. Delete student: <code>delete</code></a></li>
+<li><a href="#find-student-code-find-code">5.8.4. Find student: <code>find</code></a></li>
+</ul>
+</li>
+<li><a href="#schedule-commands">5.9. Schedule Commands</a>
+<ul class="sectlevel3">
+<li><a href="#creating-a-schedule-code-add-code">5.9.1. Creating a schedule: <code>add</code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#faq">6. FAQ</a></li>
@@ -103,84 +116,64 @@ Command Line Interface (CLI) program and have bested our efforts into ensuring a
 <p>If you need help setting up TeaPet, you can go to the <a href="#getting-started">Section 4, &#8220;Getting started&#8221;</a> section.</p>
 </div>
 <div class="paragraph">
-<p>If you want to find out more about TeaPet&#8217;s features and commands, you can go to the <a href="#Features">Section 5, &#8220;Features &amp; Commands&#8221;</a> section.</p>
+<p>If you want to find out more about TeaPet&#8217;s features and commands, you can go to the <a href="#Features">Section 5, &#8220;Features&#8221;</a> section.</p>
 </div>
 <div class="paragraph">
 <p>If you need an overview regarding the usage of TeaPet&#8217;s commands, head on to the <a href="#Summary">Section 7, &#8220;Command Summary&#8221;</a> section.</p>
 </div>
-<div class="exampleblock">
-<div class="content">
 <div class="paragraph">
-<p>Take note of the following symbols and formatting used in this document:</p>
+<p>Take note of the following symbols and formatting used in this document:<br></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. A Summary of symbols used in our User Guide.</caption>
 <colgroup>
-<col style="width: 7.6923%;">
-<col style="width: 92.3077%;">
+<col>
+<col>
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>Enter</kbd></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This symbol indicates the Enter button on your keyboard.</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Symbol/<br>
+Format</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Meaning</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>command</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A grey highlight indicates that this is a command that can be typed into the command line and executed by the program.</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><kbd>Enter</kbd></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><span class="gray">This symbol indicates the enter button on the keyboard.</span></p></td>
 </tr>
-</tbody>
-</table>
-<div class="admonitionblock important">
-<table>
 <tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-Use this to highlight important stuff
-</td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="gray"><code>command</code></span></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><span class="gray">A grey highlight indicates that this is a command that can be executed by the program.</span></p></td>
 </tr>
-</table>
-</div>
-<div class="admonitionblock warning">
-<table>
 <tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-Use this for warnings
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Use this for caution
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
+<td class="tableblock halign-left valign-middle" colspan="2"><div><div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Use this for note
+This symbol indicates notes.
 </td>
 </tr>
 </table>
-</div>
-<div class="admonitionblock tip">
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle" colspan="2"><div><div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+This symbol indicates warnings.
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle" colspan="2"><div><div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
@@ -191,11 +184,38 @@ This symbol indicates tips.
 </td>
 </tr>
 </table>
-</div>
-</div>
-</div>
-</div>
-</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle" colspan="2"><div><div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+This symbol indicates cautions.
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle" colspan="2"><div><div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+This symbol indicates important information.
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -343,19 +363,17 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </li>
 <li>
-<p>Refer to <a href="#Features">Section 5, &#8220;Features &amp; Commands&#8221;</a> for details of each command.</p>
+<p>Refer to <a href="#Features">Section 5, &#8220;Features&#8221;</a> for details of each command.</p>
 </li>
 </ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="Features"><a class="link" href="#Features">5. Features &amp; Commands</a></h2>
+<h2 id="Features"><a class="link" href="#Features">5. Features</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section will provide you with an in-depth explanation of our features and
-provide examples on what you can do to make the most out of TeaPet.
-Under each feature, you will find commands related to each feature and how to use each command.</p>
+<p>This section will provide you with an in-depth explanation of our features of TeaPet.</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -453,7 +471,7 @@ CATER THEIR NEEDS</p>
 <div class="sect2">
 <h3 id="personal-scheduler"><a class="link" href="#personal-scheduler">5.3. Personal Scheduler</a></h3>
 <div class="paragraph">
-<p>TeaPet&#8217;s Personal Scheduler feature allows you records down your commitments for the week, which will be
+<p>TeaPet&#8217;s Personal Scheduler allows you to record down your commitments for the week, which will be
 sorted according to date and time. You will then be able to view your weekly schedule at a glance.</p>
 </div>
 <div class="sect3">
@@ -525,11 +543,17 @@ progress of individual students as well as the entire class.</p>
 PROVIDE EXAMPLE<br>
 CATER THEIR NEEDS</p>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect2">
-<h3 id="notes"><a class="link" href="#notes">5.5. Notes</a></h3>
+<h3 id="update-profile"><a class="link" href="#update-profile">5.5. Update Profile Picture</a></h3>
+<div class="paragraph">
+<p>TeaPet&#8217;s student list allows you to upload image of your students into your application.</p>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="notes"><a class="link" href="#notes">5.6. Notes</a></h3>
 <div class="paragraph">
 <p>TeaPet&#8217;s Notes feature performs like the ones we all use in our everyday lives, aiming to help form teachers keep
 track of important information of their students spontaneously. This feature allows you to label each note with
@@ -537,7 +561,7 @@ different priority to better manage tasks. Every note is tagged to one or more s
 better keep track of the stakeholder and information.</p>
 </div>
 <div class="sect3">
-<h4 id="commands-related-to-notes"><a class="link" href="#commands-related-to-notes">5.5.1. Commands related to Notes</a></h4>
+<h4 id="commands-related-to-notes"><a class="link" href="#commands-related-to-notes">5.6.1. Commands related to Notes</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -569,14 +593,6 @@ CATER THEIR NEEDS</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">5.6. Saving data</a></h3>
-<div class="paragraph">
-<p>Changes are saved in the hard disk automatically upon entering a command that alters the data.
-There is no requirement to save any form of data manually.</p>
-</div>
-<hr>
-</div>
-<div class="sect2">
 <h3 id="default-commands"><a class="link" href="#default-commands">5.7. Default Commands</a></h3>
 <div class="paragraph">
 <p>Default Commands are the commands that help you navigate through TeaPet easily.</p>
@@ -584,44 +600,216 @@ There is no requirement to save any form of data manually.</p>
 <div class="sect3">
 <h4 id="view-help-code-help-code"><a class="link" href="#view-help-code-help-code">5.7.1. View help: <code>help</code></a></h4>
 <div class="paragraph">
-<p>Displays the list of commands. Or displays TeaPet User Guide.<br>
-Format: <code>help</code></p>
+<p>If you need help at any point regarding the many features TeaPet has, the default <code>help</code> command will bring you
+to this user guide.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>help</code></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="view-in-detailed-mode-code-detailed-code"><a class="link" href="#view-in-detailed-mode-code-detailed-code">5.7.2. View in detailed mode: <code>detailed</code></a></h4>
 <div class="paragraph">
-<p>View all information about students<br>
-Format: <code>detailed</code></p>
+<p>If you require detailed information about your students, the default command <code>detailed</code> will bring up the detailed student
+list<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>detailed</code></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="view-in-admin-mode-code-admin-code"><a class="link" href="#view-in-admin-mode-code-admin-code">5.7.3. View in admin mode: <code>admin</code></a></h4>
 <div class="paragraph">
-<p>View administrative details about students<br>
-Format: <code>admin</code></p>
+<p>If you require administrative information about your students&#8201;&#8212;&#8201;such as attendance or temperature, the default command
+<code>admin</code> will bring up the admin
+list<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>admin</code></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="view-in-default-mode-code-default-code"><a class="link" href="#view-in-default-mode-code-default-code">5.7.4. View in default mode: <code>default</code></a></h4>
 <div class="paragraph">
-<p>View all information about students<br>
+<p>If you want a simple and concise display of the student list, typing the <code>default</code> command will bring up a simple
+summary of your students.<br>
 Format: <code>default</code></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="exit-program-code-exit-code"><a class="link" href="#exit-program-code-exit-code">5.7.5. Exit program: <code>exit</code></a></h4>
 <div class="paragraph">
-<p>Exits the program.<br>
-Format: <code>exit</code></p>
+<p>If you are done using TeaPet and would like to safely exit the application, typing the <code>exit</code> command will save your data
+and exit the program<br></p>
 </div>
-<hr>
+<div class="paragraph">
+<p>Format: <code>exit</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="refresh-student-list-code-refresh-code"><a class="link" href="#refresh-student-list-code-refresh-code">5.7.6. Refresh student list: <code>refresh</code></a></h4>
+<div class="paragraph">
+<p>If you have just added images of your students into the image folder, simply typing the
+<code>refresh</code> command will update the images of your students. Confused on how to do so? See <a href="#update-profile">Section 5.5, &#8220;Update Profile Picture&#8221;</a>.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-like-never-lmao-lol-yes-code"><a class="link" href="#encrypting-data-files-code-coming-in-like-never-lmao-lol-yes-code">5.8. Encrypting data files <code>[coming in like never lmao lol yes]</code></a></h3>
+<h3 id="student-commands"><a class="link" href="#student-commands">5.8. Student commands</a></h3>
+<div class="sect3">
+<h4 id="adding-students-code-add-code"><a class="link" href="#adding-students-code-add-code">5.8.1. Adding students: <code>add</code></a></h4>
 <div class="paragraph">
-<p><em>{explain how the user can enable/disable data encryption}</em></p>
+<p>Adds a student into the student list.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>student add n/NAME [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG] [nok/NAME-RELATIONSHIP-PHONE_NUMBER]
+[temp/TEMPERATURE] [att/ATTENDANCE]</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Adds a new student with the given attributes.</p>
+</li>
+<li>
+<p>The student name <strong>cannot be empty</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>student add n/Jim p/90045722 e/jim@example.com a/Bishan St 13 Blk 154 #08-18 t/monitor nok/James-Father-91234567
+temp/36.6 att/Present</code> Adds a student named Jim into the student list along with his details.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Expected Outcome:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>New student added: Jim Phone: 90045722 Email: <a href="mailto:jim@example.com">jim@example.com</a> Address: Bishan St 13 Blk 154 #08-18 Temperature: 36.6 Attendance: Present Tags: [monitor]</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-student-information-code-edit-code"><a class="link" href="#editing-student-information-code-edit-code">5.8.2. Editing student information: <code>edit</code></a></h4>
+<div class="paragraph">
+<p>Edits personal details of students.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>student edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG] [nok/NAME-RELATIONSHIP-PHONE_NUMBER]
+[temp/TEMPERATURE] [att/ATTENDANCE]</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>student edit 1 p/90023413</code> Edits the student phone number in index 1 to a new phone number.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Expected Outcome:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Edited Student: Simon Lam Phone: 90023413 Email: <a href="mailto:simonlam@example.com">simonlam@example.com</a> Address: Blk 30 Geylang Street 29,
+#06-40 Temperature: 36.5 Attendance: Sick Remark:  Tags: [Sheares]</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-student-code-delete-code"><a class="link" href="#delete-student-code-delete-code">5.8.3. Delete student: <code>delete</code></a></h4>
+<div class="paragraph">
+<p>Deletes the student and all his personal details from the student list.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>student delete INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>student delete 1</code> Deletes the student at index 1.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Expected Outcome:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Deleted Student: Simon Lam Phone: 90023413 Email: <a href="mailto:simonlam@example.com">simonlam@example.com</a> Address: Blk 30 Geylang Street 29, #06-40 Temperature: 36.5 Attendance: Sick Remark:  Tags: [Sheares]</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="find-student-code-find-code"><a class="link" href="#find-student-code-find-code">5.8.4. Find student: <code>find</code></a></h4>
+<div class="paragraph">
+<p>Finds the student information from the student list and display it.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>student find NAME</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>student find simon</code> Finds the information a student named Simon.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Expected Outcome:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>1 students listed!</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="schedule-commands"><a class="link" href="#schedule-commands">5.9. Schedule Commands</a></h3>
+<div class="sect3">
+<h4 id="creating-a-schedule-code-add-code"><a class="link" href="#creating-a-schedule-code-add-code">5.9.1. Creating a schedule: <code>add</code></a></h4>
+<div class="paragraph">
+<p>Adds an event to your personal scheduler.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>schedule add eventName/EVENT_NAME startDateTime/START_DATETIME endDateTime/END_DATETIME recur/RECUR color/COLOR</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Non-Recurring Event</strong> <code>schedule add eventName/Teachers Meeting startDateTime/2020-04-07T10:00
+endDateTime/2020-04-07T12:00 recur/none color/10</code>
+Creates a schedule with the title '<em>Teachers Meeting</em>' from '<em>7th Apr 2020, 1000</em>' to '<em>7th Apr 2020, 1200</em>' with no recurrence
+and a color group of '<em>10</em>'.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -697,4 +885,4 @@ e.g. <code>find James Jake</code></p>
 </div>
 <hr>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-04 17:13:17 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-05 03:50:32 UTC</div></div></div></body></html>
