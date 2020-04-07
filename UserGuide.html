@@ -593,6 +593,12 @@ export academics report: academics export
 Type the following commands for more info!</pre>
 </div>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/academics-view.png" alt="academics view" width=""790">
+</div>
+<div class="title">Figure 1. After using the academics command</div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="add-assessment-code-add-code"><a class="link" href="#add-assessment-code-add-code">4.3.2. Add Assessment: <code>add</code></a></h4>
@@ -1065,7 +1071,7 @@ Color group is from 0 to 23 inclusive.<br>
 <div class="content">
 <img src="images/color_code.png" alt="color code" width="790">
 </div>
-<div class="title">Figure 1. Color code for TeaPet&#8217;s calendar</div>
+<div class="title">Figure 2. Color code for TeaPet&#8217;s calendar</div>
 </div>
 <div class="paragraph">
 <p>&#160;<br></p>
@@ -1087,7 +1093,7 @@ and a color group of '<em>10</em>'.</p>
 <div class="content">
 <img src="images/event_add.png" alt="event add" width="790">
 </div>
-<div class="title">Figure 2. Adding a consultation event to the schedule</div>
+<div class="title">Figure 3. Adding a consultation event to the schedule</div>
 </div>
 </div>
 </div>
@@ -1106,7 +1112,7 @@ The following steps will help you upload photos of your students into the studen
 <div class="content">
 <img src="images/locating_image_folder.png" alt="locating image folder" width="790">
 </div>
-<div class="title">Figure 3. Location of image folder</div>
+<div class="title">Figure 4. Location of image folder</div>
 </div>
 <div class="paragraph">
 <p>&#160;<br></p>
@@ -1135,7 +1141,7 @@ For example, a student with name <strong>Simon Lam</strong> must have a image fi
 <div class="content">
 <img src="images/images_in_folder.png" alt="images in folder" width="790">
 </div>
-<div class="title">Figure 4. Dragging png file into image folder</div>
+<div class="title">Figure 5. Dragging png file into image folder</div>
 </div>
 <div class="paragraph">
 <p>&#160;<br></p>
@@ -1147,7 +1153,7 @@ For example, a student with name <strong>Simon Lam</strong> must have a image fi
 <div class="content">
 <img src="images/before_picture_upload.png" alt="before picture upload" width=""790">
 </div>
-<div class="title">Figure 5. Before using the refresh command</div>
+<div class="title">Figure 6. Before using the refresh command</div>
 </div>
 <div class="paragraph">
 <p>&#160;<br></p>
@@ -1156,7 +1162,7 @@ For example, a student with name <strong>Simon Lam</strong> must have a image fi
 <div class="content">
 <img src="images/after_picture_upload.png" alt="after picture upload" width=""790">
 </div>
-<div class="title">Figure 6. After using the refresh command</div>
+<div class="title">Figure 7. After using the refresh command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1257,7 +1263,59 @@ For example, a student with name <strong>Simon Lam</strong> must have a image fi
 <p>Here are the commands to manage students. They require the prefix <code>academics</code>.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 5. Student Academics commands of TeaPet</caption>
+<caption class="title">Table 5. Student Academics commands of TeaPet.</caption>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 50%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Command</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Format</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Expected outcome</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics add desc/DESCRIPTION type/TYPE date/DATE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds an assessment into the academics list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics edit INDEX [desc/DESCRIPTION] [type/TYPE] [date/DATE]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edits an assessment in the academics list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics delete INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes the assessment at the given index</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>submit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics submit INDEX [stu/STUDENT_NAME]&#8230;&#8203;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Submits student(s) work for the assessment at the given index</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mark</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics mark INDEX [stu/STUDENT_NAME-SCORE]&#8230;&#8203;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Marks student(s) work and stores the scores for the assessment at the given index</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>filter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics homework/exam</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays either all homework or exam assessments in the academics list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>report</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics report</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays the report for all assessments</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>export</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics export</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exports the academics report into a .csv file</p></td>
+</tr>
+</tbody>
 </table>
 </div>
 <div class="sect2">
@@ -1301,4 +1359,4 @@ For example, a student with name <strong>Simon Lam</strong> must have a image fi
 </ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-07 19:12:20 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-07 19:41:36 UTC</div></div></div></body></html>
