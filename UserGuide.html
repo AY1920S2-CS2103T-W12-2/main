@@ -33,7 +33,19 @@
 </ul>
 </li>
 <li><a href="#student-administration">4.2. Student Administration</a></li>
-<li><a href="#student-academics">4.3. Student Academics</a></li>
+<li><a href="#student-academics">4.3. Student Academics</a>
+<ul class="sectlevel3">
+<li><a href="#display-all-assessments-and-academics-help-code-academics-code">4.3.1. Display all Assessments and Academics Help: <code>academics</code></a></li>
+<li><a href="#add-assessment-code-add-code">4.3.2. Add Assessment: <code>add</code></a></li>
+<li><a href="#edit-assessment-code-edit-code">4.3.3. Edit Assessment: <code>edit</code></a></li>
+<li><a href="#delete-assessment-code-delete-code">4.3.4. Delete Assessment: <code>delete</code></a></li>
+<li><a href="#submit-assessment-code-submit-code">4.3.5. Submit Assessment: <code>submit</code></a></li>
+<li><a href="#mark-assessment-code-mark-code">4.3.6. Mark Assessment: <code>mark</code></a></li>
+<li><a href="#filter-assessments-by-type-code-homework-exam-code">4.3.7. Filter Assessments by type: <code>homework/exam</code></a></li>
+<li><a href="#view-academics-report-code-report-code">4.3.8. View Academics Report: <code>report</code></a></li>
+<li><a href="#export-academics-report-code-export-code">4.3.9. Export Academics Report: <code>export</code></a></li>
+</ul>
+</li>
 <li><a href="#notes">4.4. Notes</a>
 <ul class="sectlevel3">
 <li><a href="#add-notes">4.4.1. Add Notes</a></li>
@@ -318,7 +330,7 @@ If you have any questions, please check out our <a href="#FAQ">Section 7, &#8220
 <p>Include every student&#8217;s grades for every examination.</p>
 </li>
 <li>
-<p>Easy to track progress using helpful tools. e.g. graph plots</p>
+<p>Easy to track progress using helpful tools. e.g. tables, export tools</p>
 </li>
 </ol>
 </div>
@@ -395,8 +407,13 @@ Thereafter, you are able to view, update or delete those information of specific
 <p>Adds a student into the student list.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>student add n/NAME [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG] [nok/NAME-RELATIONSHIP-PHONE_NUMBER]
-[temp/TEMPERATURE] [att/ATTENDANCE]</code></p>
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>student add n/NAME [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG] [nok/NAME-RELATIONSHIP-PHONE_NUMBER]
+[temp/TEMPERATURE] [att/ATTENDANCE]</pre>
+</div>
 </div>
 <div class="ulist">
 <ul>
@@ -409,18 +426,19 @@ Thereafter, you are able to view, update or delete those information of specific
 </ul>
 </div>
 <div class="paragraph">
-<p>Example:</p>
+<p><strong>Example:</strong></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p><code>student add n/Jim p/90045722 e/jim@example.com a/Bishan St 13 Blk 154 #08-18 t/monitor nok/James-Father-91234567
-temp/36.6 att/Present</code> Adds a student named Jim into the student list along with his details.</p>
+   temp/36.6 att/Present</code><br>
+Adds a student named Jim into the student list along with his details.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Expected Outcome:</p>
+<p><strong>Expected Outcome:</strong></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -434,21 +452,27 @@ temp/36.6 att/Present</code> Adds a student named Jim into the student list alon
 <p>Edits personal details of students.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>student edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG] [nok/NAME-RELATIONSHIP-PHONE_NUMBER]
-[temp/TEMPERATURE] [att/ATTENDANCE]</code></p>
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>student edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG] [nok/NAME-RELATIONSHIP-PHONE_NUMBER]
+[temp/TEMPERATURE] [att/ATTENDANCE]</pre>
+</div>
 </div>
 <div class="paragraph">
-<p>Example:</p>
+<p><strong>Example:</strong></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>student edit 1 p/90023413</code> Edits the student phone number in index 1 to a new phone number.</p>
+<p><code>student edit 1 p/90023413</code><br>
+Edits the student phone number in index 1 to a new phone number.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Expected Outcome:</p>
+<p><strong>Expected Outcome:</strong></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -463,10 +487,15 @@ temp/36.6 att/Present</code> Adds a student named Jim into the student list alon
 <p>Deletes the student and all his personal details from the student list.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>student delete INDEX</code></p>
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>student delete INDEX</pre>
+</div>
 </div>
 <div class="paragraph">
-<p>Example:</p>
+<p><strong>Example:</strong></p>
 </div>
 <div class="ulist">
 <ul>
@@ -476,7 +505,7 @@ temp/36.6 att/Present</code> Adds a student named Jim into the student list alon
 </ul>
 </div>
 <div class="paragraph">
-<p>Expected Outcome:</p>
+<p><strong>Expected Outcome:</strong></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -490,10 +519,15 @@ temp/36.6 att/Present</code> Adds a student named Jim into the student list alon
 <p>Finds the student information from the student list and display it.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>student find NAME</code></p>
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>student find NAME</pre>
+</div>
 </div>
 <div class="paragraph">
-<p>Example:</p>
+<p><strong>Example:</strong></p>
 </div>
 <div class="ulist">
 <ul>
@@ -503,7 +537,7 @@ temp/36.6 att/Present</code> Adds a student named Jim into the student list alon
 </ul>
 </div>
 <div class="paragraph">
-<p>Expected Outcome:</p>
+<p><strong>Expected Outcome:</strong></p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -525,10 +559,382 @@ temperature recordings. Data will be displayed in a weekly format for further pe
 <h3 id="student-academics"><a class="link" href="#student-academics">4.3. Student Academics</a></h3>
 <div class="paragraph">
 <p>TeaPet&#8217;s Class Progress Tracker is able to keep tabs on the class' academic progress. You will be able to store data of
-every student&#8217;s subject grades with this feature. Thereafter, there will be a graph plot displayed to highlight the
-progress of individual students as well as the entire class.</p>
+every student&#8217;s subject grades with this feature. Thereafter, there will be a csv file available for export displaying
+the progress of individual students as well as the entire class.</p>
+</div>
+<div class="sect3">
+<h4 id="display-all-assessments-and-academics-help-code-academics-code"><a class="link" href="#display-all-assessments-and-academics-help-code-academics-code">4.3.1. Display all Assessments and Academics Help: <code>academics</code></a></h4>
+<div class="paragraph">
+<p>Shows all assessments in the academics list and a guide for academic commands.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>academics</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>The Academics tracks all your assessments and student submissions.
+[HELP ON ACADEMICS COMMANDS]
+add assessment: academics add desc/ASSESSMENT_DESCRIPTION type/TYPE date/DATE
+edit assessment: academics edit INDEX [desc/ASSESSMENT_DESCRIPTION] [type/TYPE] [date/DATE]
+delete assessment: academics delete INDEX
+submit assessment: academics submit INDEX [stu/STUDENT_NAME]...
+mark assessment: academics mark INDEX&gt; [stu/STUDENT_NAME-SCORE]...
+filter assessment BY TYPE: academics ASSESSMENT_TYPE (only Homework or Exam)
+view academics report: academics report
+export academics report: academics export
+Type the following commands for more info!</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="add-assessment-code-add-code"><a class="link" href="#add-assessment-code-add-code">4.3.2. Add Assessment: <code>add</code></a></h4>
+<div class="paragraph">
+<p>Adds an assessment into the academics list.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>academics add desc/ASSESSMENT_DESCRIPTION type/TYPE date/DATE</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Adds a new assessment with the given attributes.</p>
+</li>
+<li>
+<p>The assessment description <strong>cannot be empty</strong>.</p>
+</li>
+<li>
+<p>Date should be written in <strong>YYYY-MM-DD</strong> format.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>academics add desc/Math Graphs Homework type/homework date/2020-05-02</code><br>
+Adds an assessment <em>Math Graphs Homework</em> into the academics list along with its deadline.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Added assessment:
+Homework: Math Graphs Homework
+Due by: 2020-05-02</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-assessment-code-edit-code"><a class="link" href="#edit-assessment-code-edit-code">4.3.3. Edit Assessment: <code>edit</code></a></h4>
+<div class="paragraph">
+<p>Edits an assessment from the academics list.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>academics edit INDEX [desc/ASSESSMENT_DESCRIPTION] [type/TYPE] [date/DATE]</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the assessment with the given attributes.</p>
+</li>
+<li>
+<p>At least one of the three fields must be updated when editing the assessment.</p>
+</li>
+<li>
+<p>Date should be written in <strong>YYYY-MM-DD</strong> format.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>academics edit 4 desc/Chemistry Compounds Assignment</code><br>
+Edits assessment in the academics list with the new description <em>Chemistry Compounds Assignment</em>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Edited Assessment:
+Homework: Chemistry Compounds Assignment
+Due by: 2020-04-30</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-assessment-code-delete-code"><a class="link" href="#delete-assessment-code-delete-code">4.3.4. Delete Assessment: <code>delete</code></a></h4>
+<div class="paragraph">
+<p>Deletes an assessment from the academics list.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>academics delete INDEX</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the assessment with at the given index.</p>
+</li>
+<li>
+<p>Index should be a positive integer and be a valid index.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>academics delete 5</code> Deletes the student at index 5.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Deleted Assessment:
+Homework: Chemistry Compounds Assignment
+Due by: 2020-04-30</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="submit-assessment-code-submit-code"><a class="link" href="#submit-assessment-code-submit-code">4.3.5. Submit Assessment: <code>submit</code></a></h4>
+<div class="paragraph">
+<p>Submits student(s) work for a specific assessment.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>academics submit INDEX [stu/STUDENT_NAME]...</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Submits work for the assessment with at the given index.</p>
+</li>
+<li>
+<p>Index should be a positive integer and be a valid index.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>academics submit 3 stu/Freddy Zhang</code><br>
+Submits <em>Freddy Zhang</em> for the assessment at index 3.</p>
+</li>
+<li>
+<p><code>academics submit 3 stu/Freddy Zhang stu/Gerren Seow</code><br>
+Submits <em>Freddy Zhang</em> and <em>Gerren Seow</em> for the assessment at index 3.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Academics submitted following submissions:
+Freddy Zhang
+Gerren Seow</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mark-assessment-code-mark-code"><a class="link" href="#mark-assessment-code-mark-code">4.3.6. Mark Assessment: <code>mark</code></a></h4>
+<div class="paragraph">
+<p>Marks student(s) work for a specific assessment.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>academics mark INDEX [stu/STUDENT_NAME-SCORE]...</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Marks work for the assessment with at the given index.</p>
+</li>
+<li>
+<p>Index should be a positive integer and be a valid index.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>academics mark 3 stu/Freddy Zhang</code><br>
+Marks <em>Freddy Zhang</em> for the assessment at index 3.</p>
+</li>
+<li>
+<p><code>academics mark 3 stu/Freddy Zhang-90 stu/Gerren Seow-80</code><br>
+Marks <em>Freddy Zhang</em> and <em>Gerren Seow</em> for the assessment at index 3.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Academics marked following submissions:
+Gerren Seow: 80
+Freddy Zhang: 90</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="filter-assessments-by-type-code-homework-exam-code"><a class="link" href="#filter-assessments-by-type-code-homework-exam-code">4.3.7. Filter Assessments by type: <code>homework/exam</code></a></h4>
+<div class="paragraph">
+<p>Filters assessment list by either homework or exam.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>academics ASSESSMENT_TYPE</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>academics homework</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Academics now displays all HOMEWORK assessments</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>academics exam</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Academics now displays all EXAM assessments</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="view-academics-report-code-report-code"><a class="link" href="#view-academics-report-code-report-code">4.3.8. View Academics Report: <code>report</code></a></h4>
+<div class="paragraph">
+<p>Generates an academic report for each assessment.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>academics report</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Academics now displays the report of each assessment.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="export-academics-report-code-export-code"><a class="link" href="#export-academics-report-code-export-code">4.3.9. Export Academics Report: <code>export</code></a></h4>
+<div class="paragraph">
+<p>Exports the academic report into a csv file.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>academics export</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Academics report will be exported to a .csv file format, which is located in the data folder in the same directory.
+The file is named "studentAcademics.csv".</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Academics are exported to studentAcademics.csv in the data folder.</pre>
+</div>
 </div>
 <hr>
+</div>
 </div>
 <div class="sect2">
 <h3 id="notes"><a class="link" href="#notes">4.4. Notes</a></h3>
@@ -895,4 +1301,4 @@ For example, a student with name <strong>Simon Lam</strong> must have a image fi
 </ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-07 15:31:11 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-07 19:12:20 UTC</div></div></div></body></html>
