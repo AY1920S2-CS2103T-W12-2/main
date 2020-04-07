@@ -71,22 +71,25 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Welcome to TeaPet!</p>
+<p>Greetings, and welcome to TeaPet!</p>
 </div>
 <div class="paragraph">
 <p>Looking for an all-in-one solution for your teaching needs? Look no further!</p>
 </div>
 <div class="paragraph">
-<p>TeaPet is an integrated platform fully customized for Primary School Form Teachers to help you manage your classroom effectively.
-It contains your personal curriculum schedule, students' particulars, and can also track your class' academic progress.</p>
+<p>TeaPet is an integrated platform fully customized for form teachers in Primary, Secondary and Tertiary institutions,
+with the aim of helping you manage your classroom effectively. The application allows you to keep track of your students'
+personal particulars, daily administration, behavioural notes and academic progress all at a glance. Furthermore,
+TeaPet also comes with an in-built personal scheduler to help with your weekly planning. It looks like you&#8217;ll never
+have to worry about missing your next coffee appointment anymore!</p>
 </div>
 <div class="paragraph">
 <p>All your important information is comfortably compartmentalized on our simple and clean Graphical User Interface (GUI) and we are optimized for users who are very comfortable
 working on the Command Line Interface (CLI).</p>
 </div>
 <div class="paragraph">
-<p>If you are looking for a way to easily manage your administrative classroom chores
-and have quick hands, then TeaPet is definitely for you!</p>
+<p>If you are looking for a way to easily manage your administrative classroom matters
+and have quick fingers, then TeaPet is definitely for you!</p>
 </div>
 <div class="paragraph">
 <p>Interested? Hop onto <a href="#getting-started">Section 4, &#8220;Getting started&#8221;</a>. Enjoy!</p>
@@ -227,7 +230,7 @@ If you have any questions, please check out our <a href="#faq">Section 7, &#8220
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Manage your students easily</p>
+<p><strong>Manage your students easily</strong></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -240,20 +243,7 @@ If you have any questions, please check out our <a href="#faq">Section 7, &#8220
 </div>
 </li>
 <li>
-<p>Plan your schedule easily</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Create and manage your events with a single calendar</p>
-</li>
-<li>
-<p>View calendar at a glance</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Manage your class academic progress easily</p>
+<p><strong>Manage your class academic progress easily</strong></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -266,7 +256,7 @@ If you have any questions, please check out our <a href="#faq">Section 7, &#8220
 </div>
 </li>
 <li>
-<p>Add Notes to act as lightweight, digital reminders easily</p>
+<p><strong>Add Notes to act as lightweight, digital reminders easily</strong></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -282,7 +272,20 @@ If you have any questions, please check out our <a href="#faq">Section 7, &#8220
 </div>
 </li>
 <li>
-<p>Toggle different views to find information easily</p>
+<p><strong>Plan your schedule easily</strong></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Create and manage your events with a single calendar</p>
+</li>
+<li>
+<p>View calendar at a glance</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Toggle different views to find information easily</strong></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -292,7 +295,7 @@ If you have any questions, please check out our <a href="#faq">Section 7, &#8220
 </div>
 </li>
 <li>
-<p>Data is saved onto your hard disk automatically</p>
+<p><strong>Data is saved onto your hard disk automatically</strong></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -339,10 +342,11 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>part add</code></strong><code>n/Xiao Ming p/98765432 e/xiaoming@example.com a/Ming Dynasty, block 123, #01-01</code> : adds a contact named Xiao Ming to the Class List.</p>
+<p><strong><code>student add</code></strong><code>n/Kelvin Klein  p/9001 5588 e/kelvink@egmail.com a/Toa Payoh Avenue 1, Block 123, #01-01</code>
+: adds a contact named Kelvin Klein to the Class List.</p>
 </li>
 <li>
-<p><strong><code>part delete</code></strong><code>3</code> : deletes the 3rd contact shown in the current list</p>
+<p><strong><code>student delete</code></strong><code>3</code> : deletes the 3rd student shown in the current list of students.</p>
 </li>
 <li>
 <p><strong><code>exit</code></strong> : exits the app</p>
@@ -361,7 +365,8 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <h2 id="Features"><a class="link" href="#Features">5. Features</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section will provide you with an in-depth explanation of our features of TeaPet.</p>
+<p>This section aims to provide you with in-depth details of TeaPet&#8217;s main features, as well as how to
+get started with them.</p>
 </div>
 <div class="sect2">
 <h3 id="class-particulars"><a class="link" href="#class-particulars">5.1. Class Particulars</a></h3>
@@ -482,14 +487,20 @@ Priority must be either HIGH, MEDIUM or LOW, case insensitive.<br>
 e.g. <code>notesa n/James Ho c/Reminder to print his testimonial pr/HIGH</code></p>
 </li>
 <li>
+<p><strong>Edit Note</strong>: <code>notese [Index] n/[New Student Name c/New Content pr/[New Priority]</code><br>
+At least one of the three fields must be updated when editing a note.
+e.g. <code>notese n/Jane Lee c/Reminder to print her testimonial pr/LOW</code></p>
+</li>
+<li>
 <p><strong>Delete Note</strong>: <code>notesd [Index]</code></p>
 </li>
 <li>
 <p><strong>Filter Search Note</strong>: <code>notesf [Keywords(s)]</code></p>
 </li>
 <li>
-<p><strong>Export Notes</strong>: <code>notese</code><br>
-Notes will be exported to a .csv file format.</p>
+<p><strong>Export Notes</strong>: <code>notesex</code><br>
+Notes will be exported to a .csv file format, which is located in the data folder in the same directory.
+The file is named "studentNotes.csv".</p>
 </li>
 </ul>
 </div>
@@ -859,17 +870,22 @@ and a color group of '<em>10</em>'.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>admin</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>admin</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Displays the administrative details of the class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays all administrative details of the class</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays all academic records of the class</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays all notes of the class</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>schedule</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>schedule</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Displays your personal schedule</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Displays the academic records of the class</p></td>
 </tr>
 </tbody>
 </table>
@@ -884,4 +900,4 @@ and a color group of '<em>10</em>'.</p>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-07 07:16:04 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-07 07:19:51 UTC</div></div></div></body></html>
