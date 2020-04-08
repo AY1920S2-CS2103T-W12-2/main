@@ -26,10 +26,12 @@
 <ul class="sectlevel2">
 <li><a href="#particulars">4.1. Student Particulars</a>
 <ul class="sectlevel3">
-<li><a href="#add-student-code-add-code">4.1.1. Add Student: <code>add</code></a></li>
-<li><a href="#edit-student-code-edit-code">4.1.2. Edit Student: <code>edit</code></a></li>
-<li><a href="#delete-student-code-delete-code">4.1.3. Delete Student: <code>delete</code></a></li>
-<li><a href="#find-student-code-find-code">4.1.4. Find Student: <code>find</code></a></li>
+<li><a href="#display-default-student-view-code-student-default-code">4.1.1. Display default student view: <code>student default</code></a></li>
+<li><a href="#display-detailed-student-view-code-student-detailed-code">4.1.2. Display detailed student view: <code>student detailed</code></a></li>
+<li><a href="#add-student-code-add-code">4.1.3. Add Student: <code>add</code></a></li>
+<li><a href="#edit-student-code-edit-code">4.1.4. Edit Student: <code>edit</code></a></li>
+<li><a href="#delete-student-code-delete-code">4.1.5. Delete Student: <code>delete</code></a></li>
+<li><a href="#find-student-code-find-code">4.1.6. Find Student: <code>find</code></a></li>
 </ul>
 </li>
 <li><a href="#admin">4.2. Student Administration [Done by Zhang Yuan Yu]</a>
@@ -66,13 +68,15 @@
 </li>
 <li><a href="#scheduler">4.5. Personal Scheduler</a>
 <ul class="sectlevel3">
-<li><a href="#creating-a-schedule-code-add-code">4.5.1. Creating a schedule: <code>add</code></a></li>
+<li><a href="#display-your-scheduler-code-schedule-code">4.5.1. Display your scheduler: <code>schedule</code></a></li>
+<li><a href="#creating-a-schedule-code-add-code">4.5.2. Creating a schedule: <code>add</code></a></li>
 </ul>
 </li>
 <li><a href="#additional-features">4.6. Additional Features</a>
 <ul class="sectlevel3">
 <li><a href="#update-profile">4.6.1. Update Profile Picture</a></li>
-<li><a href="#update-profile">4.6.2. Various Display Modes</a></li>
+<li><a href="#update-profile">4.6.2. All in one help window</a></li>
+<li><a href="#various-display-modes">4.6.3. Various Display Modes</a></li>
 </ul>
 </li>
 </ul>
@@ -448,7 +452,53 @@ get started with them.</p>
 Thereafter, you are able to view, update or delete those information of specific students when deemed necessary.</p>
 </div>
 <div class="sect3">
-<h4 id="add-student-code-add-code"><a class="link" href="#add-student-code-add-code">4.1.1. Add Student: <code>add</code></a></h4>
+<h4 id="display-default-student-view-code-student-default-code"><a class="link" href="#display-default-student-view-code-student-default-code">4.1.1. Display default student view: <code>student default</code></a></h4>
+<div class="paragraph">
+<p>Shows a summarised version of the class list with important information only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>student default</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>The student list now displays DEFAULT details.</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/default_display.png" alt="default display" width=""790">
+</div>
+<div class="title">Figure 3. After using <code>student default</code> command</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="display-detailed-student-view-code-student-detailed-code"><a class="link" href="#display-detailed-student-view-code-student-detailed-code">4.1.2. Display detailed student view: <code>student detailed</code></a></h4>
+<div class="paragraph">
+<p>Shows a detailed version of the class list with all information.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>student detailed</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>The student list now displays ALL details.</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/detailed_display.png" alt="detailed display" width=""790">
+</div>
+<div class="title">Figure 4. After using <code>student default</code> command</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="add-student-code-add-code"><a class="link" href="#add-student-code-add-code">4.1.3. Add Student: <code>add</code></a></h4>
 <div class="paragraph">
 <p>Adds a student into the student list.</p>
 </div>
@@ -457,7 +507,7 @@ Thereafter, you are able to view, update or delete those information of specific
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>student add n/NAME [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG] [nok/NAME-RELATIONSHIP-PHONE_NUMBER]
+<pre>student add name/NAME [phone/PHONE_NUMBER] [email/EMAIL] [adr/ADDRESS] [t/TAG] [nok/NAME-RELATIONSHIP-PHONE_NUMBER]
 [temp/TEMPERATURE] [att/ATTENDANCE]</pre>
 </div>
 </div>
@@ -493,7 +543,7 @@ Adds a student named Jim into the student list along with his details.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-student-code-edit-code"><a class="link" href="#edit-student-code-edit-code">4.1.2. Edit Student: <code>edit</code></a></h4>
+<h4 id="edit-student-code-edit-code"><a class="link" href="#edit-student-code-edit-code">4.1.4. Edit Student: <code>edit</code></a></h4>
 <div class="paragraph">
 <p>Edits personal details of students.</p>
 </div>
@@ -528,7 +578,7 @@ Edits the student phone number in index 1 to a new phone number.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete-student-code-delete-code"><a class="link" href="#delete-student-code-delete-code">4.1.3. Delete Student: <code>delete</code></a></h4>
+<h4 id="delete-student-code-delete-code"><a class="link" href="#delete-student-code-delete-code">4.1.5. Delete Student: <code>delete</code></a></h4>
 <div class="paragraph">
 <p>Deletes the student and all his personal details from the student list.</p>
 </div>
@@ -560,7 +610,7 @@ Edits the student phone number in index 1 to a new phone number.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="find-student-code-find-code"><a class="link" href="#find-student-code-find-code">4.1.4. Find Student: <code>find</code></a></h4>
+<h4 id="find-student-code-find-code"><a class="link" href="#find-student-code-find-code">4.1.6. Find Student: <code>find</code></a></h4>
 <div class="paragraph">
 <p>Finds the student information from the student list and display it.</p>
 </div>
@@ -624,7 +674,7 @@ temperature recordings.</p>
 <div class="content">
 <img src="images/adminDisplay.png" alt="adminDisplay" width=""790">
 </div>
-<div class="title">Figure 3. After using <code>admin</code> command</div>
+<div class="title">Figure 5. After using <code>admin</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -652,7 +702,7 @@ temperature recordings.</p>
 <div class="content">
 <img src="images/adminDates.png" alt="adminDates" width="790">
 </div>
-<div class="title">Figure 4. After using <code>admin dates</code> command</div>
+<div class="title">Figure 6. After using <code>admin dates</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -836,7 +886,7 @@ Type the following commands for more info!</pre>
 <div class="content">
 <img src="images/academics-view.png" alt="academics view" width=""790">
 </div>
-<div class="title">Figure 5. After using the <code>academics</code> command</div>
+<div class="title">Figure 7. After using the <code>academics</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1220,7 +1270,7 @@ EXPORT NOTES: notes export</pre>
 <div class="content">
 <img src="images/userguide/notesfeature/notesDisplay.png" alt="notesDisplay" width=""790">
 </div>
-<div class="title">Figure 6. After using the <code>notes</code> command</div>
+<div class="title">Figure 8. After using the <code>notes</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1285,7 +1335,7 @@ Priority: LOW</pre>
 <div class="content">
 <img src="images/userguide/notesfeature/notesAdd.png" alt="notesAdd" width=""790">
 </div>
-<div class="title">Figure 7. After using the <code>notes add</code> command</div>
+<div class="title">Figure 9. After using the <code>notes add</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1347,7 +1397,7 @@ Priority: HIGH</pre>
 <div class="content">
 <img src="images/userguide/notesfeature/notesEdit.png" alt="notesEdit" width=""790">
 </div>
-<div class="title">Figure 8. After using the <code>notes edit</code> command</div>
+<div class="title">Figure 10. After using the <code>notes edit</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1512,12 +1562,35 @@ TeaPet application</p>
 sorted according to date and time. You will then be able to view your weekly schedule at a glance.</p>
 </div>
 <div class="sect3">
-<h4 id="creating-a-schedule-code-add-code"><a class="link" href="#creating-a-schedule-code-add-code">4.5.1. Creating a schedule: <code>add</code></a></h4>
+<h4 id="display-your-scheduler-code-schedule-code"><a class="link" href="#display-your-scheduler-code-schedule-code">4.5.1. Display your scheduler: <code>schedule</code></a></h4>
+<div class="paragraph">
+<p>Displays your schedule for the current week.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>schedule</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>This is your schedule for the week</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/display_schedule.png" alt="display schedule" width="790">
+</div>
+<div class="title">Figure 11. After using schedule command</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="creating-a-schedule-code-add-code"><a class="link" href="#creating-a-schedule-code-add-code">4.5.2. Creating a schedule: <code>add</code></a></h4>
 <div class="paragraph">
 <p>Adds an event to your personal scheduler.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>schedule add eventName/EVENT_NAME startDateTime/START_DATETIME endDateTime/END_DATETIME recur/RECUR color/COLOR</code></p>
+<p><strong>Format:</strong> <code>schedule add eventName/EVENT_NAME startDateTime/START_DATETIME endDateTime/END_DATETIME recur/RECUR color/COLOR</code></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1572,7 +1645,7 @@ Color group is from 0 to 23 inclusive.<br>
 <div class="content">
 <img src="images/color_code.png" alt="color code" width="790">
 </div>
-<div class="title">Figure 9. Color code for TeaPet&#8217;s calendar</div>
+<div class="title">Figure 12. Color code for TeaPet&#8217;s calendar</div>
 </div>
 <div class="paragraph">
 <p>&#160;<br></p>
@@ -1594,7 +1667,7 @@ and a color group of '<em>10</em>'.</p>
 <div class="content">
 <img src="images/event_add.png" alt="event add" width="790">
 </div>
-<div class="title">Figure 10. Adding a consultation event to the schedule</div>
+<div class="title">Figure 13. Adding a consultation event to the schedule</div>
 </div>
 </div>
 </div>
@@ -1613,7 +1686,7 @@ The following steps will help you upload photos of your students into the studen
 <div class="content">
 <img src="images/locating_image_folder.png" alt="locating image folder" width="790">
 </div>
-<div class="title">Figure 11. Location of image folder</div>
+<div class="title">Figure 14. Location of image folder</div>
 </div>
 <div class="paragraph">
 <p>&#160;<br></p>
@@ -1642,19 +1715,19 @@ For example, a student with name <strong>Simon Lam</strong> must have a image fi
 <div class="content">
 <img src="images/images_in_folder.png" alt="images in folder" width="790">
 </div>
-<div class="title">Figure 12. Dragging png file into image folder</div>
+<div class="title">Figure 15. Dragging png file into image folder</div>
 </div>
 <div class="paragraph">
 <p>&#160;<br></p>
 </div>
 <div class="paragraph">
-<p><strong>Step 3</strong>. Type in the <code>refresh</code> command in the user interface. Now you can see your students pictures in your student list!</p>
+<p><strong>Step 3</strong>. Type in the <code>student refresh</code> command in the user interface. Now you can see your students pictures in your student list!</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/before_picture_upload.png" alt="before picture upload" width=""790">
 </div>
-<div class="title">Figure 13. Before using the refresh command</div>
+<div class="title">Figure 16. Before using the refresh command</div>
 </div>
 <div class="paragraph">
 <p>&#160;<br></p>
@@ -1663,11 +1736,35 @@ For example, a student with name <strong>Simon Lam</strong> must have a image fi
 <div class="content">
 <img src="images/after_picture_upload.png" alt="after picture upload" width=""790">
 </div>
-<div class="title">Figure 14. After using the refresh command</div>
+<div class="title">Figure 17. After using the refresh command</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="update-profile"><a class="link" href="#update-profile">4.6.2. Various Display Modes</a></h4>
+<h4 id="update-profile"><a class="link" href="#update-profile">4.6.2. All in one help window</a></h4>
+<div class="paragraph">
+<p>Suppose you are lost and you need help regarding the many commands in TeaPet, you can easily type in <code>help</code> or simply
+press your <code>F1</code> key to bring up this user guide!</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>help</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Opened help window.</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/help_window.png" alt="help window" width=""790">
+</div>
+<div class="title">Figure 18. Displayed help window</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="various-display-modes"><a class="link" href="#various-display-modes">4.6.3. Various Display Modes</a></h4>
 <hr>
 </div>
 </div>
@@ -1902,6 +1999,23 @@ specified KEYWORD</p></td>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 7. Personal Scheduler commands of TeaPet</caption>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 45%;">
+<col style="width: 45%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Command</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Format</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Expected outcome</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>scheduele add</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>schedule add eventName/EVENT_NAME startDateTime/START_DATE_TIME endDateTime/END_DATE_TIME recur/RECUR color/COLOR</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds an event into the scheduler.</p></td>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
@@ -2061,4 +2175,4 @@ command. The backup feature will be coming soon in the near future.</p>
 </ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-08 14:43:07 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-08 15:12:26 UTC</div></div></div></body></html>
