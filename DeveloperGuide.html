@@ -26,7 +26,7 @@
 </li>
 <li><a href="#implementation">7. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#class-particulars-feature">7.1. Class particulars feature</a></li>
+<li><a href="#student-particulars-feature">7.1. Student particulars feature</a></li>
 <li><a href="#import-image-feature">7.2. Import image feature</a></li>
 <li><a href="#personal-schedule-feature">7.3. Personal Schedule feature</a></li>
 <li><a href="#class-administration-feature">7.4. Class administration feature</a></li>
@@ -290,9 +290,6 @@ This symbol indicates tips.
 <div class="sect1">
 <h2 id="design"><a class="link" href="#design">6. Design</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>This section describes the high-level design details of TeaPet.</p>
-</div>
 <div class="sect2">
 <h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">6.1. Architecture</a></h3>
 <div class="paragraph">
@@ -572,10 +569,10 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="class-particulars-feature"><a class="link" href="#class-particulars-feature">7.1. Class particulars feature</a></h3>
+<h3 id="student-particulars-feature"><a class="link" href="#student-particulars-feature">7.1. Student particulars feature</a></h3>
 <div class="paragraph">
-<p>The class particulars feature keeps track of essential student details.
-The feature comprises of four commands namely,</p>
+<p>The student particulars feature keeps track of essential student details.
+The feature comprises of commands namely,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -591,7 +588,14 @@ The feature comprises of four commands namely,</p>
 <li>
 <p><code>FindCommand</code> - Finds information of the required student</p>
 </li>
+<li>
+<p><code>RefreshCommand</code> - Refreshes the student list to update profile pictures</p>
+</li>
 </ul>
+</div>
+<div class="paragraph">
+<p>The student commands all share similar paths of execution and is illustrated in the following sequence diagram below,
+which shows the sequence diagram for the StudentAddCommand.</p>
 </div>
 <div class="paragraph">
 <p>The commands when executed, will interface with the methods exposed by the <code>Model</code> interface to perform the related operations
@@ -599,9 +603,28 @@ The feature comprises of four commands namely,</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/CommandClassDiagram.png" alt="CommandClassDiagram">
+<img src="images/student_sequence_diagram.png" alt="student sequence diagram">
 </div>
-<div class="title">Figure 9. Class Diagram for Commands</div>
+<div class="title">Figure 9. Sequence Diagram for StudentAddCommand</div>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+<div class="paragraph">
+<p><strong>These are the common steps among the Student Commands:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>TeaPetParser</code> will assign the <code>StudentCommandParser</code> to parse the user input</p>
+</li>
+<li>
+<p>The <code>StudentCommandParser#parse</code> will take in a string of user input consisting of the arguments</p>
+</li>
+<li>
+<p>The arguments are tokenized and the respective models of each argument are created.</p>
+</li>
+</ol>
 </div>
 <div class="sect3">
 <h4 id="Feature-Add"><a class="link" href="#Feature-Add">7.1.1. Add command</a></h4>
@@ -610,9 +633,17 @@ The feature comprises of four commands namely,</p>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>AddCommand</code> performs.</p>
 </div>
-<div class="paragraph">
-<p><strong>Step 1</strong>. The <code>AddCommand#execute(Model model)</code> method is executed which takes in a necessary student name and additional attributes.</p>
-</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After the successful parsing of user input, the <code>StudentAddCommand#execute(Model model)</code> method is called which validates the student defined.</p>
+</li>
+<li>
+<p>As student names are unique, if a duplicate student is defined, a <code>CommandException</code> is thrown which will not add the defined student.</p>
+</li>
+<li>
+<p>The method <code>Model#addStudent(Student student)</code> will then be called to add the student. The command box will be reflected with
+the <code>StudentAddCommand#MESSAGE_SUCCESS</code> constant and a new <code>CommandResult</code> will be returned with the success message.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -620,40 +651,17 @@ The feature comprises of four commands namely,</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Format for adding NOK details is <code>add n/&lt;NAME&gt; nok/&lt;NAME-RELATIONSHIP-CONTACT&gt;</code>.
+If the format or wording of adding a student contains error(s), the behaviour of TeaPet will be that
+either a unknown command or wrong format error message will be displayed.
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p><strong>Step 2</strong>. The student is then searched through the <code>UniqueStudentList#students</code> list using the
- <code>Model#hasStudent(Student student)</code> method to check if the student already exists. If the student exists, the <code>CommandException</code> will be thrown
-with the duplicate students error message.</p>
-</div>
-<div class="paragraph">
-<p><strong>Step 3</strong>. The method <code>Model#addStudent(Student student)</code> will then be called to add the student. The command box will be reflected with
-the <code>AddCommand#MESSAGE_SUCCESS</code> constant and a new <code>CommandResult</code> will be returned with the message.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the format or wording of adding a student contains error(s), the behaviour of TeaPet will be similar to step 2, where either a unknown command
-or wrong format error message will be displayed.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the add operation works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/AddSequenceDiagram.png" alt="AddSequenceDiagram">
-</div>
+</li>
+<li>
+<p>The newly created student is added to the <code>UniqueStudentList</code>.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -664,30 +672,230 @@ or wrong format error message will be displayed.
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>EditCommand</code> performs.</p>
 </div>
-<div class="paragraph">
-<p><strong>Step 1</strong>. The <code>EditCommand#execute(Model model)</code> method is executed which edit attributes of the selected student. The method
-checks if the <code>index</code> defined when instantiating <code>EditCommand(Index index, EditStudentDescriptor editStudentDescriptor)</code> is
-valid. Since it is optional for users to input fields, the fields not entered will reuse the existing values that are currently stored and defined
-in the <code>Student</code> object.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After the successful parsing of user input, the <code>StudentEditCommand#execute(Model model)</code> method is called which checks
+if the <code>Index</code> is defined as an argument when instantiating the <code>StudentEditCommand(Index, index, EditStudentDescriptor editStudentDescriptor)</code>
+constructor. It uses the <code>StudentEditCommand.EditStudentDescriptor</code> to create a new edited student.</p>
+</li>
+<li>
+<p>A new <code>Student</code> with the newly updated values will be created which replaces the existing <code>Student</code> object using the
+<code>Model#setStudent(Student target, Student editedStudent)</code> method.</p>
+</li>
+<li>
+<p>The filtered student list is then updated with the new <code>Student</code> with the <code>Model#updateFilteredStudentList(PREDICATE_SHOW_ALL_STUDENTS)</code> method.</p>
+</li>
+<li>
+<p>The command box will be reflected with the <code>StudentEditCommand#MESSAGE_SUCCESS</code> constant and a new <code>CommandResult</code> will be
+returned with the success message.</p>
+</li>
+</ol>
 </div>
-<div class="paragraph">
-<p><strong>Step 2</strong>. A new <code>Student</code> with the updated values is created and it is then searched  through the <code>UniqueStudentList#students</code> list using the
- <code>Model#hasStudent(Student student)</code> method to check if the student already exists. If the student exists, the <code>CommandException</code> will be thrown
-with the duplicate students error message.</p>
 </div>
+</div>
+<div class="sect3">
+<h4 id="delete-command"><a class="link" href="#delete-command">7.1.3. Delete command</a></h4>
+<div class="sect4">
+<h5 id="implementation-4"><a class="link" href="#implementation-4">Implementation</a></h5>
 <div class="paragraph">
-<p><strong>Step 3</strong>. The newly created <code>Student</code> will replace the old one through the <code>Model#setStudent(Student oldStudent, Student editedStudent</code>
+<p>The following is a detailed explanation of the operations which <code>StudentDeleteCommand</code> performs.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After the successful parsing of user input, the <code>StudentDeleteCommand#execute(Model model)</code> method is called which checks if the <code>Index</code>
+is defined as an argument when instantiating the <code>StudentDeleteCommand(Index index)</code>  constructor.<br></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>Index</code> must be within the bounds of the student list.<br>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>The <code>Student</code> at the specified <code>Index</code> is then removed from the <code>UniqueStudentList#students</code> observable list using the
+<code>Model#deleteStudent(Index index)</code> method.</p>
+</li>
+<li>
+<p>The command box will be reflected with the <code>StudentDeleteCommand#MESSAGE_SUCCESS</code> constant and a new <code>CommandResult</code> will
+be returned with the success message.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="find-command"><a class="link" href="#find-command">7.1.4. Find command</a></h4>
+<div class="sect4">
+<h5 id="implementation-5"><a class="link" href="#implementation-5">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>StudentFindCommand</code> performs.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After the successful parsing of user input, the <code>StudentFindCommand#execute(Model model)</code> method is called which checks if the
+<code>NameContainsKeywordsPredicate(keywords)</code> is defined as part of the argument when instantiating the
+<code>StudentFindCommand(NameContainsKeywordsPredicate predicate)</code> constructor</p>
+</li>
+<li>
+<p>The <code>Student</code> is then searched through the <code>UniqueStudentList#students</code> list using the <code>Model#hasStudent(Student student)</code> method
+to check if the <code>Student</code> already exists. If the <code>Student</code> does not exist, a <code>StudentNotFoundException</code> will be thrown and the <code>Student</code> will not be displayed.</p>
+</li>
+<li>
+<p>The existing <code>UniqueStudentList#internalList</code> is then cleared and updated using the <code>Model#updateFilteredStudentList(Predicate predicate)</code>
 method.</p>
+</li>
+<li>
+<p>A new <code>CommandResult</code> will be returned with the success message.</p>
+</li>
+</ol>
 </div>
-<div class="paragraph">
-<p><strong>Step 4</strong>. The command box will be reflected with the <code>EditCommand#MESSAGE_SUCCESS</code> constant and a new <code>CommandResult</code> will be returned with the message.</p>
+</div>
+<div class="sect4">
+<h5 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h5>
+
+</div>
+<div class="sect4">
+<h5 id="aspect-command-syntax"><a class="link" href="#aspect-command-syntax">Aspect: Command Syntax</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Current Implementation:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Current implementation of the commands follows the command word syntax, followed by the arguments necessary for execution.
+For example, <code>student add/edit/delete/find/refresh</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternatives Considered:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>We considered using the forward slash <code>/</code> before the command word, for example <code>/add</code>. However, we realise that it is redundant
+and will make inputs more tedious and confusing for users.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-command-length"><a class="link" href="#aspect-command-length">Aspect: Command Length:</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Current Implementation:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Commands are shortened as much as possible without much loss in clarity. For example, instead of using <code>/temperature</code>, we used
+<code>/temp</code> instead to input the students temperature into the application. Although this may be initially unfamiliar to users, it
+should be easy to pick up and make it less tedious during input.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternatives Considered:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>We considered using more descriptive arguments such that arguments are clear and succinct. However, this will definitely decrease
+the user expereince as the command will be too long to type.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="import-image-feature"><a class="link" href="#import-image-feature">7.2. Import image feature</a></h3>
-
+<div class="paragraph">
+<p>This feature was included in TeaPet to help teachers easily identify the students using their pictures instead of just names.
+This feature utilises the <code>StudentRefreshCommand</code> class to update the images of students.</p>
+</div>
+<div class="paragraph">
+<p>The feature comprises of one command namely,
+* <code>StudentRefreshCommand</code> - Refreshes the student list to show updated images of students.</p>
+</div>
+<div class="paragraph">
+<p>This is further illustrated in the following sequence diagram, which shows the sequence diagram for the StudentRefreshCommand.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/refresh_sequence_diagram.png" alt="refresh sequence diagram">
+</div>
+<div class="title">Figure 10. Sequence Diagram for StudentRefreshCommand</div>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+<div class="sect3">
+<h4 id="refresh-command"><a class="link" href="#refresh-command">7.2.1. Refresh command</a></h4>
+<div class="sect4">
+<h5 id="implementation-6"><a class="link" href="#implementation-6">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>StudentRefreshCommand</code> performs.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After the successful parsing of user input, the <code>StudentRefreshCommand#execute(Model model)</code> method is called. It does not
+require validation as it does not write into the student list.</p>
+</li>
+<li>
+<p>The <code>StudentCardDefault#updateImage</code> method is then called which checks the image folder for the required png file and updates
+the student card.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The png file must match the name of the student and must be in all lower case with no whitespaces.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>If any view other than the student list view is showing on the <code>MainWindow</code>, the <code>MainWindow#handleDefaultStudent()</code> method
+will be called and the student list is now visible on the <code>MainWindow</code>.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+In this implementation of the application, the list of students is rendered on the GUI of the Main Window. Hence,  the command merely
+prints its contents on the Command Result Box.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="personal-schedule-feature"><a class="link" href="#personal-schedule-feature">7.3. Personal Schedule feature</a></h3>
@@ -713,7 +921,7 @@ The feature comprises of four commands namely.</p>
 <div class="content">
 <img src="images/AdminClassDiagram.png" alt="AdminClassDiagram">
 </div>
-<div class="title">Figure 10. Admin Commands Diagram</div>
+<div class="title">Figure 11. Admin Commands Diagram</div>
 </div>
 <div class="paragraph">
 <p>These are the various admin commands to try:</p>
@@ -740,7 +948,7 @@ The feature comprises of four commands namely.</p>
 <div class="sect3">
 <h4 id="admin-display-command"><a class="link" href="#admin-display-command">7.4.1. Admin Display Command</a></h4>
 <div class="sect4">
-<h5 id="implementation-4"><a class="link" href="#implementation-4">Implementation</a></h5>
+<h5 id="implementation-7"><a class="link" href="#implementation-7">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>admin</code> performs.</p>
 </div>
@@ -784,7 +992,7 @@ If the wording of the <code>admin</code> command contains error(s), an unknown c
 <div class="sect3">
 <h4 id="admin-dates-command"><a class="link" href="#admin-dates-command">7.4.2. Admin Dates Command</a></h4>
 <div class="sect5">
-<h6 id="implementation-5"><a class="link" href="#implementation-5">Implementation</a></h6>
+<h6 id="implementation-8"><a class="link" href="#implementation-8">Implementation</a></h6>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>admin dates</code> performs.</p>
 </div>
@@ -829,7 +1037,7 @@ will be displayed.
 <div class="sect3">
 <h4 id="admin-save-command"><a class="link" href="#admin-save-command">7.4.3. Admin Save Command</a></h4>
 <div class="sect5">
-<h6 id="implementation-6"><a class="link" href="#implementation-6">Implementation</a></h6>
+<h6 id="implementation-9"><a class="link" href="#implementation-9">Implementation</a></h6>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>admin save</code> performs.</p>
 </div>
@@ -873,11 +1081,11 @@ displayed.
 <div class="content">
 <img src="images/AdminSaveActivityDiagram.png" alt="AdminSaveActivityDiagram">
 </div>
-<div class="title">Figure 11. Admin Save Activity Diagram</div>
+<div class="title">Figure 12. Admin Save Activity Diagram</div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h5>
+<h5 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h5>
 <div class="sect5">
 <h6 id="aspect-which-date-to-save"><a class="link" href="#aspect-which-date-to-save">Aspect: Which date to save</a></h6>
 <div class="ulist">
@@ -949,7 +1157,7 @@ displayed.
 <div class="sect3">
 <h4 id="admin-delete-command"><a class="link" href="#admin-delete-command">7.4.4. Admin Delete Command</a></h4>
 <div class="sect5">
-<h6 id="implementation-7"><a class="link" href="#implementation-7">Implementation</a></h6>
+<h6 id="implementation-10"><a class="link" href="#implementation-10">Implementation</a></h6>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>admin save</code> performs.</p>
 </div>
@@ -986,7 +1194,7 @@ specified date from <code>UniqueDateList</code>.</p>
 <div class="content">
 <img src="images/AdminDeleteSequenceDiagram.png" alt="AdminDeleteSequenceDiagram">
 </div>
-<div class="title">Figure 12. Admin Delete Sequence Diagram</div>
+<div class="title">Figure 13. Admin Delete Sequence Diagram</div>
 </div>
 </div>
 </div>
@@ -1027,7 +1235,7 @@ The sequence diagram for <code>admin fetch</code> command is similar to that of 
 </table>
 </div>
 <div class="sect5">
-<h6 id="implementation-8"><a class="link" href="#implementation-8">Implementation</a></h6>
+<h6 id="implementation-11"><a class="link" href="#implementation-11">Implementation</a></h6>
 
 </div>
 </div>
@@ -1177,7 +1385,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">7.5.2. Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">7.5.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -2259,4 +2467,4 @@ Expected: Similar to test case b.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-09 17:51:41 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-09 18:01:01 UTC</div></div></div></body></html>
