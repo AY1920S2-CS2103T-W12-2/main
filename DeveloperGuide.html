@@ -29,10 +29,11 @@
 <li><a href="#class-particulars-feature">7.1. Class particulars feature</a></li>
 <li><a href="#import-image-feature">7.2. Import image feature</a></li>
 <li><a href="#personal-schedule-feature">7.3. Personal Schedule feature</a></li>
-<li><a href="#proposed-undo-redo-feature">7.4. [Proposed] Undo/Redo feature</a></li>
-<li><a href="#proposed-data-encryption">7.5. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">7.6. Logging</a></li>
-<li><a href="#Implementation-Configuration">7.7. Configuration</a></li>
+<li><a href="#class-administration-feature">7.4. Class administration feature</a></li>
+<li><a href="#proposed-undo-redo-feature">7.5. [Proposed] Undo/Redo feature</a></li>
+<li><a href="#proposed-data-encryption">7.6. [Proposed] Data Encryption</a></li>
+<li><a href="#logging">7.7. Logging</a></li>
+<li><a href="#Implementation-Configuration">7.8. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">8. Documentation</a></li>
@@ -700,9 +701,341 @@ method.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">7.4. [Proposed] Undo/Redo feature</a></h3>
+<h3 id="class-administration-feature"><a class="link" href="#class-administration-feature">7.4. Class administration feature</a></h3>
+<div class="paragraph">
+<p>The class administration feature keeps track of essential student administrative details.
+The feature comprises of four commands namely.</p>
+</div>
+<div class="paragraph">
+<p>The structure of the Admin commands are as shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AdminClassDiagram.png" alt="AdminClassDiagram">
+</div>
+<div class="title">Figure 10. Admin Commands Diagram</div>
+</div>
+<div class="paragraph">
+<p>These are the various admin commands to try:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>admin</code> - Displays the most updated class administrative details.</p>
+</li>
+<li>
+<p><code>admin dates</code> - Displays the dates that hold administrative information of the class.</p>
+</li>
+<li>
+<p><code>admin save</code> - Saves today’s administrative information of the class.</p>
+</li>
+<li>
+<p><code>admin delete</code> - Deletes the administrative information of the class at the specified date.</p>
+</li>
+<li>
+<p><code>admin fetch</code> - Fetches the administrative information of the class at the specified date.</p>
+</li>
+</ul>
+</div>
 <div class="sect3">
-<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">7.4.1. Proposed Implementation</a></h4>
+<h4 id="admin-display-command"><a class="link" href="#admin-display-command">7.4.1. Admin Display Command</a></h4>
+<div class="sect4">
+<h5 id="implementation-4"><a class="link" href="#implementation-4">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>admin</code> performs.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>AdminDisplayCommand#execute(Model model)</code> method is executed which does not take in any arguments.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. The method <code>Model#updateFilteredStudentList(PREDICATE_SHOW_ALL_STUDENTS)</code> will then be called to update the
+filtered student list to show all current students in the student list.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the class list is empty, a blank page will be shown.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>. The command box will be reflected with the <code>AdminDisplayCommand#MESSAGE_SUCCESS</code> constant and a new
+<code>CommandResult</code> will be returned with the message.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the wording of the <code>admin</code> command contains error(s), an unknown command message will be displayed.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="admin-dates-command"><a class="link" href="#admin-dates-command">7.4.2. Admin Dates Command</a></h4>
+<div class="sect5">
+<h6 id="implementation-5"><a class="link" href="#implementation-5">Implementation</a></h6>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>admin dates</code> performs.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>AdminDatesCommand#execute(Model model)</code> method is executed which does not take in any arguments.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. The method <code>Model#updateFilteredDateList(PREDICATE_SHOW_ALL_DATES)</code> will then be called to update the
+filtered date list to show all current dates in the date list.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the date list is empty, a blank page will be shown.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>. The command box will be reflected with the <code>AdminDatesCommand#MESSAGE_SUCCESS</code> constant and a new
+<code>CommandResult</code> will be returned with the message.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the format or wording of the <code>admin dates</code> command contains error(s), an unknown command or a wrong format message
+will be displayed.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="admin-save-command"><a class="link" href="#admin-save-command">7.4.3. Admin Save Command</a></h4>
+<div class="sect5">
+<h6 id="implementation-6"><a class="link" href="#implementation-6">Implementation</a></h6>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>admin save</code> performs.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>AdminSaveCommand#execute(Model model)</code> method is executed which takes in today&#8217;s date as an argument.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. The method <code>Model#updateFilteredStudentList(PREDICATE_SHOW_ALL_STUDENTS)</code> will then be called to update the
+filtered student list to show all current students in the student list.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>. Sequentially, a date constructor will then called, creating a date object with today&#8217;s date and
+<code>Model#getFilteredStudentList()</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 4</strong>. The method <code>Model#addDate(Date date)</code> will then be called to add the date. This will then trigger the
+<code>UniqueDateList#addDate(Date toadd)</code> method, which will throw <code>DuplicateDateException</code> if the date that is been added
+exists, with the duplicate dates error message.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 5</strong>. The command box will be reflected with the <code>AdminSaveCommand#MESSAGE_SUCCESS</code> constant and a new
+<code>CommandResult</code> will be returned with the message.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the format or wording of saving of a date contains error(s), an unknown command or wrong format error message will be
+displayed.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes admin save command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AdminSaveActivityDiagram.png" alt="AdminSaveActivityDiagram">
+</div>
+<div class="title">Figure 11. Admin Save Activity Diagram</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h5>
+<div class="sect5">
+<h6 id="aspect-which-date-to-save"><a class="link" href="#aspect-which-date-to-save">Aspect: Which date to save</a></h6>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Saves the most updated administrative list as today&#8217;s date.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement and prevents mutation of dates.</p>
+</li>
+<li>
+<p>Cons: The user will be unable to overwrite dates.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Saves the most updated administrative list as any date.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: The user can mutate any dates as he or she wishes.</p>
+</li>
+<li>
+<p>Cons: Hard to implement, and possible accidental mutation of dates.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect5">
+<h6 id="aspect-allow-overwriting-of-data"><a class="link" href="#aspect-allow-overwriting-of-data">Aspect: Allow overwriting of data</a></h6>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Saving a date that exists in the storage is not allowed.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement and prevent accidental mutation of data</p>
+</li>
+<li>
+<p>Cons: Hard to implement.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Saving a date that exists in the storage is allowed.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: User can make necessary changes to the dates where errors exists.</p>
+</li>
+<li>
+<p>Cons: Hard to implement and could result in accidental mutation of dates.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="admin-delete-command"><a class="link" href="#admin-delete-command">7.4.4. Admin Delete Command</a></h4>
+<div class="sect5">
+<h6 id="implementation-7"><a class="link" href="#implementation-7">Implementation</a></h6>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>admin save</code> performs.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>AdminDeleteCommand#execute(Model model)</code> method is executed which takes in a
+DateContainsKeywordsPredicate object as an argument. User input will be parsed first to a DateContainsKeywordsPredicate
+object before passing to the`AdminDeleteCommand` constructor.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Date is to be entered in YYYY-MM-DD format, or a ParseException will be thrown and an error message will be displayed.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. The method <code>Model#updateFilteredStudentList(DateContainsKeywordsPredicate predicate)</code> will then be called to
+update the filtered date list to show the date that matches the given predicate. If no such date is found after
+searching through the <code>UniqueDateList#dates</code>, a DateNotFoundException will be thrown with an error message displayed.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3.</strong> After the date has been found, the method <code>Model*deleteDate(Date target)</code> will then be called to remove the
+specified date from <code>UniqueDateList</code>.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the add operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AdminDeleteSequenceDiagram.png" alt="AdminDeleteSequenceDiagram">
+</div>
+<div class="title">Figure 12. Admin Delete Sequence Diagram</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="admin-fetch-command"><a class="link" href="#admin-fetch-command">7.4.5. Admin Fetch Command</a></h4>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>AdminFetchCommand#execute(Model model)</code> method is executed which takes in a
+DateContainsKeywordsPredicate object as an argument. User input will be parsed first to a DateContainsKeywordsPredicate
+object before passing to the`AdminFetchCommand` constructor.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Date is to be entered in YYYY-MM-DD format, or a ParseException will be thrown and an error message will be displayed.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. The method <code>Model#updateFilteredStudentList(DateContainsKeywordsPredicate predicate)</code> will then be called to
+update the filtered date list to show the date that matches the given predicate. If no such date is found after
+searching through the <code>UniqueDateList#dates</code>, a DateNotFoundException will be thrown with an error message displayed.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The sequence diagram for <code>admin fetch</code> command is similar to that of <code>admin delete</code> command.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect5">
+<h6 id="implementation-8"><a class="link" href="#implementation-8">Implementation</a></h6>
+
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">7.5. [Proposed] Undo/Redo feature</a></h3>
+<div class="sect3">
+<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">7.5.1. Proposed Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
 It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
@@ -844,7 +1177,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">7.4.2. Design Considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">7.5.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -914,13 +1247,13 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">7.5. [Proposed] Data Encryption</a></h3>
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">7.6. [Proposed] Data Encryption</a></h3>
 <div class="paragraph">
 <p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">7.6. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">7.7. Logging</a></h3>
 <div class="paragraph">
 <p>This section describes how TeaPet record it&#8217;s logs.</p>
 </div>
@@ -930,7 +1263,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 7.7, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 7.8, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -961,7 +1294,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">7.7. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">7.8. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1926,4 +2259,4 @@ Expected: Similar to test case b.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-09 13:51:32 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-09 17:51:41 UTC</div></div></div></body></html>
