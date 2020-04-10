@@ -30,10 +30,11 @@
 <li><a href="#import-image-feature">7.2. Import image feature</a></li>
 <li><a href="#personal-schedule-feature">7.3. Personal Schedule feature</a></li>
 <li><a href="#class-administration-feature">7.4. Class administration feature</a></li>
-<li><a href="#proposed-undo-redo-feature">7.5. [Proposed] Undo/Redo feature</a></li>
-<li><a href="#proposed-data-encryption">7.6. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">7.7. Logging</a></li>
-<li><a href="#Implementation-Configuration">7.8. Configuration</a></li>
+<li><a href="#notes-feature">7.5. Notes feature</a></li>
+<li><a href="#proposed-undo-redo-feature">7.6. [Proposed] Undo/Redo feature</a></li>
+<li><a href="#proposed-data-encryption">7.7. [Proposed] Data Encryption</a></li>
+<li><a href="#logging">7.8. Logging</a></li>
+<li><a href="#Implementation-Configuration">7.9. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">8. Documentation</a></li>
@@ -1242,9 +1243,267 @@ The sequence diagram for <code>admin fetch</code> command is similar to that of 
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">7.5. [Proposed] Undo/Redo feature</a></h3>
+<h3 id="notes-feature"><a class="link" href="#notes-feature">7.5. Notes feature</a></h3>
+<div class="paragraph">
+<p>TeaPet application comes with an in-built notes feature, which serves to allow Teachers to record administrative or behavioural
+information of his/her students. Each note is tagged to a specific student and acts as a lightweight, digital 'Post It'.</p>
+</div>
+<div class="paragraph">
+<p>The notes feature comprises of 6 main functionalities represented by 6 commands. They are namely:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>NotesCommand</code></p>
+</li>
+<li>
+<p><code>NotesAddCommand</code></p>
+</li>
+<li>
+<p><code>NotesEditCommand</code></p>
+</li>
+<li>
+<p><code>NotesDeleteCommand</code></p>
+</li>
+<li>
+<p><code>NotesFilterCommand</code></p>
+</li>
+<li>
+<p><code>NotesExportCommand</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/developerguide/notes/NotesClassDiagram.png" alt="NotesClassDiagram">
+</div>
+<div class="title">Figure 14. Class Diagram for NotesCommands.</div>
+</div>
 <div class="sect3">
-<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">7.5.1. Proposed Implementation</a></h4>
+<h4 id="structure-of-notes-class"><a class="link" href="#structure-of-notes-class">7.5.1. Structure of Notes Class</a></h4>
+<div class="paragraph">
+<p>Notes object is made up of 4 fields. They are namely:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>String student</code></p>
+</li>
+<li>
+<p><code>String content</code></p>
+</li>
+<li>
+<p><code>String priority</code></p>
+</li>
+<li>
+<p><code>String dateTime</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="add-note"><a class="link" href="#add-note">7.5.2. Add Note</a></h4>
+<div class="paragraph">
+<p>The following is a detailed elaboration how <code>NotesAddCommand</code> operates.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>NotesAddCommand#execute(Model model)</code> method is executed which takes in a necessary student name, content and priority as input</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format for adding a Note is <code>notes add name/&lt;NAME OF STUDENT&gt; c/&lt;CONTENT&gt; pr/&lt;LOW/MEDIUM/HIGH&gt;</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. The note is then searched through the <code>UniqueNotesList#notes</code> list using the
+ <code>Model#hasNote(Notes note)</code> method to check if the note already exists. If the note exists, the <code>CommandException</code> will be thrown
+with the duplicate note error message.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>. The method <code>Model#addNote(Notes note)</code> will then be called to add the note. The command box will be reflected with
+the <code>NotesAddCommand#MESSAGE_SUCCESS</code> constant and a new <code>CommandResult</code> will be returned with the message.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the format or wording of adding a student contains error(s), the behaviour of TeaPet will be similar to step 2, where either a unknown command
+or wrong format error message will be displayed.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/developerguide/notes/NotesAddSequence.png" alt="NotesAddSequence">
+</div>
+<div class="title">Figure 15. Sequence Diagram for Adding Notes.</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/developerguide/notes/SDGetNotesAddCommand.png" alt="SDGetNotesAddCommand">
+</div>
+<div class="title">Figure 16. Supplementary Frame for Sequence Diagram.</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-note"><a class="link" href="#edit-note">7.5.3. Edit Note</a></h4>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>NotesEditCommand</code> performs.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>NotesEditCommand#execute(Model model)</code> method is executed which edit attributes of the selected note. The method
+checks if the <code>index</code> defined when instantiating <code>NotesEditCommand(Index index, EditNotesDecriptor editNotesDescriptor)</code> is
+valid. Since it is optional for users to input fields, the fields not entered will reuse the existing values that are currently stored and defined
+in the <code>Notes</code> object.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. A new <code>Notes</code> with the updated values is created and it is then searched  through the <code>UniqueNotesList#notes</code> list using the
+ <code>Model#hasNote(Notes note)</code> method to check if the note already exists. If the note exists, the <code>CommandException</code> will be thrown
+with the duplicate note error message.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>. The newly created <code>Notes</code> will replace the old one through the <code>Model#setNote(Notes toBeChanged, Notes editedNote</code>
+method.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 4</strong>. The command box will be reflected with the <code>NotesEditCommand#MESSAGE_SUCCESS</code> constant and a new <code>CommandResult</code> will be returned with the message.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-note"><a class="link" href="#delete-note">7.5.4. Delete Note</a></h4>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>NotesDeleteCommand</code> performs.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After the successful parsing of user input, the <code>NotesDeleteCommand#execute(Model model)</code> method is called which checks if the <code>Index</code>
+is defined as an argument when instantiating the <code>NotesDeleteCommand(Index index)</code>  constructor.<br></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>Index</code> must be within the bounds of the student list.<br>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>The <code>Notes</code> at the specified <code>Index</code> is then removed from the <code>UniqueNotesList#notes</code> observable list using the
+<code>Model#deleteNote(Index index)</code> method.</p>
+</li>
+<li>
+<p>The command box will be reflected with the <code>NotesDeleteCommand#MESSAGE_SUCCESS</code> constant and a new <code>CommandResult</code> will
+be returned with the success message.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/developerguide/notes/NotesDeleteActivityDiagram.png" alt="NotesDeleteActivityDiagram">
+</div>
+<div class="title">Figure 17. Activity Diagram for Deleting Note</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="filter-notes"><a class="link" href="#filter-notes">7.5.5. Filter Notes</a></h4>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>NotesFilterCommand</code> performs.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After the successful parsing of user input, the <code>NotesFilterCommand#execute(Model model)</code> method is called which checks if the
+<code>NotesContainsKeywordsPredicate(keywords)</code> is defined as part of the argument when instantiating the
+<code>NotesFilterCommand(NotesContainsKeywordsPredicate predicate)</code> constructor</p>
+</li>
+<li>
+<p>The <code>Notes</code> is then searched through the <code>UniqueNotesList#notes</code> list&#8230;&#8203; &#8230;&#8203;</p>
+</li>
+<li>
+<p>The existing <code>UniqueNotesList#internalList</code> is then cleared and updated using the <code>Model#updateFilteredNotesList(Predicate predicate)</code>
+method.</p>
+</li>
+<li>
+<p>A new <code>CommandResult</code> will be returned with the success message.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="export-notes"><a class="link" href="#export-notes">7.5.6. Export Notes</a></h4>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>NotesExportCommand</code> performs.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After the successful parsing of user input, the <code>NotesExportCommand#execute(Model model)</code> method is called.</p>
+</li>
+<li>
+<p>The command box will be reflected with the <code>NotesExportCommand#MESSAGE_SUCCESS</code> constant and a new <code>CommandResult</code> will
+be returned with the success message.</p>
+</li>
+<li>
+<p>The <code>MainWindow</code> of the UI component will process the <code>CommandResult</code> and create a studentNotes.csv in the data folder of
+the current directory.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">7.5.7. Design Considerations</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Alternative 1 (Current Choice): Intuitive, simple syntax and user-friendly</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: It is easy for the Teacher to use the feature.</p>
+</li>
+<li>
+<p>Cons: Not as powerful and less utility for advanced users.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Alternative 2: Many additional fields including special tags, reminders, etc.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Powerful, many interesting features that advanced users can use.</p>
+</li>
+<li>
+<p>Cons: It contradicts with the initial goal of the Notes feature which is to enable quick and easy note-taking.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">7.6. [Proposed] Undo/Redo feature</a></h3>
+<div class="sect3">
+<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">7.6.1. Proposed Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
 It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
@@ -1386,7 +1645,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">7.5.2. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">7.6.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -1456,13 +1715,13 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">7.6. [Proposed] Data Encryption</a></h3>
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">7.7. [Proposed] Data Encryption</a></h3>
 <div class="paragraph">
 <p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">7.7. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">7.8. Logging</a></h3>
 <div class="paragraph">
 <p>This section describes how TeaPet record it&#8217;s logs.</p>
 </div>
@@ -1472,7 +1731,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 7.8, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 7.9, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1503,7 +1762,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">7.8. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">7.9. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2545,4 +2804,4 @@ Expected: Status bar displays invalid command and incorrect command format messa
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 08:19:32 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 12:50:51 UTC</div></div></div></body></html>
