@@ -12,7 +12,8 @@
 <div class="paragraph">
 <p>TeaPet is a personal manager application for primary school form teachers. The user interacts with it via
 a Command Line Interface (CLI) along with a Graphical User Interface (GUI) created with JavaFX. The application is
-written in Java.</p>
+written in Java and only Java 11 supports this application. TeaPet is meant for online tracking purposes. With that
+being said, there are future plans to expand the application to an online version.</p>
 </div>
 </div>
 </div>
@@ -22,29 +23,32 @@ written in Java.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: added <strong>the ability to undo/redo previous commands</strong></p>
+<p><strong>Major enhancement</strong>: added <strong>the ability for form teachers to track administrative information of the class</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: allows the user to undo all previous commands one at a time. Preceding undo commands can be reversed by using the redo command.</p>
+<p>What it does: The form teacher will be able to save, delete and view administrative details of the class.</p>
 </li>
 <li>
-<p>Justification: This feature improves the product significantly because a user can make mistakes in commands and the app should provide a convenient way to rectify them.</p>
+<p>Justification: The form teacher has to record administrative information of the class daily, hence this feature is essential for that purpose. With this feature, the form teacher can easily track
+the administrative information of the class whenever and wherever.</p>
 </li>
 <li>
-<p>Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.</p>
-</li>
-<li>
-<p>Credits: <em>{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}</em></p>
+<p>Highlights: This enhancement allows teachers to only save the most updated administrative list as today&#8217;s date to prevent mutability of other dates. The teacher is also able to view
+the dates that contains administrative information of the class.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: added a history command that allows the user to navigate to previous commands using up/down keys.</p>
+<p><strong>Minor enhancement</strong>: Added a temperature and attendance attribute to student class with the necessary restraints</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p><strong>Minor enhancement</strong>: Changed the way student edit function works. Previously, editing one field of the student results in that field to be edited and the rest being changed back to default value.
+Now, editing one field of the student still updates that specific field, but the rest of the fields are left untouched.</p>
+</li>
+<li>
+<p><strong>Code contributed</strong>: [<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=Yuanyu97&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false">Functional code and Test code</a>]_</p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -55,10 +59,16 @@ written in Java.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Team lead of the project, carved out the direction of project flow and ensured the team is up to date.</p>
+<p>Git master of the project. Managed the team&#8217;s repository and was in charge of the managing of the pull requests to prevent unnecessary merging of pull requests.</p>
 </li>
 <li>
-<p>Managed releases <code>v1.3</code> - <code>v1.5rc</code> (3 releases) on GitHub</p>
+<p>Helped teammates to fix their errors that resulted in travis build to fail.</p>
+</li>
+<li>
+<p>Helped teammates with testing errors.</p>
+</li>
+<li>
+<p>Explained to teammates the flow of AB3 to better help them understand the code and therefore aiding them in implementing their own features.</p>
 </li>
 </ul>
 </div>
@@ -68,10 +78,10 @@ written in Java.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
+<p>Loosened the restrain of tags to allow better flexibility of creating a tag (Pull request <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/228/files">#228</a>)</p>
 </li>
 <li>
-<p>Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
+<p>Added new restrains for name to make naming of a student to be more logical (Pull request <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/258/files">#258</a>)</p>
 </li>
 </ul>
 </div>
@@ -81,7 +91,13 @@ written in Java.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+<p>Updated User Guide to include Admin feature</p>
+</li>
+<li>
+<p>Updated User Guide with FAQs and the glossary</p>
+</li>
+<li>
+<p>Updated Developer Guide to include Admin feature</p>
 </li>
 </ul>
 </div>
@@ -91,29 +107,14 @@ written in Java.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
+<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/118">#118</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/112">#112</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/96">#96</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/78">#78</a>,
+<a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/74">#74</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/67">#67</a></p>
 </li>
 <li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
+<p>Contributed to forum discussions: <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/12">12</a></p>
 </li>
 <li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
-</li>
-<li>
-<p>Some parts of the history feature I added was adopted by several other class mates (<a href="https://github.com">1</a>, <a href="https://github.com">2</a>)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Tools:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Integrated a third party library (Natty) to the project (<a href="https://github.com">#42</a>)</p>
-</li>
-<li>
-<p>Integrated a new Github plugin (CircleCI) to the team repo</p>
+<p>Reported bugs and suggestions for other teams in the class: <a href="https://github.com/Yuanyu97/ped">Practical Exam Dry Run</a></p>
 </li>
 </ul>
 </div>
@@ -122,9 +123,6 @@ written in Java.</p>
 </div>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><em>{you can add/remove categories in the list above}</em></p>
 </div>
 </div>
 </div>
@@ -157,13 +155,4 @@ written in Java.</p>
 </tbody>
 </table>
 </div>
-</div>
-<div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
-<div class="sectionbody">
-<hr>
-<div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 18:59:48 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 20:20:18 UTC</div></div></div></body></html>
