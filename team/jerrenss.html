@@ -10,7 +10,7 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>TeaPet is a personal manager application for primary school form teachers. The user interacts with it via
+<p>TeaPet is a personal manager application for form teachers of primary, secondary and tertiary institutions. The user interacts with it via
 a Command Line Interface (CLI) along with a Graphical User Interface (GUI) created with JavaFX. The application is
 written in Java.</p>
 </div>
@@ -22,29 +22,60 @@ written in Java.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: added <strong>the ability to undo/redo previous commands</strong></p>
+<p><strong>Major enhancement</strong>: developed the <strong>notes feature</strong> of Teapet</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: allows the user to undo all previous commands one at a time. Preceding undo commands can be reversed by using the redo command.</p>
+<p>What it does: Allows the user to create notes of his/her students spontaneously, functioning as a digitaal "Post-It".</p>
 </li>
 <li>
-<p>Justification: This feature improves the product significantly because a user can make mistakes in commands and the app should provide a convenient way to rectify them.</p>
+<p>Justification: This feature is crucial in a teacher&#8217;s daily workflow. There might be instances throughout the day where
+the user wishes to jot down important information of his/her student, such as the student leaving school early due to
+commitments. The teacher can also note down behavioural information whenever neccessary, to prepare for parent-teacher meeting
+and year-end student reviews. The notes feature will manage all student information all within a few simple commands.</p>
 </li>
 <li>
-<p>Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.</p>
-</li>
-<li>
-<p>Credits: <em>{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}</em></p>
+<p>Highlights: This enhancement features different priority of notes (Low, Medium and High), each displayed with a different colour.
+Users are able to create, edit, delete, filter and export notes in TeaPet.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: added a history command that allows the user to navigate to previous commands using up/down keys.</p>
+<p><strong>Major enhancement</strong>: developed the UI/UX (User Interface / User Experience) of Teapet</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Provides an optimal and pleasant interaction between User and TeaPet.</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p>Justification: In every product, a well-developed UI/UX is key to getting a User interested in using the application for
+a sustained period of time. TeaPet aims to create an attractive display and pleasant experience for all our Users.</p>
+</li>
+<li>
+<p>Highlights: This enhancement saw a makeover of the original AddressBook3 interface. Colours of each component in the application
+is carefully chosen to create a good blend. The tabs at the top of the applications also lights up when a particular feature is
+in use, such that the user is clear on which feature he/she is on.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Created a <code>student default</code> command, which displays only essential personal information of all students in the Main Display.</p>
+</li>
+<li>
+<p>Created a <code>student detailed</code> command, which displays all information of every student in the Main Display, including
+personal, administrative and academic information.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Code contributed</strong>: [<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=jerrenss&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false">Functional and Test code</a>]</p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -55,7 +86,16 @@ written in Java.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Managed releases <code>v1.3</code> - <code>v1.5rc</code> (3 releases) on GitHub</p>
+<p>Managed all releases of the team <code>v1.1</code> - <code>v1.4</code> (5 releases) on GitHub</p>
+</li>
+<li>
+<p>Managed all milestones (inclusive of unofficial team milestones) of the team on GitHub.</p>
+</li>
+<li>
+<p>Consistently reminded the team to complete their tasks assigned by the deadline provided.</p>
+</li>
+<li>
+<p>Structured the project folders in the repository for the team, to enable a clean and effective workflow.</p>
 </li>
 </ul>
 </div>
@@ -65,10 +105,13 @@ written in Java.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
+<p>Updated the GUI color scheme (Pull requests <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/202">#202</a>)</p>
 </li>
 <li>
-<p>Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
+<p>Updated the GUI layout (Pull requests <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/201">#201</a> <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/204">#204</a>)</p>
+</li>
+<li>
+<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/230">#230</a></p>
 </li>
 </ul>
 </div>
@@ -78,7 +121,16 @@ written in Java.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+<p>Updated User Guide to include Notes Feature</p>
+</li>
+<li>
+<p>Updated User Guide with the Installation details of TeaPet, as well as help on how to navigate the User Interface.</p>
+</li>
+<li>
+<p>Updated Developer Guide to include Notes Feature</p>
+</li>
+<li>
+<p>Updated Developer Guide to include "student detailed" and "student default" commands.</p>
 </li>
 </ul>
 </div>
@@ -88,16 +140,11 @@ written in Java.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
+<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/66">#66</a>,
+<a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/95">#95</a></p>
 </li>
 <li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
-</li>
-<li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
-</li>
-<li>
-<p>Some parts of the history feature I added was adopted by several other class mates (<a href="https://github.com">1</a>, <a href="https://github.com">2</a>)</p>
+<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com/jerrenss/ped">Practical Exam Dry Run</a>)</p>
 </li>
 </ul>
 </div>
@@ -107,10 +154,7 @@ written in Java.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Integrated a third party library (Natty) to the project (<a href="https://github.com">#42</a>)</p>
-</li>
-<li>
-<p>Integrated a new Github plugin (CircleCI) to the team repo</p>
+<p>Introduced iCalendar API to the team, which was then used to build TeaPet&#8217;s Personal Scheduler feature.</p>
 </li>
 </ul>
 </div>
@@ -119,9 +163,6 @@ written in Java.</p>
 </div>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><em>{you can add/remove categories in the list above}</em></p>
 </div>
 </div>
 </div>
@@ -153,14 +194,9 @@ written in Java.</p>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
-<div class="sectionbody">
 <hr>
 <div class="paragraph">
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 14:22:30 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 17:05:12 UTC</div></div></div></body></html>
