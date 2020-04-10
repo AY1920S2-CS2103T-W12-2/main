@@ -31,10 +31,9 @@
 <li><a href="#personal-schedule-feature">7.3. Personal Schedule feature</a></li>
 <li><a href="#class-administration-feature">7.4. Class administration feature</a></li>
 <li><a href="#notes-feature">7.5. Notes feature</a></li>
-<li><a href="#proposed-undo-redo-feature">7.6. [Proposed] Undo/Redo feature</a></li>
-<li><a href="#proposed-data-encryption">7.7. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">7.8. Logging</a></li>
-<li><a href="#Implementation-Configuration">7.9. Configuration</a></li>
+<li><a href="#schedule-feature">7.6. Schedule feature</a></li>
+<li><a href="#logging">7.7. Logging</a></li>
+<li><a href="#Implementation-Configuration">7.8. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">8. Documentation</a></li>
@@ -42,17 +41,23 @@
 <li><a href="#dev-ops">10. Dev Ops</a></li>
 <li><a href="#product-scope">Appendix A: Product Scope</a></li>
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
-<li><a href="#use-cases">Appendix C: Use Cases</a></li>
+<li><a href="#use-cases">Appendix C: Use Cases</a>
+<ul class="sectlevel2">
+<li><a href="#use-case-uc12-add-event-into-schedule">C.1. Use case: UC12 - Add event into schedule</a></li>
+<li><a href="#use-case-uc13-delete-event-from-schedule">C.2. Use case: UC13 - Delete event from schedule</a></li>
+<li><a href="#use-case-uc14-update-student-profile-picture">C.3. Use case: UC14 - Update student profile picture</a></li>
+</ul>
+</li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
 <li><a href="#product-survey">Appendix F: Product Survey</a></li>
 <li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#adding-a-student">G.2. Adding a student</a></li>
-<li><a href="#deleting-a-student">G.3. Deleting a student</a></li>
-<li><a href="#saving-a-date">G.4. Saving a date</a></li>
-<li><a href="#deleting-a-date">G.5. Deleting a date</a></li>
+<li><a href="#manual-test-student-particulars">G.2. Manual Test: Student particulars</a></li>
+<li><a href="#saving-a-date">G.3. Saving a date</a></li>
+<li><a href="#deleting-a-date">G.4. Deleting a date</a></li>
+<li><a href="#manual-test-scheduler">G.5. Manual Test: Scheduler</a></li>
 </ul>
 </li>
 </ul>
@@ -386,7 +391,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
 <div class="paragraph">
-<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>delete 1</code>.</p>
+<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>{Entity Name} delete 1</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -450,7 +455,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>Logic</code> uses the <code>AddressBookParser</code> class to parse the user command.</p>
+<p><code>Logic</code> uses the <code>TeaPetParser</code> class to parse the user command.</p>
 </li>
 <li>
 <p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
@@ -497,7 +502,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
 </div>
-<div class="title">Figure 7. Structure of the Model Component</div>
+<div class="title">Figure 7. Structure of the Model Component using <code>Student</code> as an example.</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
@@ -511,7 +516,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
 </li>
 <li>
-<p>stores the Address Book data.</p>
+<p>stores the data of different Entities.</p>
 </li>
 <li>
 <p>stores the Notes data.</p>
@@ -590,9 +595,6 @@ The feature comprises of commands namely,</p>
 <li>
 <p><code>FindCommand</code> - Finds information of the required student</p>
 </li>
-<li>
-<p><code>RefreshCommand</code> - Refreshes the student list to update profile pictures</p>
-</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -605,7 +607,7 @@ which shows the sequence diagram for the StudentAddCommand.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/student_sequence_diagram.png" alt="student sequence diagram">
+<img src="images/student_sequence_diagram_v1.png" alt="student sequence diagram v1">
 </div>
 <div class="title">Figure 9. Sequence Diagram for StudentAddCommand</div>
 </div>
@@ -629,11 +631,11 @@ which shows the sequence diagram for the StudentAddCommand.</p>
 </ol>
 </div>
 <div class="sect3">
-<h4 id="Feature-Add"><a class="link" href="#Feature-Add">7.1.1. Add command</a></h4>
+<h4 id="Feature-Add"><a class="link" href="#Feature-Add">7.1.1. Student Add command</a></h4>
 <div class="sect4">
 <h5 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h5>
 <div class="paragraph">
-<p>The following is a detailed explanation of the operations which <code>AddCommand</code> performs.</p>
+<p>The following is a detailed explanation of the operations which <code>StudentAddCommand</code> performs.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -668,11 +670,11 @@ either a unknown command or wrong format error message will be displayed.
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-command"><a class="link" href="#edit-command">7.1.2. Edit command</a></h4>
+<h4 id="student-edit-command"><a class="link" href="#student-edit-command">7.1.2. Student Edit command</a></h4>
 <div class="sect4">
 <h5 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h5>
 <div class="paragraph">
-<p>The following is a detailed explanation of the operations which <code>EditCommand</code> performs.</p>
+<p>The following is a detailed explanation of the operations which <code>StudentEditCommand</code> performs.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -697,7 +699,7 @@ returned with the success message.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete-command"><a class="link" href="#delete-command">7.1.3. Delete command</a></h4>
+<h4 id="student-delete-command"><a class="link" href="#student-delete-command">7.1.3. Student Delete command</a></h4>
 <div class="sect4">
 <h5 id="implementation-4"><a class="link" href="#implementation-4">Implementation</a></h5>
 <div class="paragraph">
@@ -734,7 +736,7 @@ be returned with the success message.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="find-command"><a class="link" href="#find-command">7.1.4. Find command</a></h4>
+<h4 id="student-find-command"><a class="link" href="#student-find-command">7.1.4. Student Find command</a></h4>
 <div class="sect4">
 <h5 id="implementation-5"><a class="link" href="#implementation-5">Implementation</a></h5>
 <div class="paragraph">
@@ -896,6 +898,18 @@ prints its contents on the Command Result Box.
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes the <code>student refresh</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/activity_diagram_refresh.png" alt="activity diagram refresh">
+</div>
+<div class="title">Figure 11. Activity Diagram for StudentRefreshCommand</div>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
 </div>
 </div>
 </div>
@@ -923,7 +937,7 @@ The feature comprises of four commands namely.</p>
 <div class="content">
 <img src="images/AdminClassDiagram.png" alt="AdminClassDiagram">
 </div>
-<div class="title">Figure 11. Admin Commands Diagram</div>
+<div class="title">Figure 12. Admin Commands Diagram</div>
 </div>
 <div class="paragraph">
 <p>These are the various admin commands to try:</p>
@@ -1083,7 +1097,7 @@ displayed.
 <div class="content">
 <img src="images/AdminSaveActivityDiagram.png" alt="AdminSaveActivityDiagram">
 </div>
-<div class="title">Figure 12. Admin Save Activity Diagram</div>
+<div class="title">Figure 13. Admin Save Activity Diagram</div>
 </div>
 </div>
 <div class="sect4">
@@ -1196,7 +1210,7 @@ specified date from <code>UniqueDateList</code>.</p>
 <div class="content">
 <img src="images/AdminDeleteSequenceDiagram.png" alt="AdminDeleteSequenceDiagram">
 </div>
-<div class="title">Figure 13. Admin Delete Sequence Diagram</div>
+<div class="title">Figure 14. Admin Delete Sequence Diagram</div>
 </div>
 </div>
 </div>
@@ -1236,10 +1250,6 @@ The sequence diagram for <code>admin fetch</code> command is similar to that of 
 </tr>
 </table>
 </div>
-<div class="sect5">
-<h6 id="implementation-11"><a class="link" href="#implementation-11">Implementation</a></h6>
-
-</div>
 </div>
 </div>
 <div class="sect2">
@@ -1277,7 +1287,7 @@ information of his/her students. Each note is tagged to a specific student and a
 <div class="content">
 <img src="images/developerguide/notes/NotesClassDiagram.png" alt="NotesClassDiagram">
 </div>
-<div class="title">Figure 14. Class Diagram for NotesCommands.</div>
+<div class="title">Figure 15. Class Diagram for NotesCommands.</div>
 </div>
 <div class="sect3">
 <h4 id="structure-of-notes-class"><a class="link" href="#structure-of-notes-class">7.5.1. Structure of Notes Class</a></h4>
@@ -1347,13 +1357,13 @@ or wrong format error message will be displayed.
 <div class="content">
 <img src="images/developerguide/notes/NotesAddSequence.png" alt="NotesAddSequence">
 </div>
-<div class="title">Figure 15. Sequence Diagram for Adding Notes.</div>
+<div class="title">Figure 16. Sequence Diagram for Adding Notes.</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/developerguide/notes/SDGetNotesAddCommand.png" alt="SDGetNotesAddCommand">
 </div>
-<div class="title">Figure 16. Supplementary Frame for Sequence Diagram.</div>
+<div class="title">Figure 17. Supplementary Frame for Sequence Diagram.</div>
 </div>
 </div>
 <div class="sect3">
@@ -1417,7 +1427,7 @@ be returned with the success message.</p>
 <div class="content">
 <img src="images/developerguide/notes/NotesDeleteActivityDiagram.png" alt="NotesDeleteActivityDiagram">
 </div>
-<div class="title">Figure 17. Activity Diagram for Deleting Note</div>
+<div class="title">Figure 18. Activity Diagram for Deleting Note</div>
 </div>
 </div>
 <div class="sect3">
@@ -1501,227 +1511,146 @@ the current directory.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">7.6. [Proposed] Undo/Redo feature</a></h3>
+<h3 id="schedule-feature"><a class="link" href="#schedule-feature">7.6. Schedule feature</a></h3>
 <div class="sect3">
-<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">7.6.1. Proposed Implementation</a></h4>
+<h4 id="overview"><a class="link" href="#overview">7.6.1. Overview</a></h4>
 <div class="paragraph">
-<p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
-It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
-Additionally, it implements the following operations:</p>
+<p>The schedule feature enables teachers to add, delete, edit and view events in their personal scheduler. This feature is built
+based on the Jfxtras iCalendarAgenda library. The iCalendarAgenda object is used on the UI side to render VEvents. The VEvent
+object takes in data such as event name, start date time, end date time, recurrence of events, etc.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+VEvent object is used primarily throughout the application as it is the required object type for the iCalendarAgenda library.
+Hence, at the storage level, the Event objects are mapped to VEvents for reading purposes and vice versa for saving purposes.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The feature comprises of the the following commands:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>VersionedAddressBook#commit()</code>&#8201;&#8212;&#8201;Saves the current address book state in its history.</p>
-</li>
-<li>
-<p><code>VersionedAddressBook#undo()</code>&#8201;&#8212;&#8201;Restores the previous address book state from its history.</p>
-</li>
-<li>
-<p><code>VersionedAddressBook#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone address book state from its history.</p>
+<p><code>EventAddCommand</code> - Creates a new event.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> and <code>Model#redoAddressBook()</code> respectively.</p>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
-</div>
-<div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>VersionedAddressBook</code> will be initialized with the initial address book state, and the <code>currentStatePointer</code> pointing to that single address book state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState0.png" alt="UndoRedoState0">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th student in the address book. The <code>delete</code> command calls <code>Model#commitAddressBook()</code>, causing the modified state of the address book after the <code>delete 5</code> command executes to be saved in the <code>addressBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted address book state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState1.png" alt="UndoRedoState1">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new student. The <code>add</code> command also calls <code>Model#commitAddressBook()</code>, causing another modified address book state to be saved into the <code>addressBookStateList</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState2.png" alt="UndoRedoState2">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If a command fails its execution, it will not call <code>Model#commitAddressBook()</code>, so the address book state will not be saved into the <code>addressBookStateList</code>.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 4. The user now decides that adding the student was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous address book state, and restores the address book to that state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState3.png" alt="UndoRedoState3">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index 0, pointing to the initial address book state, then there are no previous address book states to restore. The <code>undo</code> command uses <code>Model#canUndoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the undo operation works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoSequenceDiagram.png" alt="UndoSequenceDiagram">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoAddressBook()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the address book to that state.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index <code>addressBookStateList.size() - 1</code>, pointing to the latest address book state, then there are no undone address book states to restore. The <code>redo</code> command uses <code>Model#canRedoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the address book, such as <code>list</code>, will usually not call <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> or <code>Model#redoAddressBook()</code>. Thus, the <code>addressBookStateList</code> remains unchanged.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState4.png" alt="UndoRedoState4">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitAddressBook()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>addressBookStateList</code>, all address book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState5.png" alt="UndoRedoState5">
-</div>
-</div>
-<div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a new command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/CommitActivityDiagram.png" alt="CommitActivityDiagram">
-</div>
+<p>To add:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">7.6.2. Design Considerations</a></h4>
+<h4 id="class-overview"><a class="link" href="#class-overview">7.6.2. Class Overview</a></h4>
+<div class="paragraph">
+<p>The class diagram below shows the interactions between events classes in the <code>Model</code>. Notice how the <code>EventHistory</code> class depends
+on the <code>Event</code> class in its constructor but only has a <code>VEvent</code> attribute. This is because an <code>Event</code> object will always be
+mapped to a <code>VEvent</code> within the <code>EventHistory</code> class. Some methods of <code>EventHistory</code> has been omitted for brevity as they are
+mostly <code>VEvent</code> based, which then again highlights that the interactions with the <code>Logic</code> and <code>UI</code> components are mostly done
+using the <code>VEvent</code> type class. Only the <code>Storage</code> component works with <code>Event</code> type class.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/schedule_class_diagram.png" alt="schedule class diagram">
+</div>
+<div class="title">Figure 19. Schedule Class Diagram</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="schedule-add-command"><a class="link" href="#schedule-add-command">7.6.3. Schedule Add Command</a></h4>
 <div class="sect4">
-<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire address book.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy to implement.</p>
-</li>
-<li>
-<p>Cons: May have performance issues in terms of memory usage.</p>
-</li>
-</ul>
+<h5 id="implementation-11"><a class="link" href="#implementation-11">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation which <code>schedule add</code> performs.</p>
 </div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the student being deleted).</p>
-</li>
-<li>
-<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p><strong>Step 1:</strong> The <code>EventAddCommand#execute(Model model)</code> method is called which validates if the <code>VEvent</code> object from
+the parser is valid.</p>
 </div>
-</li>
-</ul>
+<div class="paragraph">
+<p><strong>Step 2:</strong> The method <code>Model#addVEvent(VEvent vEvent)</code> is then called which adds the new <code>VEvent</code> to the <code>EventHistory</code>.
+The <code>VEvent</code> is validated to check if it is unique using the <code>EventUtil#isEqualVEvent(VEvent vEvent)</code> method.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3:</strong> If the event is invalid, a <code>CommandException</code> will throw an error message. Else, a new <code>CommandResult</code> will
+be returned with the success message.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 4:</strong> The <code>LogicManager</code> then calls the <code>Storage#saveEvents(ReadOnlyEvents readOnlyEvents)</code> which saves the
+<code>EventHistory</code> in JSON format after serializing it using the <code>JsonEventStorage</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>ReadOnlyEvents</code> and <code>ReadOnlyVEvents</code> interfaces are an abstraction of the implementation of the <code>EventHistory</code>
+from other layers of the application.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes the <code>schedule add</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/event_add_activity_diagram.png" alt="event add activity diagram">
+</div>
+<div class="title">Figure 20. Schedule Add Activity Diagram</div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
+<h5 id="design-considerations-4"><a class="link" href="#design-considerations-4">Design Considerations</a></h5>
+<div class="sect5">
+<h6 id="aspect-command-clarity"><a class="link" href="#aspect-command-clarity">Aspect: Command Clarity:</a></h6>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of address book states.</p>
+<p><strong>Current Implementation:</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
+<p><code>schedule add eventName/Consultation startDateTime/2020-04-08T09:00 endDateTime/2020-04-08T11:00 recur/none color/13</code></p>
 </li>
 <li>
-<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedAddressBook</code>.</p>
+<p>We currently have full names for prefixes such as eventName/ instead of name/, as well as slightly lengthier prefixes such as
+startDateTime/ and endDateTime/. Although this may be slightly more tedious, we believe that it is clearer as there are other
+very similar prefixes in our other features such as name/ and date/.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Use <code>HistoryManager</code> for undo/redo</p>
+<p><strong>Alternatives Considered:</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.</p>
+<p><code>schedule add name/Consultation startDateTime/2020-04-08T09:00 endDateTime/2020-04-08T11:00 recur/none color/13</code></p>
 </li>
 <li>
-<p>Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.</p>
+<p>By doing this, users may be confused as the Academics feature, Student feature and Notes feature require name as a prefix
+as well. Furthermore, the name required here is not the name of the student but the name of the event.</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">7.7. [Proposed] Data Encryption</a></h3>
-<div class="paragraph">
-<p><em>{Explain here how the data encryption feature will be implemented}</em></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">7.8. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">7.7. Logging</a></h3>
 <div class="paragraph">
 <p>This section describes how TeaPet record it&#8217;s logs.</p>
 </div>
@@ -1731,7 +1660,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 7.9, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 7.8, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1762,7 +1691,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">7.9. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">7.8. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2490,8 +2419,119 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
+<div class="sect2">
+<h3 id="use-case-uc12-add-event-into-schedule"><a class="link" href="#use-case-uc12-add-event-into-schedule">C.1. Use case: UC12 - Add event into schedule</a></h3>
 <div class="paragraph">
-<p><em>{More to be added}</em></p>
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Teacher wishes to add an event into the scheduler</p>
+</li>
+<li>
+<p>Teacher enters the event details.</p>
+</li>
+<li>
+<p>TeaPet saves the item and displays it on the scheduler.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. Item is missing details</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2a1. Teapet displays an error message.<br>
+Use case resumes at step 2.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-uc13-delete-event-from-schedule"><a class="link" href="#use-case-uc13-delete-event-from-schedule">C.2. Use case: UC13 - Delete event from schedule</a></h3>
+<div class="paragraph">
+<p><strong>Preconditions</strong>
+1. Event exists in scheduler.</p>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Teacher lists the events in calendar (UC12)</p>
+</li>
+<li>
+<p>Teacher wishes to delete an event.</p>
+</li>
+<li>
+<p>Teacher confirms the deletion.</p>
+</li>
+<li>
+<p>TeaPet deletes the event from the scheduler.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. Teacher reconsiders and chooses not to remove the event.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-uc14-update-student-profile-picture"><a class="link" href="#use-case-uc14-update-student-profile-picture">C.3. Use case: UC14 - Update student profile picture</a></h3>
+<div class="paragraph">
+<p><strong>Preconditions</strong>
+1. Png files in image folder is in correct format.</p>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Teacher wants to update image of students.</p>
+</li>
+<li>
+<p>Teacher adds in the respective images into the image folder.</p>
+</li>
+<li>
+<p>TeaPet confirms the process.</p>
+</li>
+<li>
+<p>TeaPet updates the profile pictures of students in the student list.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
 </div>
 </div>
 </div>
@@ -2703,7 +2743,7 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-student"><a class="link" href="#adding-a-student">G.2. Adding a student</a></h3>
+<h3 id="manual-test-student-particulars"><a class="link" href="#manual-test-student-particulars">G.2. Manual Test: Student particulars</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2711,27 +2751,28 @@ Expected: The most recent window size and location is retained.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Test case: <code>student add n/John Tan Jun Wei p/83391329 e/john@gmail.com temp/36.0 a/Punggol Street 22</code><br>
+<p>Test case: <code>student add name/John Tan Jun Wei phone/83391329 email/john@gmail.com temp/36.0 addr/Punggol Street 22 nok/James-father-93259589</code><br>
 Expected: Student John Tan Jun Wei has been added to the class list.</p>
 </li>
 <li>
-<p>Test case: <code>student add n/John Tan Jun Wei p/83393129 e/john@gmail.com temp/3@.5 a/Punggol Street 22</code><br>
+<p>Test case: <code>student add name/John Tan Jun Wei phone/83393129 e/john@gmail.com temp/3@.5 addr/Punggol Street 22 nok/James-father-93259589</code><br>
 Expected: No student is added. Error details shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>student add John Tan Jun Wei</code>, <code>student add n/John Tan Jun Wei p/phone number</code> (where the specified student is not a student in the class list due to invalid phone number.) <em>{give more}</em><br>
-Expected: Similar to test case b.</p>
+<p>Test case: <code>student add name/John Tan Jun Wei phone/839 email/john@gmail.com temp/36.0 addr/Punggol Street 22 nok/James-father-93259589</code><br>
+Expected: An error message is shown as the phone number of student is invalid.</p>
+</li>
+<li>
+<p>Test case: <code>student add name/John Tan Jun Wei phone/83391329 email/john@gmail.com temp/36.0 addr/Punggol Street 22 nok/James-dad-93259589</code><br>
+Expected: An error message is shown as the relationship of NOK is not recognised.</p>
+</li>
+<li>
+<p>Test case: <code>student add name/John333 phone/83391329 email/john@gmail.com temp/36.0 addr/Punggol Street 22 nok/James-father-93259589</code><br>
+Expected: An error message is shown as the name of student cannot contain numbers.</p>
 </li>
 </ol>
 </div>
 </li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deleting-a-student"><a class="link" href="#deleting-a-student">G.3. Deleting a student</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
 <li>
 <p>Deleting a student from class list with the specific name entered by user.</p>
 <div class="olist loweralpha">
@@ -2755,7 +2796,7 @@ Expected: Similar to test case b.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-a-date"><a class="link" href="#saving-a-date">G.4. Saving a date</a></h3>
+<h3 id="saving-a-date"><a class="link" href="#saving-a-date">G.3. Saving a date</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2779,7 +2820,7 @@ Expected: Status bar displays invalid command and incorrect command format messa
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-date"><a class="link" href="#deleting-a-date">G.5. Deleting a date</a></h3>
+<h3 id="deleting-a-date"><a class="link" href="#deleting-a-date">G.4. Deleting a date</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2803,5 +2844,52 @@ Expected: Status bar displays invalid command and incorrect command format messa
 </ol>
 </div>
 </div>
+<div class="sect2">
+<h3 id="manual-test-scheduler"><a class="link" href="#manual-test-scheduler">G.5. Manual Test: Scheduler</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding an event to the scheduler</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The scheduler already contain an event with name "Coffee Break", startDateTime "2020-04-04T12:00", endDateTime "2020-04-04T13:00".
+The recurrence type and color do not matter as long as they are valid.</p>
+</li>
+<li>
+<p>Test case: <code>schedule add eventName/Consultation startDateTime/2020-04-10T10:00 endDateTime/2020-04-10T12:00 recur/none
+color/5</code><br>
+Expected: An event with name Consultation is added to the scheduler</p>
+</li>
+<li>
+<p>Test case:  <code>schedule add eventName/Coffee Break startDateTime/2020-04-04T12:00 endDateTime/2020-04-04T13:00 recur/none
+color/5</code><br>
+Expected: An error message is shown due to duplicate events being created.</p>
+</li>
+<li>
+<p>Test case: `schedule add eventName/ `<br>
+Expected: An error message is shown due to invalid command.</p>
+</li>
+<li>
+<p>Test case: <code>schedule add eventName/Consultation startDateTime/2020-04-10T10:00 endDateTime/2020-04-10T12:00 recur/none
+color/24</code><br>
+Expected: An error message is shown due to an invalid color code.</p>
+</li>
+<li>
+<p>Test case: <code>schedule add eventName/Consultation startDateTime/2020-04-10T10:00 endDateTime/2020-04-10T12:00 recur/fortnightly
+color/5</code>
+Expected: An error message is shown due to invalid recurrence type.</p>
+</li>
+<li>
+<p>Test case: <code>schedule add eventName/Consultation startDateTime/2020-04-10T13:00 endDateTime/2020-04-10T12:00 recur/none
+color/5</code>
+Expected: An error message is shown due to the invalid date time range.</p>
+</li>
+</ol>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 12:50:51 UTC</div></div></div></body></html>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 14:22:30 UTC</div></div></div></body></html>
