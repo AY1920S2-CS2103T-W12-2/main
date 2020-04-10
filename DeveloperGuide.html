@@ -50,7 +50,8 @@
 <li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
 <li><a href="#adding-a-student">G.2. Adding a student</a></li>
 <li><a href="#deleting-a-student">G.3. Deleting a student</a></li>
-<li><a href="#saving-data">G.4. Saving data</a></li>
+<li><a href="#saving-a-date">G.4. Saving a date</a></li>
+<li><a href="#deleting-a-date">G.5. Deleting a date</a></li>
 </ul>
 </li>
 </ul>
@@ -2012,17 +2013,23 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc08-display-detailed-class-list" class="discrete">Use case: UC08 - Display detailed class list.</h3>
+<h3 id="use-case-uc08-deleting-a-date-from-the-list-of-dates" class="discrete">Use case: UC08 - Deleting a date from the list of dates.</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User enters the command to display the detailed version of the class list.</p>
+<p>User enters the command to delete a specific date from the list of dates.</p>
 </li>
 <li>
-<p>TeaPet displays the class list with all of the students' attributes.</p>
+<p>TeaPet searches through the list of dates for the date provided by the user.</p>
+</li>
+<li>
+<p>TeaPet removes that date from the date list.</p>
+</li>
+<li>
+<p>TeaPet displays that the date has been deleted successfully.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2049,17 +2056,68 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc09-display-the-class-list" class="discrete">Use case: UC09 - Display the class list.</h3>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b. Command is in incorrect format.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. TeaPet shows an error message displaying the correct format for the command.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1c. Date is in incorrect format.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1c1. TeaPet shows an error message displaying the correct format for date.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. Date provided is not in the list of dates.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. TeaPet shows an error message displaying date is not found.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc09-display-detailed-class-list" class="discrete">Use case: UC09 - Display detailed class list.</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User enters the command to list the students in the class.</p>
+<p>User enters the command to display the detailed version of the class list.</p>
 </li>
 <li>
-<p>TeaPet displays default class list..</p>
+<p>TeaPet displays the class list with all of the students' attributes.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2123,7 +2181,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc07-add-note-for-specific-student" class="discrete">Use case: UC07 - Add note for specific student</h3>
+<h3 id="use-case-uc11-add-note-for-specific-student" class="discrete">Use case: UC11 - Add note for specific student</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -2384,9 +2442,6 @@ Expected: The most recent window size and location is retained.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
 </div>
 <div class="sect2">
 <h3 id="adding-a-student"><a class="link" href="#adding-a-student">G.2. Adding a student</a></h3>
@@ -2397,24 +2452,21 @@ Expected: The most recent window size and location is retained.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Test case: <code>add n/John Tan Jun Wei p/83391329 e/john@gmail.com temp/36.0 a/Punggol Street 22</code><br>
+<p>Test case: <code>student add n/John Tan Jun Wei p/83391329 e/john@gmail.com temp/36.0 a/Punggol Street 22</code><br>
 Expected: Student John Tan Jun Wei has been added to the class list.</p>
 </li>
 <li>
-<p>Test case: <code>add n/John Tan Jun Wei p/83393129 e/john@gmail.com temp/3@.5 a/Punggol Street 22</code><br>
+<p>Test case: <code>student add n/John Tan Jun Wei p/83393129 e/john@gmail.com temp/3@.5 a/Punggol Street 22</code><br>
 Expected: No student is added. Error details shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>add John Tan Jun Wei</code>, <code>add n/John Tan Jun Wei p/phone number</code> (where the specified student is not a student in the class list due to invalid phone number.) <em>{give more}</em><br>
+<p>Other incorrect delete commands to try: <code>student add John Tan Jun Wei</code>, <code>student add n/John Tan Jun Wei p/phone number</code> (where the specified student is not a student in the class list due to invalid phone number.) <em>{give more}</em><br>
 Expected: Similar to test case b.</p>
 </li>
 </ol>
 </div>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
 </div>
 <div class="sect2">
@@ -2426,7 +2478,7 @@ Expected: Similar to test case b.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Test case: <code>delete 1</code><br>
+<p>Test case: <code>student delete 1</code><br>
 Expected: The student at the first index is deleted from the list. Status message displays that the specified student has been deleted.</p>
 </li>
 <li>
@@ -2442,29 +2494,55 @@ Expected: Similar to test case b.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.4. Saving data</a></h3>
+<h3 id="saving-a-date"><a class="link" href="#saving-a-date">G.4. Saving a date</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Dealing with missing/corrupted data files.</p>
+<p>Saving the most updated class administrative information as today&#8217;s date.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><em>{explain how to simulate a missing/corrupted file and the expected behavior}</em></p>
+<p>Test case: <code>admin save</code><br>
+Expected: Date has either been saved if today&#8217;s date is not in the list of dates, or date not saved if today&#8217;s date is
+already in the list of dates. Status message either displays that today&#8217;s date has been saved or displays that current date
+already exists in the current list of dates respectively.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>save</code>, <code>admin save DATE</code> where <code>DATE</code> is in YYYY-MM-DD format.<br>
+Expected: Status bar displays invalid command and incorrect command format message respectively.</p>
 </li>
 </ol>
 </div>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-date"><a class="link" href="#deleting-a-date">G.5. Deleting a date</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a date from the list of dates.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>admin delete DATE</code> where DATE is in YYYY-MM-DD format.<br>
+Expected: Date has either been deleted if the date provided exists in the list of dates, or no dates will be deleted if the
+date provided is not in the list. Status message either displays that the specific date has been deleted or displays that current date
+already exists in the current list of dates respectively.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>admin delete</code>, <code>delete DATE</code>, <code>admin delete `DATE</code>, where <code>DATE</code> is in
+YYYY-MM-DD format and <code>`DATE</code> is in the wrong <code>DATE</code> format.<br>
+Expected: Status bar displays invalid command and incorrect command format message.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-09 19:02:26 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 08:19:32 UTC</div></div></div></body></html>
