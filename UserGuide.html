@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>TeaPet - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>TeaPet - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://github.com/AY1920S2-CS2103T-W12-2/main"><img src="images/official_teapet.png" alt="TeaPet"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>TeaPet - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>CS2103T-W12-2</code>      Since: <code>Feb 2020</code>      Licence: <code>MIT</code></p>
@@ -31,7 +31,8 @@
 <li><a href="#add-student-code-add-code">4.1.3. Add Student: <code>add</code></a></li>
 <li><a href="#edit-student-code-edit-code">4.1.4. Edit Student: <code>edit</code></a></li>
 <li><a href="#delete-student-code-delete-code">4.1.5. Delete Student: <code>delete</code></a></li>
-<li><a href="#find-student-code-find-code">4.1.6. Find Student: <code>find</code></a></li>
+<li><a href="#clear-student-list-code-clear-code">4.1.6. Clear Student List: <code>clear</code></a></li>
+<li><a href="#find-student-code-find-code">4.1.7. Find Student: <code>find</code></a></li>
 </ul>
 </li>
 <li><a href="#admin">4.2. Student Administration [Done by Zhang Yuan Yu]</a>
@@ -76,7 +77,6 @@
 <ul class="sectlevel3">
 <li><a href="#update-profile">4.6.1. Update Profile Picture</a></li>
 <li><a href="#update-profile">4.6.2. All in one help window</a></li>
-<li><a href="#various-display-modes">4.6.3. Various Display Modes</a></li>
 </ul>
 </li>
 </ul>
@@ -280,11 +280,11 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>student add</code></strong><code>n/Kelvin Klein  p/9001 5588 e/kelvink@egmail.com a/Toa Payoh Avenue 1, Block 123, #01-01</code>
+<p><strong><code>student add</code></strong><code>name/Kelvin Klein</code>
 : adds a contact named Kelvin Klein to the Class List.</p>
 </li>
 <li>
-<p><strong><code>student delete</code></strong><code>3</code> : deletes the 3rd student shown in the current list of students.</p>
+<p><code>student delete 3</code> : deletes the 3rd student shown in the current list of students.</p>
 </li>
 <li>
 <p><strong><code>exit</code></strong> : exits the app</p>
@@ -313,7 +313,7 @@ If you have any questions, please check out our <a href="#FAQ">Section 7, &#8220
 <div class="sect2">
 <h3 id="teapet-s-layout"><a class="link" href="#teapet-s-layout">2.2. TeaPet&#8217;s Layout</a></h3>
 <div class="paragraph">
-<p>TeaPet&#8217;s User Interface can be divided into 5 main components, each peforming specific functionalities.</p>
+<p>TeaPet&#8217;s User Interface can be divided into 5 main components, each performing specific functionalities.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -454,7 +454,8 @@ Thereafter, you are able to view, update or delete those information of specific
 <div class="sect3">
 <h4 id="display-default-student-view-code-student-code"><a class="link" href="#display-default-student-view-code-student-code">4.1.1. Display default student view: <code>student</code></a></h4>
 <div class="paragraph">
-<p>Shows a summarised version of the class list with important information only.</p>
+<p>TeaPet syncs the images of students found in the image folder into the student list. More information about updating student
+images can be found <a href="#update-profile">here</a>. TeaPet then displays a summarised list of the student details.</p>
 </div>
 <div class="paragraph">
 <p><strong>Format:</strong> <code>student</code></p>
@@ -470,21 +471,20 @@ DISPLAY DETAILED LIST: student detailed
 ADD STUDENT: name/NAME phone/[PHONE] email/[EMAIL] adr/[ADDRESS] temp/[TEMPERATURE] att/[ATTENDANCE] nok/[NAME-RELATIONSHIP-PHONE] tag/[TAG]
 EDIT STUDENT: student edit INDEX name/[NAME] phone/[PHONE] email/[EMAIL] adr/[ADDRESS] temp/[TEMPERATURE] att/[ATTENDANCE] nok/[NAME-RELATIONSHIP-PHONE] tag/[TAG]
 DELETE STUDENT: student delete INDEX
-FIND STUDENT: student find NAME
-REFRESH IMAGES: student refresh</pre>
+FIND STUDENT: student find NAME</pre>
 </div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/default_display.png" alt="default display" width=""790">
+<img src="images/add_student.png" alt="add student" width=""790">
 </div>
-<div class="title">Figure 3. After using <code>student default</code> command</div>
+<div class="title">Figure 3. After using <code>student</code> command</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="display-detailed-student-view-code-student-detailed-code"><a class="link" href="#display-detailed-student-view-code-student-detailed-code">4.1.2. Display detailed student view: <code>student detailed</code></a></h4>
 <div class="paragraph">
-<p>Shows a detailed version of the class list with all information.I</p>
+<p>Shows a detailed version of the class list with all information.</p>
 </div>
 <div class="paragraph">
 <p><strong>Format:</strong> <code>student detailed</code></p>
@@ -539,18 +539,6 @@ The address of student is not restricted as it can be subjective to the student 
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p><strong>Example:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>student add name/Jim phone/90045722 email/jim@example.com addr/Bishan St 13 Blk 154 #08-18 tag/monitor nok/James-Father-91234567
-   temp/36.6 att/Present</code><br>
-Adds a student named Jim into the student list along with his details.</p>
-</li>
-</ul>
-</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -558,18 +546,36 @@ Adds a student named Jim into the student list along with his details.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Next-of-kin relationships allowed : Father, Mother, Sister, Brother, Grandfather, Grandmother
+Next-of-kin relationships allowed: Father, Mother, Sister, Brother, Grandfather, Grandmother
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>student add name/Jim phone/90045722 email/jim@example.com adr/Bishan St 13 Blk 154 #08-18 tag/monitor nok/James-Father-91234567
+   temp/36.6 att/Present</code><br>
+Adds a student named Jim into the student list along with his details.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p><strong>Expected Outcome:</strong></p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>New student added: Jim Phone: 90045722 Email: jim@example.com Address: Bishan St 13 Blk 154 #08-18 Temperature: 36.6 Attendance: Present Tags: [monitor]</pre>
+<pre>New student added: Jim Phone: 90045722 Email: jim@example.com Address: Bishan St 13 Blk 154 #08-18 Temperature: 36.6 Attendance: Present NextOfKin: James-Father-91234567 Tags: [monitor]</pre>
 </div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/add_student_jim.png" alt="add student jim" width=""790">
+</div>
+<div class="title">Figure 5. After using <code>student add</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -639,7 +645,37 @@ Edits the student phone number in index 1 to a new phone number.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="find-student-code-find-code"><a class="link" href="#find-student-code-find-code">4.1.6. Find Student: <code>find</code></a></h4>
+<h4 id="clear-student-list-code-clear-code"><a class="link" href="#clear-student-list-code-clear-code">4.1.6. Clear Student List: <code>clear</code></a></h4>
+<div class="paragraph">
+<p>Clears all data from the student list.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>student clear</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>`student clear` Deletes the entire student list</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Student list has been cleared!</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="find-student-code-find-code"><a class="link" href="#find-student-code-find-code">4.1.7. Find Student: <code>find</code></a></h4>
 <div class="paragraph">
 <p>Finds the student information from the student list and display it.</p>
 </div>
@@ -703,7 +739,7 @@ temperature recordings.</p>
 <div class="content">
 <img src="images/adminDisplay.png" alt="adminDisplay" width=""790">
 </div>
-<div class="title">Figure 5. After using <code>admin</code> command</div>
+<div class="title">Figure 6. After using <code>admin</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -731,7 +767,7 @@ temperature recordings.</p>
 <div class="content">
 <img src="images/adminDates.png" alt="adminDates" width="790">
 </div>
-<div class="title">Figure 6. After using <code>admin dates</code> command</div>
+<div class="title">Figure 7. After using <code>admin dates</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -915,7 +951,7 @@ Type the following commands for more info!</pre>
 <div class="content">
 <img src="images/academics-view.png" alt="academics view" width=""790">
 </div>
-<div class="title">Figure 7. After using the <code>academics</code> command</div>
+<div class="title">Figure 8. After using the <code>academics</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1299,7 +1335,7 @@ EXPORT NOTES: notes export</pre>
 <div class="content">
 <img src="images/userguide/notesfeature/notesDisplay.png" alt="notesDisplay" width=""790">
 </div>
-<div class="title">Figure 8. After using the <code>notes</code> command</div>
+<div class="title">Figure 9. After using the <code>notes</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1364,7 +1400,7 @@ Priority: LOW</pre>
 <div class="content">
 <img src="images/userguide/notesfeature/notesAdd.png" alt="notesAdd" width=""790">
 </div>
-<div class="title">Figure 9. After using the <code>notes add</code> command</div>
+<div class="title">Figure 10. After using the <code>notes add</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1426,7 +1462,7 @@ Priority: HIGH</pre>
 <div class="content">
 <img src="images/userguide/notesfeature/notesEdit.png" alt="notesEdit" width=""790">
 </div>
-<div class="title">Figure 10. After using the <code>notes edit</code> command</div>
+<div class="title">Figure 11. After using the <code>notes edit</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1610,7 +1646,7 @@ sorted according to date and time. You will then be able to view your weekly sch
 <div class="content">
 <img src="images/display_schedule.png" alt="display schedule" width="790">
 </div>
-<div class="title">Figure 11. After using schedule command</div>
+<div class="title">Figure 12. After using schedule command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1630,6 +1666,18 @@ sorted according to date and time. You will then be able to view your weekly sch
 <td class="content">
 The format of startDateTime and endDateTime is in YYYY-MM-DDThh:mm format, where time is in the 24-hour format.<br>
 For example, 7th April 2020 10AM will be 2020-04-07T10:00
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The recurrence type can only be either of these, none, daily or weekly.
 </td>
 </tr>
 </table>
@@ -1675,7 +1723,7 @@ Color group is from 0 to 23 inclusive.<br>
 <div class="content">
 <img src="images/color_code.png" alt="color code" width="790">
 </div>
-<div class="title">Figure 12. Color code for TeaPet&#8217;s calendar</div>
+<div class="title">Figure 13. Color code for TeaPet&#8217;s calendar</div>
 </div>
 <div class="paragraph">
 <p>&#160;<br></p>
@@ -1686,18 +1734,18 @@ Color group is from 0 to 23 inclusive.<br>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Non-Recurring Event</strong> <code>schedule add eventName/Teachers Meeting startDateTime/2020-04-07T10:00
-                         endDateTime/2020-04-07T12:00 recur/none color/10</code>
-Creates a schedule with the title '<em>Teachers Meeting</em>' from '<em>7th Apr 2020, 1000</em>' to '<em>7th Apr 2020, 1200</em>' with no recurrence
-and a color group of '<em>10</em>'.</p>
+<p><strong>Non-Recurring Event</strong> <code>schedule add eventName/Teachers Meeting startDateTime/2020-04-02T08:00
+                         endDateTime/2020-04-07T10:00 recur/none color/21</code>
+Creates a schedule with the title '<em>Teachers Meeting</em>' from '<em>2nd Apr 2020, 0800</em>' to '<em>2th Apr 2020, 1000</em>' with no recurrence
+and a color group of '<em>21</em>'.</p>
 </li>
 </ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/event_add.png" alt="event add" width="790">
+<img src="images/schedule_add.png" alt="schedule add" width="790">
 </div>
-<div class="title">Figure 13. Adding a consultation event to the schedule</div>
+<div class="title">Figure 14. Adding an event to the schedule</div>
 </div>
 </div>
 </div>
@@ -1716,7 +1764,7 @@ The following steps will help you upload photos of your students into the studen
 <div class="content">
 <img src="images/locating_image_folder.png" alt="locating image folder" width="790">
 </div>
-<div class="title">Figure 14. Location of image folder</div>
+<div class="title">Figure 15. Location of image folder</div>
 </div>
 <div class="paragraph">
 <p>&#160;<br></p>
@@ -1757,19 +1805,20 @@ For ideal optimization of the image, its dimensions for its length and width sho
 <div class="content">
 <img src="images/images_in_folder.png" alt="images in folder" width="790">
 </div>
-<div class="title">Figure 15. Dragging png file into image folder</div>
+<div class="title">Figure 16. Dragging png file into image folder</div>
 </div>
 <div class="paragraph">
 <p>&#160;<br></p>
 </div>
 <div class="paragraph">
-<p><strong>Step 3</strong>. Type in the <code>student refresh</code> command in the user interface. Now you can see your students pictures in your student list!</p>
+<p><strong>Step 3</strong>. Type in the <code>student</code> command in the user interface. TeaPet will update the images and
+now you can see pictures of your students in your student list!</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/before_picture_upload.png" alt="before picture upload" width=""790">
 </div>
-<div class="title">Figure 16. Before using the refresh command</div>
+<div class="title">Figure 17. Before using the refresh command</div>
 </div>
 <div class="paragraph">
 <p>&#160;<br></p>
@@ -1778,7 +1827,7 @@ For ideal optimization of the image, its dimensions for its length and width sho
 <div class="content">
 <img src="images/after_picture_upload.png" alt="after picture upload" width=""790">
 </div>
-<div class="title">Figure 17. After using the refresh command</div>
+<div class="title">Figure 18. After using the refresh command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1802,12 +1851,8 @@ press your <code>F1</code> key to bring up this user guide!</p>
 <div class="content">
 <img src="images/help_window.png" alt="help window" width=""790">
 </div>
-<div class="title">Figure 18. Displayed help window</div>
+<div class="title">Figure 19. Displayed help window</div>
 </div>
-</div>
-<div class="sect3">
-<h4 id="various-display-modes"><a class="link" href="#various-display-modes">4.6.3. Various Display Modes</a></h4>
-<hr>
 </div>
 </div>
 </div>
@@ -1847,14 +1892,9 @@ press your <code>F1</code> key to bring up this user guide!</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Safely exits the application</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>default</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>default</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Displays the default form of student list</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>detailed</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>detailed</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Displays the detailed details of the class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>student</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>student</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays the student list</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>admin</code></p></td>
@@ -1892,6 +1932,16 @@ press your <code>F1</code> key to bring up this user guide!</p>
 <col style="width: 45%;">
 </colgroup>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Command</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Format</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Expected outcome</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>student detailed</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>student detailed</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays the detailed details of the class</p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>student add</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>student add name/NAME [phone/PHONE] [email/EMAIL] [adr/ADDRESS] [nok/NOK] [temp/TEMPERATURE]
@@ -2032,6 +2082,43 @@ specified KEYWORD</p></td>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 6. Notes commands of TeaPet</caption>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 45%;">
+<col style="width: 45%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Command</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Format</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Expected outcome</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes add</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">`notes add name/NAME c/CONTENT pr/PRIORITY</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds a note into TeaPet.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes edit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes edit INDEX name/NAME c/CONTENT pr/PRIORITY</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edits a note in TeaPet.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes delete</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes delete INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes a note in TeaPet.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes filter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes filter KEYWORDS</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays a list of filtered notes based on specific keywords.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes export</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes export</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exports all notes in TeaPet into a .csv file</p></td>
+</tr>
+</tbody>
 </table>
 </div>
 <div class="sect2">
@@ -2161,6 +2248,11 @@ specified KEYWORD</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#scheduler">Personal Scheduler</a></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">color/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Color code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#scheduler">Personal Scheduler</a></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">indexGet/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Get index of event</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#scheduler">Personal Scheduler</a></p></td>
@@ -2217,4 +2309,4 @@ command. The backup feature will be coming soon in the near future.</p>
 </ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 16:09:30 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 18:32:25 UTC</div></div></div></body></html>

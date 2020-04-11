@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>TeaPet - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>TeaPet - Developer Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://github.com/AY1920S2-CS2103T-W12-2/main"><img src="images/official_teapet.png" alt="TeaPet"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>TeaPet - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>CS2103T-W12-02</code>      Since: <code>Jan 2020</code>      Licence: <code>MIT</code></p>
@@ -28,8 +28,8 @@
 <ul class="sectlevel2">
 <li><a href="#student-particulars-feature">7.1. Student particulars feature</a></li>
 <li><a href="#import-image-feature">7.2. Import image feature</a></li>
-<li><a href="#personal-schedule-feature">7.3. Personal Schedule feature</a></li>
-<li><a href="#class-administration-feature">7.4. Class administration feature</a></li>
+<li><a href="#class-administration-feature">7.3. Class administration feature</a></li>
+<li><a href="#student-academics-feature">7.4. Student Academics feature</a></li>
 <li><a href="#notes-feature">7.5. Notes feature</a></li>
 <li><a href="#schedule-feature">7.6. Schedule feature</a></li>
 <li><a href="#logging">7.7. Logging</a></li>
@@ -58,6 +58,7 @@
 <li><a href="#saving-a-date">G.3. Saving a date</a></li>
 <li><a href="#deleting-a-date">G.4. Deleting a date</a></li>
 <li><a href="#manual-test-scheduler">G.5. Manual Test: Scheduler</a></li>
+<li><a href="#notes">G.6. Notes</a></li>
 </ul>
 </li>
 </ul>
@@ -376,7 +377,7 @@ The following class plays an important role at the architecture level:</p>
 <p>Defines its <em>API</em> in an <code>interface</code> with the same name as the Component.</p>
 </li>
 <li>
-<p>Exposes its functionality using a <code>{Component Name}Manager</code> class.</p>
+<p>Exposes its functionality using a <code>{Component Name} Manager</code> class.</p>
 </li>
 </ul>
 </div>
@@ -391,13 +392,13 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
 <div class="paragraph">
-<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>{Entity Name} delete 1</code>.</p>
+<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>{Entity Name} student delete 1</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
 </div>
-<div class="title">Figure 3. Component interactions for <code>delete 1</code> command</div>
+<div class="title">Figure 3. Component interactions for <code>student delete 1</code> command</div>
 </div>
 <div class="paragraph">
 <p>The sections below give more details of each component.</p>
@@ -418,7 +419,7 @@ The following class plays an important role at the architecture level:</p>
 <p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>StudentListPanel</code>, <code>NotesPanel</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
+<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>StudentListPanel</code>, <code>NotesPanel</code>, <code>StatusBarFooter</code> and <code>HelpWindow</code>. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
@@ -464,21 +465,21 @@ The following class plays an important role at the architecture level:</p>
 <p>The command execution can affect the <code>Model</code> (e.g. adding a student).</p>
 </li>
 <li>
-<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>,and then displayed to the user.</p>
+<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>UI</code>,and then displayed to the user.</p>
 </li>
 <li>
-<p>In addition, the <code>CommandResult</code> object can also instruct the <code>Ui</code> to perform certain actions, such as displaying help (for commands) and toggling of view between <code>default</code>, <code>detailed</code> and <code>admin</code>.</p>
+<p>In addition, the <code>CommandResult</code> object can also instruct the <code>UI</code> to perform certain actions, such as displaying help (for commands) and toggling of view between <code>student default</code>, <code>student detailed</code>.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
+<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("student delete 1")</code> API call.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
 </div>
-<div class="title">Figure 6. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+<div class="title">Figure 6. Interactions Inside the Logic Component for the <code>student delete 1</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -487,7 +488,7 @@ The following class plays an important role at the architecture level:</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The lifeline for <code>DeleteCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+The lifeline for <code>StudentCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 </td>
 </tr>
 </table>
@@ -502,7 +503,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
 </div>
-<div class="title">Figure 7. Structure of the Model Component using <code>Student</code> as an example.</div>
+<div class="title">Figure 7. Structure of the Model Component with <code>Student</code> class as a detailed example.</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
@@ -519,10 +520,10 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <p>stores the data of different Entities.</p>
 </li>
 <li>
-<p>stores the Notes data.</p>
+<p>stores in-memory data of Students, Admin, Academics, Notes and Events.</p>
 </li>
 <li>
-<p>exposes an unmodifiable <code>ObservableList&lt;Student&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
+<p>exposes multiple unmodifiable <code>ObservableLists</code> that can be 'observed' e.g. the UI can be bound to these lists so that the UI automatically updates when the data in the lists change.</p>
 </li>
 <li>
 <p>does not depend on any of the other three components.</p>
@@ -556,7 +557,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <p>can save <code>UserPref</code> objects in json format and read it back.</p>
 </li>
 <li>
-<p>can store <code>Student</code>, <code>Academics</code> and <code>PersonalSchedule</code> data in a single json file, which can be read.</p>
+<p>can store <code>Students</code>, <code>Admin</code>, <code>Academics</code>, <code>Notes</code> and <code>Events</code> in a several json files, which can be read.</p>
 </li>
 </ul>
 </div>
@@ -666,6 +667,15 @@ either a unknown command or wrong format error message will be displayed.
 <p>The newly created student is added to the <code>UniqueStudentList</code>.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes the <code>student add</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/StudentAddActivityDiagram.png" alt="StudentAddActivityDiagram">
+</div>
+<div class="title">Figure 10. Sequence Diagram for StudentAddCommand</div>
 </div>
 </div>
 </div>
@@ -787,8 +797,9 @@ For example, <code>student add/edit/delete/find/refresh</code>.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>We considered using the forward slash <code>/</code> before the command word, for example <code>/add</code>. However, we realise that it is redundant
-and will make inputs more tedious and confusing for users.</p>
+<p>We considered using a whole new command, <code>student refresh</code> to solely refresh and update images of the students. However, we realised
+that it would be more convenient for the user if we just add this functionality into the <code>student</code> command instead as it is able to
+both update the images and display the student list concurrently.</p>
 </li>
 </ul>
 </div>
@@ -832,35 +843,33 @@ the user expereince as the command will be too long to type.</p>
 <h3 id="import-image-feature"><a class="link" href="#import-image-feature">7.2. Import image feature</a></h3>
 <div class="paragraph">
 <p>This feature was included in TeaPet to help teachers easily identify the students using their pictures instead of just names.
-This feature utilises the <code>StudentRefreshCommand</code> class to update the images of students.</p>
+This feature utilises the <code>StudentCard#updateImage</code> method to update the images of students.</p>
 </div>
 <div class="paragraph">
 <p>The feature comprises of one command namely,
-* <code>StudentRefreshCommand</code> - Refreshes the student list to show updated images of students.</p>
+* <code>DefaultStudentDisplayCommand</code> - Refreshes the student list to show updated images of students and displays the student list.</p>
 </div>
 <div class="paragraph">
 <p>This is further illustrated in the following sequence diagram, which shows the sequence diagram for the StudentRefreshCommand.</p>
 </div>
+<div class="paragraph">
+<p>(To Change)</p>
+</div>
 <div class="imageblock">
 <div class="content">
-<img src="images/refresh_sequence_diagram.png" alt="refresh sequence diagram">
+<img src="images/ImportImage.png" alt="ImportImage">
 </div>
-<div class="title">Figure 10. Sequence Diagram for StudentRefreshCommand</div>
+<div class="title">Figure 11. Sequence Diagram for StudentRefreshCommand</div>
 </div>
-<div class="paragraph">
-<p>&#160;<br></p>
-</div>
-<div class="sect3">
-<h4 id="refresh-command"><a class="link" href="#refresh-command">7.2.1. Refresh command</a></h4>
 <div class="sect4">
 <h5 id="implementation-6"><a class="link" href="#implementation-6">Implementation</a></h5>
 <div class="paragraph">
-<p>The following is a detailed explanation of the operations which <code>StudentRefreshCommand</code> performs.</p>
+<p>The following is a detailed explanation of the operations which <code>DefaultStudentDisplayCommand</code> performs.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>After the successful parsing of user input, the <code>StudentRefreshCommand#execute(Model model)</code> method is called. It does not
+<p>After the successful parsing of user input, the <code>DefaultStudentDisplayCommand#execute(Model model)</code> method is called. It does not
 require validation as it does not write into the student list.</p>
 </li>
 <li>
@@ -882,50 +891,61 @@ The png file must match the name of the student and must be in all lower case wi
 <li>
 <p>If any view other than the student list view is showing on the <code>MainWindow</code>, the <code>MainWindow#handleDefaultStudent()</code> method
 will be called and the student list is now visible on the <code>MainWindow</code>.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-In this implementation of the application, the list of students is rendered on the GUI of the Main Window. Hence,  the command merely
-prints its contents on the Command Result Box.
-</td>
-</tr>
-</table>
-</div>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes the <code>student refresh</code> command:</p>
+<p>The following activity diagram summarizes what happens when a user executes the <code>student</code> command:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/activity_diagram_refresh.png" alt="activity diagram refresh">
+<img src="images/ImportImageSequenceDiagram.png" alt="ImportImageSequenceDiagram">
 </div>
-<div class="title">Figure 11. Activity Diagram for StudentRefreshCommand</div>
+<div class="title">Figure 12. Activity Diagram for StudentRefreshCommand</div>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h5>
+
+</div>
+<div class="sect4">
+<h5 id="aspect-command-syntax-2"><a class="link" href="#aspect-command-syntax-2">Aspect: Command Syntax</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Current Implementation:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Current implementation of the feature follows just the command word syntax
+For example, <code>student</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternatives Considered:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>We considered using the forward slash <code>/</code> before the command word, for example <code>/add</code>. However, we realise that it is redundant
+and will make inputs more tedious and confusing for users.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>&#160;<br></p>
 </div>
 </div>
 </div>
-</div>
 <div class="sect2">
-<h3 id="personal-schedule-feature"><a class="link" href="#personal-schedule-feature">7.3. Personal Schedule feature</a></h3>
-<div class="sect3">
-<h4 id="command-1"><a class="link" href="#command-1">7.3.1. Command 1</a></h4>
-
-</div>
-<div class="sect3">
-<h4 id="command-2"><a class="link" href="#command-2">7.3.2. Command 2</a></h4>
-
-</div>
-</div>
-<div class="sect2">
-<h3 id="class-administration-feature"><a class="link" href="#class-administration-feature">7.4. Class administration feature</a></h3>
+<h3 id="class-administration-feature"><a class="link" href="#class-administration-feature">7.3. Class administration feature</a></h3>
 <div class="paragraph">
 <p>The class administration feature keeps track of essential student administrative details.
 The feature comprises of four commands namely.</p>
@@ -937,7 +957,7 @@ The feature comprises of four commands namely.</p>
 <div class="content">
 <img src="images/AdminClassDiagram.png" alt="AdminClassDiagram">
 </div>
-<div class="title">Figure 12. Admin Commands Diagram</div>
+<div class="title">Figure 13. Admin Commands Diagram</div>
 </div>
 <div class="paragraph">
 <p>These are the various admin commands to try:</p>
@@ -962,7 +982,7 @@ The feature comprises of four commands namely.</p>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="admin-display-command"><a class="link" href="#admin-display-command">7.4.1. Admin Display Command</a></h4>
+<h4 id="admin-display-command"><a class="link" href="#admin-display-command">7.3.1. Admin Display Command</a></h4>
 <div class="sect4">
 <h5 id="implementation-7"><a class="link" href="#implementation-7">Implementation</a></h5>
 <div class="paragraph">
@@ -1006,7 +1026,7 @@ If the wording of the <code>admin</code> command contains error(s), an unknown c
 </div>
 </div>
 <div class="sect3">
-<h4 id="admin-dates-command"><a class="link" href="#admin-dates-command">7.4.2. Admin Dates Command</a></h4>
+<h4 id="admin-dates-command"><a class="link" href="#admin-dates-command">7.3.2. Admin Dates Command</a></h4>
 <div class="sect5">
 <h6 id="implementation-8"><a class="link" href="#implementation-8">Implementation</a></h6>
 <div class="paragraph">
@@ -1051,7 +1071,7 @@ will be displayed.
 </div>
 </div>
 <div class="sect3">
-<h4 id="admin-save-command"><a class="link" href="#admin-save-command">7.4.3. Admin Save Command</a></h4>
+<h4 id="admin-save-command"><a class="link" href="#admin-save-command">7.3.3. Admin Save Command</a></h4>
 <div class="sect5">
 <h6 id="implementation-9"><a class="link" href="#implementation-9">Implementation</a></h6>
 <div class="paragraph">
@@ -1097,11 +1117,11 @@ displayed.
 <div class="content">
 <img src="images/AdminSaveActivityDiagram.png" alt="AdminSaveActivityDiagram">
 </div>
-<div class="title">Figure 13. Admin Save Activity Diagram</div>
+<div class="title">Figure 14. Admin Save Activity Diagram</div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h5>
+<h5 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h5>
 <div class="sect5">
 <h6 id="aspect-which-date-to-save"><a class="link" href="#aspect-which-date-to-save">Aspect: Which date to save</a></h6>
 <div class="ulist">
@@ -1171,7 +1191,7 @@ displayed.
 </div>
 </div>
 <div class="sect3">
-<h4 id="admin-delete-command"><a class="link" href="#admin-delete-command">7.4.4. Admin Delete Command</a></h4>
+<h4 id="admin-delete-command"><a class="link" href="#admin-delete-command">7.3.4. Admin Delete Command</a></h4>
 <div class="sect5">
 <h6 id="implementation-10"><a class="link" href="#implementation-10">Implementation</a></h6>
 <div class="paragraph">
@@ -1210,12 +1230,12 @@ specified date from <code>UniqueDateList</code>.</p>
 <div class="content">
 <img src="images/AdminDeleteSequenceDiagram.png" alt="AdminDeleteSequenceDiagram">
 </div>
-<div class="title">Figure 14. Admin Delete Sequence Diagram</div>
+<div class="title">Figure 15. Admin Delete Sequence Diagram</div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="admin-fetch-command"><a class="link" href="#admin-fetch-command">7.4.5. Admin Fetch Command</a></h4>
+<h4 id="admin-fetch-command"><a class="link" href="#admin-fetch-command">7.3.5. Admin Fetch Command</a></h4>
 <div class="paragraph">
 <p><strong>Step 1</strong>. The <code>AdminFetchCommand#execute(Model model)</code> method is executed which takes in a
 DateContainsKeywordsPredicate object as an argument. User input will be parsed first to a DateContainsKeywordsPredicate
@@ -1249,6 +1269,446 @@ The sequence diagram for <code>admin fetch</code> command is similar to that of 
 </td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="student-academics-feature"><a class="link" href="#student-academics-feature">7.4. Student Academics feature</a></h3>
+<div class="paragraph">
+<p>This student academics feature stores and tracks the class' academics progress.
+The academics feature consists of four commands namely.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>AcademicsCommand</code> - Displays the most updated student academics details.</p>
+</li>
+<li>
+<p><code>AcademicsAddCommand</code> - Adds a new assessment to the academic list.</p>
+</li>
+<li>
+<p><code>AcademicsEditCommand</code> - Edits the details of a particular assessment.</p>
+</li>
+<li>
+<p><code>AcademicsDeleteCommand</code> - Deletes the specified assessment from academics.</p>
+</li>
+<li>
+<p><code>AcademicsSubmitCommand</code> - Submits students' work to the specified assessment.</p>
+</li>
+<li>
+<p><code>AcademicsMarkCommand</code> - Marks students' work of the specified assessment.</p>
+</li>
+<li>
+<p><code>AcademicsDisplayCommand</code> - Displays either homework, exam, or the report of student academics.</p>
+</li>
+<li>
+<p><code>AcademicsExportCommand</code> - Exports the academics information into a csv file.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All academics commands share similar paths of execution. The commands when executed, will interface with the methods
+exposed by the <code>Model</code> interface to perform the related operations (See <a href="#Design-Logic">logic component</a> for the general overview).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/academics/AcademicsClassDiagram.png" alt="AcademicsClassDiagram">
+</div>
+<div class="title">Figure 16. Academics Commands Diagram</div>
+</div>
+<div class="sect3">
+<h4 id="class-overview"><a class="link" href="#class-overview">7.4.1. Class Overview</a></h4>
+<div class="paragraph">
+<p>The class diagram below will depict the structure of the Academics Model Component.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/academics/AcademicsModelClassDiagram.png" alt="AcademicsModelClassDiagram">
+</div>
+<div class="title">Figure 17. Academics Model Class Diagram</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="academics-add-command"><a class="link" href="#academics-add-command">7.4.2. Academics Add Command</a></h4>
+<div class="sect5">
+<h6 id="implementation-11"><a class="link" href="#implementation-11">Implementation</a></h6>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>AcademicsAddCommand</code> performs.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>AcademicsAddCommand#execute(Model model)</code> method is executed which takes in a necessary assessment
+description, type and date.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format for adding an assessment is <code>academics add desc/ASSESSMENT_DESCRIPTION type/TYPE date/DATE</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. As assessment names should be unique, the <code>Model#hasAssessment(Assessment assessment)</code> method will check if
+the assessment already exists in <code>UniqueAssessmentList#assessments</code>. If a duplicate assessment is found, a
+<code>CommandException</code> will be thrown.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>. Subsequently, the <code>Model#getFilteredStudentList()</code> method will then be called, to set the student submission
+tracker for the assessment.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 4</strong>. The method <code>Model#addAssessment(Assessment assessment)</code> will then be called to add the assessment. The
+command box will be reflected with the <code>AcademicsAddCommand#MESSAGE_SUCCESS</code> constant and a new <code>CommandResult</code> will be
+returned with the message.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the format or wording of adding an assessment contains error(s), an unknown command or wrong format error message
+will be displayed.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram summarizes what happens when a user keys in an academics add command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/developerguide/academics/academics_add_command_sequence_diagram.png" alt="academics add command sequence diagram">
+</div>
+<div class="title">Figure 18. Academics Add Command Sequence Diagram</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="academics-edit-command"><a class="link" href="#academics-edit-command">7.4.3. Academics Edit Command</a></h4>
+<div class="sect5">
+<h6 id="implementation-12"><a class="link" href="#implementation-12">Implementation</a></h6>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>AcademicsEditCommand</code> performs.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>AcademicsEditCommand#execute(Model model)</code> method is executed which edits the details of the specified
+assessment. The method checks if the <code>index</code> defined when instantiating
+<code>AcademicsEditCommand(Index index, EditAssessmentDescriptor editAssessmentDescriptor)</code> is valid. Since it is optional
+for users to input fields, the fields not entered will reuse the existing values that are currently stored and defined
+in the <code>Assessment</code> object.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+User needs to input at least 1 field of assessment to edit.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. A new <code>Assessment</code> with the newly updated values will be created which replaces the existing <code>Assessment</code>
+object using the <code>Model#setAssessment(Assessment target, Assessment editedAssessment)</code> method. However, if new
+assessment results in a duplicate assessment in <code>UniqueAssessmentList#assessments</code>, a <code>CommandException</code> will be thrown.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 4</strong>. The command box will be reflected with the <code>AcademicsEditCommand#MESSAGE_SUCCESS</code> constant and a new
+<code>CommandResult</code> will be returned with the message.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="academics-delete-command"><a class="link" href="#academics-delete-command">7.4.4. Academics Delete Command</a></h4>
+<div class="sect5">
+<h6 id="implementation-13"><a class="link" href="#implementation-13">Implementation</a></h6>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>AcademicsDeleteCommand</code> performs.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>AcademicsDeleteCommand#execute(Model model)</code> method is executed which deletes the assessment at the
+specified index. It checks if the <code>Index</code> is defined as an argument when instantiating the <code>AcademicsDeleteCommand</code>
+constructor.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>Index</code> must be within the bounds of <code>UniqueAssessmentList#assessments</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. The <code>Assessment</code> at the specified <code>Index</code> is then removed from <code>UniqueAssessmentList#assessments</code> observable
+list using the <code>Model#delete(Assessment assessment)</code> method.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3.</strong> The command box will be reflected with the <code>AcademicsDeleteCommand#MESSAGE_SUCCESS</code> constant and a new
+<code>CommandResult</code> will be returned with the message.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="academics-submit-command"><a class="link" href="#academics-submit-command">7.4.5. Academics Submit Command</a></h4>
+<div class="sect5">
+<h6 id="implementation-14"><a class="link" href="#implementation-14">Implementation</a></h6>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>AcademicsSubmitCommand</code> performs.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>AcademicsSubmitCommand#execute(Model model)</code> method is executed which submits students' work for the
+assessment at the specified index. The method checks if the <code>Index</code> is defined as an argument when instantiating the
+<code>AcademicsSubmitCommand</code> constructor.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>Index</code> must be within the bounds of <code>UniqueAssessmentList#assessments</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. Subsequently, the <code>Model#hasStudentName(String studentName)</code> method will then check if the given student
+exists in <code>UniqueStudentList#students</code>. Also, <code>Model#hasStudentSubmitted(String studentName)</code> method checks if the
+student has already submitted their work for the specified assessment. If the student does not exist or has already
+submitted their work, a <code>CommandException</code> will be thrown.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>. The students' <code>Submission</code> will then be submitted to the specified <code>Assessment</code> using the method
+<code>Model#submitAssessment(Assessment assessment, List&lt;String&gt; students)</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 4.</strong> The command box will be reflected with the <code>AcademicsSubmitCommand#MESSAGE_SUCCESS</code> constant and a new
+<code>CommandResult</code> will be returned with the message.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="academics-mark-command"><a class="link" href="#academics-mark-command">7.4.6. Academics Mark Command</a></h4>
+<div class="sect5">
+<h6 id="implementation-15"><a class="link" href="#implementation-15">Implementation</a></h6>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>AcademicsMarkCommand</code> performs.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>AcademicsMarkCommand#execute(Model model)</code> method is executed which marks students' work and stores the
+students' scores for the assessment at the specified index. The method checks if the <code>Index</code> is defined as an argument
+when instantiating the <code>AcademicsMarkCommand</code> constructor.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>Index</code> must be within the bounds of <code>UniqueAssessmentList#assessments</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. Subsequently, the <code>Model#hasStudentName(String studentName)</code> method will then check if the given student
+exists in <code>UniqueStudentList#students</code>. Also, <code>Model#hasStudentSubmitted(String studentName)</code> method checks if the
+student has yet to submit their work for the specified assessment. If the student does not exist or has not submitted
+their work, a <code>CommandException</code> will be thrown. Furthermore, the score should be between 0 and 100 inclusive,
+otherwise <code>CommandException</code> will also be thrown.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format for marking a students' work is <code>academics mark INDEX stu/STUDENT_NAME-SCORE</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>. The students' <code>Submission</code> will then be marked and its score will be stored in the specified <code>Assessment</code>
+using the method <code>Model#markAssessment(Assessment assessment, List&lt;String&gt; students)</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 4.</strong> The command box will be reflected with the <code>AcademicsMarkCommand#MESSAGE_SUCCESS</code> constant and a new
+<code>CommandResult</code> will be returned with the message.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-4"><a class="link" href="#design-considerations-4">Design Considerations</a></h5>
+<div class="sect5">
+<h6 id="aspect-allow-submission-along-with-marking"><a class="link" href="#aspect-allow-submission-along-with-marking">Aspect: Allow submission along with marking</a></h6>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Marking a submission that has not be submitted is not allowed.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Clearer and prevents confusion in data.</p>
+</li>
+<li>
+<p>Cons: Harder to implement and the user will have to submit students' work separately.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Marking an unsubmitted work will also submit it for the assessment.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: The user can just submit students work using the mark command, giving them less to type.</p>
+</li>
+<li>
+<p>Cons: Prone to confusion of submitting and marking commands.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect5">
+<h6 id="aspect-allow-customizable-total-score-of-assessments"><a class="link" href="#aspect-allow-customizable-total-score-of-assessments">Aspect: Allow customizable total score of assessments</a></h6>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Setting the total score for a submission is not allowed. (Total score for all submissions will be 100.)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement and maintains uniformity of data.</p>
+</li>
+<li>
+<p>Cons: User cannot set different total scores for assessments and have to grade it to a 100 weightage.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Setting the total score for a submission is allowed.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: User can make set different total scores to different assessments according to its requirements.</p>
+</li>
+<li>
+<p>Cons: Hard to implement and could result in inconsistency of data.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="academics-display-command"><a class="link" href="#academics-display-command">7.4.7. Academics Display Command</a></h4>
+<div class="sect4">
+<h5 id="implementation-16"><a class="link" href="#implementation-16">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>AcademicsDisplayCommand</code> performs.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>AcademicsDisplayCommand#execute(Model model)</code> method is executed which can either take in no arguments
+or a 1 word argument indicating the type of display to show.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Other than the default display (no arguments needed), there are only 3 types of displays: <code>homework</code>, <code>exam</code>, and
+<code>report</code>.<br>
+Format: <code>academics</code> or <code>academics DISPLAY_TYPE</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. Depending on the display type, the command box will reflect its respective <code>AcademicsDisplayCommand#MESSAGE_SUCCESS</code>
+constant and a new <code>CommandResult</code> will be returned with the message.<br>
+Example. <code>homework</code> type display will reflect <code>AcademicsDisplayCommand#MESSAGE_HOMEWORK_SUCCESS</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the academics list is empty, a blank page will be shown.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the wording of the <code>academics</code> command contains error(s), an unknown command message will be displayed.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="academics-export-command"><a class="link" href="#academics-export-command">7.4.8. Academics Export Command</a></h4>
+<div class="sect5">
+<h6 id="implementation-17"><a class="link" href="#implementation-17">Implementation</a></h6>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>AcademicsExportCommand</code> performs.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>AcademicsExportCommand#execute(Model model)</code> method is executed which exports the content of Academics
+into a csv file in the data folder.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format of the command is: <code>academics export</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 2.</strong> The command box will be reflected with the <code>AcademicsExportCommand#MESSAGE_SUCCESS</code> constant and a new
+<code>CommandResult</code> will be returned with the message.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3.</strong> Subsequently, the <code>CommandResult</code> will be processed by the`MainWindow` in the UI component and generate a
+studentAcademics.csv in the data folder of the current directory.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1287,7 +1747,7 @@ information of his/her students. Each note is tagged to a specific student and a
 <div class="content">
 <img src="images/developerguide/notes/NotesClassDiagram.png" alt="NotesClassDiagram">
 </div>
-<div class="title">Figure 15. Class Diagram for NotesCommands.</div>
+<div class="title">Figure 19. Class Diagram for NotesCommands.</div>
 </div>
 <div class="sect3">
 <h4 id="structure-of-notes-class"><a class="link" href="#structure-of-notes-class">7.5.1. Structure of Notes Class</a></h4>
@@ -1357,13 +1817,13 @@ or wrong format error message will be displayed.
 <div class="content">
 <img src="images/developerguide/notes/NotesAddSequence.png" alt="NotesAddSequence">
 </div>
-<div class="title">Figure 16. Sequence Diagram for Adding Notes.</div>
+<div class="title">Figure 20. Sequence Diagram for Adding Notes.</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/developerguide/notes/SDGetNotesAddCommand.png" alt="SDGetNotesAddCommand">
 </div>
-<div class="title">Figure 17. Supplementary Frame for Sequence Diagram.</div>
+<div class="title">Figure 21. Supplementary Frame for Sequence Diagram.</div>
 </div>
 </div>
 <div class="sect3">
@@ -1427,7 +1887,7 @@ be returned with the success message.</p>
 <div class="content">
 <img src="images/developerguide/notes/NotesDeleteActivityDiagram.png" alt="NotesDeleteActivityDiagram">
 </div>
-<div class="title">Figure 18. Activity Diagram for Deleting Note</div>
+<div class="title">Figure 22. Activity Diagram for Deleting Note</div>
 </div>
 </div>
 <div class="sect3">
@@ -1477,7 +1937,7 @@ the current directory.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">7.5.7. Design Considerations</a></h4>
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">7.5.7. Design Considerations</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1547,7 +2007,7 @@ Hence, at the storage level, the Event objects are mapped to VEvents for reading
 </div>
 </div>
 <div class="sect3">
-<h4 id="class-overview"><a class="link" href="#class-overview">7.6.2. Class Overview</a></h4>
+<h4 id="class-overview-2"><a class="link" href="#class-overview-2">7.6.2. Class Overview</a></h4>
 <div class="paragraph">
 <p>The class diagram below shows the interactions between events classes in the <code>Model</code>. Notice how the <code>EventHistory</code> class depends
 on the <code>Event</code> class in its constructor but only has a <code>VEvent</code> attribute. This is because an <code>Event</code> object will always be
@@ -1559,13 +2019,13 @@ using the <code>VEvent</code> type class. Only the <code>Storage</code> componen
 <div class="content">
 <img src="images/schedule_class_diagram.png" alt="schedule class diagram">
 </div>
-<div class="title">Figure 19. Schedule Class Diagram</div>
+<div class="title">Figure 23. Schedule Class Diagram</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="schedule-add-command"><a class="link" href="#schedule-add-command">7.6.3. Schedule Add Command</a></h4>
 <div class="sect4">
-<h5 id="implementation-11"><a class="link" href="#implementation-11">Implementation</a></h5>
+<h5 id="implementation-18"><a class="link" href="#implementation-18">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation which <code>schedule add</code> performs.</p>
 </div>
@@ -1603,13 +2063,13 @@ from other layers of the application.
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/event_add_activity_diagram.png" alt="event add activity diagram">
+<img src="images/ScheduleAddActivityDiagram.png" alt="ScheduleAddActivityDiagram">
 </div>
-<div class="title">Figure 20. Schedule Add Activity Diagram</div>
+<div class="title">Figure 24. Schedule Add Activity Diagram</div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-4"><a class="link" href="#design-considerations-4">Design Considerations</a></h5>
+<h5 id="design-considerations-6"><a class="link" href="#design-considerations-6">Design Considerations</a></h5>
 <div class="sect5">
 <h6 id="aspect-command-clarity"><a class="link" href="#aspect-command-clarity">Aspect: Command Clarity:</a></h6>
 <div class="ulist">
@@ -2891,5 +3351,139 @@ Expected: An error message is shown due to the invalid date time range.</p>
 </ol>
 </div>
 </div>
+<div class="sect2">
+<h3 id="notes"><a class="link" href="#notes">G.6. Notes</a></h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+In order to add or edit a specific note belonging to a student, the student must first be in the class-list. In order for optimal
+manual testing, please create the student first before creating a note which belongs to him/her. You can refer to <a href="#Feature-Add">Section 7.1.1, &#8220;Student Add command&#8221;</a> to
+find out more on how to add a student to the class-list.
+</td>
+</tr>
+</table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 16:09:30 UTC</div></div></div></body></html>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Delete all previous notes. Be sure to create two students named <strong>Kelvin Klein</strong> and <strong>Jane Khoo</strong> in the class-list. Conduct these tests sequentially
+from first to last, for the most effective testing experience.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a note to the notes panel.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>notes add name/Kelvin Klein c/Reminder to print his testimonial pr/HIGH</code><br>
+Expected: New note added to the notes panel. This note should be red (high priority) in colour, belonging to Kelvin Klein. The timestamp
+in the note should be the current date and time.</p>
+</li>
+<li>
+<p>Test case: <code>notes add name/Kelvin Klein c/Kelvin was late for class for the second day in a row. pr/LOW</code><br>
+Expected: New note added to the notes panel. This note should be yellow (low priority) in colour, belonging to Kelvin Klein. The timestamp
+in the note should be the current date and time.</p>
+</li>
+<li>
+<p>Test case: <code>notes add name/Jane Khoo c/Jane left school for an interview. pr/MEDIUM</code><br>
+Expected: New note added to the notes panel. This note should be orange (medium priority) in colour, belonging to Jane Khoo. The timestamp
+in the note should be the current date and time.</p>
+</li>
+<li>
+<p>Test case: <code>notes add name/Kelvin_Klein_ c/He exemplified an improvement in behaviour pr/LOW</code><br>
+Expected: An error message is shown as the student name should be alpha-numeric.</p>
+</li>
+<li>
+<p>Test case: <code>notes add name/Kelvin Klein c/He exemplified an improvement in behaviour pr/Not High</code><br>
+Expected: An error message is shown as priority indicated must be either <strong>LOW</strong>, <strong>MEDIUM</strong> or <strong>HIGH</strong>, case-insensitive.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Editing a note in the notes panel.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>notes edit 1 c/Reminder to print his testimonial and gradebook</code><br>
+Expected: First note in the panel is updated with new content. Only the content should be modified, and nothing else.</p>
+</li>
+<li>
+<p>Test case: <code>notes edit 1 name/Jane Khoo c/Reminder to print her testimonial and gradebook</code><br>
+Expected: First note in the panel is updated with new name and content. Note should reflect student Jane Khoo&#8217;s name,
+with modfied content. Nothing else should be different.</p>
+</li>
+<li>
+<p>Test case: <code>notes edit 1 pr/MEDIUM</code><br>
+Expected: First note in the panel is updated new priority. Note colour should change from red to orange.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Deleting a note in the notes panel.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>notes delete 1</code><br>
+Expected: First note in the panel should be removed.</p>
+</li>
+<li>
+<p>Test case: <code>notes delete 0</code><br>
+Expected: An error message is shown as the integer provided must be greater than zero.</p>
+</li>
+<li>
+<p>Test case: <code>notes delete 4</code><br>
+Expected: An error message is shown as the integer provided as the number of notes in the notes panel is less than 4.
+Integer provided is out of range.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Filtering the list of notes to search for specific notes.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>notes filter Jane</code><br>
+Expected: Only notes containing the word Jane should be displayed in the notes panel.</p>
+</li>
+<li>
+<p>Test case: <code>notes filter low</code><br>
+Expected: Only notes containing the word low should be displayed in the notes panel.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Exporting notes in the notes panel into a .csv file.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>notes export</code><br>
+Expected: A file named studentNotes.csv should be created in the data folder of the same directory in which TeaPet is installed.</p>
+</li>
+<li>
+<p>Test case: <code>notes export 3</code><br>
+Expected: An error message is shown as there should be no arguments passed into notes export command.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 18:32:25 UTC</div></div></div></body></html>
