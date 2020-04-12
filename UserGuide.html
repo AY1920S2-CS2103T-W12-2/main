@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>TeaPet - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://github.com/AY1920S2-CS2103T-W12-2/main"><img src="images/official_teapet.png" alt="TeaPet"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>TeaPet - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://github.com/AY1920S2-CS2103T-W12-2/main"><img src="images/official_teapet.png" alt="TeaPet"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">TeaPet</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W12-2/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>TeaPet - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>CS2103T-W12-2</code>      Since: <code>Feb 2020</code>      Licence: <code>MIT</code></p>
@@ -444,6 +444,26 @@ messages will be displayed in this box.</p>
 <div class="paragraph">
 <p>This section aims to provide you with in-depth details of TeaPet&#8217;s main features, as well as how to
 get started with them.</p>
+</div>
+<div class="paragraph">
+<p><strong>TeaPet Command Syntax:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Command + Prefix/Field</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Examples of Command: student add, notes edit, acadmics export, etc.
+Examples of Prefix/Field combinations: name/Kelvin Klein, phone/9000 8000, att/Present</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Most commands have multiple Prefix/Field combinations to fill.
+Prefix/Field combinations with an enclosing [] refers to it being OPTIONAL.</pre>
+</div>
 </div>
 <div class="sect2">
 <h3 id="particulars"><a class="link" href="#particulars">4.1. Student Particulars [Done by Simon Lam]</a></h3>
@@ -1324,10 +1344,10 @@ better keep track of the stakeholder and information.</p>
 <div class="content">
 <pre>The Column on the right displays all your notes.
 [HELP ON NOTES COMMANDS]
-ADD NOTE: notes add n/&lt;Name of Student c/&lt;Content&gt; pr/&lt;Priority&gt;
-EDIT NOTE: notes edit n/&lt;Name of Student c/&lt;Content&gt; pr/&lt;Priority&gt;
-DELETE NOTE: notes delete &lt;Index&gt;
-FILTER SEARCH NOTES: notes filter &lt;Keyword(s)&gt;
+ADD NOTE: notes add name/STUDENT_NAME c/CONTENT pr/PRIORITY
+EDIT NOTE: notes edit INDEX [name/STUDENT_NAME] [c/CONTENT] [pr/PRIORITY]
+DELETE NOTE: notes delete INDEX
+FILTER SEARCH NOTES: notes filter KEYWORD(S)
 EXPORT NOTES: notes export</pre>
 </div>
 </div>
@@ -1348,7 +1368,7 @@ EXPORT NOTES: notes export</pre>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>notes add name/&lt;Name of Student&gt; c/&lt;Content&gt; pr/&lt;Priority&gt;</pre>
+<pre>notes add name/STUDENT_NAME c/CONTENT pr/PRIORITY</pre>
 </div>
 </div>
 <div class="ulist">
@@ -1413,7 +1433,7 @@ Priority: LOW</pre>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>notes edit &lt;Index&gt; name/&lt;Updated name of student&gt; c/&lt;Updated content pr/&lt;Updated priority&gt;</pre>
+<pre>notes edit INDEX [name/UPDATED_STUDENT_NAME] [c/UPDATED_CONTENT] [pr/UPDATED_PRIORITY]</pre>
 </div>
 </div>
 <div class="ulist">
@@ -1475,7 +1495,7 @@ Priority: HIGH</pre>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>notes delete &lt;Index&gt;</pre>
+<pre>notes delete INDEX</pre>
 </div>
 </div>
 <div class="ulist">
@@ -1519,7 +1539,7 @@ Priority: HIGH</pre>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>notes filter &lt;Keyword(s)&gt;</pre>
+<pre>notes filter KEYWORD(S)</pre>
 </div>
 </div>
 <div class="ulist">
@@ -2095,12 +2115,12 @@ specified KEYWORD</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes add</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">`notes add name/NAME c/CONTENT pr/PRIORITY</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Adds a note into TeaPet.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes add name/STUDENT_NAME c/CONTENT pr/PRIORITY</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds a note into TeaPet</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes edit</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes edit INDEX name/NAME c/CONTENT pr/PRIORITY</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes edit INDEX [name/STUDENT_NAME] [c/CONTENT] [pr/PRIORITY]</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Edits a note in TeaPet.</p></td>
 </tr>
 <tr>
@@ -2309,4 +2329,4 @@ command. The backup feature will be coming soon in the near future.</p>
 </ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 04:02:43 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 04:05:39 UTC</div></div></div></body></html>
