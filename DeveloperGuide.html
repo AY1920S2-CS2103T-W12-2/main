@@ -76,11 +76,11 @@
 </div>
 </div>
 <div class="paragraph">
-<p>TeaPet is an integrated platform fully customized for Primary School Form Teachers to help you manage your classroom effectively.
-It contains your personal curriculum schedule, students' particulars, and can also track your class' academic progress.</p>
+<p>TeaPet is an integrated platform fully customized for Form Teachers in Primary, Secondary and Tertiary institutions to help them manage their classroom effectively.
+It contains their personal curriculum schedule, students' particulars, and can also track their class' academic progress.</p>
 </div>
 <div class="paragraph">
-<p>All your important information is comfortably compartmentalized on our simple and clean Graphical User Interface (GUI) and we are optimized for users who are very comfortable
+<p>All their important information is comfortably compartmentalized on our simple and clean Graphical User Interface (GUI) and we are optimized for users who are very comfortable
 working on the Command Line Interface (CLI).</p>
 </div>
 <div class="paragraph">
@@ -118,18 +118,6 @@ If you are only interested in how we develop one feature, you may read the high-
 <div class="paragraph">
 <p>Take note of the following symbols and formatting used in this document:</p>
 </div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-Use this to highlight important stuff
-</td>
-</tr>
-</table>
-</div>
 <div class="admonitionblock warning">
 <table>
 <tr>
@@ -138,18 +126,6 @@ Use this to highlight important stuff
 </td>
 <td class="content">
 Use this for warnings
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Use this for caution
 </td>
 </tr>
 </table>
@@ -210,10 +186,10 @@ This symbol indicates tips.
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Include student&#8217;s particulars. e.g. address, contact number, next of kin (NOK)</p>
+<p>Include student&#8217;s particulars. e.g. address, contact number, next of kin (NOK).</p>
 </li>
 <li>
-<p>Include administrative details of the students. e.g. attendance, temperature</p>
+<p>Include administrative details of the students. e.g. attendance, temperature.</p>
 </li>
 </ol>
 </div>
@@ -223,10 +199,10 @@ This symbol indicates tips.
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Create and manage your events with a single calendar</p>
+<p>Create and manage your events with a single calendar.</p>
 </li>
 <li>
-<p>View calendar at a glance</p>
+<p>View calendar at a glance.</p>
 </li>
 </ol>
 </div>
@@ -239,7 +215,7 @@ This symbol indicates tips.
 <p>Include every student&#8217;s grades for every examination.</p>
 </li>
 <li>
-<p>Easy to track progress using helpful tools. e.g. graph plots</p>
+<p>Easy to track progress using helpful tools. e.g. graph plots.</p>
 </li>
 </ol>
 </div>
@@ -255,17 +231,7 @@ This symbol indicates tips.
 <p>Search keywords in your notes.</p>
 </li>
 <li>
-<p>Save the notes as administrative or behavioural</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Toggle different views to find information easily</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Different view modes show only the required information. e.g. detailed, admin, default</p>
+<p>Save the notes as administrative or behavioural.</p>
 </li>
 </ol>
 </div>
@@ -319,7 +285,7 @@ This symbol indicates tips.
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The <code>.puml</code> files used to create diagrams in this document can be found in the <a href="https://github.com/se-edu/addressbook-level3/tree/master/docs/diagrams/">diagrams</a> folder.
+The <code>.puml</code> files used to create diagrams in this document can be found in the <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/tree/master/docs/diagrams">diagrams</a> folder.
 Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how to create and edit diagrams.
 </td>
 </tr>
@@ -417,13 +383,13 @@ The following class plays an important role at the architecture level:</p>
 <div class="title">Figure 4. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/blob/master/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>StudentListPanel</code>, <code>NotesPanel</code>, <code>StatusBarFooter</code> and <code>HelpWindow</code>. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/blob/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/blob/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component,</p>
@@ -452,7 +418,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
-<a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
+<a href="https://github.com/AY1920S2-CS2103T-W12-2/main/blob/master/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -469,7 +435,7 @@ The following class plays an important role at the architecture level:</p>
 <p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>UI</code>,and then displayed to the user.</p>
 </li>
 <li>
-<p>In addition, the <code>CommandResult</code> object can also instruct the <code>UI</code> to perform certain actions, such as displaying help (for commands) and toggling of view between <code>student default</code>, <code>student detailed</code>.</p>
+<p>In addition, the <code>CommandResult</code> object can also instruct the <code>UI</code> to perform certain actions.</p>
 </li>
 </ol>
 </div>
@@ -507,7 +473,7 @@ The lifeline for <code>StudentCommandParser</code> should end at the destroy mar
 <div class="title">Figure 7. Structure of the Model Component with <code>Student</code> class as a detailed example.</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/blob/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Model</code>,</p>
@@ -544,7 +510,7 @@ The lifeline for <code>StudentCommandParser</code> should end at the destroy mar
 <div class="title">Figure 8. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/blob/master/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Storage</code> component,</p>
@@ -586,19 +552,19 @@ The feature comprises of commands namely,</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>AddCommand</code> - Adds the student particulars into the class list</p>
+<p><code>StudentAddCommand</code> - Adds the student particulars into the class list</p>
 </li>
 <li>
-<p><code>EditCommand</code> - Edits the particulars of a student</p>
+<p><code>StudentEditCommand</code> - Edits the particulars of a student</p>
 </li>
 <li>
-<p><code>DeleteCommand</code> - Deletes the student information</p>
+<p><code>StudentDeleteCommand</code> - Deletes the student information</p>
 </li>
 <li>
-<p><code>FindCommand</code> - Finds information of the required student</p>
+<p><code>StudentFindCommand</code> - Finds information of the required student</p>
 </li>
 <li>
-<p><code>ClearCommand</code> - Deletes all student details from the student list</p>
+<p><code>StudentClearCommand</code> - Deletes all student details from the student list</p>
 </li>
 </ul>
 </div>
@@ -625,10 +591,10 @@ which shows the sequence diagram for the StudentAddCommand.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <code>TeaPetParser</code> will assign the <code>StudentCommandParser</code> to parse the user input</p>
+<p>The <code>TeaPetParser</code> will assign the <code>StudentCommandParser</code> to parse the user input.</p>
 </li>
 <li>
-<p>The <code>StudentCommandParser#parse</code> will take in a string of user input consisting of the arguments</p>
+<p>The <code>StudentCommandParser#parse</code> will take in a string of user input consisting of the arguments.</p>
 </li>
 <li>
 <p>The arguments are tokenized and the respective models of each argument are created.</p>
@@ -679,7 +645,7 @@ either a unknown command or wrong format error message will be displayed.
 <div class="content">
 <img src="images/StudentAddActivityDiagram.png" alt="StudentAddActivityDiagram">
 </div>
-<div class="title">Figure 10. Sequence Diagram for StudentAddCommand</div>
+<div class="title">Figure 10. Activity Diagram for StudentAddCommand</div>
 </div>
 </div>
 </div>
@@ -761,7 +727,7 @@ be returned with the success message.</p>
 <li>
 <p>After the successful parsing of user input, the <code>StudentFindCommand#execute(Model model)</code> method is called which checks if the
 <code>NameContainsKeywordsPredicate(keywords)</code> is defined as part of the argument when instantiating the
-<code>StudentFindCommand(NameContainsKeywordsPredicate predicate)</code> constructor</p>
+<code>StudentFindCommand(NameContainsKeywordsPredicate predicate)</code> constructor.</p>
 </li>
 <li>
 <p>The <code>Student</code> is then searched through the <code>UniqueStudentList#students</code> list using the <code>Model#hasStudent(Student student)</code> method
@@ -871,8 +837,14 @@ the user expereince as the command will be too long to type.</p>
 This feature utilises the <code>StudentCard#updateImage</code> method to update the images of students.</p>
 </div>
 <div class="paragraph">
-<p>The feature comprises of one command namely,
-* <code>DefaultStudentDisplayCommand</code> - Refreshes the student list to show updated images of students and displays the student list.</p>
+<p>The feature comprises of one command namely, <code>DefaultStudentDisplayCommand</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Refreshes the student list to show updated images of students and displays the student list.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>This is further illustrated in the following sequence diagram below.</p>
@@ -923,7 +895,7 @@ will be called and the student list is now visible on the <code>MainWindow</code
 <div class="content">
 <img src="images/ImportImageSequenceDiagram.png" alt="ImportImageSequenceDiagram">
 </div>
-<div class="title">Figure 12. Activity Diagram for StudentRefreshCommand</div>
+<div class="title">Figure 12. Activity Diagram Import Image Feature</div>
 </div>
 <div class="paragraph">
 <p>&#160;<br></p>
@@ -981,27 +953,27 @@ The feature comprises of four commands namely.</p>
 <div class="content">
 <img src="images/AdminClassDiagram.png" alt="AdminClassDiagram">
 </div>
-<div class="title">Figure 13. Admin Commands Diagram</div>
+<div class="title">Figure 13. Class Diagram for Admin Commands</div>
 </div>
 <div class="paragraph">
-<p>These are the various admin commands to try:</p>
+<p>The student administrative feature keeps track of essential student admin details. The feature comprises of commands namely,</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>admin</code> - Displays the most updated class administrative details.</p>
+<p><code>AdminDisplayCommand</code> - Displays the most updated class administrative details.</p>
 </li>
 <li>
-<p><code>admin dates</code> - Displays the dates that hold administrative information of the class.</p>
+<p><code>AdminDatesCommand</code> - Displays the dates that hold administrative information of the class.</p>
 </li>
 <li>
-<p><code>admin save</code> - Saves today’s administrative information of the class.</p>
+<p><code>AdminSaveCommand</code> - Saves today’s administrative information of the class.</p>
 </li>
 <li>
-<p><code>admin delete</code> - Deletes the administrative information of the class at the specified date.</p>
+<p><code>AdminDeleteCommand</code> - Deletes the administrative information of the class at the specified date.</p>
 </li>
 <li>
-<p><code>admin fetch</code> - Fetches the administrative information of the class at the specified date.</p>
+<p><code>AdminFetchCommand</code> - Fetches the administrative information of the class at the specified date.</p>
 </li>
 </ul>
 </div>
@@ -1010,7 +982,7 @@ The feature comprises of four commands namely.</p>
 <div class="sect4">
 <h5 id="implementation-8"><a class="link" href="#implementation-8">Implementation</a></h5>
 <div class="paragraph">
-<p>The following is a detailed explanation of the operations which <code>admin</code> performs.</p>
+<p>The following is a detailed explanation of the operations which <code>AdminDisplayCommand</code> performs.</p>
 </div>
 <div class="paragraph">
 <p><strong>Step 1</strong>. The <code>AdminDisplayCommand#execute(Model model)</code> method is executed which does not take in any arguments.</p>
@@ -1042,7 +1014,7 @@ If the class list is empty, a blank page will be shown.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the wording of the <code>admin</code> command contains error(s), an unknown command message will be displayed.
+If the wording of the <code>AdminDisplayCommand</code> contains error(s), an unknown command message will be displayed.
 </td>
 </tr>
 </table>
@@ -1054,7 +1026,7 @@ If the wording of the <code>admin</code> command contains error(s), an unknown c
 <div class="sect4">
 <h5 id="implementation-9"><a class="link" href="#implementation-9">Implementation</a></h5>
 <div class="paragraph">
-<p>The following is a detailed explanation of the operations which <code>admin dates</code> performs.</p>
+<p>The following is a detailed explanation of the operations which <code>AdminSaveCommand</code> performs.</p>
 </div>
 <div class="paragraph">
 <p><strong>Step 1</strong>. The <code>AdminDatesCommand#execute(Model model)</code> method is executed which does not take in any arguments.</p>
@@ -1086,7 +1058,7 @@ If the date list is empty, a blank page will be shown.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the format or wording of the <code>admin dates</code> command contains error(s), an unknown command or a wrong format message
+If the format or wording of the <code>AdminDatesCommand</code> command contains error(s), an unknown command or a wrong format message
 will be displayed.
 </td>
 </tr>
@@ -1099,7 +1071,7 @@ will be displayed.
 <div class="sect4">
 <h5 id="implementation-10"><a class="link" href="#implementation-10">Implementation</a></h5>
 <div class="paragraph">
-<p>The following is a detailed explanation of the operations which <code>admin save</code> performs.</p>
+<p>The following is a detailed explanation of the operations which <code>AdminSaveCommand</code> performs.</p>
 </div>
 <div class="paragraph">
 <p><strong>Step 1</strong>. The <code>AdminSaveCommand#execute(Model model)</code> method is executed which takes in today&#8217;s date as an argument.</p>
@@ -1128,20 +1100,20 @@ exists, with the duplicate dates error message.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the format or wording of saving of a date contains error(s), an unknown command or wrong format error message will be
+If the format or wording of <code>AdminSaveCommand</code> contains error(s), an unknown command or wrong format error message will be
 displayed.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes admin save command:</p>
+<p>The following activity diagram summarizes what happens when a user executes AdminSaveCommand:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/AdminSaveActivityDiagram.png" alt="AdminSaveActivityDiagram">
 </div>
-<div class="title">Figure 14. Admin Save Activity Diagram</div>
+<div class="title">Figure 14. Activity Diagram for AdminSaveCommand</div>
 </div>
 </div>
 <div class="sect4">
@@ -1153,7 +1125,7 @@ displayed.
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the most updated administrative list as today&#8217;s date.</p>
+<p><strong>Current Implementation:</strong> Saves the most updated administrative list as today&#8217;s date.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1166,7 +1138,7 @@ displayed.
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Saves the most updated administrative list as any date.</p>
+<p><strong>Alternatives Considered:</strong> Saves the most updated administrative list as any date.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1185,7 +1157,7 @@ displayed.
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Saving a date that exists in the storage is not allowed.</p>
+<p><strong>Current Implementation:</strong> Saving a date that exists in the storage is not allowed.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1198,7 +1170,7 @@ displayed.
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Saving a date that exists in the storage is allowed.</p>
+<p><strong>Alternatives Considered:</strong> Saving a date that exists in the storage is allowed.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1339,7 +1311,7 @@ exposed by the <code>Model</code> interface to perform the related operations (S
 <div class="content">
 <img src="images/academics/AcademicsClassDiagram.png" alt="AcademicsClassDiagram">
 </div>
-<div class="title">Figure 16. Academics Commands Diagram</div>
+<div class="title">Figure 16. Class Diagram for Academics Commands</div>
 </div>
 <div class="sect3">
 <h4 id="class-overview"><a class="link" href="#class-overview">7.3.1. Class Overview</a></h4>
@@ -1350,7 +1322,7 @@ exposed by the <code>Model</code> interface to perform the related operations (S
 <div class="content">
 <img src="images/academics/AcademicsModelClassDiagram.png" alt="AcademicsModelClassDiagram">
 </div>
-<div class="title">Figure 17. Academics Model Class Diagram</div>
+<div class="title">Figure 17. Class Diagram for Academics Model</div>
 </div>
 </div>
 <div class="sect3">
@@ -1397,14 +1369,14 @@ returned with the message.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the format or wording of adding an assessment contains error(s), an unknown command or wrong format error message
+If the format or wording of <code>AcademicsAddCommand</code> contains error(s), an unknown command or wrong format error message
 will be displayed.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The following sequence diagram summarizes what happens when a user keys in an academics add command:</p>
+<p>The following sequence diagram summarizes what happens when a user executes an AcademicsAddCommand:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1524,7 +1496,7 @@ submitted their work, a <code>CommandException</code> will be thrown.</p>
 <code>CommandResult</code> will be returned with the message.</p>
 </div>
 <div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes academics submit command:</p>
+<p>The following activity diagram summarizes what happens when a user executes an AcademicsSubmitCommand:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1595,7 +1567,7 @@ using the method <code>Model#markAssessment(Assessment assessment, List&lt;Strin
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Marking a submission that has not be submitted is not allowed.</p>
+<p><strong>Current Implementation:</strong> Marking a submission that has not be submitted is not allowed.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1608,7 +1580,7 @@ using the method <code>Model#markAssessment(Assessment assessment, List&lt;Strin
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Marking an unsubmitted work will also submit it for the assessment.</p>
+<p><strong>Alternatives Considered:</strong> Marking an unsubmitted work will also submit it for the assessment.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1628,7 +1600,7 @@ using the method <code>Model#markAssessment(Assessment assessment, List&lt;Strin
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Setting the total score for a submission is not allowed. (Total score for all submissions will be 100.)</p>
+<p><strong>Current Implementation: </strong> Setting the total score for a submission is not allowed. (Total score for all submissions will be 100.)</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1641,7 +1613,7 @@ using the method <code>Model#markAssessment(Assessment assessment, List&lt;Strin
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Setting the total score for a submission is allowed.</p>
+<p><strong>Alternatives Considered:</strong> Setting the total score for a submission is allowed.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1706,7 +1678,7 @@ If the academics list is empty, a blank page will be shown.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the wording of the <code>academics</code> command contains error(s), an unknown command message will be displayed.
+If the wording of the <code>AcademicsDisplayCommand</code> contains error(s), an unknown command message will be displayed.
 </td>
 </tr>
 </table>
@@ -1741,7 +1713,7 @@ Format of the command is: <code>academics export</code>.
 <code>CommandResult</code> will be returned with the message.</p>
 </div>
 <div class="paragraph">
-<p><strong>Step 3.</strong> Subsequently, the <code>CommandResult</code> will be processed by the`MainWindow` in the UI component and generate a
+<p><strong>Step 3.</strong> Subsequently, the <code>CommandResult</code> will be processed by the <code>MainWindow</code> in the UI component and generate a
 studentAcademics.csv in the data folder of the current directory.</p>
 </div>
 </div>
@@ -1782,7 +1754,7 @@ information of his/her students. Each note is tagged to a specific student and a
 <div class="content">
 <img src="images/developerguide/notes/NotesClassDiagram.png" alt="NotesClassDiagram">
 </div>
-<div class="title">Figure 20. Class Diagram for Notes Commands.</div>
+<div class="title">Figure 20. Class Diagram for Notes Commands</div>
 </div>
 <div class="sect3">
 <h4 id="structure-of-notes-class"><a class="link" href="#structure-of-notes-class">7.4.1. Structure of Notes Class</a></h4>
@@ -1794,7 +1766,7 @@ depicts the structure of the Notes Model Component.</p>
 <div class="content">
 <img src="images/developerguide/notes/NotesModelClassDiagram.png" alt="NotesModelClassDiagram">
 </div>
-<div class="title">Figure 21. Class Diagram for Notes Model Component.</div>
+<div class="title">Figure 21. Class Diagram for Notes Model Component</div>
 </div>
 </div>
 <div class="sect3">
@@ -1845,7 +1817,7 @@ the <code>NotesAddCommand#MESSAGE_SUCCESS</code> constant and a new <code>Comman
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the format or wording of adding a student contains error(s), the behaviour of TeaPet will be similar to step 2, where either a unknown command
+If the format or wording of <code>NotesAddCommand</code> contains error(s), the behaviour of NotesManager will be similar to step 2, where either a unknown command
 or wrong format error message will be displayed.
 </td>
 </tr>
@@ -1855,13 +1827,13 @@ or wrong format error message will be displayed.
 <div class="content">
 <img src="images/developerguide/notes/NotesAddSequence.png" alt="NotesAddSequence">
 </div>
-<div class="title">Figure 22. Sequence Diagram for Adding Notes.</div>
+<div class="title">Figure 22. Sequence Diagram for Adding Notes</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/developerguide/notes/SDGetNotesAddCommand.png" alt="SDGetNotesAddCommand">
 </div>
-<div class="title">Figure 23. Supplementary Frame for Sequence Diagram.</div>
+<div class="title">Figure 23. Supplementary Frame for Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1963,7 +1935,7 @@ be returned with the success message.</p>
 <li>
 <p>After the successful parsing of user input, the <code>NotesFilterCommand#execute(Model model)</code> method is called which checks if the
 <code>NotesContainsKeywordsPredicate(keywords)</code> is defined as part of the argument when instantiating the
-<code>NotesFilterCommand(NotesContainsKeywordsPredicate predicate)</code> constructor</p>
+<code>NotesFilterCommand(NotesContainsKeywordsPredicate predicate)</code> constructor.</p>
 </li>
 <li>
 <p>The <code>Notes</code> is then searched through the <code>UniqueNotesList#notes</code> list&#8230;&#8203; &#8230;&#8203;</p>
@@ -2003,7 +1975,7 @@ the current directory.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Alternative 1 (Current Choice): Intuitive, simple syntax and user-friendly</p>
+<p>Current Implementation: Intuitive, simple syntax and user-friendly</p>
 <div class="ulist">
 <ul>
 <li>
@@ -2016,7 +1988,7 @@ the current directory.</p>
 </div>
 </li>
 <li>
-<p>Alternative 2: Many additional fields including special tags, reminders, etc.</p>
+<p>Alternatives Considered: Many additional fields including special tags, reminders, etc.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -2082,7 +2054,7 @@ using the <code>VEvent</code> type class. Only the <code>Storage</code> componen
 <div class="content">
 <img src="images/schedule_class_diagram.png" alt="schedule class diagram">
 </div>
-<div class="title">Figure 25. Schedule Class Diagram</div>
+<div class="title">Figure 25. Class Diagram for Schedule</div>
 </div>
 </div>
 <div class="sect3">
@@ -2090,7 +2062,7 @@ using the <code>VEvent</code> type class. Only the <code>Storage</code> componen
 <div class="sect4">
 <h5 id="implementation-19"><a class="link" href="#implementation-19">Implementation</a></h5>
 <div class="paragraph">
-<p>The following is a detailed explanation which <code>schedule add</code> performs.</p>
+<p>The following is a detailed explanation which <code>EventAddCommand</code> performs.</p>
 </div>
 <div class="paragraph">
 <p><strong>Step 1:</strong> The <code>EventAddCommand#execute(Model model)</code> method is called which validates if the <code>VEvent</code> object from
@@ -2128,7 +2100,7 @@ from other layers of the application.
 <div class="content">
 <img src="images/ScheduleAddActivityDiagram.png" alt="ScheduleAddActivityDiagram">
 </div>
-<div class="title">Figure 26. Schedule Add Activity Diagram</div>
+<div class="title">Figure 26. Activity Diagram for ScheduleAddCommand</div>
 </div>
 </div>
 <div class="sect4">
@@ -2386,6 +2358,18 @@ as well. Furthermore, the name required here is not the name of the student but 
 <td class="tableblock halign-left valign-top"><p class="tableblock">know who to contact in case of emergency</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be able to view the available dates in chronological order that contains administrative information of the class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know which are the available dates that I can view</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view the administrative information of the class on a specific date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">access the required administrative information</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">specify if a student is late or absent for class</p></td>
@@ -2417,9 +2401,6 @@ as well. Furthermore, the name required here is not the name of the student but 
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2813,13 +2794,13 @@ as well. Furthermore, the name required here is not the name of the student but 
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
 <h3 id="use-case-uc09-display-detailed-class-list" class="discrete">Use case: UC09 - Display detailed class list.</h3>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -3234,8 +3215,7 @@ Use case resumes at step 2.</p>
 </dd>
 <dt class="hdlist1"><a id="schedule"></a> Schedule</dt>
 <dd>
-<p>TeaPet&#8217;s schedule that stores all of the teacher&#8217;s events
-t</p>
+<p>TeaPet&#8217;s schedule that stores all of the teacher&#8217;s events</p>
 </dd>
 </dl>
 </div>
@@ -3448,7 +3428,7 @@ already in the list of dates. Status message either displays that today&#8217;s 
 already exists in the current list of dates respectively.</p>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>save</code>, <code>admin save DATE</code> where <code>DATE</code> is in YYYY-MM-DD format.<br>
+<p>Other incorrect delete commands to try: <code>save</code>, <code>admin save DATE</code> where <code>DATE</code> is in <strong>YYYY-MM-DD</strong> format.<br>
 Expected: Status bar displays invalid command and incorrect command format message respectively.</p>
 </li>
 </ol>
@@ -3459,14 +3439,14 @@ Expected: Status bar displays invalid command and incorrect command format messa
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Test case: <code>admin delete DATE</code> where DATE is in YYYY-MM-DD format.<br>
+<p>Test case: <code>admin delete DATE</code> where DATE is in <strong>YYYY-MM-DD</strong> format.<br>
 Expected: Date has either been deleted if the date provided exists in the list of dates, or no dates will be deleted if the
 date provided is not in the list. Status message either displays that the specific date has been deleted or displays that current date
 already exists in the current list of dates respectively.</p>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>admin delete</code>, <code>delete DATE</code>, <code>admin delete `DATE</code>, where <code>DATE</code> is in
-YYYY-MM-DD format and <code>`DATE</code> is in the wrong <code>DATE</code> format.<br>
+<p>Other incorrect delete commands to try: <code>admin delete</code>, <code>delete DATE</code>, <code>admin delete DATE</code>, where <code>DATE</code> is in
+<strong>YYYY-MM-DD</strong> format and <code>DATE</code> is in the wrong <code>DATE</code> format.<br>
 Expected: Status bar displays invalid command and incorrect command format message.</p>
 </li>
 </ol>
@@ -3490,7 +3470,7 @@ The recurrence type and color do not matter as long as they are valid.</p>
 <li>
 <p>Test case: <code>schedule add eventName/Consultation startDateTime/2020-04-10T10:00 endDateTime/2020-04-10T12:00 recur/none
 color/5</code><br>
-Expected: An event with name Consultation is added to the scheduler</p>
+Expected: An event with name Consultation is added to the scheduler.</p>
 </li>
 <li>
 <p>Test case:  <code>schedule add eventName/Coffee Break startDateTime/2020-04-04T12:00 endDateTime/2020-04-04T13:00 recur/none
@@ -3657,4 +3637,4 @@ Expected: An error message is shown as there should be no arguments passed into 
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 15:24:16 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 19:41:09 UTC</div></div></div></body></html>
