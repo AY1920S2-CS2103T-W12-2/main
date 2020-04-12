@@ -215,10 +215,614 @@ it gets too packed.</p>
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="navigating-the-user-guide"><a class="link" href="#navigating-the-user-guide">Navigating the User Guide</a></h3>
+<div class="paragraph">
+<p>The aim of this User Guide is to provide you with all the information you need to fully utilise TeaPet. We understand the pains of using a
+Command Line Interface (CLI) program and have bested our efforts into ensuring a very readable guide on how to use our program.</p>
+</div>
+<div class="paragraph">
+<p>If you need help setting up TeaPet, you can go to the <a href="#QuickStart">[QuickStart]</a> section.</p>
+</div>
+<div class="paragraph">
+<p>If you want to find out more about TeaPet&#8217;s features and commands, you can go to the <a href="#Features">[Features]</a> section.</p>
+</div>
+<div class="paragraph">
+<p>If you need an overview regarding the usage of TeaPet&#8217;s commands, head on to the <a href="#CommandSummary">[CommandSummary]</a> section.</p>
+</div>
+<div class="paragraph">
+<p>Take note of the following symbols and formatting used in this document:<br></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. A Summary of symbols used in our User Guide.</caption>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Symbol/<br>
+Format</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Meaning</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><kbd>Enter</kbd></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><span class="gray">This symbol indicates the enter button on the keyboard.</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="gray"><code>command</code></span></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">A grey highlight indicates that this is a command that can be executed by the program. Some
+                     <code>[command]</code> will have brackets around them, this indicates that the command is optional.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle" colspan="2"><div><div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This symbol indicates notes.
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle" colspan="2"><div><div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+This symbol indicates warnings.
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle" colspan="2"><div><div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+This symbol indicates tips.
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="particulars"><a class="link" href="#particulars">Student Particulars [Done by Simon Lam]</a></h3>
+<div class="paragraph">
+<p>TeaPet records down personal particulars of students such as address, contact number and Next of Kin (NOK) particulars.
+Thereafter, you are able to view, update or delete those information of specific students when deemed necessary.</p>
+</div>
+<div class="sect3">
+<h4 id="display-default-student-view-code-student-code"><a class="link" href="#display-default-student-view-code-student-code">Display default student view: <code>student</code></a></h4>
+<div class="paragraph">
+<p>TeaPet syncs the images of students found in the image folder into the student list. More information about updating student
+images can be found <a href="#update-profile">here</a>. TeaPet then displays a summarised list of the student details.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>student</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>The student list now displays DEFAULT details.
+[HELP ON STUDENT COMMANDS]
+DISPLAY DETAILED LIST: student detailed
+ADD STUDENT: name/NAME [phone/PHONE] [email/EMAIL] [adr/ADDRESS] [temp/TEMPERATURE] [att/ATTENDANCE] [nok/NAME-RELATIONSHIP-PHONE] [tag/TAG]
+EDIT STUDENT: student edit INDEX [name/NAME] [phone/PHONE] [email/EMAIL] [adr/ADDRESS] [temp/TEMPERATURE] [att/ATTENDANCE] [nok/NAME-RELATIONSHIP-PHONE] [tag/TAG]
+DELETE STUDENT: student delete INDEX
+FIND STUDENT: student find NAME</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/add_student.png" alt="add student" width=""790">
+</div>
+<div class="title">Figure 1. After using <code>student</code> command</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="display-detailed-student-view-code-student-detailed-code"><a class="link" href="#display-detailed-student-view-code-student-detailed-code">Display detailed student view: <code>student detailed</code></a></h4>
+<div class="paragraph">
+<p>Displays a detailed version of the class list with all information.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>student detailed</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>The student list now displays ALL details.</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/detailed_display.png" alt="detailed display" width=""790">
+</div>
+<div class="title">Figure 2. After using <code>student detailed</code> command</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="add-student-code-add-code"><a class="link" href="#add-student-code-add-code">Add Student: <code>add</code></a></h4>
+<div class="paragraph">
+<p>Adds a student into the student list.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>student add name/NAME [phone/PHONE] [email/EMAIL] [adr/ADDRESS] [temp/TEMPERATURE] [att/ATTENDANCE] [nok/NAME-RELATIONSHIP-PHONE] [tag/TAG]</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Adds a new student with the given attributes.</p>
+</li>
+<li>
+<p>The student name <strong>cannot be empty</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The address of student is not restricted as it can be subjective to the student and teacher.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Next-of-kin relationships allowed: Father, Mother, Sister, Brother, Grandfather, Grandmother
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>student add name/Jim phone/90045722 email/jim@example.com adr/Bishan St 13 Blk 154 #08-18 tag/monitor nok/James-Father-91234567
+   temp/36.6 att/Present</code><br>
+Adds a student named Jim into the student list along with his details.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>New student added: Jim Phone: 90045722 Email: jim@example.com Address: Bishan St 13 Blk 154 #08-18 Temperature: 36.6 Attendance: Present NextOfKin: James-Father-91234567 Tags: [monitor]</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/add_student_jim.png" alt="add student jim" width=""790">
+</div>
+<div class="title">Figure 3. After using <code>student add</code> command</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-student-code-edit-code"><a class="link" href="#edit-student-code-edit-code">Edit Student: <code>edit</code></a></h4>
+<div class="paragraph">
+<p>Edits personal details of students.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>student edit INDEX [name/NAME] [phone/PHONE] [email/EMAIL] [adr/ADDRESS] [temp/TEMPERATURE] [att/ATTENDANCE] [nok/NAME-RELATIONSHIP-PHONE] [tag/TAG]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>student edit 1 phone/90023413</code><br>
+Edits the student phone number in index 1 to a new phone number.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Edited Student: Simon Lam Phone: 90023413 Email: simonlam@example.com Address: Blk 30 Geylang Street 29,
+#06-40 Temperature: 36.5 Attendance: Sick Remark:  Tags: [Sheares]</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-student-code-delete-code"><a class="link" href="#delete-student-code-delete-code">Delete Student: <code>delete</code></a></h4>
+<div class="paragraph">
+<p>Deletes the student and all his personal details from the student list.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>student delete INDEX</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>student delete 1</code> Deletes the student at index 1.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Deleted Student: Simon Lam Phone: 90023413 Email: simonlam@example.com Address: Blk 30 Geylang Street 29, #06-40 Temperature: 36.5 Attendance: Sick Remark:  Tags: [Sheares]</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="clear-student-list-code-clear-code"><a class="link" href="#clear-student-list-code-clear-code">Clear Student List: <code>clear</code></a></h4>
+<div class="paragraph">
+<p>Clears all data from the student list.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>student clear</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>`student clear` Deletes the entire student list</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Student list has been cleared!</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="find-student-code-find-code"><a class="link" href="#find-student-code-find-code">Find Student: <code>find</code></a></h4>
+<div class="paragraph">
+<p>Finds the student information from the student list and displays it.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>student find NAME</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>student find Simon</code> Finds the information a student named Simon.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>1 students listed!</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="schedulerA"><a class="link" href="#schedulerA">Personal Scheduler [Done by Simon Lam and Gary Lim]</a></h3>
+<div class="paragraph">
+<p>TeaPet&#8217;s Personal Scheduler allows you to record down your events for the week, which will be
+sorted according to date and time. You will then be able to easily view your schedule as you need it.</p>
+</div>
+<div class="sect3">
+<h4 id="display-your-scheduler-code-schedule-code-done-by-simon-lam-and-gary-lim"><a class="link" href="#display-your-scheduler-code-schedule-code-done-by-simon-lam-and-gary-lim">Display your scheduler: <code>schedule</code> [Done by Simon Lam and Gary Lim]</a></h4>
+<div class="paragraph">
+<p>Displays your schedule in this current week.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>schedule</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>This is your schedule for the week
+Schedule helps you to keep track of your events.
+[HELP ON SCHEDULE COMMANDS]
+add event: schedule add eventName/EVENT_DESCRIPTION startDateTime/YYYY-MM-DDTHH:MM endDateTime/YYYY-MM-DDTHH:MM recur/RECUR_DESCRIPTION color/COLOR_CODE
+edit event: schedule edit INDEX [eventName/EVENT_DESCRIPTION] [startDateTime/YYYY-MM-DDTHH:MM] [endDateTime/YYYY-MM-DDTHH:MM] [recur/RECUR_DESCRIPTION] [color/COLOR_CODE]
+delete event: schedule delete INDEX
+get index of a event: schedule indexGet/EVENT_DESCRIPTION
+get all indexes of events in schedule: schedule indexAll
+change view mode of schedule: schedule view mode/SCHEDULE_MODE date/YYYY-MM-DD
+export schedule: schedule export
+Type the following commands for more info!</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/display_schedule.png" alt="display schedule" width="790">
+</div>
+<div class="title">Figure 4. After using <code>schedule</code> command</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="adding-an-event-to-schedule-code-schedule-add-code-done-by-simon-lam-and-gary-lim"><a class="link" href="#adding-an-event-to-schedule-code-schedule-add-code-done-by-simon-lam-and-gary-lim">Adding an event to schedule: <code>schedule add</code> [Done by Simon Lam and Gary Lim]</a></h4>
+<div class="paragraph">
+<p>Adds an event to your personal scheduler.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>schedule add eventName/EVENT_DESCRIPTION startDateTime/START_DATETIME endDateTime/END_DATETIME recur/RECUR_DESCRIPTION color/COLOR_CODE</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The format of startDateTime and endDateTime is in YYYY-MM-DDThh:mm format, where time is in the 24-hour format.<br>
+Example: 7th April 2020 10AM will be 2020-04-07T10:00
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+RECUR_DESCRIPTION can only be either of these: <code>none</code>, <code>daily</code> or <code>weekly</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Events which are further away in the future have a darker color code. This is intentional.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The prefixes are meant to be longer due the the emphasis on clarity as there are other features in this application
+which uses similar prefixes as well.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+COLOR_CODE is from 0 to 23 inclusive.<br>
+</td>
+</tr>
+</table>
+</div>
+<div id="colourcode" class="imageblock">
+<div class="content">
+<img src="../images/color_code.png" alt="color code" width="790">
+</div>
+<div class="title">Figure 5. Color code for TeaPet&#8217;s calendar</div>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Non-Recurring Event</strong> <code>schedule add eventName/Teachers Meeting startDateTime/2020-04-02T08:00
+endDateTime/2020-04-07T10:00 recur/none color/21</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Creates an event in the schedule with the description "Teachers Meeting" from "2nd Apr 2020, 0800" to "7th Apr 2020, 1000" with "no recurrence"
+and a color group of "21".</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/schedule_add.png" alt="schedule add" width="790">
+</div>
+<div class="title">Figure 6. Adding an event to the schedule</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="schedulerA"><a class="link" href="#schedulerA">Additional Features [Done by Simon Lam]</a></h3>
+<div class="sect3">
+<h4 id="update-profile"><a class="link" href="#update-profile">Update Profile Picture</a></h4>
+<div class="paragraph">
+<p>TeaPet&#8217;s student list allows you to upload image of your students into your application.
+The following steps will help you upload photos of your students into the student list.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. Locate the image folder. It is in the root directory folder!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/locating_image_folder.png" alt="locating image folder" width="790">
+</div>
+<div class="title">Figure 7. Location of image folder</div>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. Open the image folder and drag the image of your student into the folder.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The filename of your image must of this format:<br>
+1. Filename of the image must be the same as the student.<br>
+4. File is in .png format.<br>
+For example, a student with name <strong>Simon Lam</strong> must have a image file with name <strong>Simon Lam</strong> in .png format.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+For ideal optimization of the image, its dimensions for its length and width should be roughly equal.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/images_in_folder.png" alt="images in folder" width="790">
+</div>
+<div class="title">Figure 8. Dragging png file into image folder</div>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>. Type in the <code>student</code> command in the user interface. TeaPet will update the images and
+now you can see pictures of your students in your student list!</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Editing the name of the student will change the student image back to the default image. To solve this, you have to edit
+the png file in the Image folder as well after you edit the name of the student and then enter the <code>student</code> command.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/before_picture_upload.png" alt="before picture upload" width=""790">
+</div>
+<div class="title">Figure 9. Before using the student command</div>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/after_picture_upload.png" alt="after picture upload" width=""790">
+</div>
+<div class="title">Figure 10. After using the student command</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="update-profile"><a class="link" href="#update-profile">All in one help window</a></h4>
+<div class="paragraph">
+<p>Suppose you are lost and you need help regarding the many commands in TeaPet, you can easily type in <code>help</code> or simply
+press your <code>F1</code> key to bring up this user guide!</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>help</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Opened help window.</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/help_window.png" alt="help window" width=""790">
+</div>
+<div class="title">Figure 11. Displayed help window</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<h2 id="additional-features"><a class="link" href="#additional-features">Contributions to the Developer Guide</a></h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -230,5 +834,824 @@ it gets too packed.</p>
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="student-particulars-feature"><a class="link" href="#student-particulars-feature">Student particulars feature</a></h3>
+<div class="paragraph">
+<p>The student particulars feature keeps track of essential student details.
+The feature comprises of commands namely,</p>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 20:12:12 UTC</div></div></div></body></html>
+<div class="ulist">
+<ul>
+<li>
+<p><code>StudentAddCommand</code> - Adds the student particulars into the class list</p>
+</li>
+<li>
+<p><code>StudentEditCommand</code> - Edits the particulars of a student</p>
+</li>
+<li>
+<p><code>StudentDeleteCommand</code> - Deletes the student information</p>
+</li>
+<li>
+<p><code>StudentFindCommand</code> - Finds information of the required student</p>
+</li>
+<li>
+<p><code>StudentClearCommand</code> - Deletes all student details from the student list</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The student commands all share similar paths of execution and is illustrated in the following sequence diagram below,
+which shows the sequence diagram for the StudentAddCommand.</p>
+</div>
+<div class="paragraph">
+<p>The commands when executed, will interface with the methods exposed by the <code>Model</code> interface to perform the related operations
+(See <a href="#Design-Logic">logic component</a> for the general overview).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/student_sequence_diagram_v1.png" alt="student sequence diagram v1">
+</div>
+<div class="title">Figure 12. Sequence Diagram for StudentAddCommand</div>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+<div class="paragraph">
+<p><strong>These are the common steps among the Student Commands:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>TeaPetParser</code> will assign the <code>StudentCommandParser</code> to parse the user input.</p>
+</li>
+<li>
+<p>The <code>StudentCommandParser#parse</code> will take in a string of user input consisting of the arguments.</p>
+</li>
+<li>
+<p>The arguments are tokenized and the respective models of each argument are created.</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="Feature-Add"><a class="link" href="#Feature-Add">Student Add command</a></h4>
+<div class="sect4">
+<h5 id="implementation"><a class="link" href="#implementation">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>StudentAddCommand</code> performs.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After the successful parsing of user input, the <code>StudentAddCommand#execute(Model model)</code> method is called which validates the student defined.</p>
+</li>
+<li>
+<p>As student names are unique, if a duplicate student is defined, a <code>CommandException</code> is thrown which will not add the defined student.</p>
+</li>
+<li>
+<p>The method <code>Model#addStudent(Student student)</code> will then be called to add the student. The command box will be reflected with
+the <code>StudentAddCommand#MESSAGE_SUCCESS</code> constant and a new <code>CommandResult</code> will be returned with the success message.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the format or wording of adding a student contains error(s), the behaviour of TeaPet will be that
+either a unknown command or wrong format error message will be displayed.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>The newly created student is added to the <code>UniqueStudentList</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes the <code>student add</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StudentAddActivityDiagram.png" alt="StudentAddActivityDiagram">
+</div>
+<div class="title">Figure 13. Activity Diagram for StudentAddCommand</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="student-edit-command"><a class="link" href="#student-edit-command">Student Edit command</a></h4>
+<div class="sect4">
+<h5 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>StudentEditCommand</code> performs.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After the successful parsing of user input, the <code>StudentEditCommand#execute(Model model)</code> method is called which checks
+if the <code>Index</code> is defined as an argument when instantiating the <code>StudentEditCommand(Index, index, EditStudentDescriptor editStudentDescriptor)</code>
+constructor. It uses the <code>StudentEditCommand.EditStudentDescriptor</code> to create a new edited student.</p>
+</li>
+<li>
+<p>A new <code>Student</code> with the newly updated values will be created which replaces the existing <code>Student</code> object using the
+<code>Model#setStudent(Student target, Student editedStudent)</code> method.</p>
+</li>
+<li>
+<p>The filtered student list is then updated with the new <code>Student</code> with the <code>Model#updateFilteredStudentList(PREDICATE_SHOW_ALL_STUDENTS)</code> method.</p>
+</li>
+<li>
+<p>The command box will be reflected with the <code>StudentEditCommand#MESSAGE_SUCCESS</code> constant and a new <code>CommandResult</code> will be
+returned with the success message.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="student-delete-command"><a class="link" href="#student-delete-command">Student Delete command</a></h4>
+<div class="sect4">
+<h5 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>StudentDeleteCommand</code> performs.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After the successful parsing of user input, the <code>StudentDeleteCommand#execute(Model model)</code> method is called which checks if the <code>Index</code>
+is defined as an argument when instantiating the <code>StudentDeleteCommand(Index index)</code>  constructor.<br></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>Index</code> must be within the bounds of the student list.<br>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>The <code>Student</code> at the specified <code>Index</code> is then removed from the <code>UniqueStudentList#students</code> observable list using the
+<code>Model#deleteStudent(Index index)</code> method.</p>
+</li>
+<li>
+<p>The command box will be reflected with the <code>StudentDeleteCommand#MESSAGE_SUCCESS</code> constant and a new <code>CommandResult</code> will
+be returned with the success message.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="student-find-command"><a class="link" href="#student-find-command">Student Find command</a></h4>
+<div class="sect4">
+<h5 id="implementation-4"><a class="link" href="#implementation-4">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>StudentFindCommand</code> performs.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After the successful parsing of user input, the <code>StudentFindCommand#execute(Model model)</code> method is called which checks if the
+<code>NameContainsKeywordsPredicate(keywords)</code> is defined as part of the argument when instantiating the
+<code>StudentFindCommand(NameContainsKeywordsPredicate predicate)</code> constructor.</p>
+</li>
+<li>
+<p>The <code>Student</code> is then searched through the <code>UniqueStudentList#students</code> list using the <code>Model#hasStudent(Student student)</code> method
+to check if the <code>Student</code> already exists. If the <code>Student</code> does not exist, a <code>StudentNotFoundException</code> will be thrown and the <code>Student</code> will not be displayed.</p>
+</li>
+<li>
+<p>The existing <code>UniqueStudentList#internalList</code> is then cleared and updated using the <code>Model#updateFilteredStudentList(Predicate predicate)</code>
+method.</p>
+</li>
+<li>
+<p>A new <code>CommandResult</code> will be returned with the success message.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="student-clear-command"><a class="link" href="#student-clear-command">Student Clear command</a></h4>
+<div class="sect4">
+<h5 id="implementation-5"><a class="link" href="#implementation-5">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>StudentFindCommand</code> performs.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After the successful parsing of the user input, the <code>StudentClearCommand#execute(Model model)</code> method is called.</p>
+</li>
+<li>
+<p>The <code>Model#setTeaPet(ReadOnlyTeaPet teaPet)</code> method is then called which triggers the <code>TeaPet#resetData(ReadOnlyTeaPet newData)</code> method
+and creates a brand new student list to replace the old one.</p>
+</li>
+<li>
+<p>A new <code>CommandResult</code> will be returned with the success message.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h5>
+
+</div>
+<div class="sect4">
+<h5 id="aspect-command-syntax"><a class="link" href="#aspect-command-syntax">Aspect: Command Syntax</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Current Implementation:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Current implementation of the feature follows just the command word syntax
+For example, <code>student</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternatives Considered:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>We considered using the forward slash <code>/</code> before the command word, for example <code>/add</code>. However, we realise that it is redundant
+and will make inputs more tedious and confusing for users.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-command-length"><a class="link" href="#aspect-command-length">Aspect: Command Length:</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Current Implementation:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Commands are shortened as much as possible without much loss in clarity. For example, instead of using <code>/temperature</code>, we used
+<code>/temp</code> instead to input the students temperature into the application. Although this may be initially unfamiliar to users, it
+should be easy to pick up and make it less tedious during input.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternatives Considered:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>We considered using more descriptive arguments such that arguments are clear and succinct. However, this will definitely decrease
+the user expereince as the command will be too long to type.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="import-image-feature"><a class="link" href="#import-image-feature">Import image feature</a></h4>
+<div class="paragraph">
+<p>This feature was included in TeaPet to help teachers easily identify the students using their pictures instead of just names.
+This feature utilises the <code>StudentCard#updateImage</code> method to update the images of students.</p>
+</div>
+<div class="paragraph">
+<p>The feature comprises of one command namely, <code>DefaultStudentDisplayCommand</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Updates the student list to show updated images of students and displays the student list.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This is further illustrated in the following sequence diagram below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ImportImage.v1.png" alt="ImportImage.v1">
+</div>
+<div class="title">Figure 14. Sequence Diagram for <code>DefaultStudentDisplayCommand</code></div>
+</div>
+<div class="sect4">
+<h5 id="implementation-6"><a class="link" href="#implementation-6">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>DefaultStudentDisplayCommand</code> performs.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After the successful parsing of user input, the <code>DefaultStudentDisplayCommand#execute(Model model)</code> method is called. It does not
+require validation as it does not write into the student list.</p>
+</li>
+<li>
+<p>The <code>StudentCardDefault#updateImage</code> method is then called which checks the image folder for the required png file and updates
+the student card.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The name of the png file must match the name of the student.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>If any view other than the student list view is showing on the <code>MainWindow</code>, the <code>MainWindow#handleDefaultStudent()</code> method
+will be called and the student list is now visible on the <code>MainWindow</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes the <code>student</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ImportImageSequenceDiagram.png" alt="ImportImageSequenceDiagram">
+</div>
+<div class="title">Figure 15. Activity Diagram Import Image Feature</div>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h5>
+
+</div>
+<div class="sect4">
+<h5 id="aspect-command-syntax-2"><a class="link" href="#aspect-command-syntax-2">Aspect: Command Syntax</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Current Implementation:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Current implementation of the commands follows the command word syntax, followed by the arguments necessary for execution.
+For example, <code>student add/edit/delete/find</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternatives Considered:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>We considered using a whole new command, <code>student refresh</code> to solely refresh and update images of the students. However, we realised
+that it would be more convenient for the user if we just add this functionality into the <code>student</code> command instead as it is able to
+both update the images and display the student list concurrently.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-uc01-add-student"><a class="link" href="#use-case-uc01-add-student">Use case: UC01 - Add student</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters a student name, followed by optional <a href="#attributes">attributes</a> such as emergency contacts, through the command line.</p>
+</li>
+<li>
+<p>TeaPet adds the student and his/her <a href="#attributes">attributes</a> to the class list.</p>
+</li>
+<li>
+<p>TeaPet displays feedback to the user that a new student is being added.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Student is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. Particulars are invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc02-edit-student" class="discrete">Use case: UC02 - Edit student</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User specifies which student, using the name, and what particulars he/she wants to edit in the command line.</p>
+</li>
+<li>
+<p>TeaPet edits the student&#8217;s particulars in the class list as instructed by the commands.</p>
+</li>
+<li>
+<p>TeaPet displays feedback to the user that the student has been edited, followed by the changes made.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Student is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. Particulars are invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc03-delete-student" class="discrete">Use case: UC03 - Delete student</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User specifies which student, using the index, he/she wants to remove.</p>
+</li>
+<li>
+<p>TeaPet removes the student from the class list.</p>
+</li>
+<li>
+<p>TeaPet displays feedback to the user that the student is being removed.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Student name entered is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc04-display-schedule" class="discrete">Use case: UC04 - Display Schedule</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User keys in the command to display events.</p>
+</li>
+<li>
+<p>TeaPet displays the events in chronological order.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Command is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc05-display-student-class-list" class="discrete">Use case: UC05 - Display student class list.</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters the command to display the class list.</p>
+</li>
+<li>
+<p>TeaPet displays the class list with the students' tags, mobile number, email, and notes.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Command is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc14-add-event-into-schedule" class="discrete">Use case: UC14 - Add event into schedule</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Teacher wishes to add an event into the scheduler</p>
+</li>
+<li>
+<p>Teacher enters the event details.</p>
+</li>
+<li>
+<p>TeaPet saves the item and displays it on the scheduler.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. Item is missing details</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2a1. Teapet displays an error message.<br>
+Use case resumes at step 2.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc15-delete-event-from-schedule" class="discrete">Use case: UC15 - Delete event from schedule</h3>
+<div class="paragraph">
+<p><strong>Preconditions</strong>
+1. Event exists in scheduler.</p>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Teacher lists the events in calendar (UC12)</p>
+</li>
+<li>
+<p>Teacher wishes to delete an event.</p>
+</li>
+<li>
+<p>Teacher confirms the deletion.</p>
+</li>
+<li>
+<p>TeaPet deletes the event from the scheduler.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. Teacher reconsiders and chooses not to remove the event.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc16-update-student-profile-picture" class="discrete">Use case: UC16 - Update student profile picture</h3>
+<div class="paragraph">
+<p><strong>Preconditions</strong>
+1. Png files in image folder is in correct format.</p>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Teacher wants to update image of students.</p>
+</li>
+<li>
+<p>Teacher adds in the respective images into the image folder.</p>
+</li>
+<li>
+<p>TeaPet confirms the process.</p>
+</li>
+<li>
+<p>TeaPet updates the profile pictures of students in the student list.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<h3 id="manual-test-student-particulars" class="discrete">Manual Test: Student particulars</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a student from class list with the specific name entered by user.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>student add name/John Tan Jun Wei phone/83391329 email/john@gmail.com temp/36.0 adr/Punggol Street 22 nok/James-father-93259589</code><br>
+Expected: Student John Tan Jun Wei has been added to the class list.</p>
+</li>
+<li>
+<p>Test case: <code>student add name/John Tan Jun Wei phone/83393129 email/john@gmail.com temp/3@.5 adr/Punggol Street 22 nok/James-father-93259589</code><br>
+Expected: No student is added. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Test case: <code>student add name/John Tan Jun Wei phone/839 email/john@gmail.com temp/36.0 adr/Punggol Street 22 nok/James-father-93259589</code><br>
+Expected: An error message is shown as the phone number of student is invalid.</p>
+</li>
+<li>
+<p>Test case: <code>student add name/John Tan Jun Wei phone/83391329 email/john@gmail.com temp/36.0 adr/Punggol Street 22 nok/James-dad-93259589</code><br>
+Expected: An error message is shown as the relationship of NOK is not recognised.</p>
+</li>
+<li>
+<p>Test case: <code>student add name/John333 phone/83391329 email/john@gmail.com temp/36.0 adr/Punggol Street 22 nok/James-father-93259589</code><br>
+Expected: An error message is shown as the name of student cannot contain numbers.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Deleting a student from class list with the specific name entered by user.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>student delete 1</code><br>
+Expected: The student at the first index is deleted from the list. Status message displays that the specified student has been deleted.</p>
+</li>
+<li>
+<p>Test case: <code>delete Tan John Wei Jun</code><br>
+Expected: No student is deleted. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete 10</code> (where the specified student is not a student in the class list due to the index being out of bounds.) <em>{give more}</em><br>
+   Expected: Similar to test case b.
+=== Manual Test: Scheduler</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Adding an event to the scheduler</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The scheduler already contain an event with name "Coffee Break", startDateTime "2020-04-04T12:00", endDateTime "2020-04-04T13:00".
+The recurrence type and color do not matter as long as they are valid.</p>
+</li>
+<li>
+<p>Test case: <code>schedule add eventName/Consultation startDateTime/2020-04-10T10:00 endDateTime/2020-04-10T12:00 recur/none
+color/5</code><br>
+Expected: An event with name Consultation is added to the scheduler.</p>
+</li>
+<li>
+<p>Test case:  <code>schedule add eventName/Coffee Break startDateTime/2020-04-04T12:00 endDateTime/2020-04-04T13:00 recur/none
+color/5</code><br>
+Expected: An error message is shown due to duplicate events being created.</p>
+</li>
+<li>
+<p>Test case: `schedule add eventName/ `<br>
+Expected: An error message is shown due to invalid command.</p>
+</li>
+<li>
+<p>Test case: <code>schedule add eventName/Consultation startDateTime/2020-04-10T10:00 endDateTime/2020-04-10T12:00 recur/none
+color/24</code><br>
+Expected: An error message is shown due to an invalid color code.</p>
+</li>
+<li>
+<p>Test case: <code>schedule add eventName/Consultation startDateTime/2020-04-10T10:00 endDateTime/2020-04-10T12:00 recur/fortnightly
+color/5</code>
+Expected: An error message is shown due to invalid recurrence type.</p>
+</li>
+<li>
+<p>Test case: <code>schedule add eventName/Consultation startDateTime/2020-04-10T13:00 endDateTime/2020-04-10T12:00 recur/none
+color/5</code>
+Expected: An error message is shown due to the invalid date time range.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 20:24:51 UTC</div></div></div></body></html>
