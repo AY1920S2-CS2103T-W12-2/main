@@ -595,6 +595,9 @@ The feature comprises of commands namely,</p>
 <li>
 <p><code>FindCommand</code> - Finds information of the required student</p>
 </li>
+<li>
+<p><code>ClearCommand</code> - Deletes all student details from the student list</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -772,6 +775,29 @@ method.</p>
 </ol>
 </div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="student-clear-command"><a class="link" href="#student-clear-command">7.1.5. Student Clear command</a></h4>
+<div class="sect4">
+<h5 id="implementation-6"><a class="link" href="#implementation-6">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>StudentFindCommand</code> performs.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After the successful parsing of the user input, the <code>StudentClearCommand#execute(Model model)</code> method is called.</p>
+</li>
+<li>
+<p>The <code>Model#setTeaPet(ReadOnlyTeaPet teaPet)</code> method is then called which triggers the <code>TeaPet#resetData(ReadOnlyTeaPet newData)</code> method
+and creates a brand new student list to replace the old one.</p>
+</li>
+<li>
+<p>A new <code>CommandResult</code> will be returned with the success message.</p>
+</li>
+</ol>
+</div>
+</div>
 <div class="sect4">
 <h5 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h5>
 
@@ -785,8 +811,8 @@ method.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Current implementation of the commands follows the command word syntax, followed by the arguments necessary for execution.
-For example, <code>student add/edit/delete/find/refresh</code>.</p>
+<p>Current implementation of the feature follows just the command word syntax
+For example, <code>student</code>.</p>
 </li>
 </ul>
 </div>
@@ -796,9 +822,8 @@ For example, <code>student add/edit/delete/find/refresh</code>.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>We considered using a whole new command, <code>student refresh</code> to solely refresh and update images of the students. However, we realised
-that it would be more convenient for the user if we just add this functionality into the <code>student</code> command instead as it is able to
-both update the images and display the student list concurrently.</p>
+<p>We considered using the forward slash <code>/</code> before the command word, for example <code>/add</code>. However, we realise that it is redundant
+and will make inputs more tedious and confusing for users.</p>
 </li>
 </ul>
 </div>
@@ -838,7 +863,7 @@ the user expereince as the command will be too long to type.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="import-image-feature"><a class="link" href="#import-image-feature">7.1.5. Import image feature</a></h4>
+<h4 id="import-image-feature"><a class="link" href="#import-image-feature">7.1.6. Import image feature</a></h4>
 <div class="paragraph">
 <p>This feature was included in TeaPet to help teachers easily identify the students using their pictures instead of just names.
 This feature utilises the <code>StudentCard#updateImage</code> method to update the images of students.</p>
@@ -848,16 +873,16 @@ This feature utilises the <code>StudentCard#updateImage</code> method to update 
 * <code>DefaultStudentDisplayCommand</code> - Refreshes the student list to show updated images of students and displays the student list.</p>
 </div>
 <div class="paragraph">
-<p>This is further illustrated in the following sequence diagram, which shows the sequence diagram for the StudentRefreshCommand.</p>
+<p>This is further illustrated in the following sequence diagram below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ImportImage.png" alt="ImportImage">
+<img src="images/ImportImage.v1.png" alt="ImportImage.v1">
 </div>
 <div class="title">Figure 11. Sequence Diagram for StudentRefreshCommand</div>
 </div>
 <div class="sect4">
-<h5 id="implementation-6"><a class="link" href="#implementation-6">Implementation</a></h5>
+<h5 id="implementation-7"><a class="link" href="#implementation-7">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>DefaultStudentDisplayCommand</code> performs.</p>
 </div>
@@ -877,7 +902,7 @@ the student card.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The png file must match the name of the student and must be in all lower case with no whitespaces.
+The name of the png file must match the name of the student.
 </td>
 </tr>
 </table>
@@ -915,8 +940,8 @@ will be called and the student list is now visible on the <code>MainWindow</code
 <div class="ulist">
 <ul>
 <li>
-<p>Current implementation of the feature follows just the command word syntax
-For example, <code>student</code>.</p>
+<p>Current implementation of the commands follows the command word syntax, followed by the arguments necessary for execution.
+For example, <code>student add/edit/delete/find/refresh</code>.</p>
 </li>
 </ul>
 </div>
@@ -926,8 +951,9 @@ For example, <code>student</code>.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>We considered using the forward slash <code>/</code> before the command word, for example <code>/add</code>. However, we realise that it is redundant
-and will make inputs more tedious and confusing for users.</p>
+<p>We considered using a whole new command, <code>student refresh</code> to solely refresh and update images of the students. However, we realised
+that it would be more convenient for the user if we just add this functionality into the <code>student</code> command instead as it is able to
+both update the images and display the student list concurrently.</p>
 </li>
 </ul>
 </div>
@@ -980,7 +1006,7 @@ The feature comprises of four commands namely.</p>
 <div class="sect3">
 <h4 id="admin-display-command"><a class="link" href="#admin-display-command">7.2.1. Admin Display Command</a></h4>
 <div class="sect4">
-<h5 id="implementation-7"><a class="link" href="#implementation-7">Implementation</a></h5>
+<h5 id="implementation-8"><a class="link" href="#implementation-8">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>admin</code> performs.</p>
 </div>
@@ -1024,7 +1050,7 @@ If the wording of the <code>admin</code> command contains error(s), an unknown c
 <div class="sect3">
 <h4 id="admin-dates-command"><a class="link" href="#admin-dates-command">7.2.2. Admin Dates Command</a></h4>
 <div class="sect4">
-<h5 id="implementation-8"><a class="link" href="#implementation-8">Implementation</a></h5>
+<h5 id="implementation-9"><a class="link" href="#implementation-9">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>admin dates</code> performs.</p>
 </div>
@@ -1069,7 +1095,7 @@ will be displayed.
 <div class="sect3">
 <h4 id="admin-save-command"><a class="link" href="#admin-save-command">7.2.3. Admin Save Command</a></h4>
 <div class="sect4">
-<h5 id="implementation-9"><a class="link" href="#implementation-9">Implementation</a></h5>
+<h5 id="implementation-10"><a class="link" href="#implementation-10">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>admin save</code> performs.</p>
 </div>
@@ -1190,7 +1216,7 @@ displayed.
 <div class="sect3">
 <h4 id="admin-delete-command"><a class="link" href="#admin-delete-command">7.2.4. Admin Delete Command</a></h4>
 <div class="sect4">
-<h5 id="implementation-10"><a class="link" href="#implementation-10">Implementation</a></h5>
+<h5 id="implementation-11"><a class="link" href="#implementation-11">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>admin save</code> performs.</p>
 </div>
@@ -1328,7 +1354,7 @@ exposed by the <code>Model</code> interface to perform the related operations (S
 <div class="sect3">
 <h4 id="academics-add-command"><a class="link" href="#academics-add-command">7.3.2. Academics Add Command</a></h4>
 <div class="sect4">
-<h5 id="implementation-11"><a class="link" href="#implementation-11">Implementation</a></h5>
+<h5 id="implementation-12"><a class="link" href="#implementation-12">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>AcademicsAddCommand</code> performs.</p>
 </div>
@@ -1389,7 +1415,7 @@ will be displayed.
 <div class="sect3">
 <h4 id="academics-edit-command"><a class="link" href="#academics-edit-command">7.3.3. Academics Edit Command</a></h4>
 <div class="sect4">
-<h5 id="implementation-12"><a class="link" href="#implementation-12">Implementation</a></h5>
+<h5 id="implementation-13"><a class="link" href="#implementation-13">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>AcademicsEditCommand</code> performs.</p>
 </div>
@@ -1426,7 +1452,7 @@ assessment results in a duplicate assessment in <code>UniqueAssessmentList#asses
 <div class="sect3">
 <h4 id="academics-delete-command"><a class="link" href="#academics-delete-command">7.3.4. Academics Delete Command</a></h4>
 <div class="sect4">
-<h5 id="implementation-13"><a class="link" href="#implementation-13">Implementation</a></h5>
+<h5 id="implementation-14"><a class="link" href="#implementation-14">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>AcademicsDeleteCommand</code> performs.</p>
 </div>
@@ -1460,7 +1486,7 @@ list using the <code>Model#delete(Assessment assessment)</code> method.</p>
 <div class="sect3">
 <h4 id="academics-submit-command"><a class="link" href="#academics-submit-command">7.3.5. Academics Submit Command</a></h4>
 <div class="sect4">
-<h5 id="implementation-14"><a class="link" href="#implementation-14">Implementation</a></h5>
+<h5 id="implementation-15"><a class="link" href="#implementation-15">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>AcademicsSubmitCommand</code> performs.</p>
 </div>
@@ -1509,7 +1535,7 @@ submitted their work, a <code>CommandException</code> will be thrown.</p>
 <div class="sect3">
 <h4 id="academics-mark-command"><a class="link" href="#academics-mark-command">7.3.6. Academics Mark Command</a></h4>
 <div class="sect4">
-<h5 id="implementation-15"><a class="link" href="#implementation-15">Implementation</a></h5>
+<h5 id="implementation-16"><a class="link" href="#implementation-16">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>AcademicsMarkCommand</code> performs.</p>
 </div>
@@ -1632,7 +1658,7 @@ using the method <code>Model#markAssessment(Assessment assessment, List&lt;Strin
 <div class="sect3">
 <h4 id="academics-display-command"><a class="link" href="#academics-display-command">7.3.7. Academics Display Command</a></h4>
 <div class="sect4">
-<h5 id="implementation-16"><a class="link" href="#implementation-16">Implementation</a></h5>
+<h5 id="implementation-17"><a class="link" href="#implementation-17">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>AcademicsDisplayCommand</code> performs.</p>
 </div>
@@ -1688,7 +1714,7 @@ If the wording of the <code>academics</code> command contains error(s), an unkno
 <div class="sect3">
 <h4 id="academics-export-command"><a class="link" href="#academics-export-command">7.3.8. Academics Export Command</a></h4>
 <div class="sect4">
-<h5 id="implementation-17"><a class="link" href="#implementation-17">Implementation</a></h5>
+<h5 id="implementation-18"><a class="link" href="#implementation-18">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>AcademicsExportCommand</code> performs.</p>
 </div>
@@ -2069,7 +2095,7 @@ using the <code>VEvent</code> type class. Only the <code>Storage</code> componen
 <div class="sect3">
 <h4 id="schedule-add-command"><a class="link" href="#schedule-add-command">7.5.3. Schedule Add Command</a></h4>
 <div class="sect4">
-<h5 id="implementation-18"><a class="link" href="#implementation-18">Implementation</a></h5>
+<h5 id="implementation-19"><a class="link" href="#implementation-19">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation which <code>schedule add</code> performs.</p>
 </div>
@@ -3524,4 +3550,4 @@ Expected: An error message is shown as there should be no arguments passed into 
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 05:37:13 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 07:36:02 UTC</div></div></div></body></html>
