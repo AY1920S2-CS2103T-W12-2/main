@@ -27,13 +27,12 @@
 <li><a href="#implementation">7. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#student-particulars-feature">7.1. Student particulars feature</a></li>
-<li><a href="#import-image-feature">7.2. Import image feature</a></li>
-<li><a href="#class-administration-feature">7.3. Class administration feature</a></li>
-<li><a href="#student-academics-feature">7.4. Student Academics feature</a></li>
-<li><a href="#notes-feature">7.5. Notes feature</a></li>
-<li><a href="#schedule-feature">7.6. Schedule feature</a></li>
-<li><a href="#logging">7.7. Logging</a></li>
-<li><a href="#Implementation-Configuration">7.8. Configuration</a></li>
+<li><a href="#class-administration-feature">7.2. Class administration feature</a></li>
+<li><a href="#student-academics-feature">7.3. Student Academics feature</a></li>
+<li><a href="#notes-feature">7.4. Notes feature</a></li>
+<li><a href="#schedule-feature">7.5. Schedule feature</a></li>
+<li><a href="#logging">7.6. Logging</a></li>
+<li><a href="#Implementation-Configuration">7.7. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">8. Documentation</a></li>
@@ -838,9 +837,8 @@ the user expereince as the command will be too long to type.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="import-image-feature"><a class="link" href="#import-image-feature">7.2. Import image feature</a></h3>
+<div class="sect3">
+<h4 id="import-image-feature"><a class="link" href="#import-image-feature">7.1.5. Import image feature</a></h4>
 <div class="paragraph">
 <p>This feature was included in TeaPet to help teachers easily identify the students using their pictures instead of just names.
 This feature utilises the <code>StudentCard#updateImage</code> method to update the images of students.</p>
@@ -944,8 +942,9 @@ and will make inputs more tedious and confusing for users.</p>
 </div>
 </div>
 </div>
+</div>
 <div class="sect2">
-<h3 id="class-administration-feature"><a class="link" href="#class-administration-feature">7.3. Class administration feature</a></h3>
+<h3 id="class-administration-feature"><a class="link" href="#class-administration-feature">7.2. Class administration feature</a></h3>
 <div class="paragraph">
 <p>The class administration feature keeps track of essential student administrative details.
 The feature comprises of four commands namely.</p>
@@ -982,7 +981,7 @@ The feature comprises of four commands namely.</p>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="admin-display-command"><a class="link" href="#admin-display-command">7.3.1. Admin Display Command</a></h4>
+<h4 id="admin-display-command"><a class="link" href="#admin-display-command">7.2.1. Admin Display Command</a></h4>
 <div class="sect4">
 <h5 id="implementation-7"><a class="link" href="#implementation-7">Implementation</a></h5>
 <div class="paragraph">
@@ -1026,9 +1025,9 @@ If the wording of the <code>admin</code> command contains error(s), an unknown c
 </div>
 </div>
 <div class="sect3">
-<h4 id="admin-dates-command"><a class="link" href="#admin-dates-command">7.3.2. Admin Dates Command</a></h4>
-<div class="sect5">
-<h6 id="implementation-8"><a class="link" href="#implementation-8">Implementation</a></h6>
+<h4 id="admin-dates-command"><a class="link" href="#admin-dates-command">7.2.2. Admin Dates Command</a></h4>
+<div class="sect4">
+<h5 id="implementation-8"><a class="link" href="#implementation-8">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>admin dates</code> performs.</p>
 </div>
@@ -1071,9 +1070,9 @@ will be displayed.
 </div>
 </div>
 <div class="sect3">
-<h4 id="admin-save-command"><a class="link" href="#admin-save-command">7.3.3. Admin Save Command</a></h4>
-<div class="sect5">
-<h6 id="implementation-9"><a class="link" href="#implementation-9">Implementation</a></h6>
+<h4 id="admin-save-command"><a class="link" href="#admin-save-command">7.2.3. Admin Save Command</a></h4>
+<div class="sect4">
+<h5 id="implementation-9"><a class="link" href="#implementation-9">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>admin save</code> performs.</p>
 </div>
@@ -1122,8 +1121,10 @@ displayed.
 </div>
 <div class="sect4">
 <h5 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h5>
-<div class="sect5">
-<h6 id="aspect-which-date-to-save"><a class="link" href="#aspect-which-date-to-save">Aspect: Which date to save</a></h6>
+
+</div>
+<div class="sect4">
+<h5 id="aspect-which-date-to-save"><a class="link" href="#aspect-which-date-to-save">Aspect: Which date to save</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1153,7 +1154,6 @@ displayed.
 </div>
 </li>
 </ul>
-</div>
 </div>
 <div class="sect5">
 <h6 id="aspect-allow-overwriting-of-data"><a class="link" href="#aspect-allow-overwriting-of-data">Aspect: Allow overwriting of data</a></h6>
@@ -1191,9 +1191,9 @@ displayed.
 </div>
 </div>
 <div class="sect3">
-<h4 id="admin-delete-command"><a class="link" href="#admin-delete-command">7.3.4. Admin Delete Command</a></h4>
-<div class="sect5">
-<h6 id="implementation-10"><a class="link" href="#implementation-10">Implementation</a></h6>
+<h4 id="admin-delete-command"><a class="link" href="#admin-delete-command">7.2.4. Admin Delete Command</a></h4>
+<div class="sect4">
+<h5 id="implementation-10"><a class="link" href="#implementation-10">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>admin save</code> performs.</p>
 </div>
@@ -1235,7 +1235,7 @@ specified date from <code>UniqueDateList</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="admin-fetch-command"><a class="link" href="#admin-fetch-command">7.3.5. Admin Fetch Command</a></h4>
+<h4 id="admin-fetch-command"><a class="link" href="#admin-fetch-command">7.2.5. Admin Fetch Command</a></h4>
 <div class="paragraph">
 <p><strong>Step 1</strong>. The <code>AdminFetchCommand#execute(Model model)</code> method is executed which takes in a
 DateContainsKeywordsPredicate object as an argument. User input will be parsed first to a DateContainsKeywordsPredicate
@@ -1273,7 +1273,7 @@ The sequence diagram for <code>admin fetch</code> command is similar to that of 
 </div>
 </div>
 <div class="sect2">
-<h3 id="student-academics-feature"><a class="link" href="#student-academics-feature">7.4. Student Academics feature</a></h3>
+<h3 id="student-academics-feature"><a class="link" href="#student-academics-feature">7.3. Student Academics feature</a></h3>
 <div class="paragraph">
 <p>This student academics feature stores and tracks the class' academics progress.
 The academics feature consists of four commands namely.</p>
@@ -1317,7 +1317,7 @@ exposed by the <code>Model</code> interface to perform the related operations (S
 <div class="title">Figure 16. Academics Commands Diagram</div>
 </div>
 <div class="sect3">
-<h4 id="class-overview"><a class="link" href="#class-overview">7.4.1. Class Overview</a></h4>
+<h4 id="class-overview"><a class="link" href="#class-overview">7.3.1. Class Overview</a></h4>
 <div class="paragraph">
 <p>The class diagram below will depict the structure of the Academics Model Component.</p>
 </div>
@@ -1329,9 +1329,9 @@ exposed by the <code>Model</code> interface to perform the related operations (S
 </div>
 </div>
 <div class="sect3">
-<h4 id="academics-add-command"><a class="link" href="#academics-add-command">7.4.2. Academics Add Command</a></h4>
-<div class="sect5">
-<h6 id="implementation-11"><a class="link" href="#implementation-11">Implementation</a></h6>
+<h4 id="academics-add-command"><a class="link" href="#academics-add-command">7.3.2. Academics Add Command</a></h4>
+<div class="sect4">
+<h5 id="implementation-11"><a class="link" href="#implementation-11">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>AcademicsAddCommand</code> performs.</p>
 </div>
@@ -1383,16 +1383,16 @@ will be displayed.
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/developerguide/academics/academics_add_command_sequence_diagram.png" alt="academics add command sequence diagram">
+<img src="images/academics/academics_add_command_sequence_diagram.png" alt="academics add command sequence diagram">
 </div>
 <div class="title">Figure 18. Academics Add Command Sequence Diagram</div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="academics-edit-command"><a class="link" href="#academics-edit-command">7.4.3. Academics Edit Command</a></h4>
-<div class="sect5">
-<h6 id="implementation-12"><a class="link" href="#implementation-12">Implementation</a></h6>
+<h4 id="academics-edit-command"><a class="link" href="#academics-edit-command">7.3.3. Academics Edit Command</a></h4>
+<div class="sect4">
+<h5 id="implementation-12"><a class="link" href="#implementation-12">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>AcademicsEditCommand</code> performs.</p>
 </div>
@@ -1427,9 +1427,9 @@ assessment results in a duplicate assessment in <code>UniqueAssessmentList#asses
 </div>
 </div>
 <div class="sect3">
-<h4 id="academics-delete-command"><a class="link" href="#academics-delete-command">7.4.4. Academics Delete Command</a></h4>
-<div class="sect5">
-<h6 id="implementation-13"><a class="link" href="#implementation-13">Implementation</a></h6>
+<h4 id="academics-delete-command"><a class="link" href="#academics-delete-command">7.3.4. Academics Delete Command</a></h4>
+<div class="sect4">
+<h5 id="implementation-13"><a class="link" href="#implementation-13">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>AcademicsDeleteCommand</code> performs.</p>
 </div>
@@ -1461,9 +1461,9 @@ list using the <code>Model#delete(Assessment assessment)</code> method.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="academics-submit-command"><a class="link" href="#academics-submit-command">7.4.5. Academics Submit Command</a></h4>
-<div class="sect5">
-<h6 id="implementation-14"><a class="link" href="#implementation-14">Implementation</a></h6>
+<h4 id="academics-submit-command"><a class="link" href="#academics-submit-command">7.3.5. Academics Submit Command</a></h4>
+<div class="sect4">
+<h5 id="implementation-14"><a class="link" href="#implementation-14">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>AcademicsSubmitCommand</code> performs.</p>
 </div>
@@ -1498,12 +1498,21 @@ submitted their work, a <code>CommandException</code> will be thrown.</p>
 <p><strong>Step 4.</strong> The command box will be reflected with the <code>AcademicsSubmitCommand#MESSAGE_SUCCESS</code> constant and a new
 <code>CommandResult</code> will be returned with the message.</p>
 </div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes academics submit command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/academics/AcademicsSubmitActivityDiagram.png" alt="AcademicsSubmitActivityDiagram">
+</div>
+<div class="title">Figure 19. Academics Submit Activity Diagram</div>
+</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="academics-mark-command"><a class="link" href="#academics-mark-command">7.4.6. Academics Mark Command</a></h4>
-<div class="sect5">
-<h6 id="implementation-15"><a class="link" href="#implementation-15">Implementation</a></h6>
+<h4 id="academics-mark-command"><a class="link" href="#academics-mark-command">7.3.6. Academics Mark Command</a></h4>
+<div class="sect4">
+<h5 id="implementation-15"><a class="link" href="#implementation-15">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>AcademicsMarkCommand</code> performs.</p>
 </div>
@@ -1554,8 +1563,10 @@ using the method <code>Model#markAssessment(Assessment assessment, List&lt;Strin
 </div>
 <div class="sect4">
 <h5 id="design-considerations-4"><a class="link" href="#design-considerations-4">Design Considerations</a></h5>
-<div class="sect5">
-<h6 id="aspect-allow-submission-along-with-marking"><a class="link" href="#aspect-allow-submission-along-with-marking">Aspect: Allow submission along with marking</a></h6>
+
+</div>
+<div class="sect4">
+<h5 id="aspect-allow-submission-along-with-marking"><a class="link" href="#aspect-allow-submission-along-with-marking">Aspect: Allow submission along with marking</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1587,8 +1598,8 @@ using the method <code>Model#markAssessment(Assessment assessment, List&lt;Strin
 </ul>
 </div>
 </div>
-<div class="sect5">
-<h6 id="aspect-allow-customizable-total-score-of-assessments"><a class="link" href="#aspect-allow-customizable-total-score-of-assessments">Aspect: Allow customizable total score of assessments</a></h6>
+<div class="sect4">
+<h5 id="aspect-allow-customizable-total-score-of-assessments"><a class="link" href="#aspect-allow-customizable-total-score-of-assessments">Aspect: Allow customizable total score of assessments</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1621,9 +1632,8 @@ using the method <code>Model#markAssessment(Assessment assessment, List&lt;Strin
 </div>
 </div>
 </div>
-</div>
 <div class="sect3">
-<h4 id="academics-display-command"><a class="link" href="#academics-display-command">7.4.7. Academics Display Command</a></h4>
+<h4 id="academics-display-command"><a class="link" href="#academics-display-command">7.3.7. Academics Display Command</a></h4>
 <div class="sect4">
 <h5 id="implementation-16"><a class="link" href="#implementation-16">Implementation</a></h5>
 <div class="paragraph">
@@ -1679,9 +1689,9 @@ If the wording of the <code>academics</code> command contains error(s), an unkno
 </div>
 </div>
 <div class="sect3">
-<h4 id="academics-export-command"><a class="link" href="#academics-export-command">7.4.8. Academics Export Command</a></h4>
-<div class="sect5">
-<h6 id="implementation-17"><a class="link" href="#implementation-17">Implementation</a></h6>
+<h4 id="academics-export-command"><a class="link" href="#academics-export-command">7.3.8. Academics Export Command</a></h4>
+<div class="sect4">
+<h5 id="implementation-17"><a class="link" href="#implementation-17">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>AcademicsExportCommand</code> performs.</p>
 </div>
@@ -1713,7 +1723,7 @@ studentAcademics.csv in the data folder of the current directory.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="notes-feature"><a class="link" href="#notes-feature">7.5. Notes feature</a></h3>
+<h3 id="notes-feature"><a class="link" href="#notes-feature">7.4. Notes feature</a></h3>
 <div class="paragraph">
 <p>TeaPet application comes with an in-built notes feature, which serves to allow Teachers to record administrative or behavioural
 information of his/her students. Each note is tagged to a specific student and acts as a lightweight, digital 'Post It'.</p>
@@ -1747,10 +1757,10 @@ information of his/her students. Each note is tagged to a specific student and a
 <div class="content">
 <img src="images/developerguide/notes/NotesClassDiagram.png" alt="NotesClassDiagram">
 </div>
-<div class="title">Figure 19. Class Diagram for NotesCommands.</div>
+<div class="title">Figure 20. Class Diagram for NotesCommands.</div>
 </div>
 <div class="sect3">
-<h4 id="structure-of-notes-class"><a class="link" href="#structure-of-notes-class">7.5.1. Structure of Notes Class</a></h4>
+<h4 id="structure-of-notes-class"><a class="link" href="#structure-of-notes-class">7.4.1. Structure of Notes Class</a></h4>
 <div class="paragraph">
 <p>Notes object is made up of 4 fields. They are namely:<br></p>
 </div>
@@ -1772,7 +1782,7 @@ information of his/her students. Each note is tagged to a specific student and a
 </div>
 </div>
 <div class="sect3">
-<h4 id="add-note"><a class="link" href="#add-note">7.5.2. Add Note</a></h4>
+<h4 id="add-note"><a class="link" href="#add-note">7.4.2. Add Note</a></h4>
 <div class="paragraph">
 <p>The following is a detailed elaboration how <code>NotesAddCommand</code> operates.</p>
 </div>
@@ -1817,17 +1827,17 @@ or wrong format error message will be displayed.
 <div class="content">
 <img src="images/developerguide/notes/NotesAddSequence.png" alt="NotesAddSequence">
 </div>
-<div class="title">Figure 20. Sequence Diagram for Adding Notes.</div>
+<div class="title">Figure 21. Sequence Diagram for Adding Notes.</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/developerguide/notes/SDGetNotesAddCommand.png" alt="SDGetNotesAddCommand">
 </div>
-<div class="title">Figure 21. Supplementary Frame for Sequence Diagram.</div>
+<div class="title">Figure 22. Supplementary Frame for Sequence Diagram.</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-note"><a class="link" href="#edit-note">7.5.3. Edit Note</a></h4>
+<h4 id="edit-note"><a class="link" href="#edit-note">7.4.3. Edit Note</a></h4>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>NotesEditCommand</code> performs.</p>
 </div>
@@ -1851,7 +1861,7 @@ method.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete-note"><a class="link" href="#delete-note">7.5.4. Delete Note</a></h4>
+<h4 id="delete-note"><a class="link" href="#delete-note">7.4.4. Delete Note</a></h4>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>NotesDeleteCommand</code> performs.</p>
 </div>
@@ -1887,11 +1897,11 @@ be returned with the success message.</p>
 <div class="content">
 <img src="images/developerguide/notes/NotesDeleteActivityDiagram.png" alt="NotesDeleteActivityDiagram">
 </div>
-<div class="title">Figure 22. Activity Diagram for Deleting Note</div>
+<div class="title">Figure 23. Activity Diagram for Deleting Note</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="filter-notes"><a class="link" href="#filter-notes">7.5.5. Filter Notes</a></h4>
+<h4 id="filter-notes"><a class="link" href="#filter-notes">7.4.5. Filter Notes</a></h4>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>NotesFilterCommand</code> performs.</p>
 </div>
@@ -1916,7 +1926,7 @@ method.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="export-notes"><a class="link" href="#export-notes">7.5.6. Export Notes</a></h4>
+<h4 id="export-notes"><a class="link" href="#export-notes">7.4.6. Export Notes</a></h4>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations which <code>NotesExportCommand</code> performs.</p>
 </div>
@@ -1935,9 +1945,8 @@ the current directory.</p>
 </li>
 </ol>
 </div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">7.5.7. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="design-considerations-5"><a class="link" href="#design-considerations-5">Design Considerations</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1970,10 +1979,11 @@ the current directory.</p>
 </div>
 </div>
 </div>
+</div>
 <div class="sect2">
-<h3 id="schedule-feature"><a class="link" href="#schedule-feature">7.6. Schedule feature</a></h3>
+<h3 id="schedule-feature"><a class="link" href="#schedule-feature">7.5. Schedule feature</a></h3>
 <div class="sect3">
-<h4 id="overview"><a class="link" href="#overview">7.6.1. Overview</a></h4>
+<h4 id="overview"><a class="link" href="#overview">7.5.1. Overview</a></h4>
 <div class="paragraph">
 <p>The schedule feature enables teachers to add, delete, edit and view events in their personal scheduler. This feature is built
 based on the Jfxtras iCalendarAgenda library. The iCalendarAgenda object is used on the UI side to render VEvents. The VEvent
@@ -2007,7 +2017,7 @@ Hence, at the storage level, the Event objects are mapped to VEvents for reading
 </div>
 </div>
 <div class="sect3">
-<h4 id="class-overview-2"><a class="link" href="#class-overview-2">7.6.2. Class Overview</a></h4>
+<h4 id="class-overview-2"><a class="link" href="#class-overview-2">7.5.2. Class Overview</a></h4>
 <div class="paragraph">
 <p>The class diagram below shows the interactions between events classes in the <code>Model</code>. Notice how the <code>EventHistory</code> class depends
 on the <code>Event</code> class in its constructor but only has a <code>VEvent</code> attribute. This is because an <code>Event</code> object will always be
@@ -2019,11 +2029,11 @@ using the <code>VEvent</code> type class. Only the <code>Storage</code> componen
 <div class="content">
 <img src="images/schedule_class_diagram.png" alt="schedule class diagram">
 </div>
-<div class="title">Figure 23. Schedule Class Diagram</div>
+<div class="title">Figure 24. Schedule Class Diagram</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="schedule-add-command"><a class="link" href="#schedule-add-command">7.6.3. Schedule Add Command</a></h4>
+<h4 id="schedule-add-command"><a class="link" href="#schedule-add-command">7.5.3. Schedule Add Command</a></h4>
 <div class="sect4">
 <h5 id="implementation-18"><a class="link" href="#implementation-18">Implementation</a></h5>
 <div class="paragraph">
@@ -2065,13 +2075,15 @@ from other layers of the application.
 <div class="content">
 <img src="images/ScheduleAddActivityDiagram.png" alt="ScheduleAddActivityDiagram">
 </div>
-<div class="title">Figure 24. Schedule Add Activity Diagram</div>
+<div class="title">Figure 25. Schedule Add Activity Diagram</div>
 </div>
 </div>
 <div class="sect4">
 <h5 id="design-considerations-6"><a class="link" href="#design-considerations-6">Design Considerations</a></h5>
-<div class="sect5">
-<h6 id="aspect-command-clarity"><a class="link" href="#aspect-command-clarity">Aspect: Command Clarity:</a></h6>
+
+</div>
+<div class="sect4">
+<h5 id="aspect-command-clarity"><a class="link" href="#aspect-command-clarity">Aspect: Command Clarity</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -2108,9 +2120,8 @@ as well. Furthermore, the name required here is not the name of the student but 
 </div>
 </div>
 </div>
-</div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">7.7. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">7.6. Logging</a></h3>
 <div class="paragraph">
 <p>This section describes how TeaPet record it&#8217;s logs.</p>
 </div>
@@ -2120,7 +2131,7 @@ as well. Furthermore, the name required here is not the name of the student but 
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 7.8, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 7.7, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -2151,7 +2162,7 @@ as well. Furthermore, the name required here is not the name of the student but 
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">7.8. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">7.7. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -3479,4 +3490,4 @@ Expected: An error message is shown as there should be no arguments passed into 
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 22:46:58 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 04:02:43 UTC</div></div></div></body></html>
