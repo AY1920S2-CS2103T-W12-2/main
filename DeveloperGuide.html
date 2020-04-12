@@ -42,9 +42,11 @@
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
 <li><a href="#use-cases">Appendix C: Use Cases</a>
 <ul class="sectlevel2">
-<li><a href="#use-case-uc12-add-event-into-schedule">C.1. Use case: UC12 - Add event into schedule</a></li>
-<li><a href="#use-case-uc13-delete-event-from-schedule">C.2. Use case: UC13 - Delete event from schedule</a></li>
-<li><a href="#use-case-uc14-update-student-profile-picture">C.3. Use case: UC14 - Update student profile picture</a></li>
+<li><a href="#use-case-uc12-edit-note-of-specific-student">C.1. Use case: UC12 - Edit note of specific student</a></li>
+<li><a href="#use-case-uc13-delete-note-for-specific-student">C.2. Use case: UC13 - Delete note for specific student</a></li>
+<li><a href="#use-case-uc14-add-event-into-schedule">C.3. Use case: UC14 - Add event into schedule</a></li>
+<li><a href="#use-case-uc15-delete-event-from-schedule">C.4. Use case: UC15 - Delete event from schedule</a></li>
+<li><a href="#use-case-uc16-update-student-profile-picture">C.5. Use case: UC16 - Update student profile picture</a></li>
 </ul>
 </li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
@@ -1325,7 +1327,7 @@ The academics feature consists of four commands namely.</p>
 <p><code>AcademicsDisplayCommand</code> - Displays either homework, exam, or the report of student academics.</p>
 </li>
 <li>
-<p><code>AcademicsExportCommand</code> - Exports the academics information into a csv file.</p>
+<p><code>AcademicsExportCommand</code> - Exports the academics information into a .csv file.</p>
 </li>
 </ul>
 </div>
@@ -1757,22 +1759,22 @@ information of his/her students. Each note is tagged to a specific student and a
 <div class="ulist">
 <ul>
 <li>
-<p><code>NotesCommand</code></p>
+<p><code>NotesCommand</code> - Displays all notes and help on the notes feature.</p>
 </li>
 <li>
-<p><code>NotesAddCommand</code></p>
+<p><code>NotesAddCommand</code> - Adds a new note into TeaPet.</p>
 </li>
 <li>
-<p><code>NotesEditCommand</code></p>
+<p><code>NotesEditCommand</code> - Edits the details of a note in TeaPet.</p>
 </li>
 <li>
-<p><code>NotesDeleteCommand</code></p>
+<p><code>NotesDeleteCommand</code> - Deletes a note in TeaPet.</p>
 </li>
 <li>
-<p><code>NotesFilterCommand</code></p>
+<p><code>NotesFilterCommand</code> - Filters the list of notes in TeaPet based on user-input keywords.</p>
 </li>
 <li>
-<p><code>NotesExportCommand</code></p>
+<p><code>NotesExportCommand</code> - Exports all notes information into a .csv file</p>
 </li>
 </ul>
 </div>
@@ -1780,28 +1782,19 @@ information of his/her students. Each note is tagged to a specific student and a
 <div class="content">
 <img src="images/developerguide/notes/NotesClassDiagram.png" alt="NotesClassDiagram">
 </div>
-<div class="title">Figure 20. Class Diagram for NotesCommands.</div>
+<div class="title">Figure 20. Class Diagram for Notes Commands.</div>
 </div>
 <div class="sect3">
 <h4 id="structure-of-notes-class"><a class="link" href="#structure-of-notes-class">7.4.1. Structure of Notes Class</a></h4>
 <div class="paragraph">
-<p>Notes object is made up of 4 fields. They are namely:<br></p>
+<p>Notes object is made up of 4 fields. They are namely: Student Name, Content, Priority and DateTime. The class diagram below
+depicts the structure of the Notes Model Component.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>String student</code></p>
-</li>
-<li>
-<p><code>String content</code></p>
-</li>
-<li>
-<p><code>String priority</code></p>
-</li>
-<li>
-<p><code>String dateTime</code></p>
-</li>
-</ul>
+<div class="imageblock">
+<div class="content">
+<img src="images/developerguide/notes/NotesModelClassDiagram.png" alt="NotesModelClassDiagram">
+</div>
+<div class="title">Figure 21. Class Diagram for Notes Model Component.</div>
 </div>
 </div>
 <div class="sect3">
@@ -1862,13 +1855,13 @@ or wrong format error message will be displayed.
 <div class="content">
 <img src="images/developerguide/notes/NotesAddSequence.png" alt="NotesAddSequence">
 </div>
-<div class="title">Figure 21. Sequence Diagram for Adding Notes.</div>
+<div class="title">Figure 22. Sequence Diagram for Adding Notes.</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/developerguide/notes/SDGetNotesAddCommand.png" alt="SDGetNotesAddCommand">
 </div>
-<div class="title">Figure 22. Supplementary Frame for Sequence Diagram.</div>
+<div class="title">Figure 23. Supplementary Frame for Sequence Diagram.</div>
 </div>
 </div>
 <div class="sect3">
@@ -1957,7 +1950,7 @@ be returned with the success message.</p>
 <div class="content">
 <img src="images/developerguide/notes/NotesDeleteActivityDiagram.png" alt="NotesDeleteActivityDiagram">
 </div>
-<div class="title">Figure 23. Activity Diagram for Deleting Note</div>
+<div class="title">Figure 24. Activity Diagram for Deleting Note</div>
 </div>
 </div>
 <div class="sect3">
@@ -2089,7 +2082,7 @@ using the <code>VEvent</code> type class. Only the <code>Storage</code> componen
 <div class="content">
 <img src="images/schedule_class_diagram.png" alt="schedule class diagram">
 </div>
-<div class="title">Figure 24. Schedule Class Diagram</div>
+<div class="title">Figure 25. Schedule Class Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -2135,7 +2128,7 @@ from other layers of the application.
 <div class="content">
 <img src="images/ScheduleAddActivityDiagram.png" alt="ScheduleAddActivityDiagram">
 </div>
-<div class="title">Figure 25. Schedule Add Activity Diagram</div>
+<div class="title">Figure 26. Schedule Add Activity Diagram</div>
 </div>
 </div>
 <div class="sect4">
@@ -2940,7 +2933,7 @@ as well. Furthermore, the name required here is not the name of the student but 
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a1. TeaPet shows an error message.</p>
+<p>1b1. TeaPet shows an error message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2951,7 +2944,121 @@ as well. Furthermore, the name required here is not the name of the student but 
 </ul>
 </div>
 <div class="sect2">
-<h3 id="use-case-uc12-add-event-into-schedule"><a class="link" href="#use-case-uc12-add-event-into-schedule">C.1. Use case: UC12 - Add event into schedule</a></h3>
+<h3 id="use-case-uc12-edit-note-of-specific-student"><a class="link" href="#use-case-uc12-edit-note-of-specific-student">C.1. Use case: UC12 - Edit note of specific student</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters command, together with an index of the note to edit, and fields to update.</p>
+</li>
+<li>
+<p>TeaPet displays feedback that the specific note chosen has been edited.</p>
+</li>
+<li>
+<p>TeaPet&#8217;s note panel will display the updated list of notes.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Command is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. TeaPet shows an error message.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. Student is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. TeaPet shows an error message.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1c. Index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1c1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-uc13-delete-note-for-specific-student"><a class="link" href="#use-case-uc13-delete-note-for-specific-student">C.2. Use case: UC13 - Delete note for specific student</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters command, together with an index of the note to delete.</p>
+</li>
+<li>
+<p>TeaPet displays feedback that the specifed note is deleted.</p>
+</li>
+<li>
+<p>TeaPet&#8217;s note panel will display the updated list of notes.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Command is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. TeaPet shows an error message.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. Index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-uc14-add-event-into-schedule"><a class="link" href="#use-case-uc14-add-event-into-schedule">C.3. Use case: UC14 - Add event into schedule</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -2994,7 +3101,7 @@ Use case resumes at step 2.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-uc13-delete-event-from-schedule"><a class="link" href="#use-case-uc13-delete-event-from-schedule">C.2. Use case: UC13 - Delete event from schedule</a></h3>
+<h3 id="use-case-uc15-delete-event-from-schedule"><a class="link" href="#use-case-uc15-delete-event-from-schedule">C.4. Use case: UC15 - Delete event from schedule</a></h3>
 <div class="paragraph">
 <p><strong>Preconditions</strong>
 1. Event exists in scheduler.</p>
@@ -3036,7 +3143,7 @@ Use case resumes at step 2.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-uc14-update-student-profile-picture"><a class="link" href="#use-case-uc14-update-student-profile-picture">C.3. Use case: UC14 - Update student profile picture</a></h3>
+<h3 id="use-case-uc16-update-student-profile-picture"><a class="link" href="#use-case-uc16-update-student-profile-picture">C.5. Use case: UC16 - Update student profile picture</a></h3>
 <div class="paragraph">
 <p><strong>Preconditions</strong>
 1. Png files in image folder is in correct format.</p>
@@ -3438,7 +3545,7 @@ find out more on how to add a student to the class-list.
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Delete all previous notes. Be sure to create two students named <strong>Kelvin Klein</strong> and <strong>Jane Khoo</strong> in the class-list. Conduct these tests sequentially
+Delete all previous notes. Be sure two students named <strong>Freddy Zhang</strong> and <strong>Lee Hui Ting</strong> are in the class-list. Conduct these tests sequentially
 from first to last, for the most effective testing experience.
 </td>
 </tr>
@@ -3451,26 +3558,26 @@ from first to last, for the most effective testing experience.
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Test case: <code>notes add name/Kelvin Klein cont/Reminder to print his testimonial pr/HIGH</code><br>
-Expected: New note added to the notes panel. This note should be red (high priority) in colour, belonging to Kelvin Klein. The timestamp
+<p>Test case: <code>notes add name/Freddy Zhang cont/Reminder to print his testimonial pr/HIGH</code><br>
+Expected: New note added to the notes panel. This note should be red (high priority) in colour, belonging to Freddy Zhang. The timestamp
 in the note should be the current date and time.</p>
 </li>
 <li>
-<p>Test case: <code>notes add name/Kelvin Klein cont/Kelvin was late for class for the second day in a row. pr/LOW</code><br>
-Expected: New note added to the notes panel. This note should be yellow (low priority) in colour, belonging to Kelvin Klein. The timestamp
+<p>Test case: <code>notes add name/Freddy Zhang cont/Freddy was late for class for the second day in a row. pr/LOW</code><br>
+Expected: New note added to the notes panel. This note should be yellow (low priority) in colour, belonging to Freddy Zhang. The timestamp
 in the note should be the current date and time.</p>
 </li>
 <li>
-<p>Test case: <code>notes add name/Jane Khoo cont/Jane left school for an interview. pr/MEDIUM</code><br>
-Expected: New note added to the notes panel. This note should be orange (medium priority) in colour, belonging to Jane Khoo. The timestamp
+<p>Test case: <code>notes add name/Lee Hui Ting cont/Hui Ting left school for an interview. pr/MEDIUM</code><br>
+Expected: New note added to the notes panel. This note should be orange (medium priority) in colour, belonging to Lee Hui Ting. The timestamp
 in the note should be the current date and time.</p>
 </li>
 <li>
-<p>Test case: <code>notes add name/Kelvin_Klein_ cont/He exemplified an improvement in behaviour pr/LOW</code><br>
+<p>Test case: <code>notes add name/Freddy_Zhang_ cont/He exemplified an improvement in behaviour pr/LOW</code><br>
 Expected: An error message is shown as the student name should be alpha-numeric.</p>
 </li>
 <li>
-<p>Test case: <code>notes add name/Kelvin Klein cont/He exemplified an improvement in behaviour pr/Not High</code><br>
+<p>Test case: <code>notes add name/Freddy Zhang cont/He exemplified an improvement in behaviour pr/Not High</code><br>
 Expected: An error message is shown as priority indicated must be either <strong>LOW</strong>, <strong>MEDIUM</strong> or <strong>HIGH</strong>, case-insensitive.</p>
 </li>
 </ol>
@@ -3485,8 +3592,8 @@ Expected: An error message is shown as priority indicated must be either <strong
 Expected: First note in the panel is updated with new content. Only the content should be modified, and nothing else.</p>
 </li>
 <li>
-<p>Test case: <code>notes edit 1 name/Jane Khoo cont/Reminder to print her testimonial and gradebook</code><br>
-Expected: First note in the panel is updated with new name and content. Note should reflect student Jane Khoo&#8217;s name,
+<p>Test case: <code>notes edit 1 name/Lee Hui Ting cont/Reminder to print her testimonial and gradebook</code><br>
+Expected: First note in the panel is updated with new name and content. Note should reflect student Lee Hui Ting&#8217;s name,
 with modfied content. Nothing else should be different.</p>
 </li>
 <li>
@@ -3521,8 +3628,8 @@ Integer provided is out of range.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Test case: <code>notes filter Jane</code><br>
-Expected: Only notes containing the word Jane should be displayed in the notes panel.</p>
+<p>Test case: <code>notes filter Freddy</code><br>
+Expected: Only notes containing the word Freddy should be displayed in the notes panel.</p>
 </li>
 <li>
 <p>Test case: <code>notes filter low</code><br>
@@ -3550,4 +3657,4 @@ Expected: An error message is shown as there should be no arguments passed into 
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 12:16:25 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 14:59:08 UTC</div></div></div></body></html>
