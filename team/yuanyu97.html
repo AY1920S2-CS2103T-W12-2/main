@@ -198,7 +198,12 @@ temperature recordings.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>The Student list now displays last updated ADMIN details</pre>
+<pre>The Student list now displays last updated ADMIN details.
+[HELP ON ADMIN COMMANDS]
+1. Save date: admin save
+2. Show dates: admin dates
+3. Delete date: admin delete YYYY-MM-DD
+4. Fetch date: admin fetch YYYY-MM-DD</pre>
 </div>
 </div>
 <div class="imageblock">
@@ -1021,37 +1026,7 @@ The sequence diagram for <code>admin fetch</code> command is similar to that of 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">take the attendance of my students</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">know who is present for my class</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">have a schedule tracking my events</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">know what I need to attend/do in a day</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">maintain of a list of students who have completed my homework</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">know who has not submitted my homework</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">take down notes for student&#8217;s behavior</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">track the behaviour of my students</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">see the scores of my class</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">track the academic progress of my class</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">competent form teacher</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add students</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add new students to the class list</p></td>
 </tr>
@@ -1063,13 +1038,43 @@ The sequence diagram for <code>admin fetch</code> command is similar to that of 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lazy form teacher</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">find a student by name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">locate details of students without having to go through the entire list</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher doing their job</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">take the attendance of my students</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know who is present for my class</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">organised form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have a schedule tracking my events</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know what I need to attend/do in a day</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">diligent form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">maintain of a list of students who have completed my homework</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know who has not submitted my homework</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">caring form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">take down notes for student&#8217;s behavior</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">track the behaviour of my students</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hard working form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see the scores of my class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">track the academic progress of my class</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lazy form teacher</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sort students by alphabetical order</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">locate a student easily</p></td>
 </tr>
@@ -1081,7 +1086,7 @@ The sequence diagram for <code>admin fetch</code> command is similar to that of 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">well prepared form teacher</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">maintain emergency contacts of my students</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">know who to contact in case of emergency</p></td>
 </tr>
@@ -1100,14 +1105,44 @@ The sequence diagram for <code>admin fetch</code> command is similar to that of 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be able to view my assessment list by the latest date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know which are the more urgent or overdue assessments to monitor</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view the academic statistics of my class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know the academic progress of my students</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">set different colours to my events</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see clearer what type of events I have</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">specify if a student is late or absent for class</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">know why my student is absent</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">hide <a href="#private-contact-detail">private contact details</a> by default</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">minimize chance of someone else seeing them by accident</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">caring form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">export academic statistics into a printable file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">share and discuss the student&#8217;s academic progress with their parents</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">caring form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">export behavioural notes into a printable file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">share and discuss the student&#8217;s behaviour with their parents</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
@@ -1305,4 +1340,4 @@ Expected: Status bar displays invalid command and incorrect command format messa
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 20:54:36 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 23:31:43 UTC</div></div></div></body></html>
