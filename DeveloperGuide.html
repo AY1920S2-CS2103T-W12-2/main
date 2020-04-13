@@ -50,7 +50,7 @@
 <li><a href="#manual-test-class-admin-particulars">G.2. Manual Test: Class Admin Particulars</a></li>
 <li><a href="#manual-test-class-academics">G.3. Manual Test: Class Academics</a></li>
 <li><a href="#manual-test-scheduler">G.4. Manual Test: Scheduler</a></li>
-<li><a href="#notes">G.5. Notes</a></li>
+<li><a href="#manual-test-notes">G.5. Manual Test: Notes</a></li>
 </ul>
 </li>
 </ul>
@@ -1752,7 +1752,7 @@ information of his/her students. Each note is tagged to a specific student and a
 <h4 id="structure-of-notes-class"><a class="link" href="#structure-of-notes-class">7.4.1. Structure of Notes Class</a></h4>
 <div class="paragraph">
 <p>Notes object is made up of 4 fields. They are namely: Student Name, Content, Priority and DateTime. The class diagram below
-depicts the structure of the Notes Model Component.</p>
+depicts the structure of the Notes in the Model Component. Please refer to <a href="#Design-Model">Section 6.4, &#8220;Model component&#8221;</a> for the higher-level architecture.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1764,7 +1764,7 @@ depicts the structure of the Notes Model Component.</p>
 <div class="sect3">
 <h4 id="add-note"><a class="link" href="#add-note">7.4.2. Add Note</a></h4>
 <div class="paragraph">
-<p>The following is a detailed elaboration how <code>NotesAddCommand</code> operates.</p>
+<p>The following is a detailed elaboration of how <code>NotesAddCommand</code> operates.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1785,21 +1785,27 @@ Format for adding a Note is <code>notes add name/STUDENT_NAME cont/CONTENT pr/PR
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Priority can only be either LOW, MEDIUM or HIGH, case-insensitive.
+Priority can only be either LOW, MEDIUM or HIGH, case-insensitive. Student must be present in the class list for him/her to be
+tagged in a note.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p><strong>Step 1</strong>. The <code>NotesAddCommand#execute(Model model)</code> method is executed which takes in a necessary student name, content and priority as input</p>
+<p><strong>Step 1</strong>. The <code>NotesAddCommand#execute(Model model)</code> method is executed which takes in a necessary student name, content and priority as input.</p>
 </div>
 <div class="paragraph">
-<p><strong>Step 2</strong>. The note is then searched through the <code>UniqueNotesList#notes</code> list using the
+<p><strong>Step 2</strong>. The note is then searched through the <code>UniqueStudentList#students</code> list using the
+ <code>Model#hasStudentName(String student)</code> method to check if the specified student exists. If the student does not exist, the <code>CommandException</code> will be thrown
+with the invalid student error message.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>. The note is then searched through the <code>UniqueNotesList#notes</code> list using the
  <code>Model#hasNote(Notes note)</code> method to check if the note already exists. If the note exists, the <code>CommandException</code> will be thrown
 with the duplicate note error message.</p>
 </div>
 <div class="paragraph">
-<p><strong>Step 3</strong>. The method <code>Model#addNote(Notes note)</code> will then be called to add the note. The command box will be reflected with
+<p><strong>Step 4</strong>. The method <code>Model#addNote(Notes note)</code> will then be called to add the note. The command box will be reflected with
 the <code>NotesAddCommand#MESSAGE_SUCCESS</code> constant and a new <code>CommandResult</code> will be returned with the message.</p>
 </div>
 <div class="admonitionblock note">
@@ -1809,7 +1815,7 @@ the <code>NotesAddCommand#MESSAGE_SUCCESS</code> constant and a new <code>Comman
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the format or wording of <code>NotesAddCommand</code> contains error(s), the behaviour of NotesManager will be similar to step 2, where either a unknown command
+If the format or wording of <code>NotesAddCommand</code> contains error(s), the behaviour of NotesManager will be similar to step 2 and 3, where either a unknown command
 or wrong format error message will be displayed.
 </td>
 </tr>
@@ -1858,6 +1864,18 @@ At least one of the three fields must be present.
 </tr>
 </table>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Updated student must be present in the class list for him/her to be tagged in a note.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p><strong>Step 1</strong>. The <code>NotesEditCommand#execute(Model model)</code> method is executed which edit attributes of the selected note. The method
 checks if the <code>index</code> defined when instantiating <code>NotesEditCommand(Index index, EditNotesDecriptor editNotesDescriptor)</code> is
@@ -1865,16 +1883,21 @@ valid. Since it is optional for users to input fields, the fields not entered wi
 in the <code>Notes</code> object.</p>
 </div>
 <div class="paragraph">
-<p><strong>Step 2</strong>. A new <code>Notes</code> with the updated values is created and it is then searched  through the <code>UniqueNotesList#notes</code> list using the
+<p><strong>Step 2</strong>. The note is then searched through the <code>UniqueStudentList#students</code> list using the
+ <code>Model#hasStudentName(String student)</code> method to check if the specified student exists. If the student does not exist, the <code>CommandException</code> will be thrown
+with the invalid student error message.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>. A new <code>Notes</code> with the updated values is created and it is then searched  through the <code>UniqueNotesList#notes</code> list using the
  <code>Model#hasNote(Notes note)</code> method to check if the note already exists. If the note exists, the <code>CommandException</code> will be thrown
 with the duplicate note error message.</p>
 </div>
 <div class="paragraph">
-<p><strong>Step 3</strong>. The newly created <code>Notes</code> will replace the old one through the <code>Model#setNote(Notes toBeChanged, Notes editedNote</code>
+<p><strong>Step 4</strong>. The newly created <code>Notes</code> will replace the old one through the <code>Model#setNote(Notes toBeChanged, Notes editedNote</code>
 method.</p>
 </div>
 <div class="paragraph">
-<p><strong>Step 4</strong>. The command box will be reflected with the <code>NotesEditCommand#MESSAGE_SUCCESS</code> constant and a new <code>CommandResult</code> will be returned with the message.</p>
+<p><strong>Step 5</strong>. The command box will be reflected with the <code>NotesEditCommand#MESSAGE_SUCCESS</code> constant and a new <code>CommandResult</code> will be returned with the message.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1885,7 +1908,7 @@ method.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>After the successful parsing of user input, the <code>NotesDeleteCommand#execute(Model model)</code> method is called which checks if the <code>Index</code>
+<p>After the successful parsing of user input, the <code>NotesDeleteCommand#execute(Model model)</code> method is called which checks if the <code>index</code>
 is defined as an argument when instantiating the <code>NotesDeleteCommand(Index index)</code>  constructor.<br></p>
 <div class="admonitionblock note">
 <table>
@@ -1894,7 +1917,7 @@ is defined as an argument when instantiating the <code>NotesDeleteCommand(Index 
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The <code>Index</code> must be within the bounds of the student list.<br>
+The <code>Index</code> must be within the bounds of the list of notes.<br>
 </td>
 </tr>
 </table>
@@ -1930,7 +1953,7 @@ be returned with the success message.</p>
 <code>NotesFilterCommand(NotesContainsKeywordsPredicate predicate)</code> constructor.</p>
 </li>
 <li>
-<p>The <code>Notes</code> is then searched through the <code>UniqueNotesList#notes</code> list&#8230;&#8203; &#8230;&#8203;</p>
+<p>The <code>Notes</code> objects are then searched through the <code>UniqueNotesList#notes</code> list, checking for presence of any keyword given by the user.</p>
 </li>
 <li>
 <p>The existing <code>UniqueNotesList#internalList</code> is then cleared and updated using the <code>Model#updateFilteredNotesList(Predicate predicate)</code>
@@ -1967,7 +1990,7 @@ the current directory.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Current Implementation: Intuitive, simple syntax and user-friendly</p>
+<p><strong>Current Implementation</strong>: Intuitive, simple syntax and user-friendly</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1980,7 +2003,7 @@ the current directory.</p>
 </div>
 </li>
 <li>
-<p>Alternatives Considered: Many additional fields including special tags, reminders, etc.</p>
+<p><strong>Alternatives Considered</strong>: Many additional fields including special tags, reminders, etc.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -3139,7 +3162,7 @@ command line.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User enters command, together with a student and note&#8217;s content.</p>
+<p>User enters command, together with a student name, note&#8217;s content and priority level.</p>
 </li>
 <li>
 <p>TeaPet displays feedback that a new note is now tagged to the student specified.</p>
@@ -3868,7 +3891,7 @@ Expected: An error message is shown due to the invalid date time range.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="notes"><a class="link" href="#notes">G.5. Notes</a></h3>
+<h3 id="manual-test-notes"><a class="link" href="#manual-test-notes">G.5. Manual Test: Notes</a></h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -4002,4 +4025,4 @@ Expected: An error message is shown as there should be no arguments passed into 
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 07:35:10 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 07:59:00 UTC</div></div></div></body></html>

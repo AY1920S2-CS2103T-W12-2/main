@@ -182,6 +182,525 @@ personal, administrative and academic information.</p>
 </div>
 </div>
 <div class="sect1">
+<h2 id="QuickStart"><a class="link" href="#QuickStart">Quick Start [Done By Gerren Seow]</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section will serve to explain the various components of the TeaPet, which you can interact with. You can also
+follow our step-by-step guide on how to install the application into your Computer. Quickly now, let&#8217;s get started!</p>
+</div>
+<div class="sect2">
+<h3 id="teapet-s-layout"><a class="link" href="#teapet-s-layout">TeaPet&#8217;s Layout</a></h3>
+<div class="paragraph">
+<p>TeaPet&#8217;s User Interface can be divided into 5 main components, each performing specific functionality.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/userguide/TeaPetLayout.png" alt="TeaPetLayout" width="790">
+</div>
+<div class="title">Figure 1. User Interface of TeaPet</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Feature Tabs</strong><br>
+These tabs display some of TeaPet features so that you tell easily which section of TeaPet you are in. There is a drop-down menu in each tab to select and perform various feature
+functionality, if you intend to use your mouse instead of using the command line to access the features.</p>
+</li>
+<li>
+<p><strong>Main Panel</strong><br>
+The main panel is the display window of Student List, Student Administration, Student Academics and Personal Schedule
+information. Depending on which feature you are currently using, the main panel will display corresponding information.</p>
+</li>
+<li>
+<p><strong>Notes Panel</strong><br>
+The notes panel is specifically used to displays all the notes stored in TeaPet.</p>
+</li>
+<li>
+<p><strong>Command Box</strong><br>
+The command box is where you will be entering commands into TeaPet.</p>
+</li>
+<li>
+<p><strong>Result Display Box</strong><br>
+The result display box is where TeaPet&#8217;s server replies to every command input. Any success, error or information
+messages will be displayed in this box.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="installation"><a class="link" href="#installation">Installation</a></h3>
+<div class="paragraph">
+<p>The details below indicate the step-by-step process on getting started with TeaPet.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The Computer you are using should either be of <em>Windows</em> or <em>Mac</em> operating system.</p>
+</li>
+<li>
+<p>Ensure you have Java 11 or above installed in your Computer.</p>
+</li>
+<li>
+<p>Download the latest TeaPet.jar <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/releases">here</a>.</p>
+</li>
+<li>
+<p>Copy the TeaPet.jar file to the folder you want to use as the root directory for TeaPet.</p>
+</li>
+<li>
+<p>Double-click the file to start the app. The Graphical User Interface (GUI) should appear in a matter of seconds.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Ui.png" alt="Ui" width="790">
+</div>
+<div class="title">Figure 2. Home View of TeaPet</div>
+</div>
+</li>
+<li>
+<p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
+For example,  typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.</p>
+</li>
+<li>
+<p>Some example commands you can try:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><code>student add</code></strong><code>name/Kelvin Klein</code>
+: adds a contact named Kelvin Klein to the class List</p>
+</li>
+<li>
+<p><code>student delete 3</code> : deletes the 3rd student shown in the current list of students</p>
+</li>
+<li>
+<p><strong><code>exit</code></strong> : exits the app</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Refer to <a href="#Features">[Features]</a> for details of each command.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you have any questions, please check out our <a href="#FAQ">[FAQ]</a> section.
+</td>
+</tr>
+</table>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="notes"><a class="link" href="#notes">Notes [Done by Gerren Seow]</a></h3>
+<div class="paragraph">
+<p>TeaPet&#8217;s Notes feature performs like the ones we all use in our everyday lives, aiming to help form teachers keep
+track of important information of their students spontaneously. This feature allows you to label each note with
+different priority to better manage tasks. Every note is specifically tagged to a student, such you will be able to
+better keep track of the stakeholder and information.</p>
+</div>
+<div class="sect3">
+<h4 id="display-all-notes-and-help-code-notes-code"><a class="link" href="#display-all-notes-and-help-code-notes-code">Display all Notes and Help <code>notes</code></a></h4>
+<div class="paragraph">
+<p>Shows all notes currently stored in TeaPet, and displays help on the usage of this feature.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>notes</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>The Column on the right displays all your notes.
+[HELP ON NOTES COMMANDS]
+1. Display all Notes: notes
+2. Add Note: notes add name/STUDENT_NAME cont/CONTENT pr/PRIORITY
+3. Edit Note: notes edit INDEX [name/UPDATED_STUDENT_NAME] [cont/UPDATED_CONTENT] [pr/UPDATED_PRIORITY]
+4. Delete Note: notes delete INDEX
+5. Filter Search Notes: notes filter KEYWORD(S)
+6. Export Notes: notes export</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/userguide/notesfeature/notesDisplay.png" alt="notesDisplay" width=""790">
+</div>
+<div class="title">Figure 3. After using the <code>notes</code> command</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="add-notes-code-notes-add-code"><a class="link" href="#add-notes-code-notes-add-code">Add Notes <code>notes add</code></a></h4>
+<div class="paragraph">
+<p>Adds a note into TeaPet.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>notes add name/STUDENT_NAME cont/CONTENT pr/PRIORITY</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create and add a new note with the following fields.</p>
+</li>
+<li>
+<p>An automatic timestamp is generated for each note added.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<strong>None</strong> of the fields can be empty. Priority must either be <strong>LOW</strong>, <strong>MEDIUM</strong> or <strong>HIGH</strong>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Student&#8217;s name (case-sensitive) indicated in the name field must be already <strong>present</strong> in the class-list. Please refer to
+<a href="#AddStudent">Section 4.1.3, "Add Student"</a> should you need help on adding a student.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>notes add name/Freddy Zhang cont/Reminder to inform his parents about Freddy&#8217;s exemplary behaviour. pr/LOW</code><br>
+Adds a note for student "Freddy Zhang" into the list of notes, together with content and priority.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>New Student Note added! Wonderful!
+[NOTE]
+Student: Freddy Zhang
+Content: Reminder to inform his parents about Freddy’s exemplary behaviour.
+Priority: LOW</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/userguide/notesfeature/notesAdd.png" alt="notesAdd" width="790">
+</div>
+<div class="title">Figure 4. After using the <code>notes add</code> command</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-notes-code-notes-edit-code"><a class="link" href="#edit-notes-code-notes-edit-code">Edit Notes <code>notes edit</code></a></h4>
+<div class="paragraph">
+<p>Edits a note in TeaPet.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>notes edit INDEX [name/UPDATED_STUDENT_NAME] [cont/UPDATED_CONTENT] [pr/UPDATED_PRIORITY]</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Edits a current note in the list by index. Index chosen must be an integer within the total number of notes.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<strong>At least 1</strong> of the three prefix fields must be indicated. Priority must either be <strong>LOW</strong>, <strong>MEDIUM</strong> or <strong>HIGH</strong>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Updated student&#8217;s name (case-sensitive) indicated in the name field must be already <strong>present</strong> in the class-list. Please refer to
+<a href="#AddStudent">Section 4.1.3, "Add Student"</a> should you need help on adding a student.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>notes edit 4 cont/Reminder to inform his parents about Freddy&#8217;s exemplary behaviour TONIGHT. pr/HIGH</code><br>
+Edits a note for student "Freddy Zhang" in the list of notes, together with updated content and updated priority.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Student's Note Edited. Wonderful!
+[NOTE]
+Student: Freddy Zhang
+Content: Reminder to inform his parents about Freddy’s exemplary behaviour TONIGHT.
+Priority: HIGH</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/userguide/notesfeature/notesEdit.png" alt="notesEdit" width=""790">
+</div>
+<div class="title">Figure 5. After using the <code>notes edit</code> command</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-notes-code-notes-delete-code"><a class="link" href="#delete-notes-code-notes-delete-code">Delete Notes <code>notes delete</code></a></h4>
+<div class="paragraph">
+<p>Deletes a note in TeaPet.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>notes delete INDEX</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes a current note in the list by index. Index must be an integer within the total number of notes.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>notes delete 4</code><br>
+Deletes the 4th note in the list. In this example, the note is the one we created for student "Freddy Zhang".</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Student Note deleted.
+[NOTE]
+Student: Freddy Zhang
+Content: Reminder to inform his parents about Freddy’s exemplary behaviour TONIGHT.
+Priority: HIGH</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="filter-notes-code-notes-filter-code"><a class="link" href="#filter-notes-code-notes-filter-code">Filter Notes <code>notes filter</code></a></h4>
+<div class="paragraph">
+<p>Displays a list of filtered notes based on specific keywords.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>notes filter KEYWORD(S)</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Filters the list of notes based on the presence of keywords given.</p>
+</li>
+<li>
+<p>This notes filter feature will perform a comparison of <strong>name of student</strong>, <strong>content</strong>, <strong>priority</strong> and <strong>timestamp</strong>
+of the notes.</p>
+</li>
+<li>
+<p>Filtering is done based on character match, not full-word match.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Example 1:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>notes filter low</code><br>
+Displays only notes with the keyword "low" present.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Displaying Notes with Keywords: [low]</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/userguide/notesfeature/notesFilter.png" alt="notesFilter" width=""790">
+</div>
+<div class="title">Figure 6. After using the <code>notes filter low</code> command</div>
+</div>
+<div class="paragraph">
+<p><strong>Example 2:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>notes filter high 29</code><br>
+Displays only notes with the keyword "high" and "29" present.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Displaying Notes with Keywords: [high, 29]</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="export-notes-code-notes-export-code"><a class="link" href="#export-notes-code-notes-export-code">Export Notes <code>notes export</code></a></h4>
+<div class="paragraph">
+<p>Exports all notes in TeaPet into a .csv file.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>notes export</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Exports all notes into studentNotes.csv, which can be located in the <strong>data</strong> folder of the same directory as the
+TeaPet application.</p>
+</li>
+<li>
+<p>The .csv file&#8217;s column headers are Student, Priority, DateTime and Content, in that order.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>notes export</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Notes are exported to studentNotes.csv in the data folder</pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="notes-commands"><a class="link" href="#notes-commands">Notes Commands</a></h3>
+<div class="paragraph">
+<p>Here are the commands to manage notes. They require the prefix <code>notes</code>.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Notes commands of TeaPet</caption>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 45%;">
+<col style="width: 45%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Command</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Format</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Expected outcome</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes add</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes add name/STUDENT_NAME cont/CONTENT pr/PRIORITY</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds a note into TeaPet</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes edit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes edit INDEX [name/UPDATED_STUDENT_NAME] [cont/UPDATED_CONTENT] [pr/UPDATED_PRIORITY]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edits a note in TeaPet.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes delete</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes delete INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes a note in TeaPet.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes filter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes filter KEYWORD(S)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays a list of filtered notes based on presence of keywords.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes export</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notes export</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exports all notes in TeaPet into a .csv file</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
@@ -194,5 +713,682 @@ personal, administrative and academic information.</p>
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="Design-Model"><a class="link" href="#Design-Model">Model component</a></h3>
+<div class="paragraph">
+<p>This section describes the high-level software structure of TeaPet&#8217;s Model Component.</p>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 07:35:10 UTC</div></div></div></body></html>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ModelClassDiagram.png" alt="ModelClassDiagram">
+</div>
+<div class="title">Figure 7. Structure of the Model Component with <code>Student</code> class as a detailed example.</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/blob/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Model</code>,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
+</li>
+<li>
+<p>stores the data of different Entities.</p>
+</li>
+<li>
+<p>stores in-memory data of Students, Admin, Academics, Notes and Events.</p>
+</li>
+<li>
+<p>exposes multiple unmodifiable <code>ObservableLists</code> that can be 'observed' e.g. the UI can be bound to these lists so that the UI automatically updates when the data in the lists change.</p>
+</li>
+<li>
+<p>does not depend on any of the other three components.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">Storage component</a></h3>
+<div class="paragraph">
+<p>This section describes the high-level software structure of TeaPet&#8217;s Storage Component.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StorageClassDiagram.png" alt="StorageClassDiagram">
+</div>
+<div class="title">Figure 8. Structure of the Storage Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/blob/master/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Storage</code> component,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>converts Model objects into savable data in JSON-format and vice versa.</p>
+</li>
+<li>
+<p>can save <code>UserPref</code> objects in json format and read it back.</p>
+</li>
+<li>
+<p>can store <code>Students</code>, <code>Admin</code>, <code>Academics</code>, <code>Notes</code> and <code>Events</code> in a several json files, which can be read.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Commons"><a class="link" href="#Design-Commons">Common classes</a></h3>
+<div class="paragraph">
+<p>Classes used by multiple components are in the <code>seedu.address.commons</code> package.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="notes-feature"><a class="link" href="#notes-feature">Notes feature</a></h3>
+<div class="paragraph">
+<p>TeaPet application comes with an in-built notes feature, which serves to allow Teachers to record administrative or behavioural
+information of his/her students. Each note is tagged to a specific student and acts as a lightweight, digital 'Post It'.</p>
+</div>
+<div class="paragraph">
+<p>The notes feature comprises of 6 main functionalities represented by 6 commands. They are namely:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>NotesCommand</code> - Displays all notes and help on the notes feature.</p>
+</li>
+<li>
+<p><code>NotesAddCommand</code> - Adds a new note into TeaPet.</p>
+</li>
+<li>
+<p><code>NotesEditCommand</code> - Edits the details of a note in TeaPet.</p>
+</li>
+<li>
+<p><code>NotesDeleteCommand</code> - Deletes a note in TeaPet.</p>
+</li>
+<li>
+<p><code>NotesFilterCommand</code> - Filters the list of notes in TeaPet based on user-input keywords.</p>
+</li>
+<li>
+<p><code>NotesExportCommand</code> - Exports all notes information into a .csv file</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/developerguide/notes/NotesClassDiagram.png" alt="NotesClassDiagram">
+</div>
+<div class="title">Figure 9. Class Diagram for Notes Commands</div>
+</div>
+<div class="sect3">
+<h4 id="structure-of-notes-class"><a class="link" href="#structure-of-notes-class">Structure of Notes Class</a></h4>
+<div class="paragraph">
+<p>Notes object is made up of 4 fields. They are namely: Student Name, Content, Priority and DateTime. The class diagram below
+depicts the structure of the Notes in the Model Component. Please refer to <a href="#Design-Model">Model component</a> for the higher-level architecture.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/developerguide/notes/NotesModelClassDiagram.png" alt="NotesModelClassDiagram">
+</div>
+<div class="title">Figure 10. Class Diagram for Notes Model Component</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="add-note"><a class="link" href="#add-note">Add Note</a></h4>
+<div class="paragraph">
+<p>The following is a detailed elaboration of how <code>NotesAddCommand</code> operates.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format for adding a Note is <code>notes add name/STUDENT_NAME cont/CONTENT pr/PRIORITY</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Priority can only be either LOW, MEDIUM or HIGH, case-insensitive. Student must be present in the class list for him/her to be
+tagged in a note.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>NotesAddCommand#execute(Model model)</code> method is executed which takes in a necessary student name, content and priority as input.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. The note is then searched through the <code>UniqueStudentList#students</code> list using the
+ <code>Model#hasStudentName(String student)</code> method to check if the specified student exists. If the student does not exist, the <code>CommandException</code> will be thrown
+with the invalid student error message.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>. The note is then searched through the <code>UniqueNotesList#notes</code> list using the
+ <code>Model#hasNote(Notes note)</code> method to check if the note already exists. If the note exists, the <code>CommandException</code> will be thrown
+with the duplicate note error message.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 4</strong>. The method <code>Model#addNote(Notes note)</code> will then be called to add the note. The command box will be reflected with
+the <code>NotesAddCommand#MESSAGE_SUCCESS</code> constant and a new <code>CommandResult</code> will be returned with the message.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the format or wording of <code>NotesAddCommand</code> contains error(s), the behaviour of NotesManager will be similar to step 2 and 3, where either a unknown command
+or wrong format error message will be displayed.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/developerguide/notes/NotesAddSequence.png" alt="NotesAddSequence">
+</div>
+<div class="title">Figure 11. Sequence Diagram for Adding Notes</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/developerguide/notes/SDGetNotesAddCommand.png" alt="SDGetNotesAddCommand">
+</div>
+<div class="title">Figure 12. Supplementary Frame for Sequence Diagram</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-note"><a class="link" href="#edit-note">Edit Note</a></h4>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>NotesEditCommand</code> performs.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format for adding a Note is <code>notes edit INDEX [name/UPDATED_STUDENT_NAME] [cont/CONTENT] [pr/PRIORITY]</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Priority can only be either LOW, MEDIUM or HIGH, case-insensitive. Enclosing [] braces indicate optional fields.
+At least one of the three fields must be present.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Updated student must be present in the class list for him/her to be tagged in a note.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>NotesEditCommand#execute(Model model)</code> method is executed which edit attributes of the selected note. The method
+checks if the <code>index</code> defined when instantiating <code>NotesEditCommand(Index index, EditNotesDecriptor editNotesDescriptor)</code> is
+valid. Since it is optional for users to input fields, the fields not entered will reuse the existing values that are currently stored and defined
+in the <code>Notes</code> object.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. The note is then searched through the <code>UniqueStudentList#students</code> list using the
+ <code>Model#hasStudentName(String student)</code> method to check if the specified student exists. If the student does not exist, the <code>CommandException</code> will be thrown
+with the invalid student error message.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>. A new <code>Notes</code> with the updated values is created and it is then searched  through the <code>UniqueNotesList#notes</code> list using the
+ <code>Model#hasNote(Notes note)</code> method to check if the note already exists. If the note exists, the <code>CommandException</code> will be thrown
+with the duplicate note error message.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 4</strong>. The newly created <code>Notes</code> will replace the old one through the <code>Model#setNote(Notes toBeChanged, Notes editedNote</code>
+method.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 5</strong>. The command box will be reflected with the <code>NotesEditCommand#MESSAGE_SUCCESS</code> constant and a new <code>CommandResult</code> will be returned with the message.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-note"><a class="link" href="#delete-note">Delete Note</a></h4>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>NotesDeleteCommand</code> performs.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After the successful parsing of user input, the <code>NotesDeleteCommand#execute(Model model)</code> method is called which checks if the <code>index</code>
+is defined as an argument when instantiating the <code>NotesDeleteCommand(Index index)</code>  constructor.<br></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>Index</code> must be within the bounds of the list of notes.<br>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>The <code>Notes</code> at the specified <code>Index</code> is then removed from the <code>UniqueNotesList#notes</code> observable list using the
+<code>Model#deleteNote(Index index)</code> method.</p>
+</li>
+<li>
+<p>The command box will be reflected with the <code>NotesDeleteCommand#MESSAGE_SUCCESS</code> constant and a new <code>CommandResult</code> will
+be returned with the success message.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/developerguide/notes/NotesDeleteActivityDiagram.png" alt="NotesDeleteActivityDiagram">
+</div>
+<div class="title">Figure 13. Activity Diagram for Deleting Note</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="filter-notes"><a class="link" href="#filter-notes">Filter Notes</a></h4>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>NotesFilterCommand</code> performs.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After the successful parsing of user input, the <code>NotesFilterCommand#execute(Model model)</code> method is called which checks if the
+<code>NotesContainsKeywordsPredicate(keywords)</code> is defined as part of the argument when instantiating the
+<code>NotesFilterCommand(NotesContainsKeywordsPredicate predicate)</code> constructor.</p>
+</li>
+<li>
+<p>The <code>Notes</code> objects are then searched through the <code>UniqueNotesList#notes</code> list, checking for presence of any keyword given by the user.</p>
+</li>
+<li>
+<p>The existing <code>UniqueNotesList#internalList</code> is then cleared and updated using the <code>Model#updateFilteredNotesList(Predicate predicate)</code>
+method.</p>
+</li>
+<li>
+<p>A new <code>CommandResult</code> will be returned with the success message.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="export-notes"><a class="link" href="#export-notes">Export Notes</a></h4>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>NotesExportCommand</code> performs.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After the successful parsing of user input, the <code>NotesExportCommand#execute(Model model)</code> method is called.</p>
+</li>
+<li>
+<p>The command box will be reflected with the <code>NotesExportCommand#MESSAGE_SUCCESS</code> constant and a new <code>CommandResult</code> will
+be returned with the success message.</p>
+</li>
+<li>
+<p>The <code>MainWindow</code> of the UI component will process the <code>CommandResult</code> and create a studentNotes.csv in the data folder of
+the current directory.</p>
+</li>
+</ol>
+</div>
+<div class="sect4">
+<h5 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Current Implementation</strong>: Intuitive, simple syntax and user-friendly</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: It is easy for the Teacher to use the feature.</p>
+</li>
+<li>
+<p>Cons: Not as powerful and less utility for advanced users.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternatives Considered</strong>: Many additional fields including special tags, reminders, etc.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Powerful, many interesting features that advanced users can use.</p>
+</li>
+<li>
+<p>Cons: It contradicts with the initial goal of the Notes feature which is to enable quick and easy note-taking.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc15-add-note-for-specific-student" class="discrete">Use case: UC15 - Add note for specific student</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters command, together with a student name, note&#8217;s content and priority level.</p>
+</li>
+<li>
+<p>TeaPet displays feedback that a new note is now tagged to the student specified.</p>
+</li>
+<li>
+<p>TeaPet&#8217;s note panel will display the updated list of notes.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Command is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. TeaPet shows an error message.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. Student is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc16-edit-note-of-specific-student" class="discrete">Use case: UC16 - Edit note of specific student</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters command, together with an index of the note to edit, and fields to update.</p>
+</li>
+<li>
+<p>TeaPet displays feedback that the specific note chosen has been edited.</p>
+</li>
+<li>
+<p>TeaPet&#8217;s note panel will display the updated list of notes.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Command is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. TeaPet shows an error message.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. Student is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. TeaPet shows an error message.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1c. Index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1c1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc17-delete-note-for-specific-student" class="discrete">Use case: UC17 - Delete note for specific student</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters command, together with an index of the note to delete.</p>
+</li>
+<li>
+<p>TeaPet displays feedback that the specifed note is deleted.</p>
+</li>
+<li>
+<p>TeaPet&#8217;s note panel will display the updated list of notes.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Command is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. TeaPet shows an error message.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. Index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="manual-test-notes"><a class="link" href="#manual-test-notes">Manual Test: Notes</a></h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+In order to add or edit a specific note belonging to a student, the student must first be in the class-list. In order for optimal
+manual testing, please create the student first before creating a note which belongs to him/her. You can refer to <a href="#Feature-Add">[Feature-Add]</a> to
+find out more on how to add a student to the class-list.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Delete all previous notes. Be sure two students named <strong>Freddy Zhang</strong> and <strong>Lee Hui Ting</strong> are in the class-list. Conduct these tests sequentially
+from first to last, for the most effective testing experience.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a note to the notes panel.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>notes add name/Freddy Zhang cont/Reminder to print his testimonial pr/HIGH</code><br>
+Expected: New note added to the notes panel. This note should be red (high priority) in colour, belonging to Freddy Zhang. The timestamp
+in the note should be the current date and time.</p>
+</li>
+<li>
+<p>Test case: <code>notes add name/Freddy Zhang cont/Freddy was late for class for the second day in a row. pr/LOW</code><br>
+Expected: New note added to the notes panel. This note should be yellow (low priority) in colour, belonging to Freddy Zhang. The timestamp
+in the note should be the current date and time.</p>
+</li>
+<li>
+<p>Test case: <code>notes add name/Lee Hui Ting cont/Hui Ting left school for an interview. pr/MEDIUM</code><br>
+Expected: New note added to the notes panel. This note should be orange (medium priority) in colour, belonging to Lee Hui Ting. The timestamp
+in the note should be the current date and time.</p>
+</li>
+<li>
+<p>Test case: <code>notes add name/Freddy_Zhang_ cont/He exemplified an improvement in behaviour pr/LOW</code><br>
+Expected: An error message is shown as the student name should be alpha-numeric.</p>
+</li>
+<li>
+<p>Test case: <code>notes add name/Freddy Zhang cont/He exemplified an improvement in behaviour pr/Not High</code><br>
+Expected: An error message is shown as priority indicated must be either <strong>LOW</strong>, <strong>MEDIUM</strong> or <strong>HIGH</strong>, case-insensitive.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Editing a note in the notes panel.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>notes edit 1 cont/Reminder to print his testimonial and gradebook</code><br>
+Expected: First note in the panel is updated with new content. Only the content should be modified, and nothing else.</p>
+</li>
+<li>
+<p>Test case: <code>notes edit 1 name/Lee Hui Ting cont/Reminder to print her testimonial and gradebook</code><br>
+Expected: First note in the panel is updated with new name and content. Note should reflect student Lee Hui Ting&#8217;s name,
+with modfied content. Nothing else should be different.</p>
+</li>
+<li>
+<p>Test case: <code>notes edit 1 pr/MEDIUM</code><br>
+Expected: First note in the panel is updated new priority. Note colour should change from red to orange.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Deleting a note in the notes panel.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>notes delete 1</code><br>
+Expected: First note in the panel should be removed.</p>
+</li>
+<li>
+<p>Test case: <code>notes delete 0</code><br>
+Expected: An error message is shown as the integer provided must be greater than zero.</p>
+</li>
+<li>
+<p>Test case: <code>notes delete 4</code><br>
+Expected: An error message is shown as the integer provided as the number of notes in the notes panel is less than 4.
+Integer provided is out of range.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Filtering the list of notes to search for specific notes.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>notes filter Freddy</code><br>
+Expected: Only notes containing the word Freddy should be displayed in the notes panel.</p>
+</li>
+<li>
+<p>Test case: <code>notes filter low</code><br>
+Expected: Only notes containing the word low should be displayed in the notes panel.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Exporting notes in the notes panel into a .csv file.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>notes export</code><br>
+Expected: A file named studentNotes.csv should be created in the data folder of the same directory in which TeaPet is installed.</p>
+</li>
+<li>
+<p>Test case: <code>notes export 3</code><br>
+Expected: An error message is shown as there should be no arguments passed into notes export command.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 07:59:00 UTC</div></div></div></body></html>
