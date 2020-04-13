@@ -943,7 +943,7 @@ The feature comprises of four commands namely.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/AdminClassDiagram.png" alt="AdminClassDiagram">
+<img src="images/admin/AdminClassDiagram.png" alt="AdminClassDiagram">
 </div>
 <div class="title">Figure 13. Class Diagram for Admin Commands</div>
 </div>
@@ -970,7 +970,19 @@ The feature comprises of four commands namely.</p>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="admin-display-command"><a class="link" href="#admin-display-command">7.2.1. Admin Display Command</a></h4>
+<h4 id="class-overview"><a class="link" href="#class-overview">7.2.1. Class Overview</a></h4>
+<div class="paragraph">
+<p>The class diagram below depicts the structure of the Admin Model Component.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/admin/AdminModelClassDiagram.png" alt="AdminModelClassDiagram">
+</div>
+<div class="title">Figure 14. Class Diagram for Admin Model</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="admin-display-command"><a class="link" href="#admin-display-command">7.2.2. Admin Display Command</a></h4>
 <div class="sect4">
 <h5 id="implementation-8"><a class="link" href="#implementation-8">Implementation</a></h5>
 <div class="paragraph">
@@ -1014,7 +1026,7 @@ If the wording of the <code>AdminDisplayCommand</code> contains error(s), an unk
 </div>
 </div>
 <div class="sect3">
-<h4 id="admin-dates-command"><a class="link" href="#admin-dates-command">7.2.2. Admin Dates Command</a></h4>
+<h4 id="admin-dates-command"><a class="link" href="#admin-dates-command">7.2.3. Admin Dates Command</a></h4>
 <div class="sect4">
 <h5 id="implementation-9"><a class="link" href="#implementation-9">Implementation</a></h5>
 <div class="paragraph">
@@ -1059,7 +1071,7 @@ will be displayed.
 </div>
 </div>
 <div class="sect3">
-<h4 id="admin-save-command"><a class="link" href="#admin-save-command">7.2.3. Admin Save Command</a></h4>
+<h4 id="admin-save-command"><a class="link" href="#admin-save-command">7.2.4. Admin Save Command</a></h4>
 <div class="sect4">
 <h5 id="implementation-10"><a class="link" href="#implementation-10">Implementation</a></h5>
 <div class="paragraph">
@@ -1103,9 +1115,9 @@ displayed.
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/AdminSaveActivityDiagram.png" alt="AdminSaveActivityDiagram">
+<img src="images/admin/AdminSaveActivityDiagram.png" alt="AdminSaveActivityDiagram">
 </div>
-<div class="title">Figure 14. Activity Diagram for AdminSaveCommand</div>
+<div class="title">Figure 15. Activity Diagram for AdminSaveCommand</div>
 </div>
 </div>
 <div class="sect4">
@@ -1180,7 +1192,7 @@ displayed.
 </div>
 </div>
 <div class="sect3">
-<h4 id="admin-delete-command"><a class="link" href="#admin-delete-command">7.2.4. Admin Delete Command</a></h4>
+<h4 id="admin-delete-command"><a class="link" href="#admin-delete-command">7.2.5. Admin Delete Command</a></h4>
 <div class="sect4">
 <h5 id="implementation-11"><a class="link" href="#implementation-11">Implementation</a></h5>
 <div class="paragraph">
@@ -1217,14 +1229,14 @@ specified date from <code>UniqueDateList</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/AdminDeleteSequenceDiagram.png" alt="AdminDeleteSequenceDiagram">
+<img src="images/admin/AdminDeleteSequenceDiagram.png" alt="AdminDeleteSequenceDiagram">
 </div>
-<div class="title">Figure 15. Admin Delete Sequence Diagram</div>
+<div class="title">Figure 16. Admin Delete Sequence Diagram</div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="admin-fetch-command"><a class="link" href="#admin-fetch-command">7.2.5. Admin Fetch Command</a></h4>
+<h4 id="admin-fetch-command"><a class="link" href="#admin-fetch-command">7.2.6. Admin Fetch Command</a></h4>
 <div class="paragraph">
 <p><strong>Step 1</strong>. The <code>AdminFetchCommand#execute(Model model)</code> method is executed which takes in a
 DateContainsKeywordsPredicate object as an argument. User input will be parsed first to a DateContainsKeywordsPredicate
@@ -1265,7 +1277,7 @@ The sequence diagram for <code>admin fetch</code> command is similar to that of 
 <h3 id="student-academics-feature"><a class="link" href="#student-academics-feature">7.3. Student Academics feature</a></h3>
 <div class="paragraph">
 <p>This student academics feature stores and tracks the class' academics progress.
-The academics feature consists of four commands namely.</p>
+The academics feature consists of the following commands namely,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1303,10 +1315,10 @@ exposed by the <code>Model</code> interface to perform the related operations (S
 <div class="content">
 <img src="images/academics/AcademicsClassDiagram.png" alt="AcademicsClassDiagram">
 </div>
-<div class="title">Figure 16. Class Diagram for Academics Commands</div>
+<div class="title">Figure 17. Class Diagram for Academics Commands</div>
 </div>
 <div class="sect3">
-<h4 id="class-overview"><a class="link" href="#class-overview">7.3.1. Class Overview</a></h4>
+<h4 id="class-overview-2"><a class="link" href="#class-overview-2">7.3.1. Class Overview</a></h4>
 <div class="paragraph">
 <p>The class diagram below will depict the structure of the Academics Model Component.</p>
 </div>
@@ -1314,7 +1326,7 @@ exposed by the <code>Model</code> interface to perform the related operations (S
 <div class="content">
 <img src="images/academics/AcademicsModelClassDiagram.png" alt="AcademicsModelClassDiagram">
 </div>
-<div class="title">Figure 17. Class Diagram for Academics Model</div>
+<div class="title">Figure 18. Class Diagram for Academics Model</div>
 </div>
 </div>
 <div class="sect3">
@@ -1374,7 +1386,7 @@ will be displayed.
 <div class="content">
 <img src="images/academics/academics_add_command_sequence_diagram.png" alt="academics add command sequence diagram">
 </div>
-<div class="title">Figure 18. Academics Add Command Sequence Diagram</div>
+<div class="title">Figure 19. Academics Add Command Sequence Diagram</div>
 </div>
 </div>
 </div>
@@ -1494,7 +1506,7 @@ submitted their work, a <code>CommandException</code> will be thrown.</p>
 <div class="content">
 <img src="images/academics/AcademicsSubmitActivityDiagram.png" alt="AcademicsSubmitActivityDiagram">
 </div>
-<div class="title">Figure 19. Academics Submit Activity Diagram</div>
+<div class="title">Figure 20. Academics Submit Activity Diagram</div>
 </div>
 </div>
 </div>
@@ -1746,7 +1758,7 @@ information of his/her students. Each note is tagged to a specific student and a
 <div class="content">
 <img src="images/developerguide/notes/NotesClassDiagram.png" alt="NotesClassDiagram">
 </div>
-<div class="title">Figure 20. Class Diagram for Notes Commands</div>
+<div class="title">Figure 21. Class Diagram for Notes Commands</div>
 </div>
 <div class="sect3">
 <h4 id="structure-of-notes-class"><a class="link" href="#structure-of-notes-class">7.4.1. Structure of Notes Class</a></h4>
@@ -1758,7 +1770,7 @@ depicts the structure of the Notes in the Model Component. Please refer to <a hr
 <div class="content">
 <img src="images/developerguide/notes/NotesModelClassDiagram.png" alt="NotesModelClassDiagram">
 </div>
-<div class="title">Figure 21. Class Diagram for Notes Model Component</div>
+<div class="title">Figure 22. Class Diagram for Notes Model Component</div>
 </div>
 </div>
 <div class="sect3">
@@ -1825,13 +1837,13 @@ or wrong format error message will be displayed.
 <div class="content">
 <img src="images/developerguide/notes/NotesAddSequence.png" alt="NotesAddSequence">
 </div>
-<div class="title">Figure 22. Sequence Diagram for Adding Notes</div>
+<div class="title">Figure 23. Sequence Diagram for Adding Notes</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/developerguide/notes/SDGetNotesAddCommand.png" alt="SDGetNotesAddCommand">
 </div>
-<div class="title">Figure 23. Reference Frame for Sequence Diagram</div>
+<div class="title">Figure 24. Reference Frame for Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1937,7 +1949,7 @@ be returned with the success message.</p>
 <div class="content">
 <img src="images/developerguide/notes/NotesDeleteActivityDiagram.png" alt="NotesDeleteActivityDiagram">
 </div>
-<div class="title">Figure 24. Activity Diagram for Deleting Note</div>
+<div class="title">Figure 25. Activity Diagram for Deleting Note</div>
 </div>
 </div>
 <div class="sect3">
@@ -2057,7 +2069,7 @@ Hence, at the storage level, the Event objects are mapped to VEvents for reading
 </div>
 </div>
 <div class="sect3">
-<h4 id="class-overview-2"><a class="link" href="#class-overview-2">7.5.2. Class Overview</a></h4>
+<h4 id="class-overview-3"><a class="link" href="#class-overview-3">7.5.2. Class Overview</a></h4>
 <div class="paragraph">
 <p>The class diagram below shows the interactions between events classes in the <code>Model</code>. Notice how the <code>EventHistory</code> class depends
 on the <code>Event</code> class in its constructor but only has a <code>VEvent</code> attribute. This is because an <code>Event</code> object will always be
@@ -2069,7 +2081,7 @@ using the <code>VEvent</code> type class. Only the <code>Storage</code> componen
 <div class="content">
 <img src="images/schedule_class_diagram.png" alt="schedule class diagram">
 </div>
-<div class="title">Figure 25. Class Diagram for Schedule</div>
+<div class="title">Figure 26. Class Diagram for Schedule</div>
 </div>
 </div>
 <div class="sect3">
@@ -2115,7 +2127,7 @@ from other layers of the application.
 <div class="content">
 <img src="images/ScheduleAddActivityDiagram.png" alt="ScheduleAddActivityDiagram">
 </div>
-<div class="title">Figure 26. Activity Diagram for ScheduleAddCommand</div>
+<div class="title">Figure 27. Activity Diagram for ScheduleAddCommand</div>
 </div>
 </div>
 <div class="sect4">
@@ -4025,4 +4037,4 @@ Expected: An error message is shown as there should be no arguments passed into 
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 10:02:30 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 10:16:12 UTC</div></div></div></body></html>
