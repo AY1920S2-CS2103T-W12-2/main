@@ -562,148 +562,7 @@ Edits the student phone number in index 1 to a new phone number.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="schedulerA"><a class="link" href="#schedulerA">Personal Scheduler [Done by Simon Lam and Gary Lim]</a></h3>
-<div class="paragraph">
-<p>TeaPet&#8217;s Personal Scheduler allows you to record down your events for the week, which will be
-sorted according to date and time. You will then be able to easily view your schedule as you need it.</p>
-</div>
-<div class="sect3">
-<h4 id="display-your-scheduler-code-schedule-code-done-by-simon-lam-and-gary-lim"><a class="link" href="#display-your-scheduler-code-schedule-code-done-by-simon-lam-and-gary-lim">Display your scheduler: <code>schedule</code> [Done by Simon Lam and Gary Lim]</a></h4>
-<div class="paragraph">
-<p>Displays your schedule in this current week.</p>
-</div>
-<div class="paragraph">
-<p><strong>Format:</strong> <code>schedule</code></p>
-</div>
-<div class="paragraph">
-<p><strong>Expected Outcome:</strong></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>This is your schedule for the week
-Schedule helps you to keep track of your events.
-[HELP ON SCHEDULE COMMANDS]
-add event: schedule add eventName/EVENT_DESCRIPTION startDateTime/YYYY-MM-DDTHH:MM endDateTime/YYYY-MM-DDTHH:MM recur/RECUR_DESCRIPTION color/COLOR_CODE
-edit event: schedule edit INDEX [eventName/EVENT_DESCRIPTION] [startDateTime/YYYY-MM-DDTHH:MM] [endDateTime/YYYY-MM-DDTHH:MM] [recur/RECUR_DESCRIPTION] [color/COLOR_CODE]
-delete event: schedule delete INDEX
-get index of a event: schedule indexGet/EVENT_DESCRIPTION
-get all indexes of events in schedule: schedule indexAll
-change view mode of schedule: schedule view mode/SCHEDULE_MODE date/YYYY-MM-DD
-export schedule: schedule export
-Type the following commands for more info!</pre>
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/display_schedule.png" alt="display schedule" width="790">
-</div>
-<div class="title">Figure 4. After using <code>schedule</code> command</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="adding-an-event-to-schedule-code-schedule-add-code-done-by-simon-lam-and-gary-lim"><a class="link" href="#adding-an-event-to-schedule-code-schedule-add-code-done-by-simon-lam-and-gary-lim">Adding an event to schedule: <code>schedule add</code> [Done by Simon Lam and Gary Lim]</a></h4>
-<div class="paragraph">
-<p>Adds an event to your personal scheduler.</p>
-</div>
-<div class="paragraph">
-<p><strong>Format:</strong> <code>schedule add eventName/EVENT_DESCRIPTION startDateTime/START_DATETIME endDateTime/END_DATETIME recur/RECUR_DESCRIPTION color/COLOR_CODE</code></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The format of startDateTime and endDateTime is in YYYY-MM-DDThh:mm format, where time is in the 24-hour format.<br>
-Example: 7th April 2020 10AM will be 2020-04-07T10:00
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-RECUR_DESCRIPTION can only be either of these: <code>none</code>, <code>daily</code> or <code>weekly</code>.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Events which are further away in the future have a darker color code. This is intentional.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The prefixes are meant to be longer due the the emphasis on clarity as there are other features in this application
-which uses similar prefixes as well.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-COLOR_CODE is from 0 to 23 inclusive.<br>
-</td>
-</tr>
-</table>
-</div>
-<div id="colourcode" class="imageblock">
-<div class="content">
-<img src="../images/color_code.png" alt="color code" width="790">
-</div>
-<div class="title">Figure 5. Color code for TeaPet&#8217;s calendar</div>
-</div>
-<div class="paragraph">
-<p>&#160;<br></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Non-Recurring Event</strong> <code>schedule add eventName/Teachers Meeting startDateTime/2020-04-02T08:00
-endDateTime/2020-04-07T10:00 recur/none color/21</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Creates an event in the schedule with the description "Teachers Meeting" from "2nd Apr 2020, 0800" to "7th Apr 2020, 1000" with "no recurrence"
-and a color group of "21".</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/schedule_add.png" alt="schedule add" width="790">
-</div>
-<div class="title">Figure 6. Adding an event to the schedule</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="schedulerA"><a class="link" href="#schedulerA">Additional Features [Done by Simon Lam]</a></h3>
+<h3 id="additional-features-done-by-simon-lam"><a class="link" href="#additional-features-done-by-simon-lam">Additional Features [Done by Simon Lam]</a></h3>
 <div class="sect3">
 <h4 id="update-profile"><a class="link" href="#update-profile">Update Profile Picture</a></h4>
 <div class="paragraph">
@@ -717,7 +576,7 @@ The following steps will help you upload photos of your students into the studen
 <div class="content">
 <img src="../images/locating_image_folder.png" alt="locating image folder" width="790">
 </div>
-<div class="title">Figure 7. Location of image folder</div>
+<div class="title">Figure 4. Location of image folder</div>
 </div>
 <div class="paragraph">
 <p>&#160;<br></p>
@@ -756,7 +615,7 @@ For ideal optimization of the image, its dimensions for its length and width sho
 <div class="content">
 <img src="../images/images_in_folder.png" alt="images in folder" width="790">
 </div>
-<div class="title">Figure 8. Dragging png file into image folder</div>
+<div class="title">Figure 5. Dragging png file into image folder</div>
 </div>
 <div class="paragraph">
 <p>&#160;<br></p>
@@ -782,7 +641,7 @@ the png file in the Image folder as well after you edit the name of the student 
 <div class="content">
 <img src="../images/before_picture_upload.png" alt="before picture upload" width=""790">
 </div>
-<div class="title">Figure 9. Before using the student command</div>
+<div class="title">Figure 6. Before using the student command</div>
 </div>
 <div class="paragraph">
 <p>&#160;<br></p>
@@ -791,7 +650,7 @@ the png file in the Image folder as well after you edit the name of the student 
 <div class="content">
 <img src="../images/after_picture_upload.png" alt="after picture upload" width=""790">
 </div>
-<div class="title">Figure 10. After using the student command</div>
+<div class="title">Figure 7. After using the student command</div>
 </div>
 </div>
 <div class="sect3">
@@ -815,7 +674,7 @@ press your <code>F1</code> key to bring up this user guide!</p>
 <div class="content">
 <img src="../images/help_window.png" alt="help window" width=""790">
 </div>
-<div class="title">Figure 11. Displayed help window</div>
+<div class="title">Figure 8. Displayed help window</div>
 </div>
 </div>
 </div>
@@ -871,7 +730,7 @@ which shows the sequence diagram for the StudentAddCommand.</p>
 <div class="content">
 <img src="../images/student_sequence_diagram_v1.png" alt="student sequence diagram v1">
 </div>
-<div class="title">Figure 12. Sequence Diagram for StudentAddCommand</div>
+<div class="title">Figure 9. Sequence Diagram for StudentAddCommand</div>
 </div>
 <div class="paragraph">
 <p>&#160;<br></p>
@@ -936,7 +795,7 @@ either a unknown command or wrong format error message will be displayed.
 <div class="content">
 <img src="../images/StudentAddActivityDiagram.png" alt="StudentAddActivityDiagram">
 </div>
-<div class="title">Figure 13. Activity Diagram for StudentAddCommand</div>
+<div class="title">Figure 10. Activity Diagram for StudentAddCommand</div>
 </div>
 </div>
 </div>
@@ -1144,7 +1003,7 @@ This feature utilises the <code>StudentCard#updateImage</code> method to update 
 <div class="content">
 <img src="../images/ImportImage.v1.png" alt="ImportImage.v1">
 </div>
-<div class="title">Figure 14. Sequence Diagram for <code>DefaultStudentDisplayCommand</code></div>
+<div class="title">Figure 11. Sequence Diagram for <code>DefaultStudentDisplayCommand</code></div>
 </div>
 <div class="sect4">
 <h5 id="implementation-6"><a class="link" href="#implementation-6">Implementation</a></h5>
@@ -1186,7 +1045,7 @@ will be called and the student list is now visible on the <code>MainWindow</code
 <div class="content">
 <img src="../images/ImportImageSequenceDiagram.png" alt="ImportImageSequenceDiagram">
 </div>
-<div class="title">Figure 15. Activity Diagram Import Image Feature</div>
+<div class="title">Figure 12. Activity Diagram Import Image Feature</div>
 </div>
 <div class="paragraph">
 <p>&#160;<br></p>
@@ -1654,4 +1513,4 @@ Expected: An error message is shown due to the invalid date time range.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 06:45:03 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 07:35:10 UTC</div></div></div></body></html>

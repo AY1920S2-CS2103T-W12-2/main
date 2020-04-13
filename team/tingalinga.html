@@ -112,7 +112,7 @@ orange to allow easy identification of which feature the user is using.</p>
 <p>Major refactoring of certain commands and packaging (Pull requests <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/229">#229</a>)</p>
 </li>
 <li>
-<p>Wrote additional tests for existing features to increase coverage by 2.9% (Pull requests <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/279">#279</a>)</p>
+<p>Wrote additional tests for existing features to increase coverage by 2.9% and 4.7% (Pull requests <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/279">#279</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/283">#283</a>)</p>
 </li>
 </ul>
 </div>
@@ -125,10 +125,10 @@ orange to allow easy identification of which feature the user is using.</p>
 <p>Updated User Guide to include Academics Feature (Pull requests <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/235">#235</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/236">#236</a>)</p>
 </li>
 <li>
-<p>Updated Developer Guide to include Academics Feature (Pull requests <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/270">#270</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/276">#276</a>)</p>
+<p>Updated Developer Guide to include Academics Feature (Pull requests <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/270">#270</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/276">#276</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/283">#283</a>)</p>
 </li>
 <li>
-<p>Updated Developer Guide to include Project Description, User Stories, Use Cases. (Pull requests <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/51">#51</a>)</p>
+<p>Updated Developer Guide to include Project Description, User Stories, Use Cases. (Pull requests <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/51">#51</a>, <a href="https://github.com/AY1920S2-CS2103T-W12-2/main/pull/283">#283</a>)</p>
 </li>
 </ul>
 </div>
@@ -166,6 +166,485 @@ orange to allow easy identification of which feature the user is using.</p>
 </tr>
 </tbody>
 </table>
+<hr>
+<div class="sect2">
+<h3 id="acads"><a class="link" href="#acads">Student Academics [Done by Lee Hui Ting]</a></h3>
+<div class="paragraph">
+<p>TeaPet&#8217;s Class Progress Tracker is able to keep tabs on the class' academic progress. You will be able to store data of
+every student&#8217;s subject grades with this feature. Thereafter, there will be a csv file available for export displaying
+the progress of individual students as well as the entire class.</p>
+</div>
+<div class="sect3">
+<h4 id="display-all-assessments-and-academics-help-code-academics-code"><a class="link" href="#display-all-assessments-and-academics-help-code-academics-code">Display all Assessments and Academics Help: <code>academics</code></a></h4>
+<div class="paragraph">
+<p>Shows all assessments in the academics list and a guide for academic commands.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>academics</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>The Academics tracks all your assessments and student submissions.
+[HELP ON ACADEMICS COMMANDS]
+1. Add assessment: academics add desc/ASSESSMENT_DESCRIPTION type/TYPE date/DATE
+2. Edit assessment: academics edit INDEX [desc/ASSESSMENT_DESCRIPTION] [type/TYPE] [date/DATE]
+3. Delete assessment: academics delete INDEX
+4. Submit assessment: academics submit INDEX [stu/STUDENT_NAME]...
+5. Mark assessment: academics mark INDEX [stu/STUDENT_NAME-SCORE]...
+6. Filter assessment BY TYPE: academics ASSESSMENT_TYPE (only homework or exam)
+7. View academics report: academics report
+8. Export academics report: academics export
+Type the following commands for more info!</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/academics-view.png" alt="academics view" width=""790">
+</div>
+<div class="title">Figure 1. After using the <code>academics</code> command</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="add-assessment-code-academics-add-code"><a class="link" href="#add-assessment-code-academics-add-code">Add Assessment: <code>academics add</code></a></h4>
+<div class="paragraph">
+<p>Adds an assessment into the academics list.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>academics add desc/ASSESSMENT_DESCRIPTION type/TYPE date/DATE</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Adds a new assessment with the given attributes.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The assessment description <strong>cannot be empty</strong>. Date should be written in <strong>YYYY-MM-DD</strong> format.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>academics add desc/Math Graphs Homework type/homework date/2020-05-02</code><br>
+Adds an assessment "Math Graphs Homework" into the academics list along with its deadline.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Added assessment:
+Homework: Math Graphs Homework
+Due by: 2020-05-02</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-assessment-code-academics-edit-code"><a class="link" href="#edit-assessment-code-academics-edit-code">Edit Assessment: <code>academics edit</code></a></h4>
+<div class="paragraph">
+<p>Edits an assessment from the academics list.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>academics edit INDEX [desc/ASSESSMENT_DESCRIPTION] [type/TYPE] [date/DATE]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Edits the assessment with the given attributes.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The assessment description <strong>cannot be empty</strong>. Date should be written in <strong>YYYY-MM-DD</strong> format.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>academics edit 4 desc/Chemistry Compounds Assignment</code><br>
+Edits assessment in the academics list with the new description "Chemistry Compounds Assignment".</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Edited Assessment:
+Homework: Chemistry Compounds Assignment
+Due by: 2020-04-30</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-assessment-code-academics-delete-code"><a class="link" href="#delete-assessment-code-academics-delete-code">Delete Assessment: <code>academics delete</code></a></h4>
+<div class="paragraph">
+<p>Deletes an assessment from the academics list.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>academics delete INDEX</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Deletes the assessment with at the given index.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Index should be a positive integer and be a valid index.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>academics delete 5</code> Deletes the student at index 5.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Deleted Assessment:
+Homework: Chemistry Compounds Assignment
+Due by: 2020-04-30</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="submit-assessment-code-academics-submit-code"><a class="link" href="#submit-assessment-code-academics-submit-code">Submit Assessment: <code>academics submit</code></a></h4>
+<div class="paragraph">
+<p>Submits student(s) work for a specific assessment.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>academics submit INDEX [stu/STUDENT_NAME]...</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Submits work for the assessment with at the given index.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Index should be a positive integer and be a valid index.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>academics submit 3 stu/Freddy Zhang</code><br>
+Submits "Freddy Zhang" for the assessment at index 3.</p>
+</li>
+<li>
+<p><code>academics submit 3 stu/Freddy Zhang stu/Gerren Seow</code><br>
+Submits "Freddy Zhang" and "Gerren Seow" for the assessment at index 3.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Academics submitted following submissions:
+Freddy Zhang
+Gerren Seow</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mark-assessment-code-academics-mark-code"><a class="link" href="#mark-assessment-code-academics-mark-code">Mark Assessment: <code>academics mark</code></a></h4>
+<div class="paragraph">
+<p>Marks student(s) work for a specific assessment.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>academics mark INDEX [stu/STUDENT_NAME-SCORE]...</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Marks work for the assessment with at the given index.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Index should be a positive integer and be a valid index.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>academics mark 3 stu/Freddy Zhang</code><br>
+Marks "Freddy Zhang" for the assessment at index 3.</p>
+</li>
+<li>
+<p><code>academics mark 3 stu/Freddy Zhang-90 stu/Gerren Seow-80</code><br>
+Marks "Freddy Zhang" and "Gerren Seow" for the assessment at index 3.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Academics marked following submissions:
+Gerren Seow: 80
+Freddy Zhang: 90</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="filter-assessments-by-type-code-academics-homework-exam-code"><a class="link" href="#filter-assessments-by-type-code-academics-homework-exam-code">Filter Assessments by type: <code>academics homework/exam</code></a></h4>
+<div class="paragraph">
+<p>Filters assessment list by either homework or exam.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>academics ASSESSMENT_TYPE</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>academics homework</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Academics now displays all HOMEWORK assessments</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>academics exam</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Academics now displays all EXAM assessments</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/academics-exam-view.png" alt="academics exam view" width=""790">
+</div>
+<div class="title">Figure 2. After using the <code>academics exam</code> command</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="view-academics-report-code-academics-report-code"><a class="link" href="#view-academics-report-code-academics-report-code">View Academics Report: <code>academics report</code></a></h4>
+<div class="paragraph">
+<p>Generates an academic report for each assessment.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>academics report</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Academics now displays the report of each assessment.</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/academics-report-view.png" alt="academics report view" width=""790">
+</div>
+<div class="title">Figure 3. After using the <code>academics report</code> command</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="export-academics-report-code-academics-export-code"><a class="link" href="#export-academics-report-code-academics-export-code">Export Academics Report: <code>academics export</code></a></h4>
+<div class="paragraph">
+<p>Exports the academic report into a csv file.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>academics export</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Academics report will be exported to a .csv file format, which is located in the data folder in the same directory.
+The file is named "studentAcademics.csv".</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Expected Outcome:</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Academics are exported to studentAcademics.csv in the data folder.</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="student-academics-commands"><a class="link" href="#student-academics-commands">Student Academics Commands</a></h3>
+<div class="paragraph">
+<p>Here are the commands to manage students. They require the prefix <code>academics</code>.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Student Academics commands of TeaPet.</caption>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 50%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Command</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Format</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Expected outcome</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics add</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics add desc/DESCRIPTION type/TYPE date/DATE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds an assessment into the academics list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics edit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics edit INDEX [desc/DESCRIPTION] [type/TYPE] [date/DATE]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edits an assessment in the academics list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics delete</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics delete INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes the assessment at the given index</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics submit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics submit INDEX [stu/STUDENT_NAME]&#8230;&#8203;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Submits student(s) work for the assessment at the given index</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics mark</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics mark INDEX [stu/STUDENT_NAME-SCORE]&#8230;&#8203;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Marks student(s) work and stores the scores for the assessment at the given index</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics filter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics homework/exam</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays either all homework or exam assessments in the academics list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics report</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics report</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays the report for all assessments</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics export</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>academics export</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exports the academics report into a .csv file</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -181,6 +660,1092 @@ orange to allow easy identification of which feature the user is using.</p>
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="student-academics-feature"><a class="link" href="#student-academics-feature">Student Academics feature</a></h3>
+<div class="paragraph">
+<p>This student academics feature stores and tracks the class' academics progress.
+The academics feature consists of four commands namely.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>AcademicsCommand</code> - Displays the most updated student academics details.</p>
+</li>
+<li>
+<p><code>AcademicsAddCommand</code> - Adds a new assessment to the academic list.</p>
+</li>
+<li>
+<p><code>AcademicsEditCommand</code> - Edits the details of a particular assessment.</p>
+</li>
+<li>
+<p><code>AcademicsDeleteCommand</code> - Deletes the specified assessment from academics.</p>
+</li>
+<li>
+<p><code>AcademicsSubmitCommand</code> - Submits students' work to the specified assessment.</p>
+</li>
+<li>
+<p><code>AcademicsMarkCommand</code> - Marks students' work of the specified assessment.</p>
+</li>
+<li>
+<p><code>AcademicsDisplayCommand</code> - Displays either homework, exam, or the report of student academics.</p>
+</li>
+<li>
+<p><code>AcademicsExportCommand</code> - Exports the academics information into a .csv file.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All academics commands share similar paths of execution. The commands when executed, will interface with the methods
+exposed by the <code>Model</code> interface to perform the related operations (See <a href="#Design-Logic">logic component</a> for the general overview).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/academics/AcademicsClassDiagram.png" alt="AcademicsClassDiagram">
+</div>
+<div class="title">Figure 4. Class Diagram for Academics Commands</div>
+</div>
+<div class="sect3">
+<h4 id="class-overview"><a class="link" href="#class-overview">Class Overview</a></h4>
+<div class="paragraph">
+<p>The class diagram below will depict the structure of the Academics Model Component.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/academics/AcademicsModelClassDiagram.png" alt="AcademicsModelClassDiagram">
+</div>
+<div class="title">Figure 5. Class Diagram for Academics Model</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="academics-add-command"><a class="link" href="#academics-add-command">Academics Add Command</a></h4>
+<div class="sect4">
+<h5 id="implementation"><a class="link" href="#implementation">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>AcademicsAddCommand</code> performs.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>AcademicsAddCommand#execute(Model model)</code> method is executed which takes in a necessary assessment
+description, type and date.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format for adding an assessment is <code>academics add desc/ASSESSMENT_DESCRIPTION type/TYPE date/DATE</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. As assessment names should be unique, the <code>Model#hasAssessment(Assessment assessment)</code> method will check if
+the assessment already exists in <code>UniqueAssessmentList#assessments</code>. If a duplicate assessment is found, a
+<code>CommandException</code> will be thrown.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>. Subsequently, the <code>Model#getFilteredStudentList()</code> method will then be called, to set the student submission
+tracker for the assessment.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 4</strong>. The method <code>Model#addAssessment(Assessment assessment)</code> will then be called to add the assessment. The
+command box will be reflected with the <code>AcademicsAddCommand#MESSAGE_SUCCESS</code> constant and a new <code>CommandResult</code> will be
+returned with the message.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the format or wording of <code>AcademicsAddCommand</code> contains error(s), an unknown command or wrong format error message
+will be displayed.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram summarizes what happens when a user executes an AcademicsAddCommand:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/academics/academics_add_command_sequence_diagram.png" alt="academics add command sequence diagram">
+</div>
+<div class="title">Figure 6. Academics Add Command Sequence Diagram</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="academics-edit-command"><a class="link" href="#academics-edit-command">Academics Edit Command</a></h4>
+<div class="sect4">
+<h5 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>AcademicsEditCommand</code> performs.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>AcademicsEditCommand#execute(Model model)</code> method is executed which edits the details of the specified
+assessment. The method checks if the <code>index</code> defined when instantiating
+<code>AcademicsEditCommand(Index index, EditAssessmentDescriptor editAssessmentDescriptor)</code> is valid. Since it is optional
+for users to input fields, the fields not entered will reuse the existing values that are currently stored and defined
+in the <code>Assessment</code> object.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+User needs to input at least 1 field of assessment to edit.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. A new <code>Assessment</code> with the newly updated values will be created which replaces the existing <code>Assessment</code>
+object using the <code>Model#setAssessment(Assessment target, Assessment editedAssessment)</code> method. However, if new
+assessment results in a duplicate assessment in <code>UniqueAssessmentList#assessments</code>, a <code>CommandException</code> will be thrown.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 4</strong>. The command box will be reflected with the <code>AcademicsEditCommand#MESSAGE_SUCCESS</code> constant and a new
+<code>CommandResult</code> will be returned with the message.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="academics-delete-command"><a class="link" href="#academics-delete-command">Academics Delete Command</a></h4>
+<div class="sect4">
+<h5 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>AcademicsDeleteCommand</code> performs.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>AcademicsDeleteCommand#execute(Model model)</code> method is executed which deletes the assessment at the
+specified index. It checks if the <code>Index</code> is defined as an argument when instantiating the <code>AcademicsDeleteCommand</code>
+constructor.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>Index</code> must be within the bounds of <code>UniqueAssessmentList#assessments</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. The <code>Assessment</code> at the specified <code>Index</code> is then removed from <code>UniqueAssessmentList#assessments</code> observable
+list using the <code>Model#delete(Assessment assessment)</code> method.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3.</strong> The command box will be reflected with the <code>AcademicsDeleteCommand#MESSAGE_SUCCESS</code> constant and a new
+<code>CommandResult</code> will be returned with the message.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="academics-submit-command"><a class="link" href="#academics-submit-command">Academics Submit Command</a></h4>
+<div class="sect4">
+<h5 id="implementation-4"><a class="link" href="#implementation-4">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>AcademicsSubmitCommand</code> performs.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>AcademicsSubmitCommand#execute(Model model)</code> method is executed which submits students' work for the
+assessment at the specified index. The method checks if the <code>Index</code> is defined as an argument when instantiating the
+<code>AcademicsSubmitCommand</code> constructor.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>Index</code> must be within the bounds of <code>UniqueAssessmentList#assessments</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. Subsequently, the <code>Model#hasStudentName(String studentName)</code> method will then check if the given student
+exists in <code>UniqueStudentList#students</code>. Also, <code>Model#hasStudentSubmitted(String studentName)</code> method checks if the
+student has already submitted their work for the specified assessment. If the student does not exist or has already
+submitted their work, a <code>CommandException</code> will be thrown.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>. The students' <code>Submission</code> will then be submitted to the specified <code>Assessment</code> using the method
+<code>Model#submitAssessment(Assessment assessment, List&lt;String&gt; students)</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 4.</strong> The command box will be reflected with the <code>AcademicsSubmitCommand#MESSAGE_SUCCESS</code> constant and a new
+<code>CommandResult</code> will be returned with the message.</p>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes an AcademicsSubmitCommand:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/academics/AcademicsSubmitActivityDiagram.png" alt="AcademicsSubmitActivityDiagram">
+</div>
+<div class="title">Figure 7. Academics Submit Activity Diagram</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="academics-mark-command"><a class="link" href="#academics-mark-command">Academics Mark Command</a></h4>
+<div class="sect4">
+<h5 id="implementation-5"><a class="link" href="#implementation-5">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>AcademicsMarkCommand</code> performs.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>AcademicsMarkCommand#execute(Model model)</code> method is executed which marks students' work and stores the
+students' scores for the assessment at the specified index. The method checks if the <code>Index</code> is defined as an argument
+when instantiating the <code>AcademicsMarkCommand</code> constructor.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>Index</code> must be within the bounds of <code>UniqueAssessmentList#assessments</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. Subsequently, the <code>Model#hasStudentName(String studentName)</code> method will then check if the given student
+exists in <code>UniqueStudentList#students</code>. Also, <code>Model#hasStudentSubmitted(String studentName)</code> method checks if the
+student has yet to submit their work for the specified assessment. If the student does not exist or has not submitted
+their work, a <code>CommandException</code> will be thrown. Furthermore, the score should be between 0 and 100 inclusive,
+otherwise <code>CommandException</code> will also be thrown.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format for marking a students' work is <code>academics mark INDEX stu/STUDENT_NAME-SCORE</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>. The students' <code>Submission</code> will then be marked and its score will be stored in the specified <code>Assessment</code>
+using the method <code>Model#markAssessment(Assessment assessment, List&lt;String&gt; students)</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 4.</strong> The command box will be reflected with the <code>AcademicsMarkCommand#MESSAGE_SUCCESS</code> constant and a new
+<code>CommandResult</code> will be returned with the message.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h5>
+
+</div>
+<div class="sect4">
+<h5 id="aspect-allow-submission-along-with-marking"><a class="link" href="#aspect-allow-submission-along-with-marking">Aspect: Allow submission along with marking</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Current Implementation:</strong> Marking a submission that has not be submitted is not allowed.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Clearer and prevents confusion in data.</p>
+</li>
+<li>
+<p>Cons: Harder to implement and the user will have to submit students' work separately.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternatives Considered:</strong> Marking an unsubmitted work will also submit it for the assessment.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: The user can just submit students work using the mark command, giving them less to type.</p>
+</li>
+<li>
+<p>Cons: Prone to confusion of submitting and marking commands.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-allow-customizable-total-score-of-assessments"><a class="link" href="#aspect-allow-customizable-total-score-of-assessments">Aspect: Allow customizable total score of assessments</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Current Implementation: </strong> Setting the total score for a submission is not allowed. (Total score for all submissions will be 100.)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement and maintains uniformity of data.</p>
+</li>
+<li>
+<p>Cons: User cannot set different total scores for assessments and have to grade it to a 100 weightage.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternatives Considered:</strong> Setting the total score for a submission is allowed.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: User can make set different total scores to different assessments according to its requirements.</p>
+</li>
+<li>
+<p>Cons: Hard to implement and could result in inconsistency of data.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="academics-display-command"><a class="link" href="#academics-display-command">Academics Display Command</a></h4>
+<div class="sect4">
+<h5 id="implementation-6"><a class="link" href="#implementation-6">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>AcademicsDisplayCommand</code> performs.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>AcademicsDisplayCommand#execute(Model model)</code> method is executed which can either take in no arguments
+or a 1 word argument indicating the type of display to show.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Other than the default display (no arguments needed), there are only 3 types of displays: <code>homework</code>, <code>exam</code>, and
+<code>report</code>.<br>
+Format: <code>academics</code> or <code>academics DISPLAY_TYPE</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. Depending on the display type, the command box will reflect its respective <code>AcademicsDisplayCommand#MESSAGE_SUCCESS</code>
+constant and a new <code>CommandResult</code> will be returned with the message.<br>
+Example. <code>homework</code> type display will reflect <code>AcademicsDisplayCommand#MESSAGE_HOMEWORK_SUCCESS</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the academics list is empty, a blank page will be shown.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the wording of the <code>AcademicsDisplayCommand</code> contains error(s), an unknown command message will be displayed.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="academics-export-command"><a class="link" href="#academics-export-command">Academics Export Command</a></h4>
+<div class="sect4">
+<h5 id="implementation-7"><a class="link" href="#implementation-7">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>AcademicsExportCommand</code> performs.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>AcademicsExportCommand#execute(Model model)</code> method is executed which exports the content of Academics
+into a csv file in the data folder.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format of the command is: <code>academics export</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 2.</strong> The command box will be reflected with the <code>AcademicsExportCommand#MESSAGE_SUCCESS</code> constant and a new
+<code>CommandResult</code> will be returned with the message.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3.</strong> Subsequently, the <code>CommandResult</code> will be processed by the <code>MainWindow</code> in the UI component and generate a
+studentAcademics.csv in the data folder of the current directory.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="user-stories"><a class="link" href="#user-stories">Appendix A: User Stories</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Priorities: High (must have) - <code>* * *</code>, Medium (nice to have) - <code>* *</code>, Low (unlikely to have) - <code>*</code></p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 59%;">
+<colgroup>
+<col style="width: 22%;">
+<col style="width: 23%;">
+<col style="width: 25%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Priority</th>
+<th class="tableblock halign-left valign-top">As a &#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">I want to &#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">So that I can&#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">new user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see usage instructions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">refer to instructions when I forget how to use the App</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">competent form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add students</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add new students to the class list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete a student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove students that I no longer need</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lazy form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find a student by name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">locate details of students without having to go through the entire list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher doing their job</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">take the attendance of my students</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know who is present for my class</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">organised form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have a schedule tracking my events</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know what I need to attend/do in a day</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">diligent form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">maintain of a list of students who have completed my homework</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know who has not submitted my homework</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">caring form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">take down notes for student&#8217;s behavior</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">track the behaviour of my students</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hard working form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see the scores of my class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">track the academic progress of my class</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lazy form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sort students by alphabetical order</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">locate a student easily</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">update the details of my students</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">make necessary changes to my student&#8217;s particulars</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">well prepared form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">maintain emergency contacts of my students</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know who to contact in case of emergency</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be able to view the available dates in chronological order that contains administrative information of the class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know which are the available dates that I can view</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view the administrative information of the class on a specific date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">access the required administrative information</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be able to view my assessment list by the latest date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know which are the more urgent or overdue assessments to monitor</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view the academic statistics of my class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know the academic progress of my students</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">set different colours to my events</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see clearer what type of events I have</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">specify if a student is late or absent for class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know why my student is absent</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hide <a href="#private-contact-detail">private contact details</a> by default</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">minimize chance of someone else seeing them by accident</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">caring form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">export academic statistics into a printable file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">share and discuss the student&#8217;s academic progress with their parents</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">caring form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">export behavioural notes into a printable file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">share and discuss the student&#8217;s behaviour with their parents</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of the sitting arrangement of the class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">students who change their seats unknowingly</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">record the temperature of students</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">track the health of my students</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">form teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get feedback from other teachers teaching the students of my class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">better understand the progress of the class</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Appendix B: Non Functional Requirements</a></h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>11</code> or above installed.</p>
+</li>
+<li>
+<p>Should be able to hold up to 500 students without a noticeable sluggishness in performance for typical usage.</p>
+</li>
+<li>
+<p>A teacher with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish majority of the tasks faster using commands than using the mouse.</p>
+</li>
+<li>
+<p>TeaPet should be used only for a teacher handling his/her own form class, not by any other teachers.</p>
+</li>
+<li>
+<p>TeaPet should be able to work without internet access.</p>
+</li>
+<li>
+<p>The teacher should be able to familiarise himself/herself within half an hour of usage.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><em>{More to be added}</em></p>
+</div>
+<h3 id="use-case-uc09-display-students-academic-progress" class="discrete">Use case: UC09 - Display students' academic progress</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters the command to display academic progress of students.</p>
+</li>
+<li>
+<p>TeaPet displays the academic progress in chronological order.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Command is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc10-add-assessment-to-academics" class="discrete">Use case: UC10 - Add assessment to academics</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters command, together with an assessment description, type and date.</p>
+</li>
+<li>
+<p>TeaPet adds the new assessment and its details to the academics list.</p>
+</li>
+<li>
+<p>TeaPet displays feedback to the user that a new assessment to the academics list.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Assessment is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. TeaPet shows an error message.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. Assessment details keyed by user are invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc11-edit-assessment" class="discrete">Use case: UC11 - Edit assessment</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User specifies which assessment, using its index in the academics list, and what details he/she wants to edit in the
+command line.</p>
+</li>
+<li>
+<p>TeaPet edits the assessment&#8217;s details in the academics list as instructed by the commands.</p>
+</li>
+<li>
+<p>TeaPet displays feedback to the user that the assessment has been edited, followed by the changes made.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Edited assessment is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. Assessment details keyed in by user are invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc12-delete-assessment" class="discrete">Use case: UC12 - Delete assessment</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User specifies which assessment, using the index, he/she wants to remove.</p>
+</li>
+<li>
+<p>TeaPet removes the assessment from the class list.</p>
+</li>
+<li>
+<p>TeaPet displays feedback to the user that the assessment is being removed.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Assessment index entered by user is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc13-submit-student-s-work-for-assessment" class="discrete">Use case: UC13 - Submit student&#8217;s work for assessment</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User specifies which assessment and student, using index and name respectively, that he/she wants to submit work to.</p>
+</li>
+<li>
+<p>TeaPet submits the student&#8217;s work to the assessment from the academics list.</p>
+</li>
+<li>
+<p>TeaPet displays feedback to the user that the following student&#8217;s work has been submitted to the assessment.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Assessment index entered by user is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. Student name is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1c. Student has already submitted their work.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1c1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc14-marks-student-s-work-for-assessment" class="discrete">Use case: UC14 - Marks student&#8217;s work for assessment</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User specifies which assessment and student, using index and name respectively, that he/she wants to mark.</p>
+</li>
+<li>
+<p>TeaPet marks and stores the submission&#8217;s score to the assessment from the academics list.</p>
+</li>
+<li>
+<p>TeaPet displays feedback to the user that the following student&#8217;s work has been marked and stored to the assessment.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Assessment index entered by user is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. Student name is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1c. Student has yet to submit their work.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1c1. TeaPet shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="manual-test-class-academics"><a class="link" href="#manual-test-class-academics">Manual Test: Class Academics</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding an assessment to academics</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The scheduler already contain an assessment with description "Math Differentiation Homework", type "homework", date "2020-03-23".</p>
+</li>
+<li>
+<p>Test case: <code>academics add desc/Math Integration Homework type/homework date/2020-03-23</code><br>
+Expected: An assessment with the description Math Integration Homework is added to academics.</p>
+</li>
+<li>
+<p>Test case: `academics add desc/ `<br>
+Expected: An error message is shown due to invalid command.</p>
+</li>
+<li>
+<p>Test case: <code>academics add desc/Math Integration Homework type/ date/2020-03-23</code><br>
+Expected: An error message is shown due to invalid assessment type.</p>
+</li>
+<li>
+<p>Test case: <code>academics add desc/Math Integration Homework type/homework date/</code><br>
+Expected: An error message is shown due to invalid assessment date.</p>
+</li>
+<li>
+<p>Test case: <code>academics add desc/Math Integration Homework type/homework date/2020/03/04</code><br>
+Expected: An error message is shown due to invalid assessment date.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Editing an assessment in academics.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>academics edit 1 desc/Chinese Spelling Practice</code><br>
+Expected: First assessment in the academics list is updated with new description. Only the description should be modified.</p>
+</li>
+<li>
+<p>Test case: <code>academics edit 1 desc/Chinese Spelling Practice type/exam date/2020-03-04</code><br>
+Expected: First assessment in the academics list is updated with new description, type and date.</p>
+</li>
+<li>
+<p>Test case: <code>academics edit 1 desc/</code><br>
+Expected: An error message is shown due to invalid assessment description.</p>
+</li>
+<li>
+<p>Test case: <code>academics edit 1 desc/Chinese Spelling Practice type/assignment</code><br>
+Expected: An error message is shown due to invalid assessment type.</p>
+</li>
+<li>
+<p>Test case: <code>academics edit 1 date/2020/03/04</code><br>
+Expected: An error message is shown due to invalid assessment date.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Deleting an assessment</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>academics delete INDEX</code> where INDEX is a valid index.<br>
+Expected: Assessment will be deleted if the given index is valid. The status message either displays that the
+specified assessment has been deleted or show that the index given is invalid.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>academics delete</code>
+Expected: Status bar displays invalid command and incorrect command format message.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Submitting a student&#8217;s work for an assessment</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>academics submit INDEX stu/Simon_Lam</code> where INDEX is a valid index and Simon Lam is an existing student in TeaPet.<br>
+Expected: Simon Lam&#8217;s work will be submitted to the specified assessment if the given index is valid.
+The status message either displays that the student&#8217;s work has been submitted or show that the index given is invalid.</p>
+</li>
+<li>
+<p>Other incorrect submission commands to try: <code>academics submit</code>
+Expected: Status bar displays invalid command and incorrect command format message.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Marking a student&#8217;s work for an assessment</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>academics mark INDEX stu/Simon_Lam-90</code> where INDEX is a valid index and Simon Lam is an existing student in TeaPet who scored 90 for the given assessment.<br>
+Expected: Simon Lam&#8217;s work will be marked and his score of 90 will be stored in the specified assessment if the given index is valid.
+The status message either displays that the student&#8217;s work has been marked or show that the index given is invalid.</p>
+</li>
+<li>
+<p>Other incorrect marking commands to try: <code>academics mark</code>
+Expected: Status bar displays invalid command and incorrect command format message.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Exporting academic statistics into .csv file.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>academics export</code><br>
+Expected: A file named studentAcademics.csv should be created in the data folder of the same directory in which TeaPet is installed.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -191,4 +1756,4 @@ orange to allow easy identification of which feature the user is using.</p>
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 06:45:03 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 07:35:10 UTC</div></div></div></body></html>
