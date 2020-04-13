@@ -30,7 +30,7 @@
 <li><a href="#class-administration-feature">7.2. Class administration feature</a></li>
 <li><a href="#student-academics-feature">7.3. Student Academics feature</a></li>
 <li><a href="#notes-feature">7.4. Notes feature</a></li>
-<li><a href="#schedule-feature">7.5. Schedule feature</a></li>
+<li><a href="#personal-schedule-feature">7.5. Personal Schedule feature</a></li>
 <li><a href="#logging">7.6. Logging</a></li>
 <li><a href="#Implementation-Configuration">7.7. Configuration</a></li>
 </ul>
@@ -49,7 +49,7 @@
 <li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
 <li><a href="#manual-test-class-admin-particulars">G.2. Manual Test: Class Admin Particulars</a></li>
 <li><a href="#manual-test-class-academics">G.3. Manual Test: Class Academics</a></li>
-<li><a href="#manual-test-scheduler">G.4. Manual Test: Scheduler</a></li>
+<li><a href="#manual-test-personal-schedule">G.4. Manual Test: Personal Schedule</a></li>
 <li><a href="#manual-test-notes">G.5. Manual Test: Notes</a></li>
 </ul>
 </li>
@@ -117,7 +117,7 @@ If you are only interested in how we develop one feature, you may read the high-
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-Use this for warnings
+This is used to show warnings
 </td>
 </tr>
 </table>
@@ -129,7 +129,7 @@ Use this for warnings
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Use this for note
+This is used to show descriptions that the user should take note of.
 </td>
 </tr>
 </table>
@@ -929,6 +929,7 @@ both update the images and display the student list concurrently.</p>
 <div class="paragraph">
 <p>&#160;<br></p>
 </div>
+<hr>
 </div>
 </div>
 </div>
@@ -1271,13 +1272,16 @@ The sequence diagram for <code>admin fetch</code> command is similar to that of 
 </tr>
 </table>
 </div>
+<hr>
 </div>
 </div>
 <div class="sect2">
 <h3 id="student-academics-feature"><a class="link" href="#student-academics-feature">7.3. Student Academics feature</a></h3>
 <div class="paragraph">
-<p>This student academics feature stores and tracks the class' academics progress.
-The academics feature consists of the following commands namely,</p>
+<p>This student academics feature stores and tracks the class' academics progress.</p>
+</div>
+<div class="paragraph">
+<p>The academics feature consists of the following commands namely,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1718,8 +1722,9 @@ Format of the command is: <code>academics export</code>.
 </div>
 <div class="paragraph">
 <p><strong>Step 3.</strong> Subsequently, the <code>CommandResult</code> will be processed by the <code>MainWindow</code> in the UI component and generate a
-studentAcademics.csv in the data folder of the current directory.</p>
+studentAcademics.csv in the data folder of the current directory</p>
 </div>
+<hr>
 </div>
 </div>
 </div>
@@ -2029,16 +2034,21 @@ the current directory.</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+'''</p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="schedule-feature"><a class="link" href="#schedule-feature">7.5. Schedule feature</a></h3>
-<div class="sect3">
-<h4 id="overview"><a class="link" href="#overview">7.5.1. Overview</a></h4>
+<h3 id="personal-schedule-feature"><a class="link" href="#personal-schedule-feature">7.5. Personal Schedule feature</a></h3>
 <div class="paragraph">
-<p>The schedule feature enables teachers to add, delete, edit and view events in their personal scheduler. This feature is built
-based on the Jfxtras iCalendarAgenda library. The iCalendarAgenda object is used on the UI side to render VEvents. The VEvent
+<p>The Personal Schedule feature enables teachers to record down their events in their personal scheduler, which
+will be sorted accordingly to date and time. Different view modes are available to enable the teachers to easily view their schedule.</p>
+</div>
+<div class="paragraph">
+<p>This feature is built based on the Jfxtras iCalendarAgenda library. The iCalendarAgenda object is used on the UI side to render VEvents. The VEvent
 object takes in data such as event name, start date time, end date time, recurrence of events, etc.</p>
 </div>
 <div class="admonitionblock note">
@@ -2048,30 +2058,47 @@ object takes in data such as event name, start date time, end date time, recurre
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-VEvent object is used primarily throughout the application as it is the required object type for the iCalendarAgenda library.
+VEvent object is used primarily throughout the feature as it is the required object type for the iCalendarAgenda library.
 Hence, at the storage level, the Event objects are mapped to VEvents for reading purposes and vice versa for saving purposes.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The feature comprises of the the following commands:</p>
+<p>The Personal Schedule feature allows the user to track and manage their events. The schedule feature consists of eight commands namely:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>EventAddCommand</code> - Creates a new event.</p>
+<p><code>EventDisplayCommand</code> - Displays all events in the current week.</p>
+</li>
+<li>
+<p><code>EventAddCommand</code> - Creates a new event in the scheduler.</p>
+</li>
+<li>
+<p><code>EventEditCommand</code> - Edits the details of an event in the scheduler.</p>
+</li>
+<li>
+<p><code>EventDeleteCommand</code> - Deletes the specified event from the scheduler.</p>
+</li>
+<li>
+<p><code>EventIndexCommand</code> - Obtain the index of the specified event.</p>
+</li>
+<li>
+<p><code>EventIndexAllCommand</code> - Obtain all the indexes of all the events in the scheduler.</p>
+</li>
+<li>
+<p><code>EventViewCommand</code> - Changes the view mode of the scheduler.</p>
+</li>
+<li>
+<p><code>EventExportCommand</code> - Exports the event details into an .ics file.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>To add:</p>
-</div>
-</div>
 <div class="sect3">
-<h4 id="class-overview-3"><a class="link" href="#class-overview-3">7.5.2. Class Overview</a></h4>
+<h4 id="class-overview-3"><a class="link" href="#class-overview-3">7.5.1. Class Overview</a></h4>
 <div class="paragraph">
-<p>The class diagram below shows the interactions between events classes in the <code>Model</code>. Notice how the <code>EventHistory</code> class depends
+<p>The class diagram below shows the structure of Event classes in the <code>Model</code>. Notice how the <code>EventHistory</code> class depends
 on the <code>Event</code> class in its constructor but only has a <code>VEvent</code> attribute. This is because an <code>Event</code> object will always be
 mapped to a <code>VEvent</code> within the <code>EventHistory</code> class. Some methods of <code>EventHistory</code> has been omitted for brevity as they are
 mostly <code>VEvent</code> based, which then again highlights that the interactions with the <code>Logic</code> and <code>UI</code> components are mostly done
@@ -2079,17 +2106,126 @@ using the <code>VEvent</code> type class. Only the <code>Storage</code> componen
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/schedule_class_diagram.png" alt="schedule class diagram">
+<img src="images/event/schedule_class_diagram.png" alt="schedule class diagram">
 </div>
 <div class="title">Figure 26. Class Diagram for Schedule</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="schedule-add-command"><a class="link" href="#schedule-add-command">7.5.3. Schedule Add Command</a></h4>
+<h4 id="schedule-display-command"><a class="link" href="#schedule-display-command">7.5.2. Schedule Display Command</a></h4>
 <div class="sect4">
 <h5 id="implementation-19"><a class="link" href="#implementation-19">Implementation</a></h5>
 <div class="paragraph">
-<p>The following is a detailed explanation which <code>EventAddCommand</code> performs.</p>
+<p>The following is a detailed explanation of the operations which <code>EventDisplayCommand</code> performs.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format for displaying the schedule is <code>schedule</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 1:</strong> The <code>EventDisplayCommand#execute(Model model)</code> method is executed and it updates the current model using the method
+<code>Model#setEventScheduleLocalDateTime(LocalDateTime localDateTime)</code>. <code>LocalDateTime#now()</code> is used to obtain the current <code>LocalDateTime</code>
+and used as the parameter in <code>Model#setEventScheduleLocalDateTime(LocalDateTime localDateTime)</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2:</strong> The <code>EventSchedulePrefs#localDateTime</code> is then updated with the current <code>LocalDateTime</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3:</strong>  The CommandBox will be reflected with the <code>EventDisplayCommand#MESSAGE_SUCCESS</code> constant and
+a new CommandResult will be returned with the message.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-6"><a class="link" href="#design-considerations-6">Design Considerations</a></h5>
+
+</div>
+<div class="sect4">
+<h5 id="aspect-product-cohesiveness"><a class="link" href="#aspect-product-cohesiveness">Aspect: Product cohesiveness</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Current Implementation:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>schedule</code></p>
+</li>
+<li>
+<p>Our team chose to use the one-word command <code>schedule</code> as the rest of our features also use one-word commands. This is
+so that our features look like one integrated product and not an application with several features.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternatives Considered:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>schedule view</code></p>
+</li>
+<li>
+<p>If this was the implementation that we used, it can get quite confusing to other users as to why the <code>academics</code>
+command works to change the scene to display the academics whilst to look at the schedule, one must enter in <code>schedule view</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="schedule-add-command"><a class="link" href="#schedule-add-command">7.5.3. Schedule Add Command</a></h4>
+<div class="sect4">
+<h5 id="implementation-20"><a class="link" href="#implementation-20">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>EventAddCommand</code> performs.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format for adding an event to the schedule is <code>schedule add eventName/EVENT_DESCRIPTION startDateTime/YYYY-MM-DDTHH:MM
+ endDateTime/YYYY-MM-DDTHH:MM recur/RECUR_DESCRIPTION color/COLOR_CODE</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+RECUR_DESCRIPTION can only take the values <code>none</code>, <code>daily</code> or <code>weekly</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+COLOR_CODE can only take the values <code>1</code>-<code>23</code>.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p><strong>Step 1:</strong> The <code>EventAddCommand#execute(Model model)</code> method is called which validates if the <code>VEvent</code> object from
@@ -2100,38 +2236,24 @@ the parser is valid.</p>
 The <code>VEvent</code> is validated to check if it is unique using the <code>EventUtil#isEqualVEvent(VEvent vEvent)</code> method.</p>
 </div>
 <div class="paragraph">
-<p><strong>Step 3:</strong> If the event is invalid, a <code>CommandException</code> will throw an error message. Else, a new <code>CommandResult</code> will
-be returned with the success message.</p>
+<p><strong>Step 3:</strong> If the event is invalid, a <code>CommandException</code> will be thrown with an error message.</p>
 </div>
 <div class="paragraph">
-<p><strong>Step 4:</strong> The <code>LogicManager</code> then calls the <code>Storage#saveEvents(ReadOnlyEvents readOnlyEvents)</code> which saves the
-<code>EventHistory</code> in JSON format after serializing it using the <code>JsonEventStorage</code>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The <code>ReadOnlyEvents</code> and <code>ReadOnlyVEvents</code> interfaces are an abstraction of the implementation of the <code>EventHistory</code>
-from other layers of the application.
-</td>
-</tr>
-</table>
+<p><strong>Step 4:</strong> The CommandBox will be reflected with the formatted <code>EventAddCommand#MESSAGE_SUCCESS</code> constant with the summary of the <code>VEvent</code> and
+a new CommandResult will be returned with this same formatted message.</p>
 </div>
 <div class="paragraph">
 <p>The following activity diagram summarizes what happens when a user executes the <code>schedule add</code> command:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ScheduleAddActivityDiagram.png" alt="ScheduleAddActivityDiagram">
+<img src="images/event/ScheduleAddActivityDiagram.png" alt="ScheduleAddActivityDiagram">
 </div>
 <div class="title">Figure 27. Activity Diagram for ScheduleAddCommand</div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-6"><a class="link" href="#design-considerations-6">Design Considerations</a></h5>
+<h5 id="design-considerations-7"><a class="link" href="#design-considerations-7">Design Considerations</a></h5>
 
 </div>
 <div class="sect4">
@@ -2169,6 +2291,401 @@ as well. Furthermore, the name required here is not the name of the student but 
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="schedule-edit-command"><a class="link" href="#schedule-edit-command">7.5.4. Schedule Edit Command</a></h4>
+<div class="sect4">
+<h5 id="implementation-21"><a class="link" href="#implementation-21">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>EventEditCommand</code> performs.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format for editing an event in the schedule is <code>schedule edit INDEX [eventName/EVENT_DESCRIPTION] [startDateTime/YYYY-MM-DDTHH:MM]
+             [endDateTime/YYYY-MM-DDTHH:MM] [recur/RECUR_DESCRIPTION] [color/COLOR_CODE]</code>
+NOTE: INDEX is the index of the event. Which can be obtained by the indexGet Command. See <a href="#indexGetCommandSection">below</a> for more information.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+RECUR_DESCRIPTION can only take the values <code>none</code>, <code>daily</code> or <code>weekly</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+COLOR_CODE can only take the values <code>1</code>-<code>23</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+All fields are optional, however at least one field needs to be entered to edit.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>: The <code>EventEditCommand#execute(Model model)</code> method is executed which edits the details of the specified
+<code>VEvent</code> in the model. This method checks if the <code>index</code> defined when instantiating
+<code>EventEditCommand(Index index, EditVEventDescriptor editVEventDescriptor)</code> is valid. This method also checks if
+the <code>editVEventDescriptor</code> is valid.
+Since the fields are optional, the fields not entered by the user will reuse the existing values that are currently stored and defined
+in the <code>VEvent</code> object.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Index must be a positive number greater than zero.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+At least 1 field of event needs to be provided to <code>editVEventDescriptor</code> to edit.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>: A new <code>VEvent</code> with the newly updated values will be created which replaces the existing <code>VEvent</code>
+object in the current model using the <code>Model#setVEvent(Index index, VEvent vEvent);</code> method. The values input to editVEventDescriptor
+are then validated and if the values are not valid, an <code>IllegalValueException</code> will be thrown.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>: The newly created VEvent is then validated. If the newly created VEvent is the same as any of the events in the scheduler
+or it has not been edited, a <code>CommandException</code> will be thrown.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 4</strong>: The new created <code>VEvent</code> is then mapped to an Event and the <code>LocalDateTime</code> of this <code>VEvent</code> is used to update
+<code>EventSchedulePrefs#localDateTime</code> using the method <code>Model#setEventScheduleLocalDateTime(LocalDateTime localDateTime)</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 5</strong>: <code>EventEditCommand#generateSuccessMessage(VEvent vEvent)</code> formats the success message with
+<code>EventEditCommand#MESSAGE_EDIT_EVENT_SUCCESS</code> , the <code>Index</code> of the event and the <code>VEvent</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 6</strong>: The command box will be reflected with the success message and a new
+<code>CommandResult</code> will be returned with the message.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="schedule-delete-command"><a class="link" href="#schedule-delete-command">7.5.5. Schedule Delete Command</a></h4>
+<div class="sect4">
+<h5 id="implementation-22"><a class="link" href="#implementation-22">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>EventDeleteCommand</code> performs.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format for deleting an event in the schedule is <code>schedule delete INDEX</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+INDEX is the index of the event. Which can be obtained by the indexGet Command. See <a href="#indexGetCommandSection">below</a> for more information.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>: The <code>EventDeleteCommand#execute(Model model)</code> method is executed which deletes the specified
+<code>VEvent</code> in the model. This method checks if the <code>targetIndex</code> defined when instantiating
+<code>EventDeleteCommand(Index targetIndex)</code> is valid.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Index must be a positive number greater than zero and within the bounds of the number of events in the scheduler.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>: The <code>VEvent</code> at the specified <code>targetIndex</code> is then removed from <code>EventHistory#VEvents</code>
+using the Model#delete(Index index) method.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>: <code>EventDeleteCommand#generateDeleteSuccessMessage(VEvent vEvent)</code> formats the success message with
+<code>EventDeleteCommand#MESSAGE_SUCCESS</code> and the <code>VEvent</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 4</strong>: The command box will be reflected with the success message and a new
+<code>CommandResult</code> will be returned with the message.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/event/sequence_diagram_event_delete_command.png" alt="sequence diagram event delete command">
+</div>
+<div class="title">Figure 28. Sequence Diagram for EventDeleteCommand</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="indexGetCommandSection"><a class="link" href="#indexGetCommandSection">7.5.6. Schedule Index Command</a></h4>
+<div class="sect4">
+<h5 id="implementation-23"><a class="link" href="#implementation-23">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>EventIndexCommand</code> performs.
+This command returns the index of the Event(s) with same EVENT_DESCRIPTION as the <code>eventName</code> input from the user.
+If there are no Events with the same EVENT_DESCRIPTION, the Event with the most similar EVEnT_DESCRIPTION, calculated
+using the Levenshtein Distance formula, will then be suggested.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format for getting the index of an event in the schedule is <code>schedule indexGet/EVENT_DESCRIPTION</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>EVENT_DESCRIPTION</code> is the name of the event.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>: The <code>EventIndexCommand#execute(Model model)</code> method is executed which obtains the index of the specified
+<code>VEvent</code> in the model. This method first obtains the current list of <code>Pair</code> of <code>Index</code> and <code>VEvents</code> in <code>EventHistory#vEvents</code> using
+<code>Model#searchVEvents(String eventName)</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>: The current list of Events is then validated.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If the list of Events is empty, the method will find the most similar <code>Event</code> in
+<code>EventHistory#vEvents</code> based on the <code>eventName</code> entered when when instantiating <code>EventIndexCommand(String eventName)</code>. The found <code>VEvent</code> is then mapped to an Event and the <code>LocalDateTime</code> of this <code>VEvent</code> is used to update
+<code>EventSchedulePrefs#localDateTime</code> using the method <code>Model#setEventScheduleLocalDateTime(LocalDateTime localDateTime)</code>. <code>VEventNotFoundException</code> is thrown
+when there are no events in the schedule at all.</p>
+</li>
+<li>
+<p>If the list of Events is not empty, The first <code>VEvent</code> of the list of Events is then mapped to an Event and the <code>LocalDateTime</code> of this <code>VEvent</code> is used to update
+<code>EventSchedulePrefs#localDateTime</code> using the method <code>Model#setEventScheduleLocalDateTime(LocalDateTime localDateTime)</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>: <code>EventIndexCommand#generateSuggestionMessage(Pair&lt;Index, VEvent&gt; resultVEventPair)</code> or <code>EventIndexCommand#generateResultMessage(List&lt;Pair&lt;Index, VEvent&gt;&gt; pairVEventIndexList)</code>
+will then format the message according to whether there the list of Events is empty.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If the list of Events is empty, the method <code>EventIndexCommand#generateSuggestionMessage(Pair&lt;Index, VEvent&gt; resultVEventPair)</code> will be called.</p>
+</li>
+<li>
+<p>If the list of Events is not empty, the method <code>EventIndexCommand#generateResultMessage(List&lt;Pair&lt;Index, VEvent&gt;&gt; pairVEventIndexList)</code> will be called.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Step 4</strong>: The command box will be reflected with the message and a new
+<code>CommandResult</code> will be returned with the message.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/event/EventIndexCommandActivityDiagram.png" alt="EventIndexCommandActivityDiagram">
+</div>
+<div class="title">Figure 29. Activity Diagram for EventIndexCommand</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="schedule-indexall-command"><a class="link" href="#schedule-indexall-command">7.5.7. Schedule IndexAll Command</a></h4>
+<div class="sect4">
+<h5 id="implementation-24"><a class="link" href="#implementation-24">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>EventIndexAllCommand</code> performs.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format for getting the indexes of all events is <code>schedule indexAll</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>: The <code>EventIndexAllCommand#execute(Model model)</code> method is executed which obtains all indexes of the all of VEvents in the model.
+This method first obtains the current list of <code>Pair</code> of <code>Index</code> and <code>VEvents</code> in <code>EventHistory#vEvents</code> using
+<code>Model#getAllVEventsWithIndex()</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>: The current list is then validated. If the list is empty, a new <code>CommandResult</code> with message <code>EventIndexAllCommand#MESSAGE_NO_EVENT</code>
+will be returned.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>: The success message is generated using EventIndexAllCommand#generateResultMessage(List&lt;Pair&lt;Index, VEvent&gt;&gt; pairVEventIndexList)
+and a new <code>CommandResult</code> will be returned with this message.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/event/EventIndexAllActivityDiagram.png" alt="EventIndexAllActivityDiagram">
+</div>
+<div class="title">Figure 30. Activity Diagram for EventIndexAllCommand</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="schedule-view-command"><a class="link" href="#schedule-view-command">7.5.8. Schedule View Command</a></h4>
+<div class="sect4">
+<h5 id="implementation-25"><a class="link" href="#implementation-25">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>EventViewCommand</code> performs.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format for changing the view mode of the schedule is <code>schedule view mode/SCHEDULE_MODE date/YYYY-MM-DD</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>SCHEDULE_MODE</code> can only takes the values <code>daily</code> or <code>weekly</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Date must be entered in YYYY-MM-DD format.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>: The <code>EventViewCommand#execute(Model model)</code> method is executed which changes the view mode of the model.
+ This method sets <code>EventSchedulePrefs#eventScheduleView</code> and <code>EventSchedulePrefs#localDateTime</code>
+with <code>EventViewCommand#scheduleViewMode</code> and <code>EventViewCommand#targetViewDateTime</code> respectively.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>: The success message is generated using EventViewCommand#generateSuccessMessage(EventScheduleView eventScheduleViewMode, LocalDateTime targetViewDate)
+and a new <code>CommandResult</code> will be returned with this message.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/event/EventViewCommandActivityDiagram.png" alt="EventViewCommandActivityDiagram">
+</div>
+<div class="title">Figure 31. Activity Diagram for EventViewCommand</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="schedule-export-command"><a class="link" href="#schedule-export-command">7.5.9. Schedule Export Command</a></h4>
+<div class="sect4">
+<h5 id="implementation-26"><a class="link" href="#implementation-26">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations which <code>EventExportCommand</code> performs.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format for exporting the schedule into an .ics file is <code>schedule export</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>: The `The EventExportCommand#execute(Model model) method is executed which exports the events in the scheduler into a .ics file in the data folder.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>: The command box will be reflected with the
+EventExportCommand#MESSAGE_SUCCESS constant and a new CommandResult will be returned with the message.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>: Subsequently, the CommandResult will be processed by the`MainWindow` in the UI component and
+generate a mySchedule.ics file in the data folder of the current directory.</p>
+</div>
+<hr>
 </div>
 </div>
 </div>
@@ -3856,7 +4373,22 @@ Expected: A file named studentAcademics.csv should be created in the data folder
 </div>
 </div>
 <div class="sect2">
-<h3 id="manual-test-scheduler"><a class="link" href="#manual-test-scheduler">G.4. Manual Test: Scheduler</a></h3>
+<h3 id="manual-test-personal-schedule"><a class="link" href="#manual-test-personal-schedule">G.4. Manual Test: Personal Schedule</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Displaying the personal schedule</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>schedule</code><br>
+Expected: User should now be able to view the schedule at the current date. A help message should also be shown in the command box.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3898,6 +4430,192 @@ Expected: An error message is shown due to the invalid date time range.</p>
 </li>
 </ol>
 </div>
+</li>
+<li>
+<p>Editing an event in the schedule</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Prerequisite: The scheduler already contain an event with index 1, name "Coffee Break", startDateTime "2020-04-04T12:00", endDateTime "2020-04-04T13:00" .
+No other events exists.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>schedule edit 1 eventName/Meeting at Town</code><br>
+Expected: The event name is changed to "Meeting at Town". The rest of the fields remains the same as before the edit command was called.</p>
+</li>
+<li>
+<p>Test case: <code>schedule edit 1 endDateTime/2020-04-04T14:00</code><br>
+Expected: The event end date time is extended to 1400 hrs. The rest of the fields remains the same as before the edit command was called.</p>
+</li>
+<li>
+<p>Test case: <code>schedule edit 2 eventName/Meeting now</code><br>
+Expected: An error message due to invalid index provided.</p>
+</li>
+<li>
+<p>Test case: <code>schedule edit 2 eventName/</code><br>
+Expected: An error message due to invalid event name entered.</p>
+</li>
+<li>
+<p>Test case: <code>schedule edit 1</code><br>
+Expected: An error message due to no fields provided to edit.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting an event in the schedule</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Prerequisite: The scheduler already contain an event with index 1, name "Coffee Break", startDateTime "2020-04-04T12:00", endDateTime "2020-04-04T13:00" .
+No other events exists.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>schedule delete 1</code><br>
+Expected: The event with name "Coffee Break" is removed from the schedule.</p>
+</li>
+<li>
+<p>Test case: <code>schedule delete 2</code><br>
+Expected: An error message due to invalid index provided.</p>
+</li>
+<li>
+<p>Test case: <code>schedule delete a</code><br>
+Expected: An error message due to wrong command format provided.</p>
+</li>
+<li>
+<p>Test case: <code>schedule delete</code><br>
+Expected: An error message due to wrong command format provided.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Getting the index of an event in the schedule</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Prerequisite: The scheduler already contain an event with index 1, name "Coffee Break", startDateTime "2020-04-04T12:00", endDateTime "2020-04-04T13:00" .
+No other events exists.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>schedule indexGet/Coffee Break</code><br>
+Expected: The event description along with its index is shown in the command box.</p>
+</li>
+<li>
+<p>Test case: <code>schedule indexGet/coffee</code><br>
+Expected: The event description with the closest name to the search term "coffee" is displayed along with its index in the command box.</p>
+</li>
+<li>
+<p>Test case: <code>schedule indexGet/i am not trying to find</code><br>
+Expected: By default, the event with index 1 is displayed. Since no events match the search term.</p>
+</li>
+<li>
+<p>Test case: <code>schedule indexGet/</code><br>
+Expected: An error message due to invalid event name provided.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Getting the indexes of all events</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Prerequisite: The scheduler already contain an event with index 1, name "Coffee Break", startDateTime "2020-04-04T12:00", endDateTime "2020-04-04T13:00"
+and another event with index 2, name "Dinner", startDateTime "2020-04-04T17:00", endDateTime "2020-04-04T18:00"
+</td>
+</tr>
+</table>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>schedule indexAll</code><br>
+Expected: Both event&#8217;s details along with their indexes will be shown in the command box.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Changing the view mode of the schedule</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case: <code>schedule view mode/weekly date/2020-04-20</code><br>
+Expected: The schedule will show the week of Monday to Sunday that reference date "2020-04-20" lies on.</p>
+</li>
+<li>
+<p>Test case: <code>schedule view mode/daily date/2020-04-21</code><br>
+Expected: The schedule will show all the events on the reference date "2002-04-21".</p>
+</li>
+<li>
+<p>Test case: <code>schedule view mode/daily</code><br>
+Expected: An error message due to wrong command format provided.</p>
+</li>
+<li>
+<p>Test case: <code>schedule view date/2020-04-21</code><br>
+Expected: An error message due to wrong command format provided.</p>
+</li>
+<li>
+<p>Test case: <code>schedule view</code><br>
+Expected: An error message due to wrong command format provided.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Exporting the schedule into an .ics file</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case <code>schedule export</code><br>
+Expected: An .ics file with name "mySchedule.ics" will be created in the data folder in the current directory of TeaPet.</p>
 </li>
 </ol>
 </div>
@@ -4037,4 +4755,4 @@ Expected: An error message is shown as there should be no arguments passed into 
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:56:39 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 14:07:52 UTC</div></div></div></body></html>
