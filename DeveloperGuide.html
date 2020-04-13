@@ -2203,11 +2203,11 @@ Format for adding an event to the schedule is <code>schedule add eventName/EVENT
 </tr>
 </table>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
 RECUR_DESCRIPTION can only take the values <code>none</code>, <code>daily</code> or <code>weekly</code>.
@@ -2215,11 +2215,11 @@ RECUR_DESCRIPTION can only take the values <code>none</code>, <code>daily</code>
 </tr>
 </table>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
 COLOR_CODE can only take the values <code>1</code>-<code>23</code>.
@@ -2314,11 +2314,11 @@ NOTE: INDEX is the index of the event. Which can be obtained by the indexGet Com
 </tr>
 </table>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
 RECUR_DESCRIPTION can only take the values <code>none</code>, <code>daily</code> or <code>weekly</code>.
@@ -2326,11 +2326,11 @@ RECUR_DESCRIPTION can only take the values <code>none</code>, <code>daily</code>
 </tr>
 </table>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
 COLOR_CODE can only take the values <code>1</code>-<code>23</code>.
@@ -2338,11 +2338,11 @@ COLOR_CODE can only take the values <code>1</code>-<code>23</code>.
 </tr>
 </table>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
 All fields are optional, however at least one field needs to be entered to edit.
@@ -2358,11 +2358,11 @@ the <code>editVEventDescriptor</code> is valid.
 Since the fields are optional, the fields not entered by the user will reuse the existing values that are currently stored and defined
 in the <code>VEvent</code> object.</p>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
 Index must be a positive number greater than zero.
@@ -2370,11 +2370,11 @@ Index must be a positive number greater than zero.
 </tr>
 </table>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
 At least 1 field of event needs to be provided to <code>editVEventDescriptor</code> to edit.
@@ -2441,11 +2441,11 @@ INDEX is the index of the event. Which can be obtained by the indexGet Command. 
 <code>VEvent</code> in the model. This method checks if the <code>targetIndex</code> defined when instantiating
 <code>EventDeleteCommand(Index targetIndex)</code> is valid.</p>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
 Index must be a positive number greater than zero and within the bounds of the number of events in the scheduler.
@@ -2464,6 +2464,9 @@ using the Model#delete(Index index) method.</p>
 <div class="paragraph">
 <p><strong>Step 4</strong>: The command box will be reflected with the success message and a new
 <code>CommandResult</code> will be returned with the message.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram will provide a clearer picture on how the EventDeleteCommand works.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -2547,6 +2550,9 @@ will then format the message according to whether there the list of Events is em
 <p><strong>Step 4</strong>: The command box will be reflected with the message and a new
 <code>CommandResult</code> will be returned with the message.</p>
 </div>
+<div class="paragraph">
+<p>The following Activity Diagram will provide a clearer picture on how the EventIndexCommand is supposed to run.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/event/EventIndexCommandActivityDiagram.png" alt="EventIndexCommandActivityDiagram">
@@ -2587,6 +2593,9 @@ will be returned.</p>
 <p><strong>Step 3</strong>: The success message is generated using EventIndexAllCommand#generateResultMessage(List&lt;Pair&lt;Index, VEvent&gt;&gt; pairVEventIndexList)
 and a new <code>CommandResult</code> will be returned with this message.</p>
 </div>
+<div class="paragraph">
+<p>The following Activity Diagram will provide a clearer picture on how the EventIndexAllCommand is supposed to run.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/event/EventIndexAllActivityDiagram.png" alt="EventIndexAllActivityDiagram">
@@ -2614,26 +2623,26 @@ Format for changing the view mode of the schedule is <code>schedule view mode/SC
 </tr>
 </table>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-<code>SCHEDULE_MODE</code> can only takes the values <code>daily</code> or <code>weekly</code>
+<code>SCHEDULE_MODE</code> can only takes the values <code>daily</code> or <code>weekly</code>. Any other values will result in an error thrown.
 </td>
 </tr>
 </table>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-Date must be entered in YYYY-MM-DD format.
+Date must be entered in YYYY-MM-DD format. Any other values will result in an error thrown.
 </td>
 </tr>
 </table>
@@ -2646,6 +2655,9 @@ with <code>EventViewCommand#scheduleViewMode</code> and <code>EventViewCommand#t
 <div class="paragraph">
 <p><strong>Step 2</strong>: The success message is generated using EventViewCommand#generateSuccessMessage(EventScheduleView eventScheduleViewMode, LocalDateTime targetViewDate)
 and a new <code>CommandResult</code> will be returned with this message.</p>
+</div>
+<div class="paragraph">
+<p>The following Activity Diagram will provide a clearer picture on how the EventViewCommand is supposed to run.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4755,4 +4767,4 @@ Expected: An error message is shown as there should be no arguments passed into 
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 14:51:12 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:31:14 UTC</div></div></div></body></html>
